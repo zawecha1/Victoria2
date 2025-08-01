@@ -1,0 +1,1513 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Victoria II 主修改器 (victoria2_modifier.py)
+==================================================
+统一修改器，集成所有Victoria II存档修改功能
+
+核心功能:
+1. 人口斗争性修改 (militancy_modifier.py的功能)
+2. 文化修改 (china_culture_modifier.py的功能)  
+3. 恶名度修改 (china_infamy_modifier.py的功能)
+4. 中国人口属性修改 (chinese_pop_modifier.py的功能) ⭐ 最新集成
+
+最新更新: 2025年1月28日 - 完全集成确认的意识形态映射功能
+"""
+
+import re
+import shutil
+import sys
+from datetime import datetime
+from typing import Dict, List, Optional, Tuple
+
+# 导入花括号解析器
+from bracket_parser import Victoria2BracketParser, BracketBlock
+
+class Victoria2Modifier:
+    """Victoria II 主修改器 - 统一入口工具"""
+    
+    def __init__(self, file_path: str = None):
+        self.content = ""
+        self.file_path = file_path
+        self.parser = Victoria2BracketParser()  # 花括号解析器
+        self.structure = None  # 花括号结构
+        
+        # 统计计数器
+        self.militancy_changes = 0
+        self.culture_changes = 0  
+        self.infamy_changes = 0
+        self.religion_changes = 0
+        self.ideology_changes = 0
+        self.population_count = 0
+        self.date_changes = 0
+        
+        # 默认存档路径
+        self.default_save_path = r"c:\Users\zhangwc6\Documents\Paradox Interactive\Victoria II\save games"
+        
+        # ✅ 已确认的意识形态转换映射 (Liberal = ID 6)
+        self.ideology_mapping = {
+            1: 3,  # Reactionary(1) -> Conservative(3)
+            2: 6,  # Fascist(2) -> Liberal(6) ✅ 确认ID 6是Liberal
+            4: 3,  # Socialist(4) -> Conservative(3)  
+            5: 6,  # Anarcho-Liberal(5) -> Liberal(6) ✅ 确认ID 6是Liberal
+            7: 3   # Communist(7) -> Conservative(3)
+        }
+        
+        # 如果提供了文件路径，立即加载
+        if file_path:
+            self.load_file(file_path)
+    
+    def create_backup(self, filename: str, operation: str = "unified") -> str:
+        """创建备份文件"""
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_filename = f"{filename.replace('.v2', '')}_{operation}_backup_{timestamp}.v2"
+        print(f"创建备份文件: {backup_filename}")
+        shutil.copy2(filename, backup_filename)
+        return backup_filename
+    
+    def load_file(self, filename: str) -> bool:
+        """加载存档文件并初始化解析器"""
+        try:
+            # 保存文件路径以供后续使用
+            self.file_path = filename
+            
+            encodings = ['utf-8-sig', 'utf-8', 'latin-1', 'cp1252']
+            for encoding in encodings:
+                try:
+                    with open(filename, 'r', encoding=encoding, errors='ignore') as f:
+                        self.content = f.read()
+                    print(f"文件读取完成 (编码: {encoding})，大小: {len(self.content):,} 字符")
+                    
+                    # 初始化花括号解析器
+                    self.parser.load_content(self.content)
+                    print("🔍 正在解析文件结构...")
+                    blocks = self.parser.parse_all_blocks()
+                    
+                    # 创建一个假的根结构来容纳所有块
+                    from bracket_parser import BracketBlock
+                    self.structure = BracketBlock("root", 0, len(self.content), self.content, 0)
+                    self.structure.children = blocks
+                    
+                    print(f"📊 解析完成: 找到 {len(blocks)} 个顶级块")
+                    
+                    return True
+                except UnicodeDecodeError:
+                    continue
+            
+            print("❌ 所有编码尝试失败")
+            return False
+        except Exception as e:
+            print(f"❌ 文件读取失败: {e}")
+            return False
+    
+    def save_file(self, filename: str) -> bool:
+        """保存修改后的文件"""
+        try:
+            with open(filename, 'w', encoding='utf-8-sig') as f:
+                f.write(self.content)
+            print(f"文件保存完成: {filename}")
+            return True
+        except Exception as e:
+            print(f"❌ 文件保存失败: {e}")
+            return False
+    
+    def find_chinese_provinces(self) -> List[int]:
+        """查找中国拥有的省份"""
+        chinese_provinces = []
+        
+        # 查找所有省份
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        
+        print("查找中国省份...")
+        for i, match in enumerate(province_matches):
+            province_id = int(match.group(1))
+            start_pos = match.end()
+            
+            # 确定省份块的结束位置
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start()
+            else:
+                next_section = re.search(r'\n[a-z_]+=\s*{', self.content[start_pos:start_pos+20000])
+                if next_section:
+                    end_pos = start_pos + next_section.start()
+                else:
+                    end_pos = start_pos + 10000
+            
+            province_content = self.content[start_pos:end_pos]
+            
+            # 检查是否为中国拥有
+            owner_match = re.search(r'owner="?CHI"?', province_content)
+            if owner_match:
+                chinese_provinces.append(province_id)
+        
+        print(f"找到 {len(chinese_provinces)} 个中国省份")
+        return chinese_provinces
+    
+    # ========================================
+    # 花括号结构安全修改方法
+    # ========================================
+    
+    def find_china_country_block(self) -> Optional[BracketBlock]:
+        """安全地查找真正的CHI国家定义块"""
+        print("🔍 查找CHI国家定义块...")
+        
+        # 查找所有名为CHI的块
+        chi_blocks = self.parser.find_blocks_by_name("CHI")
+        print(f"找到 {len(chi_blocks)} 个CHI块")
+        
+        if not chi_blocks:
+            print("❌ 未找到任何CHI块")
+            return None
+        
+        # 分析每个CHI块，找出真正的国家定义块
+        country_block = None
+        max_complexity = 0
+        
+        for i, block in enumerate(chi_blocks):
+            content_type = self.parser.analyze_content_type(block)
+            child_count = len(block.children)
+            complexity = len(block.content) + child_count * 100
+            
+            print(f"CHI块 {i+1}: 位置 {block.start_pos}-{block.end_pos}")
+            print(f"  大小: {len(block.content):,} 字符")
+            print(f"  类型: {content_type}")
+            print(f"  子块数: {child_count}")
+            print(f"  复杂度: {complexity}")
+            
+            # 检查是否包含国家特有字段
+            country_indicators = [
+                'primary_culture', 'capital', 'technology', 'ruling_party',
+                'upper_house', 'government', 'plurality', 'badboy',
+                'consciousness', 'mobilized', 'war_exhaustion'
+            ]
+            
+            indicator_count = sum(1 for indicator in country_indicators 
+                                if indicator in block.content)
+            
+            print(f"  国家指标数: {indicator_count}/{len(country_indicators)}")
+            
+            # 如果这个块有更多的国家指标或更高的复杂度，则认为是国家块
+            if indicator_count > 3 or (indicator_count > 0 and complexity > max_complexity):
+                max_complexity = complexity
+                country_block = block
+                print(f"  ✅ 识别为国家定义块")
+            else:
+                print(f"  ❌ 识别为外交关系或其他类型块")
+        
+        if country_block:
+            print(f"🎯 确定CHI国家块: 位置 {country_block.start_pos}-{country_block.end_pos}")
+            return country_block
+        else:
+            print("❌ 未找到有效的CHI国家定义块")
+            return None
+    
+    def modify_block_content_safely(self, block: BracketBlock, 
+                                   modifications: Dict[str, str]) -> bool:
+        """在花括号块内安全地修改内容"""
+        if not block:
+            return False
+        
+        # 获取块的完整内容（包括花括号）
+        block_start = block.start_pos
+        block_end = block.end_pos + 1
+        original_block_content = self.content[block_start:block_end]
+        
+        # 获取内部内容（不包括花括号）
+        inner_content = block.content
+        modified_inner_content = inner_content
+        
+        changes_made = False
+        
+        for key, value in modifications.items():
+            # 检查是否已存在这个键
+            existing_pattern = r'\b' + re.escape(key) + r'\s*=\s*[^{}\n]+'
+            if re.search(existing_pattern, modified_inner_content):
+                # 替换现有值
+                new_inner_content = re.sub(
+                    existing_pattern,
+                    f'{key}={value}',
+                    modified_inner_content
+                )
+                if new_inner_content != modified_inner_content:
+                    modified_inner_content = new_inner_content
+                    changes_made = True
+                    print(f"  🔄 修改现有字段: {key}={value}")
+            else:
+                # 添加新字段（在开头添加）
+                modified_inner_content = f'\n\t{key}={value}' + modified_inner_content
+                changes_made = True
+                print(f"  ➕ 添加新字段: {key}={value}")
+        
+        if changes_made:
+            # 重构完整的块内容
+            new_block_content = f'{{\n\t{modified_inner_content.strip()}\n}}'
+            
+            # 替换原始内容
+            self.content = (self.content[:block_start] + 
+                          new_block_content + 
+                          self.content[block_end:])
+            
+            # 重新解析结构
+            self.parser.load_content(self.content)
+            return True
+        
+        return False
+    
+    def find_nested_block_safely(self, parent_block: BracketBlock, 
+                                block_name: str) -> Optional[BracketBlock]:
+        """在父块中安全地查找嵌套块"""
+        for child in parent_block.children:
+            if child.name == block_name:
+                return child
+        return None
+    
+    def modify_nested_block_safely(self, parent_block: BracketBlock,
+                                  block_name: str, new_content: List[str]) -> bool:
+        """安全地修改嵌套块（如culture块）"""
+        nested_block = self.find_nested_block_safely(parent_block, block_name)
+        
+        if nested_block:
+            # 修改现有块
+            formatted_content = '\n\t\t' + '\n\t\t'.join([f'"{item}"' for item in new_content])
+            new_block_content = f'{block_name}=\n\t{{\n\t\t{formatted_content}\n\t}}'
+            
+            # 替换嵌套块
+            block_start = nested_block.start_pos
+            block_end = nested_block.end_pos + 1
+            
+            # 找到块名称的开始位置
+            name_start = block_start
+            while name_start > 0 and self.content[name_start-1:name_start] != '\n':
+                name_start -= 1
+            
+            self.content = (self.content[:name_start] + 
+                          new_block_content + 
+                          self.content[block_end:])
+            
+            # 重新解析
+            self.parser.load_content(self.content)
+            return True
+        else:
+            # 在父块中添加新的嵌套块
+            formatted_content = '\n\t\t' + '\n\t\t'.join([f'"{item}"' for item in new_content])
+            new_block_content = f'\n\t{block_name}=\n\t{{\n\t\t{formatted_content}\n\t}}'
+            
+            # 在父块内容的开头插入
+            parent_start = parent_block.start_pos + 1  # 跳过开始的{
+            self.content = (self.content[:parent_start] + 
+                          new_block_content + 
+                          self.content[parent_start:])
+            
+            # 重新解析
+            self.parser.load_content(self.content)
+            return True
+    
+    # ========================================
+    # 功能1: 人口斗争性修改
+    # ========================================
+    
+    def modify_militancy(self, china_militancy: float = 0.0, other_militancy: float = 10.0) -> bool:
+        """修改人口斗争性 - 中国人口斗争性设为0，其他国家设为10"""
+        print(f"\n⚔️ 开始修改人口斗争性 (中国: {china_militancy}, 其他: {other_militancy})")
+        
+        # 获取中国省份列表
+        chinese_provinces = set(self.find_chinese_provinces())
+        
+        # 查找所有省份
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        
+        for i, match in enumerate(province_matches):
+            province_id = int(match.group(1))
+            start_pos = match.end()
+            
+            # 确定省份块的结束位置  
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start()
+            else:
+                end_pos = len(self.content)
+            
+            province_content = self.content[start_pos:end_pos]
+            
+            # 确定目标斗争性值
+            target_militancy = china_militancy if province_id in chinese_provinces else other_militancy
+            
+            # 修改省份中的人口斗争性
+            new_province_content = self._modify_province_militancy(province_content, target_militancy)
+            
+            if new_province_content != province_content:
+                self.content = self.content[:start_pos] + new_province_content + self.content[end_pos:]
+                # 重新计算偏移量
+                offset = len(new_province_content) - len(province_content)
+                for j in range(i + 1, len(province_matches)):
+                    old_match = province_matches[j]
+                    province_matches[j] = type(old_match)(
+                        old_match.pattern, old_match.string,
+                        old_match.start() + offset, old_match.end() + offset
+                    )
+        
+        print(f"✅ 斗争性修改完成: {self.militancy_changes} 处修改")
+        return True
+    
+    def _modify_province_militancy(self, province_content: str, target_militancy: float) -> str:
+        """修改单个省份的人口斗争性"""
+        pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
+                    'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
+                    'bureaucrats', 'intellectuals']
+        
+        modified_content = province_content
+        
+        for pop_type in pop_types:
+            pattern = f'({pop_type}=\\s*{{[^{{}}]*}})'
+            matches = list(re.finditer(pattern, modified_content, re.DOTALL))
+            
+            for match in reversed(matches):
+                pop_block = match.group(1)
+                new_pop_block = re.sub(
+                    r'militancy=[\d.]+',
+                    f'militancy={target_militancy:.5f}',
+                    pop_block
+                )
+                
+                if new_pop_block != pop_block:
+                    modified_content = (modified_content[:match.start()] + 
+                                      new_pop_block + 
+                                      modified_content[match.end():])
+                    self.militancy_changes += 1
+        
+        return modified_content
+    
+    # ========================================
+    # 功能2: 文化修改
+    # ========================================
+    
+    def modify_china_culture(self, primary_culture: str = "beifaren", 
+                           accepted_cultures: List[str] = None) -> bool:
+        """修改中国的文化设置 - 基于花括号结构的安全版本"""
+        if accepted_cultures is None:
+            accepted_cultures = ["nanfaren", "manchu"]
+        
+        print(f"\n🏛️ 开始修改中国文化 (主文化: {primary_culture}, 接受文化: {accepted_cultures})")
+        
+        # 使用新的安全方法查找CHI国家块
+        china_block = self.find_china_country_block()
+        if not china_block:
+            return False
+        
+        print(f"📍 CHI国家块分析:")
+        print(f"  位置: {china_block.start_pos}-{china_block.end_pos}")
+        print(f"  大小: {len(china_block.content):,} 字符")
+        print(f"  子块数量: {len(china_block.children)}")
+        
+        # 检查当前文化设置
+        current_primary = re.search(r'primary_culture\s*=\s*"?([^"\s]+)"?', china_block.content)
+        
+        # 查找culture子块
+        culture_block = self.find_nested_block_safely(china_block, "culture")
+        current_accepted = []
+        if culture_block:
+            # 解析当前接受文化
+            culture_matches = re.findall(r'"([^"]+)"', culture_block.content)
+            current_accepted = culture_matches
+        
+        print(f"📊 当前文化配置:")
+        print(f"  主文化: {current_primary.group(1) if current_primary else '未设置'}")
+        print(f"  接受文化: {current_accepted if current_accepted else '未设置'}")
+        
+        changes_made = False
+        
+        # 1. 修改主文化
+        if not current_primary or current_primary.group(1) != primary_culture:
+            modifications = {"primary_culture": f'"{primary_culture}"'}
+            if self.modify_block_content_safely(china_block, modifications):
+                print(f"✅ 主文化修改: {current_primary.group(1) if current_primary else '无'} → {primary_culture}")
+                changes_made = True
+                # 重新获取更新后的块
+                china_block = self.find_china_country_block()
+        else:
+            print(f"ℹ️ 主文化已经是 {primary_culture}，无需修改")
+        
+        # 2. 修改接受文化
+        if set(current_accepted) != set(accepted_cultures):
+            if self.modify_nested_block_safely(china_block, "culture", accepted_cultures):
+                print(f"✅ 接受文化修改: {current_accepted} → {accepted_cultures}")
+                changes_made = True
+        else:
+            print(f"ℹ️ 接受文化已经是 {accepted_cultures}，无需修改")
+        
+        if changes_made:
+            self.culture_changes += 1
+            print(f"🎉 中国文化修改完成")
+        else:
+            print(f"ℹ️ 文化设置已经是目标值，无需修改")
+        
+        return True
+    
+    # ========================================
+    # 功能3: 恶名度修改
+    # ========================================
+    
+    def modify_china_infamy(self, target_infamy: float = 0.0) -> bool:
+        """修改中国的恶名度 - 基于花括号结构的安全版本"""
+        print(f"\n😈 开始修改中国恶名度 (目标值: {target_infamy})")
+        
+        # 使用新的安全方法查找CHI国家块
+        china_block = self.find_china_country_block()
+        if not china_block:
+            return False
+        
+        print(f"📍 CHI国家块分析:")
+        print(f"  位置: {china_block.start_pos}-{china_block.end_pos}")
+        print(f"  大小: {len(china_block.content):,} 字符")
+        
+        # 查找当前badboy值
+        current_badboy_match = re.search(r'badboy\s*=\s*([\d.]+)', china_block.content)
+        current_badboy = float(current_badboy_match.group(1)) if current_badboy_match else None
+        
+        print(f"📊 当前恶名度值: {current_badboy if current_badboy is not None else '未设置'}")
+        
+        # 检查是否需要修改
+        if current_badboy is not None and abs(current_badboy - target_infamy) < 0.001:
+            print(f"ℹ️ 恶名度已经是目标值 {target_infamy}，无需修改")
+            return True
+        
+        # 修改恶名度
+        modifications = {"badboy": f"{target_infamy:.3f}"}
+        if self.modify_block_content_safely(china_block, modifications):
+            print(f"✅ 恶名度修改: {current_badboy if current_badboy is not None else '无'} → {target_infamy:.3f}")
+            self.infamy_changes += 1
+            print(f"🎉 中国恶名度修改完成")
+            return True
+        else:
+            print(f"❌ 恶名度修改失败")
+            return False
+    
+    # ========================================
+    # 功能5: 游戏日期修改
+    # ========================================
+    
+    def modify_game_date(self, target_date: str = "1836.1.1") -> bool:
+        """修改游戏中的所有日期为指定日期"""
+        print(f"\n📅 开始修改游戏日期 (目标日期: {target_date})")
+        
+        # 验证目标日期格式
+        target_pattern = r'^(\d{4})\.(\d{1,2})\.(\d{1,2})$'
+        if not re.match(target_pattern, target_date):
+            print(f"❌ 目标日期格式无效: {target_date}")
+            print("正确格式: YYYY.M.D (例如: 1836.1.1)")
+            return False
+        
+        # 使用正则表达式查找所有日期
+        date_pattern = r'(?<![a-zA-Z0-9_])(\d{4})\.(\d{1,2})\.(\d{1,2})(?![a-zA-Z0-9_])'
+        
+        # 查找所有匹配的日期
+        matches = list(re.finditer(date_pattern, self.content))
+        
+        if not matches:
+            print("❌ 未找到任何日期格式")
+            return False
+        
+        print(f"🔍 找到 {len(matches)} 个日期需要修改:")
+        
+        # 统计不同类型的日期
+        date_types = {}
+        for match in matches:
+            original_date = match.group(0)
+            start_pos = max(0, match.start() - 20)
+            end_pos = min(len(self.content), match.end() + 20)
+            context = self.content[start_pos:end_pos]
+            
+            # 分析日期类型
+            if 'date=' in context or 'start_date=' in context:
+                date_type = "游戏开始日期"
+            elif 'last_election=' in context:
+                date_type = "选举日期"
+            elif 'birth_date=' in context:
+                date_type = "出生日期"
+            elif 'end_date=' in context:
+                date_type = "结束日期"
+            else:
+                date_type = "其他日期"
+            
+            if date_type not in date_types:
+                date_types[date_type] = []
+            date_types[date_type].append(original_date)
+        
+        # 显示日期类型统计
+        for date_type, dates in date_types.items():
+            unique_dates = list(set(dates))
+            print(f"  • {date_type}: {len(dates)} 处 (示例: {unique_dates[:3]})")
+        
+        # 从后往前替换，避免位置偏移
+        modified_content = self.content
+        for match in reversed(matches):
+            original_date = match.group(0)
+            
+            # 替换为目标日期
+            modified_content = (modified_content[:match.start()] + 
+                              target_date + 
+                              modified_content[match.end():])
+            self.date_changes += 1
+        
+        # 更新内容
+        self.content = modified_content
+        
+        print(f"✅ 日期修改完成: {self.date_changes} 处修改")
+        print(f"🎯 所有日期已修改为: {target_date}")
+        
+        return True
+    
+    def modify_game_date_selective(self, target_date: str = "1836.1.1", 
+                                 date_types: List[str] = None) -> bool:
+        """选择性修改特定类型的日期"""
+        if date_types is None:
+            date_types = ["游戏开始日期", "选举日期", "结束日期"]  # 默认不修改出生日期
+        
+        print(f"\n📅 开始选择性修改游戏日期 (目标日期: {target_date})")
+        print(f"修改类型: {date_types}")
+        
+        # 验证目标日期格式
+        target_pattern = r'^(\d{4})\.(\d{1,2})\.(\d{1,2})$'
+        if not re.match(target_pattern, target_date):
+            print(f"❌ 目标日期格式无效: {target_date}")
+            return False
+        
+        # 使用正则表达式查找所有日期
+        date_pattern = r'(?<![a-zA-Z0-9_])(\d{4})\.(\d{1,2})\.(\d{1,2})(?![a-zA-Z0-9_])'
+        matches = list(re.finditer(date_pattern, self.content))
+        
+        if not matches:
+            print("❌ 未找到任何日期格式")
+            return False
+        
+        # 筛选需要修改的日期
+        matches_to_modify = []
+        for match in matches:
+            start_pos = max(0, match.start() - 30)
+            end_pos = min(len(self.content), match.end() + 10)
+            context = self.content[start_pos:end_pos]
+            
+            # 判断日期类型 - 更精确的匹配
+            should_modify = False
+            date_type = "其他日期"
+            
+            # 查找最近的等号前的字段名
+            before_date = self.content[max(0, match.start() - 30):match.start()]
+            
+            if 'birth_date=' in before_date:
+                date_type = "出生日期"
+                if "出生日期" in date_types:
+                    should_modify = True
+            elif 'last_election=' in before_date:
+                date_type = "选举日期"
+                if "选举日期" in date_types:
+                    should_modify = True
+            elif 'end_date=' in before_date:
+                date_type = "结束日期"
+                if "结束日期" in date_types:
+                    should_modify = True
+            elif 'start_date=' in before_date or 'date=' in before_date:
+                date_type = "游戏开始日期"
+                if "游戏开始日期" in date_types:
+                    should_modify = True
+            else:
+                date_type = "其他日期"
+                if "其他日期" in date_types:
+                    should_modify = True
+            
+            if should_modify:
+                matches_to_modify.append(match)
+                print(f"  将修改: {match.group(0)} ({date_type})")
+            else:
+                print(f"  跳过: {match.group(0)} ({date_type})")
+        
+        if not matches_to_modify:
+            print("❌ 未找到符合条件的日期")
+            return False
+        
+        print(f"🔍 找到 {len(matches_to_modify)} 个符合条件的日期需要修改")
+        
+        # 从后往前替换
+        modified_content = self.content
+        for match in reversed(matches_to_modify):
+            original_date = match.group(0)
+            modified_content = (modified_content[:match.start()] + 
+                              target_date + 
+                              modified_content[match.end():])
+            self.date_changes += 1
+        
+        self.content = modified_content
+        
+        print(f"✅ 选择性日期修改完成: {self.date_changes} 处修改")
+        print(f"🎯 符合条件的日期已修改为: {target_date}")
+        
+        return True
+    
+    # ========================================
+    # 功能4: 中国人口属性修改 (核心功能)
+    # ========================================
+    
+    def modify_chinese_population(self, max_provinces: int = None) -> bool:
+        """修改中国人口的宗教和意识形态属性 - 基于花括号结构的安全版本"""
+        print(f"\n🙏 开始修改中国人口属性 (宗教→mahayana, 意识形态→温和派)")
+        print("- 意识形态调整 (✅ 已确认映射):")
+        print("  • Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
+        print("  • Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
+        
+        # 检查花括号结构是否已初始化
+        if not self.structure:
+            print("❌ 花括号结构未初始化，无法执行结构化人口修改")
+            print("⚠️ 回退到传统方法...")
+            return self._modify_chinese_population_traditional(max_provinces)
+        
+        # 查找中国省份 - 使用结构化方法
+        chinese_provinces = self.find_chinese_provinces_structured()
+        if not chinese_provinces:
+            print("❌ 未找到中国省份")
+            return False
+        
+        # 确定要处理的省份数量
+        if max_provinces is None:
+            max_provinces = len(chinese_provinces)
+        
+        provinces_to_process = chinese_provinces[:max_provinces]
+        print(f"📊 处理范围：{len(provinces_to_process)}/{len(chinese_provinces)} 个中国省份")
+        
+        # 修改中国省份的人口
+        for i, province_block in enumerate(provinces_to_process):
+            self._modify_province_populations_structured(province_block)
+            
+            # 进度显示
+            if (i + 1) % 10 == 0 or i == len(provinces_to_process) - 1:
+                print(f"已处理 {i + 1}/{len(provinces_to_process)} 个中国省份...")
+        
+        print(f"✅ 中国人口属性修改完成:")
+        print(f"宗教修改: {self.religion_changes} 处")
+        print(f"意识形态修改: {self.ideology_changes} 处")
+        print(f"总修改数: {self.population_count} 个人口组")
+        
+        return True
+    
+    def _modify_chinese_population_traditional(self, max_provinces: int = None) -> bool:
+        """传统方法修改中国人口属性（备用方案）"""
+        print("🔄 使用传统方法修改中国人口属性...")
+        
+        # 查找中国省份
+        chinese_provinces = self.find_chinese_provinces()
+        if not chinese_provinces:
+            print("❌ 未找到中国省份")
+            return False
+        
+        # 确定要处理的省份数量
+        if max_provinces is None:
+            max_provinces = len(chinese_provinces)
+        
+        provinces_to_process = chinese_provinces[:max_provinces]
+        print(f"📊 处理范围：{len(provinces_to_process)}/{len(chinese_provinces)} 个中国省份")
+        
+        # 修改中国省份的人口
+        for i, province_id in enumerate(provinces_to_process):
+            self._modify_province_populations_traditional(province_id)
+            
+            # 进度显示
+            if (i + 1) % 10 == 0 or i == len(provinces_to_process) - 1:
+                print(f"已处理 {i + 1}/{len(provinces_to_process)} 个中国省份...")
+        
+        print(f"✅ 中国人口属性修改完成:")
+        print(f"宗教修改: {self.religion_changes} 处")
+        print(f"意识形态修改: {self.ideology_changes} 处")
+        print(f"总修改数: {self.population_count} 个人口组")
+        
+        return True
+    
+    def _modify_province_populations_traditional(self, province_id: int):
+        """传统方法修改单个省份的中国人口"""
+        # 查找省份数据块
+        province_pattern = f'^{province_id}=\\s*{{'
+        province_match = re.search(province_pattern, self.content, re.MULTILINE)
+        if not province_match:
+            return
+        
+        start_pos = province_match.end()
+        
+        # 找到省份块的结束位置
+        brace_count = 1
+        current_pos = start_pos
+        while current_pos < len(self.content) and brace_count > 0:
+            char = self.content[current_pos]
+            if char == '{':
+                brace_count += 1
+            elif char == '}':
+                brace_count -= 1
+            current_pos += 1
+        
+        if brace_count != 0:
+            return
+        
+        province_content = self.content[start_pos:current_pos-1]
+        
+        # 查找并修改人口组
+        new_province_content = self._modify_population_groups_traditional(province_content)
+        
+        # 替换省份内容
+        if new_province_content != province_content:
+            self.content = self.content[:start_pos] + new_province_content + self.content[current_pos-1:]
+    
+    def _modify_population_groups_traditional(self, province_content: str) -> str:
+        """传统方法修改省份中的人口组"""
+        # 查找所有人口类型
+        pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
+                    'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
+                    'bureaucrats', 'intellectuals']
+        
+        modified_content = province_content
+        
+        for pop_type in pop_types:
+            # 查找该人口类型的所有实例
+            pattern = f'({pop_type}=\\s*{{[^{{}}]*(?:{{[^{{}}]*}}[^{{}}]*)*}})'
+            matches = list(re.finditer(pattern, modified_content, re.DOTALL))
+            
+            # 从后往前修改，避免位置偏移
+            for match in reversed(matches):
+                original_pop_block = match.group(1)
+                modified_pop_block = self._modify_single_population_traditional(original_pop_block)
+                
+                if modified_pop_block != original_pop_block:
+                    modified_content = (modified_content[:match.start()] + 
+                                      modified_pop_block + 
+                                      modified_content[match.end():])
+                    self.population_count += 1
+        
+        return modified_content
+    
+    def _modify_single_population_traditional(self, pop_block: str) -> str:
+        """传统方法修改单个人口组"""
+        modified_block = pop_block
+        
+        # 1. 修改宗教为 mahayana
+        chinese_cultures = ['beifaren', 'nanfaren', 'manchu', 'han', 'cantonese', 'min', 'hakka']
+        
+        for culture in chinese_cultures:
+            pattern = f'\\b{culture}=([a-zA-Z_]+)\\b'
+            match = re.search(pattern, modified_block)
+            if match:
+                old_religion = match.group(1)
+                if old_religion not in ['size', 'money', 'literacy', 'militancy', 'consciousness', 
+                                       'everyday_needs', 'luxury_needs', 'ideology', 'issues']:
+                    modified_block = re.sub(pattern, f'{culture}=mahayana', modified_block)
+                    self.religion_changes += 1
+        
+        # 2. 修改意识形态分布
+        ideology_pattern = r'ideology=\s*{([^{}]*)}'
+        ideology_match = re.search(ideology_pattern, modified_block, re.DOTALL)
+        
+        if ideology_match:
+            ideology_content = ideology_match.group(1)
+            new_ideology_content = self._modify_ideology_distribution(ideology_content)
+            
+            if new_ideology_content != ideology_content:
+                modified_block = modified_block.replace(
+                    ideology_match.group(0),
+                    f'ideology=\n\t\t{{\n{new_ideology_content}}}'
+                )
+                self.ideology_changes += 1
+        
+        return modified_block
+    
+    def find_chinese_provinces_structured(self) -> List[BracketBlock]:
+        """基于花括号结构查找中国省份"""
+        chinese_provinces = []
+        
+        # 已知的中国省份ID范围和特定ID
+        chinese_province_ranges = [
+            (1496, 1616),  # 主要中国省份
+            (2562, 2648),  # 其他中国区域
+        ]
+        specific_chinese_provinces = [1609, 1612, 1498, 1499]
+        
+        # 在结构中查找省份块
+        for block in self.structure.children:
+            # 检查是否为数字开头的块（可能是省份）
+            if re.match(r'^\d+$', block.name.strip()):
+                province_id = int(block.name.strip())
+                
+                # 检查是否为中国省份ID范围
+                is_chinese = False
+                for start, end in chinese_province_ranges:
+                    if start <= province_id <= end:
+                        is_chinese = True
+                        break
+                
+                if not is_chinese and province_id in specific_chinese_provinces:
+                    is_chinese = True
+                
+                if is_chinese:
+                    # 进一步检查是否包含owner=CHI
+                    if 'owner="CHI"' in block.content or 'owner=CHI' in block.content:
+                        chinese_provinces.append(block)
+        
+        print(f"📍 找到 {len(chinese_provinces)} 个中国省份 (结构化方法)")
+        return chinese_provinces
+    
+    def _modify_province_populations_structured(self, province_block: BracketBlock):
+        """基于花括号结构修改单个省份的中国人口"""
+        # 查找省份中的人口类型块
+        pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
+                    'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
+                    'bureaucrats', 'intellectuals']
+        
+        for child_block in province_block.children:
+            # 检查子块是否包含人口类型
+            if any(pop_type in child_block.content for pop_type in pop_types):
+                # 修改这个人口组
+                old_content = child_block.content
+                new_content = self._modify_single_population_structured(old_content)
+                
+                if new_content != old_content:
+                    # 更新内容
+                    self.content = (self.content[:child_block.start_pos] + 
+                                   new_content + 
+                                   self.content[child_block.end_pos:])
+                    
+                    # 重新解析结构（简化版，只更新位置）
+                    offset = len(new_content) - len(old_content)
+                    self._adjust_positions_after_edit(child_block.end_pos, offset)
+                    self.population_count += 1
+    
+    def _modify_single_population_structured(self, pop_block: str) -> str:
+        """基于花括号结构修改单个人口组 - 安全版本"""
+        modified_block = pop_block
+        
+        # 1. 修改宗教为 mahayana - 使用更安全的方法
+        # 只查找明确的文化=宗教模式，避免误改其他数据
+        
+        # 已知的中国文化列表
+        chinese_cultures = ['beifaren', 'nanfaren', 'manchu', 'han', 'cantonese', 'min', 'hakka']
+        
+        for culture in chinese_cultures:
+            # 查找这个文化的宗教设置
+            # 模式：culture=religion 其中religion不是数字或关键字
+            pattern = f'\\b{culture}=([a-zA-Z_]+)\\b'
+            match = re.search(pattern, modified_block)
+            if match:
+                old_religion = match.group(1)
+                # 确保不是系统关键字
+                if old_religion not in ['size', 'money', 'literacy', 'militancy', 'consciousness', 
+                                       'everyday_needs', 'luxury_needs', 'ideology', 'issues']:
+                    # 替换宗教
+                    modified_block = re.sub(pattern, f'{culture}=mahayana', modified_block)
+                    self.religion_changes += 1
+        
+        # 2. 修改意识形态分布
+        ideology_pattern = r'ideology=\s*{([^{}]*)}'
+        ideology_match = re.search(ideology_pattern, modified_block, re.DOTALL)
+        
+        if ideology_match:
+            ideology_content = ideology_match.group(1)
+            new_ideology_content = self._modify_ideology_distribution(ideology_content)
+            
+            if new_ideology_content != ideology_content:
+                # 保持原有格式：ideology= 换行 { 内容 }
+                modified_block = modified_block.replace(
+                    ideology_match.group(0),
+                    f'ideology=\n\t\t{{\n{new_ideology_content}}}'
+                )
+                self.ideology_changes += 1
+        
+        return modified_block
+    
+    def _adjust_positions_after_edit(self, edit_position: int, offset: int):
+        """编辑后调整所有块的位置"""
+        def adjust_block_positions(block: BracketBlock):
+            if block.start_pos >= edit_position:
+                block.start_pos += offset
+                block.end_pos += offset
+            elif block.end_pos > edit_position:
+                block.end_pos += offset
+            
+            for child in block.children:
+                adjust_block_positions(child)
+        
+        # 调整主结构
+        adjust_block_positions(self.structure)
+    
+    def _modify_ideology_distribution(self, ideology_content: str) -> str:
+        """修改意识形态分布"""
+        # 解析现有的意识形态分布
+        ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
+        ideology_dist = {}
+        
+        for id_str, value_str in ideology_pairs:
+            ideology_dist[int(id_str)] = float(value_str)
+        
+        # 应用转换规则
+        transferred_to_liberal = 0.0
+        transferred_to_conservative = 0.0
+        
+        for old_id, new_id in self.ideology_mapping.items():
+            if old_id in ideology_dist:
+                value = ideology_dist[old_id]
+                
+                if new_id == 6:  # Liberal = ID 6 ✅ 已确认
+                    transferred_to_liberal += value
+                elif new_id == 3:  # Conservative = ID 3
+                    transferred_to_conservative += value
+                
+                # 将原意识形态设为0
+                ideology_dist[old_id] = 0.0
+        
+        # 增加目标意识形态的值
+        if transferred_to_liberal > 0:
+            ideology_dist[6] = ideology_dist.get(6, 0.0) + transferred_to_liberal  # Liberal = ID 6 ✅ 已确认
+        
+        if transferred_to_conservative > 0:
+            ideology_dist[3] = ideology_dist.get(3, 0.0) + transferred_to_conservative  # Conservative = ID 3
+        
+        # 重新构建意识形态内容，保持原有格式
+        new_lines = []
+        for ideology_id in sorted(ideology_dist.keys()):
+            value = ideology_dist[ideology_id]
+            new_lines.append(f'{ideology_id}={value:.5f}')
+        
+        # 保持原有的格式：没有缩进的数值行，最后有制表符缩进的结束大括号
+        return '\n'.join(new_lines) + '\n\t\t'
+    
+    # ========================================
+    # 验证和总结功能
+    # ========================================
+    
+    def verify_modifications(self, filename: str):
+        """验证修改结果"""
+        print("\n验证修改结果...")
+        
+        try:
+            with open(filename, 'r', encoding='utf-8-sig', errors='ignore') as f:
+                content = f.read()
+        except Exception as e:
+            print(f"❌ 验证时文件读取失败: {e}")
+            return
+        
+        # 验证中国人口宗教
+        chinese_provinces = self.find_chinese_provinces()
+        mahayana_count = 0
+        
+        for province_id in chinese_provinces[:3]:  # 检查前3个省份
+            province_pattern = f'^{province_id}=\\s*{{'
+            province_match = re.search(province_pattern, content, re.MULTILINE)
+            if province_match:
+                start_pos = province_match.end()
+                province_content = content[start_pos:start_pos+10000]
+                culture_religion_matches = re.findall(r'(\w+)=(\w+)', province_content)
+                for culture, religion in culture_religion_matches:
+                    if not culture.isdigit() and not religion.isdigit() and religion == 'mahayana':
+                        mahayana_count += 1
+        
+        print(f"✓ 验证样本: {mahayana_count} 个mahayana宗教人口组")
+        print("验证完成!")
+    
+    def execute_selective_modifications(self, filename: str, options: Dict[str, bool]) -> bool:
+        """执行选择性修改操作 - 每个功能独立读取和保存文件"""
+        print(f"\n{'='*70}")
+        print("Victoria II 主修改器 - 选择性修改 (安全模式)")
+        print(f"{'='*70}")
+        print(f"目标文件: {filename}")
+        print("选择的修改项目:")
+        
+        selected_count = 0
+        selected_operations = []
+        if options.get('militancy', False):
+            print("✓ 1. 人口斗争性: 中国=0, 其他=10")
+            selected_operations.append('militancy')
+            selected_count += 1
+        if options.get('culture', False):
+            print("✓ 2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+            selected_operations.append('culture')
+            selected_count += 1
+        if options.get('infamy', False):
+            print("✓ 3. 中国恶名度: 设为0")
+            selected_operations.append('infamy')
+            selected_count += 1
+        if options.get('population', False):
+            print("✓ 4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
+            selected_operations.append('population')
+            selected_count += 1
+        if options.get('date', False):
+            print("✓ 5. 游戏日期: 设为1836.1.1")
+            selected_operations.append('date')
+            selected_count += 1
+        
+        if selected_count == 0:
+            print("❌ 未选择任何修改项目")
+            return False
+            
+        print("⚡ 每个功能独立执行，确保数据安全")
+        print(f"{'='*70}")
+        
+        # 创建备份
+        operation_type = "selective" if selected_count < 5 else "unified"
+        backup_filename = self.create_backup(filename, operation_type)
+        
+        success_count = 0
+        step = 1
+        
+        # 1. 人口斗争性修改
+        if 'militancy' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行人口斗争性修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_militancy():
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 斗争性修改 {self.militancy_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 斗争性修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
+        
+        # 2. 文化修改
+        if 'culture' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行中国文化修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_china_culture():
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 文化修改 {self.culture_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 文化修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
+        
+        # 3. 恶名度修改
+        if 'infamy' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行中国恶名度修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_china_infamy():
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 恶名度修改 {self.infamy_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 恶名度修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
+        
+        # 4. 中国人口属性修改
+        if 'population' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行中国人口属性修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_chinese_population():
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 宗教修改 {self.religion_changes} 处, 意识形态修改 {self.ideology_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 人口属性修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
+        
+        # 5. 游戏日期修改
+        if 'date' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行游戏日期修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_game_date():
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 日期修改 {self.date_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 日期修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
+        
+        # 最终验证
+        if success_count > 0:
+            print(f"\n🔍 执行最终验证...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if 'population' in selected_operations:
+                    self.verify_modifications(filename)
+        
+        # 显示结果
+        print(f"\n{'='*70}")
+        print("安全模式修改完成统计:")
+        print(f"成功步骤: {success_count}/{selected_count}")
+        print(f"每个功能都独立执行，确保数据安全")
+        print(f"{'='*70}")
+        
+        print(f"\n📁 备份文件已创建: {backup_filename}")
+        
+        if success_count == selected_count:
+            print("🎉 所有选择的修改操作成功完成!")
+            print("🎮 可以继续游戏了!")
+        else:
+            print("⚠️ 部分操作失败，请检查输出信息")
+        
+        return success_count == selected_count
+    
+    # ========================================
+    # 主执行功能
+    # ========================================
+    
+    def execute_all_modifications(self, filename: str) -> bool:
+        """执行所有修改操作 - 每个功能独立读取和保存文件"""
+        print(f"\n{'='*70}")
+        print("Victoria II 主修改器 - 安全模式")
+        print(f"{'='*70}")
+        print(f"目标文件: {filename}")
+        print("修改内容:")
+        print("1. 人口斗争性: 中国=0, 其他=10")
+        print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+        print("3. 中国恶名度: 设为0")
+        print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
+        print("5. 游戏日期: 设为1836.1.1")
+        print("⚡ 每个功能独立执行，确保数据安全")
+        print(f"{'='*70}")
+        
+        # 创建总备份
+        backup_filename = self.create_backup(filename, "unified")
+        
+        success_count = 0
+        
+        # 1. 人口斗争性修改
+        print(f"\n🔄 步骤1: 执行人口斗争性修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_militancy():
+                if self.save_file(filename):
+                    print(f"✅ 步骤1完成: 斗争性修改 {self.militancy_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤1失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤1失败: 斗争性修改失败")
+        else:
+            print(f"❌ 步骤1失败: 文件读取失败")
+        
+        # 2. 文化修改
+        print(f"\n🔄 步骤2: 执行中国文化修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_china_culture():
+                if self.save_file(filename):
+                    print(f"✅ 步骤2完成: 文化修改 {self.culture_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤2失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤2失败: 文化修改失败")
+        else:
+            print(f"❌ 步骤2失败: 文件读取失败")
+        
+        # 3. 恶名度修改
+        print(f"\n🔄 步骤3: 执行中国恶名度修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_china_infamy():
+                if self.save_file(filename):
+                    print(f"✅ 步骤3完成: 恶名度修改 {self.infamy_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤3失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤3失败: 恶名度修改失败")
+        else:
+            print(f"❌ 步骤3失败: 文件读取失败")
+        
+        # 4. 中国人口属性修改
+        print(f"\n🔄 步骤4: 执行中国人口属性修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_chinese_population():
+                if self.save_file(filename):
+                    print(f"✅ 步骤4完成: 宗教修改 {self.religion_changes} 处, 意识形态修改 {self.ideology_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤4失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤4失败: 人口属性修改失败")
+        else:
+            print(f"❌ 步骤4失败: 文件读取失败")
+        
+        # 5. 游戏日期修改
+        print(f"\n🔄 步骤5: 执行游戏日期修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_game_date():
+                if self.save_file(filename):
+                    print(f"✅ 步骤5完成: 日期修改 {self.date_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤5失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤5失败: 日期修改失败")
+        else:
+            print(f"❌ 步骤5失败: 文件读取失败")
+        
+        # 最终验证
+        print(f"\n🔍 执行最终验证...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            self.verify_modifications(filename)
+        
+        # 显示最终结果
+        print(f"\n{'='*70}")
+        print("安全模式修改完成统计:")
+        print(f"成功步骤: {success_count}/5")
+        print(f"每个功能都独立执行，确保数据安全")
+        print(f"{'='*70}")
+        
+        print(f"\n📁 总备份文件: {backup_filename}")
+        
+        if success_count == 5:
+            print("🎉 所有修改操作成功完成!")
+            print("🎮 可以继续游戏了!")
+        else:
+            print("⚠️ 部分操作失败，请检查输出信息")
+        
+        return success_count == 5
+
+def get_save_files_list():
+    """获取存档文件列表"""
+    import os
+    import glob
+    
+    save_path = r"c:\Users\zhangwc6\Documents\Paradox Interactive\Victoria II\save games"
+    try:
+        os.chdir(save_path)
+        save_files = glob.glob("*.v2")
+        save_files.sort(key=os.path.getmtime, reverse=True)  # 按修改时间排序
+        return save_files
+    except Exception as e:
+        print(f"❌ 无法访问存档目录: {e}")
+        return []
+
+def show_modification_menu():
+    """显示修改选项菜单"""
+    print("\n" + "="*50)
+    print("请选择要执行的修改操作:")
+    print("="*50)
+    print("1. 人口斗争性修改 (中国=0, 其他=10)")
+    print("2. 中国文化修改 (主文化=beifaren, 接受=nanfaren+manchu)")
+    print("3. 中国恶名度修改 (设为0)")
+    print("4. 中国人口属性修改 (宗教=mahayana, 意识形态=温和派)")
+    print("5. 游戏日期修改 (设为1836.1.1)")
+    print("6. 执行全部修改 (推荐)")
+    print("0. 退出程序")
+    print("="*50)
+
+def get_user_selection():
+    """获取用户选择的修改项目"""
+    options = {
+        'militancy': False,
+        'culture': False,
+        'infamy': False,
+        'population': False,
+        'date': False
+    }
+    
+    while True:
+        try:
+            choice = input("请输入选项 (多选用逗号分隔，如: 1,3,4): ").strip()
+            
+            if choice == '0':
+                return None
+            elif choice == '6':
+                # 全部修改
+                return {
+                    'militancy': True,
+                    'culture': True,
+                    'infamy': True,
+                    'population': True,
+                    'date': True
+                }
+            else:
+                # 解析选择
+                choices = [int(x.strip()) for x in choice.split(',') if x.strip().isdigit()]
+                
+                if not choices:
+                    print("❌ 无效选择，请重新输入")
+                    continue
+                
+                for num in choices:
+                    if num == 1:
+                        options['militancy'] = True
+                    elif num == 2:
+                        options['culture'] = True
+                    elif num == 3:
+                        options['infamy'] = True
+                    elif num == 4:
+                        options['population'] = True
+                    elif num == 5:
+                        options['date'] = True
+                    else:
+                        print(f"❌ 无效选项: {num}")
+                        continue
+                
+                if any(options.values()):
+                    return options
+                else:
+                    print("❌ 未选择任何有效选项，请重新输入")
+                    
+        except ValueError:
+            print("❌ 输入格式错误，请输入数字")
+        except KeyboardInterrupt:
+            print("\n程序已取消")
+            return None
+
+def main():
+    """主函数"""
+    print("Victoria II 主修改器 v2.1")
+    print("集成所有修改功能的统一入口工具")
+    print("支持默认路径和选择性修改")
+    print("="*50)
+    
+    # 获取文件名
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+        print(f"从命令行获取文件名: {filename}")
+        
+        # 检查是否为帮助命令
+        if filename in ['--help', '-h', 'help']:
+            print("\n使用方法:")
+            print("python victoria2_main_modifier.py <存档文件名>")
+            print("python victoria2_main_modifier.py  # 交互式模式")
+            print("\n功能说明:")
+            print("1. 人口斗争性: 中国=0, 其他=10")
+            print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+            print("3. 中国恶名度: 设为0")
+            print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
+            print("5. 游戏日期: 设为1836.1.1")
+            print("6. 支持选择性修改和全部修改")
+            print("\n意识形态映射 (已确认 Liberal=ID 6):")
+            print("• Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
+            print("• Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
+            return
+        
+        # 检查文件是否存在
+        import os
+        if not os.path.isfile(filename):
+            print(f"❌ 文件不存在: {filename}")
+            return
+            
+        # 命令行模式：执行全部修改
+        options = {
+            'militancy': True,
+            'culture': True,
+            'infamy': True,
+            'population': True,
+            'date': True
+        }
+    else:
+        # 交互式模式
+        print("\n🎮 交互式模式")
+        
+        # 显示可用的存档文件
+        save_files = get_save_files_list()
+        if save_files:
+            print(f"\n📁 在默认存档目录找到 {len(save_files)} 个存档文件:")
+            for i, file in enumerate(save_files[:10], 1):  # 显示最近的10个文件
+                print(f"{i:2d}. {file}")
+            if len(save_files) > 10:
+                print(f"    ... 还有 {len(save_files) - 10} 个文件")
+        
+        # 获取文件名
+        while True:
+            user_input = input("\n请输入存档文件名 (或文件编号): ").strip()
+            if not user_input:
+                print("❌ 未提供文件名，退出程序")
+                return
+            
+            # 检查是否为数字编号
+            if user_input.isdigit() and save_files:
+                file_num = int(user_input)
+                if 1 <= file_num <= len(save_files):
+                    filename = save_files[file_num - 1]
+                    print(f"选择文件: {filename}")
+                    break
+                else:
+                    print(f"❌ 编号超出范围，请输入 1-{len(save_files)}")
+                    continue
+            else:
+                filename = user_input
+                if not filename.endswith('.v2'):
+                    filename += '.v2'
+                
+                # 检查文件是否存在
+                import os
+                if os.path.isfile(filename):
+                    break
+                else:
+                    print(f"❌ 文件不存在: {filename}")
+                    continue
+        
+        # 显示修改选项菜单
+        show_modification_menu()
+        options = get_user_selection()
+        
+        if options is None:
+            print("操作已取消")
+            return
+    
+    # 确认执行
+    print(f"\n即将修改文件: {filename}")
+    print("选择的修改内容:")
+    
+    modification_list = []
+    if options.get('population', False):
+        modification_list.extend([
+            "1. 所有中国人口宗教 → mahayana",
+            "2. 意识形态调整 (✅ Liberal=ID 6 已确认):",
+            "   • Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)",
+            "   • Fascist(2) + Anarcho-Liberal(5) → Liberal(6)"
+        ])
+    if options.get('militancy', False):
+        modification_list.append("3. 人口斗争性: 中国=0, 其他=10")
+    if options.get('culture', False):
+        modification_list.append("4. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+    if options.get('infamy', False):
+        modification_list.append("5. 中国恶名度: 设为0")
+    if options.get('date', False):
+        modification_list.append("6. 游戏日期: 设为1836.1.1")
+    
+    for item in modification_list:
+        print(item)
+    
+    # 命令行模式自动确认，交互式模式需要确认
+    if len(sys.argv) > 1:
+        confirm = "yes"  # 命令行模式自动确认
+    else:
+        confirm = input("\n确认执行修改吗？(输入 'yes' 确认): ")
+    
+    if confirm.lower() != 'yes':
+        print("操作已取消")
+        return
+    
+    # 创建修改器并执行
+    modifier = Victoria2Modifier()
+    
+    # 根据选择执行相应的修改
+    if all(options.values()):
+        # 全部修改
+        modifier.execute_all_modifications(filename)
+    else:
+        # 选择性修改
+        modifier.execute_selective_modifications(filename, options)
+
+if __name__ == "__main__":
+    main()
