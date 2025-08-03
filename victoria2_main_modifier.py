@@ -26,11 +26,12 @@ from bracket_parser import Victoria2BracketParser, BracketBlock
 class Victoria2Modifier:
     """Victoria II 主修改器 - 统一入口工具"""
     
-    def __init__(self, file_path: str = None):
+    def __init__(self, file_path: str = None, debug_mode: bool = False):
         self.content = ""
         self.file_path = file_path
         self.parser = Victoria2BracketParser()  # 花括号解析器
         self.structure = None  # 花括号结构
+        self.debug_mode = debug_mode  # 调试模式
         
         # 统计计数器
         self.militancy_changes = 0
@@ -42,7 +43,7 @@ class Victoria2Modifier:
         self.date_changes = 0
         
         # 默认存档路径
-        self.default_save_path = r"c:\Users\zhangwc6\Documents\Paradox Interactive\Victoria II\save games"
+        self.default_save_path = r"Z:\Users\Administrator\Documents\Paradox Interactive\Victoria II\save games"
         
         # ✅ 已确认的意识形态转换映射 (Liberal = ID 6)
         self.ideology_mapping = {
@@ -798,20 +799,42 @@ class Victoria2Modifier:
                     modified_block = re.sub(pattern, f'{culture}=mahayana', modified_block)
                     self.religion_changes += 1
         
-        # 2. 修改意识形态分布
-        ideology_pattern = r'ideology=\s*{([^{}]*)}'
+        # 2. 修改意识形态分布 - 修复版本（传统方法）
+        ideology_pattern = r'ideology=\s*\{[^}]*\}'
         ideology_match = re.search(ideology_pattern, modified_block, re.DOTALL)
         
         if ideology_match:
-            ideology_content = ideology_match.group(1)
-            new_ideology_content = self._modify_ideology_distribution(ideology_content)
+            # 提取完整的ideology块
+            full_ideology_block = ideology_match.group(0)
+            # 提取花括号内的内容
+            inner_content_match = re.search(r'ideology=\s*\{([^}]*)\}', full_ideology_block, re.DOTALL)
             
-            if new_ideology_content != ideology_content:
-                modified_block = modified_block.replace(
-                    ideology_match.group(0),
-                    f'ideology=\n\t\t{{\n{new_ideology_content}}}'
-                )
-                self.ideology_changes += 1
+            if inner_content_match:
+                ideology_content = inner_content_match.group(1)
+                
+                # 解析现有意识形态数据，检查是否需要转换
+                ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
+                ideology_dist = {int(id_str): float(value_str) for id_str, value_str in ideology_pairs}
+                
+                # 检查是否有需要转换的旧意识形态
+                has_old_ideologies = any(ideology_dist.get(old_id, 0) > 0 for old_id in [1, 2, 4, 5, 7])
+                
+                if has_old_ideologies:
+                    if self.debug_mode:
+                        print(f"    🔄 [传统] 发现需要转换的意识形态: {ideology_dist}")
+                    
+                    new_ideology_content = self._modify_ideology_distribution(ideology_content)
+                    
+                    # 构建新的ideology块，保持原有缩进格式
+                    new_ideology_block = f'ideology=\n\t\t{{\n\t\t\t{new_ideology_content}\n\t\t}}'
+                    modified_block = modified_block.replace(full_ideology_block, new_ideology_block)
+                    self.ideology_changes += 1
+                    
+                    if self.debug_mode:
+                        print(f"    ✅ [传统] 意识形态块已更新")
+                else:
+                    if self.debug_mode:
+                        print(f"    ℹ️ [传统] 无需转换的意识形态: {ideology_dist}")
         
         return modified_block
     
@@ -899,21 +922,42 @@ class Victoria2Modifier:
                     modified_block = re.sub(pattern, f'{culture}=mahayana', modified_block)
                     self.religion_changes += 1
         
-        # 2. 修改意识形态分布
-        ideology_pattern = r'ideology=\s*{([^{}]*)}'
+        # 2. 修改意识形态分布 - 修复版本（结构化方法）
+        ideology_pattern = r'ideology=\s*\{[^}]*\}'
         ideology_match = re.search(ideology_pattern, modified_block, re.DOTALL)
         
         if ideology_match:
-            ideology_content = ideology_match.group(1)
-            new_ideology_content = self._modify_ideology_distribution(ideology_content)
+            # 提取完整的ideology块
+            full_ideology_block = ideology_match.group(0)
+            # 提取花括号内的内容
+            inner_content_match = re.search(r'ideology=\s*\{([^}]*)\}', full_ideology_block, re.DOTALL)
             
-            if new_ideology_content != ideology_content:
-                # 保持原有格式：ideology= 换行 { 内容 }
-                modified_block = modified_block.replace(
-                    ideology_match.group(0),
-                    f'ideology=\n\t\t{{\n{new_ideology_content}}}'
-                )
-                self.ideology_changes += 1
+            if inner_content_match:
+                ideology_content = inner_content_match.group(1)
+                
+                # 解析现有意识形态数据，检查是否需要转换
+                ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
+                ideology_dist = {int(id_str): float(value_str) for id_str, value_str in ideology_pairs}
+                
+                # 检查是否有需要转换的旧意识形态
+                has_old_ideologies = any(ideology_dist.get(old_id, 0) > 0 for old_id in [1, 2, 4, 5, 7])
+                
+                if has_old_ideologies:
+                    if self.debug_mode:
+                        print(f"    🔄 [结构化] 发现需要转换的意识形态: {ideology_dist}")
+                    
+                    new_ideology_content = self._modify_ideology_distribution(ideology_content)
+                    
+                    # 构建新的ideology块，保持原有缩进格式
+                    new_ideology_block = f'ideology=\n\t\t{{\n\t\t\t{new_ideology_content}\n\t\t}}'
+                    modified_block = modified_block.replace(full_ideology_block, new_ideology_block)
+                    self.ideology_changes += 1
+                    
+                    if self.debug_mode:
+                        print(f"    ✅ [结构化] 意识形态块已更新")
+                else:
+                    if self.debug_mode:
+                        print(f"    ℹ️ [结构化] 无需转换的意识形态: {ideology_dist}")
         
         return modified_block
     
@@ -933,21 +977,28 @@ class Victoria2Modifier:
         adjust_block_positions(self.structure)
     
     def _modify_ideology_distribution(self, ideology_content: str) -> str:
-        """修改意识形态分布"""
+        """修改意识形态分布 - 改进版本"""
         # 解析现有的意识形态分布
         ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
         ideology_dist = {}
         
+        # 解析所有现有的意识形态数据
         for id_str, value_str in ideology_pairs:
             ideology_dist[int(id_str)] = float(value_str)
+        
+        if self.debug_mode:
+            print(f"    🔍 发现意识形态分布: {ideology_dist}")
         
         # 应用转换规则
         transferred_to_liberal = 0.0
         transferred_to_conservative = 0.0
+        changes_made = False
         
         for old_id, new_id in self.ideology_mapping.items():
-            if old_id in ideology_dist:
+            if old_id in ideology_dist and ideology_dist[old_id] > 0:
                 value = ideology_dist[old_id]
+                if self.debug_mode:
+                    print(f"    🔄 转换意识形态 {old_id} -> {new_id}, 值: {value}")
                 
                 if new_id == 6:  # Liberal = ID 6 ✅ 已确认
                     transferred_to_liberal += value
@@ -956,22 +1007,39 @@ class Victoria2Modifier:
                 
                 # 将原意识形态设为0
                 ideology_dist[old_id] = 0.0
+                changes_made = True
+        
+        # 确保目标意识形态存在
+        if 6 not in ideology_dist:
+            ideology_dist[6] = 0.0  # Liberal
+        if 3 not in ideology_dist:
+            ideology_dist[3] = 0.0  # Conservative
         
         # 增加目标意识形态的值
         if transferred_to_liberal > 0:
-            ideology_dist[6] = ideology_dist.get(6, 0.0) + transferred_to_liberal  # Liberal = ID 6 ✅ 已确认
+            ideology_dist[6] += transferred_to_liberal  # Liberal = ID 6 ✅ 已确认
+            if self.debug_mode:
+                print(f"    ✅ Liberal(6) 增加: {transferred_to_liberal}, 总值: {ideology_dist[6]}")
         
         if transferred_to_conservative > 0:
-            ideology_dist[3] = ideology_dist.get(3, 0.0) + transferred_to_conservative  # Conservative = ID 3
+            ideology_dist[3] += transferred_to_conservative  # Conservative = ID 3
+            if self.debug_mode:
+                print(f"    ✅ Conservative(3) 增加: {transferred_to_conservative}, 总值: {ideology_dist[3]}")
         
-        # 重新构建意识形态内容，保持原有格式
+        # 重新构建意识形态内容，保持Victoria II格式
         new_lines = []
         for ideology_id in sorted(ideology_dist.keys()):
             value = ideology_dist[ideology_id]
+            # 保持5位小数精度，这是Victoria II的标准格式
             new_lines.append(f'{ideology_id}={value:.5f}')
         
-        # 保持原有的格式：没有缩进的数值行，最后有制表符缩进的结束大括号
-        return '\n'.join(new_lines) + '\n\t\t'
+        # 构建正确的格式：每行前有制表符缩进
+        formatted_content = '\n\t\t\t'.join(new_lines)
+        
+        if changes_made and self.debug_mode:
+            print(f"    🎯 意识形态修改完成: {len([id for id, val in ideology_dist.items() if val > 0])} 个非零值")
+        
+        return formatted_content
     
     # ========================================
     # 验证和总结功能
@@ -979,7 +1047,7 @@ class Victoria2Modifier:
     
     def verify_modifications(self, filename: str):
         """验证修改结果"""
-        print("\n验证修改结果...")
+        print("\n🔍 验证修改结果...")
         
         try:
             with open(filename, 'r', encoding='utf-8-sig', errors='ignore') as f:
@@ -991,20 +1059,129 @@ class Victoria2Modifier:
         # 验证中国人口宗教
         chinese_provinces = self.find_chinese_provinces()
         mahayana_count = 0
+        ideology_conversion_count = 0
         
-        for province_id in chinese_provinces[:3]:  # 检查前3个省份
+        print(f"📊 验证样本：检查前5个中国省份...")
+        
+        for i, province_id in enumerate(chinese_provinces[:5]):  # 检查前5个省份
+            print(f"  检查省份 {province_id}...")
             province_pattern = f'^{province_id}=\\s*{{'
             province_match = re.search(province_pattern, content, re.MULTILINE)
             if province_match:
                 start_pos = province_match.end()
-                province_content = content[start_pos:start_pos+10000]
-                culture_religion_matches = re.findall(r'(\w+)=(\w+)', province_content)
-                for culture, religion in culture_religion_matches:
-                    if not culture.isdigit() and not religion.isdigit() and religion == 'mahayana':
-                        mahayana_count += 1
+                # 找到省份块的结束位置
+                brace_count = 1
+                current_pos = start_pos
+                while current_pos < len(content) and brace_count > 0:
+                    char = content[current_pos]
+                    if char == '{':
+                        brace_count += 1
+                    elif char == '}':
+                        brace_count -= 1
+                    current_pos += 1
+                
+                province_content = content[start_pos:current_pos-1]
+                
+                # 验证宗教修改
+                culture_religion_matches = re.findall(r'(\w+)=mahayana', province_content)
+                mahayana_count += len(culture_religion_matches)
+                
+                # 验证意识形态修改
+                ideology_blocks = re.findall(r'ideology=\s*\{([^}]*)\}', province_content, re.DOTALL)
+                for ideology_block in ideology_blocks:
+                    # 检查是否有Conservative(3)和Liberal(6)的值大于0
+                    conservative_match = re.search(r'3=([\d.]+)', ideology_block)
+                    liberal_match = re.search(r'6=([\d.]+)', ideology_block)
+                    
+                    if conservative_match and float(conservative_match.group(1)) > 0:
+                        ideology_conversion_count += 1
+                        print(f"    ✅ 发现Conservative(3): {conservative_match.group(1)}")
+                    if liberal_match and float(liberal_match.group(1)) > 0:
+                        ideology_conversion_count += 1
+                        print(f"    ✅ 发现Liberal(6): {liberal_match.group(1)}")
+                    
+                    # 检查旧意识形态是否已清零
+                    for old_id in [1, 2, 4, 5, 7]:  # Reactionary, Fascist, Socialist, Anarcho-Liberal, Communist
+                        old_match = re.search(f'{old_id}=([\\d.]+)', ideology_block)
+                        if old_match and float(old_match.group(1)) > 0:
+                            print(f"    ⚠️ 警告：意识形态{old_id}仍有值: {old_match.group(1)}")
         
-        print(f"✓ 验证样本: {mahayana_count} 个mahayana宗教人口组")
+        print(f"\n📈 验证结果:")
+        print(f"✅ mahayana宗教人口组: {mahayana_count} 个")
+        print(f"✅ 意识形态转换成功: {ideology_conversion_count} 处")
         print("验证完成!")
+    
+    def verify_ideology_modifications(self, filename: str):
+        """专门验证意识形态修改结果"""
+        print("\n🎭 专门验证意识形态修改...")
+        
+        try:
+            with open(filename, 'r', encoding='utf-8-sig', errors='ignore') as f:
+                content = f.read()
+        except Exception as e:
+            print(f"❌ 验证时文件读取失败: {e}")
+            return False
+        
+        chinese_provinces = self.find_chinese_provinces()
+        print(f"📍 检查 {min(10, len(chinese_provinces))} 个中国省份的意识形态...")
+        
+        total_ideology_blocks = 0
+        successful_conversions = 0
+        failed_conversions = 0
+        
+        for i, province_id in enumerate(chinese_provinces[:10]):  # 检查前10个省份
+            print(f"\n🔍 省份 {province_id}:")
+            
+            # 查找省份块
+            province_pattern = f'^{province_id}=\\s*{{'
+            province_match = re.search(province_pattern, content, re.MULTILINE)
+            if not province_match:
+                continue
+            
+            start_pos = province_match.end()
+            # 找到省份块结束
+            brace_count = 1
+            current_pos = start_pos
+            while current_pos < len(content) and brace_count > 0:
+                char = content[current_pos]
+                if char == '{': brace_count += 1
+                elif char == '}': brace_count -= 1
+                current_pos += 1
+            
+            province_content = content[start_pos:current_pos-1]
+            
+            # 查找所有人口组的意识形态块
+            pop_blocks = re.findall(r'(farmers|labourers|clerks|artisans|craftsmen|clergymen|officers|soldiers|aristocrats|capitalists|bureaucrats|intellectuals)=\s*\{[^}]*ideology=\s*\{[^}]*\}[^}]*\}', province_content, re.DOTALL)
+            
+            for pop_block in pop_blocks:
+                total_ideology_blocks += 1
+                
+                # 提取意识形态数据
+                ideology_match = re.search(r'ideology=\s*\{([^}]*)\}', pop_block, re.DOTALL)
+                if ideology_match:
+                    ideology_content = ideology_match.group(1)
+                    ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
+                    ideology_dist = {int(id_str): float(value_str) for id_str, value_str in ideology_pairs}
+                    
+                    # 检查转换是否成功
+                    has_old_ideologies = any(ideology_dist.get(old_id, 0) > 0 for old_id in [1, 2, 4, 5, 7])
+                    has_new_ideologies = ideology_dist.get(3, 0) > 0 or ideology_dist.get(6, 0) > 0
+                    
+                    if not has_old_ideologies and has_new_ideologies:
+                        successful_conversions += 1
+                        print(f"  ✅ 成功转换 - Conservative: {ideology_dist.get(3, 0):.3f}, Liberal: {ideology_dist.get(6, 0):.3f}")
+                    elif has_old_ideologies:
+                        failed_conversions += 1
+                        old_values = {id: ideology_dist.get(id, 0) for id in [1, 2, 4, 5, 7] if ideology_dist.get(id, 0) > 0}
+                        print(f"  ❌ 转换失败 - 仍有旧意识形态: {old_values}")
+        
+        print(f"\n📊 意识形态验证统计:")
+        print(f"总意识形态块数: {total_ideology_blocks}")
+        print(f"成功转换: {successful_conversions}")
+        print(f"转换失败: {failed_conversions}")
+        print(f"成功率: {(successful_conversions / max(1, total_ideology_blocks)) * 100:.1f}%")
+        
+        return successful_conversions > 0
     
     def execute_selective_modifications(self, filename: str, options: Dict[str, bool]) -> bool:
         """执行选择性修改操作 - 每个功能独立读取和保存文件"""
@@ -1142,6 +1319,11 @@ class Victoria2Modifier:
             if self.load_file(filename):
                 if 'population' in selected_operations:
                     self.verify_modifications(filename)
+                    # 专门验证意识形态修改
+                    if self.verify_ideology_modifications(filename):
+                        print("🎭 意识形态修改验证成功!")
+                    else:
+                        print("⚠️ 意识形态修改可能存在问题，请检查输出")
         
         # 显示结果
         print(f"\n{'='*70}")
@@ -1264,6 +1446,11 @@ class Victoria2Modifier:
         self.__init__()  # 重置计数器
         if self.load_file(filename):
             self.verify_modifications(filename)
+            # 专门验证意识形态修改
+            if self.verify_ideology_modifications(filename):
+                print("🎭 意识形态修改验证成功!")
+            else:
+                print("⚠️ 意识形态修改可能存在问题，请检查输出")
         
         # 显示最终结果
         print(f"\n{'='*70}")
@@ -1287,7 +1474,7 @@ def get_save_files_list():
     import os
     import glob
     
-    save_path = r"c:\Users\zhangwc6\Documents\Paradox Interactive\Victoria II\save games"
+    save_path = r"Z:\Users\Administrator\Documents\Paradox Interactive\Victoria II\save games"
     try:
         os.chdir(save_path)
         save_files = glob.glob("*.v2")
@@ -1379,14 +1566,26 @@ def main():
     
     # 获取文件名
     if len(sys.argv) > 1:
-        filename = sys.argv[1]
+        # 过滤掉选项参数，只保留文件名
+        filename = None
+        for arg in sys.argv[1:]:
+            if not arg.startswith('-'):
+                filename = arg
+                break
+        
+        if not filename:
+            print("❌ 未提供文件名")
+            return
+            
         print(f"从命令行获取文件名: {filename}")
         
         # 检查是否为帮助命令
         if filename in ['--help', '-h', 'help']:
             print("\n使用方法:")
-            print("python victoria2_main_modifier.py <存档文件名>")
+            print("python victoria2_main_modifier.py <存档文件名> [选项]")
             print("python victoria2_main_modifier.py  # 交互式模式")
+            print("\n选项:")
+            print("--debug, -d    启用调试模式，显示详细的修改过程")
             print("\n功能说明:")
             print("1. 人口斗争性: 中国=0, 其他=10")
             print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
@@ -1397,6 +1596,8 @@ def main():
             print("\n意识形态映射 (已确认 Liberal=ID 6):")
             print("• Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
             print("• Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
+            print("\n示例:")
+            print("python victoria2_main_modifier.py mysave.v2 --debug")
             return
         
         # 检查文件是否存在
@@ -1498,8 +1699,13 @@ def main():
         print("操作已取消")
         return
     
+    # 检查是否启用调试模式
+    debug_mode = '--debug' in sys.argv or '-d' in sys.argv
+    if debug_mode:
+        print("🐛 调试模式已启用 - 将显示详细的修改过程")
+    
     # 创建修改器并执行
-    modifier = Victoria2Modifier()
+    modifier = Victoria2Modifier(debug_mode=debug_mode)
     
     # 根据选择执行相应的修改
     if all(options.values()):
