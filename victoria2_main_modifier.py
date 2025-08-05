@@ -311,10 +311,74 @@ class Victoria2Modifier:
         """修改人口斗争性 - 中国人口斗争性设为0，其他国家设为10"""
         print(f"\n⚔️ 开始修改人口斗争性 (中国: {china_militancy}, 其他: {other_militancy})")
         
-        # 获取中国省份列表
-        chinese_provinces = set(self.find_chinese_provinces())
+        # ✅ 使用与原始militancy_modifier.py相同的逻辑
+        # 首先构建省份所有者映射
+        print("🗺️ 构建省份-国家映射...")
+        province_owners = self._build_province_owner_mapping()
+        print(f"找到 {len(province_owners)} 个省份")
         
         # 查找所有省份
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        
+        china_changes = 0
+        other_changes = 0
+        
+        # 从后往前处理，避免位置偏移问题
+        for i in reversed(range(len(province_matches))):
+            match = province_matches[i]
+            province_id = int(match.group(1))
+            start_pos = match.end()
+            
+            # 找到省份块的结束位置
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start()
+            else:
+                next_section = re.search(r'\n[a-z_]+=\s*{', self.content[start_pos:start_pos+10000])
+                if next_section:
+                    end_pos = start_pos + next_section.start()
+                else:
+                    end_pos = start_pos + 5000
+            
+            province_content = self.content[start_pos:end_pos]
+            owner = province_owners.get(province_id, "")
+            
+            # 根据国家设置斗争性
+            if owner == "CHI":
+                target_militancy = china_militancy
+            else:
+                target_militancy = other_militancy
+            
+            # 修改这个省份中所有人口的斗争性
+            new_province_content, changes = self._modify_province_militancy_with_count(
+                province_content, target_militancy
+            )
+            
+            if changes > 0:
+                # 替换省份内容
+                self.content = (self.content[:start_pos] + 
+                              new_province_content + 
+                              self.content[end_pos:])
+                
+                if owner == "CHI":
+                    china_changes += changes
+                else:
+                    other_changes += changes
+            
+            # 进度显示
+            if (len(province_matches) - i) % 500 == 0:
+                print(f"已处理 {len(province_matches) - i}/{len(province_matches)} 个省份...")
+        
+        print(f"✅ 中国人口斗争性修改: {china_changes} 个人口组")
+        print(f"✅ 其他国家人口斗争性修改: {other_changes} 个人口组")
+        self.militancy_changes = china_changes + other_changes
+        
+        print(f"✅ 斗争性修改完成: {self.militancy_changes} 处修改")
+        return True
+    
+    def _build_province_owner_mapping(self) -> Dict[int, str]:
+        """构建省份ID到所有者国家的映射"""
+        province_owners = {}
         province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
         province_matches = list(province_pattern.finditer(self.content))
         
@@ -322,59 +386,60 @@ class Victoria2Modifier:
             province_id = int(match.group(1))
             start_pos = match.end()
             
-            # 确定省份块的结束位置  
+            # 找到省份块的结束位置
             if i + 1 < len(province_matches):
                 end_pos = province_matches[i + 1].start()
             else:
-                end_pos = len(self.content)
+                next_section = re.search(r'\n[a-z_]+=\s*{', self.content[start_pos:start_pos+10000])
+                if next_section:
+                    end_pos = start_pos + next_section.start()
+                else:
+                    end_pos = start_pos + 5000
             
             province_content = self.content[start_pos:end_pos]
             
-            # 确定目标斗争性值
-            target_militancy = china_militancy if province_id in chinese_provinces else other_militancy
+            # 提取owner信息
+            owner_match = re.search(r'owner="?([A-Z]{3})"?', province_content)
+            if owner_match:
+                province_owners[province_id] = owner_match.group(1)
             
-            # 修改省份中的人口斗争性
-            new_province_content = self._modify_province_militancy(province_content, target_militancy)
-            
-            if new_province_content != province_content:
-                self.content = self.content[:start_pos] + new_province_content + self.content[end_pos:]
-                # 重新计算偏移量
-                offset = len(new_province_content) - len(province_content)
-                for j in range(i + 1, len(province_matches)):
-                    old_match = province_matches[j]
-                    province_matches[j] = type(old_match)(
-                        old_match.pattern, old_match.string,
-                        old_match.start() + offset, old_match.end() + offset
-                    )
+            # 进度显示
+            if (i + 1) % 500 == 0:
+                print(f"已处理 {i + 1}/{len(province_matches)} 个省份映射...")
         
-        print(f"✅ 斗争性修改完成: {self.militancy_changes} 处修改")
-        return True
+        return province_owners
+    
+    def _modify_province_militancy_with_count(self, province_content: str, target_militancy: float) -> tuple:
+        """修改单个省份中所有人口的斗争性，返回内容和修改数量"""
+        # 查找所有人口组的斗争性字段 (mil=数值)
+        militancy_pattern = r'mil=([\d.]+)'
+        changes = 0
+        
+        def replace_militancy(match):
+            nonlocal changes
+            changes += 1
+            return f'mil={target_militancy:.5f}'
+        
+        modified_content = re.sub(militancy_pattern, replace_militancy, province_content)
+        
+        return modified_content, changes
     
     def _modify_province_militancy(self, province_content: str, target_militancy: float) -> str:
         """修改单个省份的人口斗争性"""
-        pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
-                    'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
-                    'bureaucrats', 'intellectuals']
+        # ✅ 修复: Victoria 2存档中斗争性字段是 'mil=' 而不是 'militancy='
+        militancy_pattern = r'mil=([\d.]+)'
+        changes_in_province = 0
         
-        modified_content = province_content
+        def replace_militancy(match):
+            nonlocal changes_in_province
+            changes_in_province += 1
+            return f'mil={target_militancy:.5f}'
         
-        for pop_type in pop_types:
-            pattern = f'({pop_type}=\\s*{{[^{{}}]*}})'
-            matches = list(re.finditer(pattern, modified_content, re.DOTALL))
-            
-            for match in reversed(matches):
-                pop_block = match.group(1)
-                new_pop_block = re.sub(
-                    r'militancy=[\d.]+',
-                    f'militancy={target_militancy:.5f}',
-                    pop_block
-                )
-                
-                if new_pop_block != pop_block:
-                    modified_content = (modified_content[:match.start()] + 
-                                      new_pop_block + 
-                                      modified_content[match.end():])
-                    self.militancy_changes += 1
+        # 使用正确的字段名 'mil=' 进行替换
+        modified_content = re.sub(militancy_pattern, replace_militancy, province_content)
+        
+        # 更新总计数器
+        self.militancy_changes += changes_in_province
         
         return modified_content
     
