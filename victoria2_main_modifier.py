@@ -1112,8 +1112,9 @@ class Victoria2Modifier:
     # ========================================
     
     def modify_chinese_population_money(self, target_money: float = 9999999.0) -> bool:
-        """修改中国人口的金钱数量"""
+        """修改中国人口的金钱数量 (money和bank字段)"""
         print(f"\n💰 开始修改中国人口金钱 (目标金额: {target_money:,.0f})")
+        print("📋 将修改 money 和 bank 字段")
         
         # ✅ 使用与斗争性修改相同的逻辑
         # 首先构建省份所有者映射
@@ -1179,8 +1180,9 @@ class Victoria2Modifier:
     
     def _modify_province_money(self, province_content: str, target_money: float) -> tuple:
         """修改单个省份中所有人口的金钱，返回内容和修改数量"""
-        # 查找所有人口组的金钱字段 (money=数值)
+        # 查找所有人口组的金钱字段 (money=数值 和 bank=数值)
         money_pattern = r'money=([\d.]+)'
+        bank_pattern = r'bank=([\d.]+)'
         changes = 0
         
         def replace_money(match):
@@ -1188,7 +1190,15 @@ class Victoria2Modifier:
             changes += 1
             return f'money={target_money:.5f}'
         
+        def replace_bank(match):
+            nonlocal changes
+            changes += 1
+            return f'bank={target_money:.5f}'
+        
+        # 修改money字段
         modified_content = re.sub(money_pattern, replace_money, province_content)
+        # 修改bank字段
+        modified_content = re.sub(bank_pattern, replace_bank, modified_content)
         
         return modified_content, changes
 
@@ -1266,65 +1276,58 @@ class Victoria2Modifier:
         """专门验证意识形态修改结果"""
         print("\n🎭 专门验证意识形态修改...")
         
-        try:
-            with open(filename, 'r', encoding='utf-8-sig', errors='ignore') as f:
-                content = f.read()
-        except Exception as e:
-            print(f"❌ 验证时文件读取失败: {e}")
-            return False
+        # Load the file using the same method as the modifier
+        if not hasattr(self, 'content') or not self.content:
+            self.load_file(filename)
         
-        chinese_provinces = self.find_chinese_provinces()
+        chinese_provinces = self.find_chinese_provinces_structured()
         print(f"📍 检查 {min(10, len(chinese_provinces))} 个中国省份的意识形态...")
         
         total_ideology_blocks = 0
         successful_conversions = 0
         failed_conversions = 0
         
-        for i, province_id in enumerate(chinese_provinces[:10]):  # 检查前10个省份
+        # Define population types locally like the modification function does
+        pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
+                    'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
+                    'bureaucrats', 'intellectuals']
+        
+        for i, province_block in enumerate(chinese_provinces[:10]):  # 检查前10个省份
+            # Extract province ID from the block content
+            province_id_match = re.match(r'^(\d+)=', province_block.content)
+            province_id = province_id_match.group(1) if province_id_match else f"Province_{i+1}"
             print(f"\n🔍 省份 {province_id}:")
             
-            # 查找省份块
-            province_pattern = f'^{province_id}=\\s*{{'
-            province_match = re.search(province_pattern, content, re.MULTILINE)
-            if not province_match:
-                continue
-            
-            start_pos = province_match.end()
-            # 找到省份块结束
-            brace_count = 1
-            current_pos = start_pos
-            while current_pos < len(content) and brace_count > 0:
-                char = content[current_pos]
-                if char == '{': brace_count += 1
-                elif char == '}': brace_count -= 1
-                current_pos += 1
-            
-            province_content = content[start_pos:current_pos-1]
-            
-            # 查找所有人口组的意识形态块
-            pop_blocks = re.findall(r'(farmers|labourers|clerks|artisans|craftsmen|clergymen|officers|soldiers|aristocrats|capitalists|bureaucrats|intellectuals)=\s*\{[^}]*ideology=\s*\{[^}]*\}[^}]*\}', province_content, re.DOTALL)
-            
-            for pop_block in pop_blocks:
-                total_ideology_blocks += 1
-                
-                # 提取意识形态数据
-                ideology_match = re.search(r'ideology=\s*\{([^}]*)\}', pop_block, re.DOTALL)
-                if ideology_match:
-                    ideology_content = ideology_match.group(1)
-                    ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
-                    ideology_dist = {int(id_str): float(value_str) for id_str, value_str in ideology_pairs}
+            # Find population groups in this province using the same method as modification
+            for child_block in province_block.children:
+                # Check if this child block contains population types
+                if any(pop_type in child_block.content for pop_type in pop_types):
+                    # Look for ideology blocks within this population group
+                    ideology_pattern = r'ideology=\s*\{([^}]*)\}'
+                    ideology_match = re.search(ideology_pattern, child_block.content, re.DOTALL)
                     
-                    # 检查转换是否成功
-                    has_old_ideologies = any(ideology_dist.get(old_id, 0) > 0 for old_id in [1, 2, 4, 5, 7])
-                    has_new_ideologies = ideology_dist.get(3, 0) > 0 or ideology_dist.get(6, 0) > 0
-                    
-                    if not has_old_ideologies and has_new_ideologies:
-                        successful_conversions += 1
-                        print(f"  ✅ 成功转换 - Conservative: {ideology_dist.get(3, 0):.3f}, Liberal: {ideology_dist.get(6, 0):.3f}")
-                    elif has_old_ideologies:
-                        failed_conversions += 1
-                        old_values = {id: ideology_dist.get(id, 0) for id in [1, 2, 4, 5, 7] if ideology_dist.get(id, 0) > 0}
-                        print(f"  ❌ 转换失败 - 仍有旧意识形态: {old_values}")
+                    if ideology_match:
+                        total_ideology_blocks += 1
+                        ideology_content = ideology_match.group(1)
+                        
+                        # Extract ideology data
+                        ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
+                        ideology_dist = {int(id_str): float(value_str) for id_str, value_str in ideology_pairs}
+                        
+                        # Check conversion success
+                        has_old_ideologies = any(ideology_dist.get(old_id, 0) > 0 for old_id in [1, 2, 4, 5, 7])
+                        has_new_ideologies = ideology_dist.get(3, 0) > 0 or ideology_dist.get(6, 0) > 0
+                        
+                        if not has_old_ideologies and has_new_ideologies:
+                            successful_conversions += 1
+                            print(f"  ✅ 成功转换 - Conservative: {ideology_dist.get(3, 0):.3f}, Liberal: {ideology_dist.get(6, 0):.3f}")
+                        elif has_old_ideologies:
+                            failed_conversions += 1
+                            old_values = {id: ideology_dist.get(id, 0) for id in [1, 2, 4, 5, 7] if ideology_dist.get(id, 0) > 0}
+                            print(f"  ❌ 转换失败 - 仍有旧意识形态: {old_values}")
+                            print(f"     当前值 - Conservative: {ideology_dist.get(3, 0):.3f}, Liberal: {ideology_dist.get(6, 0):.3f}")
+                        elif ideology_dist:
+                            print(f"  ℹ️ 无旧意识形态，现有分布: {ideology_dist}")
         
         print(f"\n📊 意识形态验证统计:")
         print(f"总意识形态块数: {total_ideology_blocks}")
