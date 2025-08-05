@@ -1,0 +1,1691 @@
+{
+  "date": "2245.4.6",
+  "player": "CHI",
+  "government": 8,
+  "automate_trade": false,
+  "automate_sliders": 0,
+  "rebel": 68340,
+  "unit": 22309,
+  "state": 1732,
+  "start_date": "1836.1.1",
+  "start_pop_index": 12905663,
+  "flags": [
+    "1NobelLiterature",
+    "1NobelMedicine",
+    "1NobelPeace",
+    "1NobelPhysics",
+    "2NobelMedicine",
+    "2NobelPeace",
+    "2NobelPhysics",
+    "3NobelPeace",
+    "3NobelPhysics",
+    "4NobelPeace",
+    "4NobelPhysics",
+    "5NobelPeace",
+    "5NobelPhysics",
+    "6NobelPeace",
+    "Aasen",
+    "botanical_expedition_in_progress",
+    "doctrine_of_lapse_has_been_used",
+    "geneva_convention_held",
+    "great_wars_enabled",
+    "GRENoHost1Olympiad",
+    "Hold10Olympiad",
+    "Hold1Olympiad",
+    "Hold3Olympiad",
+    "Hold4Olympiad",
+    "Hold5Olympiad",
+    "Hold6Olympiad",
+    "Hold7Olympiad",
+    "Hold8Olympiad",
+    "Hold9Olympiad",
+    "Host10Olympiad",
+    "Host1Olympiad",
+    "Host2Olympiad",
+    "Host3Olympiad",
+    "Host4Olympiad",
+    "Host5Olympiad",
+    "Host6Olympiad",
+    "Host7Olympiad",
+    "Host8Olympiad",
+    "Host9Olympiad",
+    "Ibsen",
+    "liberal_revolution_somewhere",
+    "liberal_revolutions_should_now_fire",
+    "LouisNapoleonExtradite",
+    "marching_on_the_trail_of_tears",
+    "MozartFest1838",
+    "Nabucco",
+    "NileDiscovered",
+    "NobelChemistry",
+    "NobelLiterature",
+    "NobelMedicine",
+    "NobelPeace",
+    "NobelPhysics",
+    "NorthPoleDiscovered",
+    "piet_retief_massacre",
+    "RerumNovarum",
+    "RichardWagner",
+    "ruhr_boom_has_happened",
+    "SCAStudent",
+    "SouthPoleDiscovered",
+    "statue_of_liberty_has_been_built",
+    "suez_canal_built",
+    "taiping_has_happened",
+    "the_dragon_wakes",
+    "the_great_trek",
+    "the_walhalla_is_built",
+    "Thrane",
+    "tutankhamun_found",
+    "victoria_regina_found"
+  ],
+  "countries": {
+    "REB": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "ENG": {
+      "tax_base": 256.44748,
+      "capital": 300,
+      "research_points": 23796.905,
+      "technology_count": 150,
+      "flag_count": 229
+    },
+    "RUS": {
+      "tax_base": 2137.1431,
+      "capital": 1008,
+      "research_points": 25395.24,
+      "technology_count": 150,
+      "flag_count": 193
+    },
+    "FRA": {
+      "tax_base": 385.25122,
+      "capital": 425,
+      "research_points": 16157.455,
+      "technology_count": 150,
+      "flag_count": 155
+    },
+    "PRU": {
+      "tax_base": 76.33496,
+      "capital": 549,
+      "research_points": 16438.14,
+      "technology_count": 150,
+      "flag_count": 181
+    },
+    "GER": {
+      "tax_base": 0.0,
+      "capital": 549,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "AUS": {
+      "tax_base": 132.42065,
+      "capital": 619,
+      "research_points": 17899.6,
+      "technology_count": 150,
+      "flag_count": 136
+    },
+    "USA": {
+      "tax_base": 1886.78915,
+      "capital": 2,
+      "research_points": 23170.93,
+      "technology_count": 150,
+      "flag_count": 219
+    },
+    "JAP": {
+      "tax_base": 64.16812,
+      "capital": 1649,
+      "research_points": 16553.115,
+      "technology_count": 150,
+      "flag_count": 137
+    },
+    "ITA": {
+      "tax_base": 190.81622,
+      "capital": 749,
+      "research_points": 15505.93,
+      "technology_count": 150,
+      "flag_count": 134
+    },
+    "KUK": {
+      "tax_base": 0.0,
+      "capital": 619,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "DEN": {
+      "tax_base": 0.0,
+      "capital": 372,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 116
+    },
+    "FIN": {
+      "tax_base": 0.0,
+      "capital": 343,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "NOR": {
+      "tax_base": 0.0,
+      "capital": 313,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "SCA": {
+      "tax_base": 122.58258,
+      "capital": 322,
+      "research_points": 17079.81,
+      "technology_count": 150,
+      "flag_count": 160
+    },
+    "SWE": {
+      "tax_base": 0.0,
+      "capital": 322,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "BEL": {
+      "tax_base": 0.0,
+      "capital": 387,
+      "research_points": 11409.535,
+      "technology_count": 120,
+      "flag_count": 127
+    },
+    "CAT": {
+      "tax_base": 0.0,
+      "capital": 498,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "FLA": {
+      "tax_base": 1.76465,
+      "capital": 388,
+      "research_points": 21888.685,
+      "technology_count": 144,
+      "flag_count": 108
+    },
+    "IRE": {
+      "tax_base": 121.25455,
+      "capital": 263,
+      "research_points": 22586.2,
+      "technology_count": 144,
+      "flag_count": 105
+    },
+    "NET": {
+      "tax_base": 161.55173,
+      "capital": 375,
+      "research_points": 17902.155,
+      "technology_count": 150,
+      "flag_count": 172
+    },
+    "POR": {
+      "tax_base": 71.58087,
+      "capital": 521,
+      "research_points": 16460.405,
+      "technology_count": 150,
+      "flag_count": 152
+    },
+    "SCO": {
+      "tax_base": 0.0,
+      "capital": 269,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "SPA": {
+      "tax_base": 925.02609,
+      "capital": 487,
+      "research_points": 25385.02,
+      "technology_count": 150,
+      "flag_count": 215
+    },
+    "WLL": {
+      "tax_base": 1.28165,
+      "capital": 392,
+      "research_points": 5616.985,
+      "technology_count": 120,
+      "flag_count": 124
+    },
+    "ANH": {
+      "tax_base": 0.02859,
+      "capital": 555,
+      "research_points": 25026.225,
+      "technology_count": 120,
+      "flag_count": 118
+    },
+    "BAD": {
+      "tax_base": 13.20291,
+      "capital": 586,
+      "research_points": 21467.475,
+      "technology_count": 120,
+      "flag_count": 147
+    },
+    "BAV": {
+      "tax_base": 15.31989,
+      "capital": 599,
+      "research_points": 26597.55,
+      "technology_count": 120,
+      "flag_count": 131
+    },
+    "BRA": {
+      "tax_base": 0.0,
+      "capital": 536,
+      "research_points": 13555.735,
+      "technology_count": 120,
+      "flag_count": 115
+    },
+    "BRE": {
+      "tax_base": 0.0,
+      "capital": 539,
+      "research_points": 2737.5,
+      "technology_count": 144,
+      "flag_count": 120
+    },
+    "COB": {
+      "tax_base": 0.0,
+      "capital": 562,
+      "research_points": 12778.285,
+      "technology_count": 120,
+      "flag_count": 122
+    },
+    "DZG": {
+      "tax_base": 0.0,
+      "capital": 690,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "FRM": {
+      "tax_base": 0.0,
+      "capital": 564,
+      "research_points": 2737.5,
+      "technology_count": 120,
+      "flag_count": 118
+    },
+    "HAM": {
+      "tax_base": 0.03882,
+      "capital": 528,
+      "research_points": 17034.449,
+      "technology_count": 150,
+      "flag_count": 118
+    },
+    "HAN": {
+      "tax_base": 1.15262,
+      "capital": 534,
+      "research_points": 21888.685,
+      "technology_count": 144,
+      "flag_count": 131
+    },
+    "HES": {
+      "tax_base": 0.12106,
+      "capital": 2560,
+      "research_points": 19917.685,
+      "technology_count": 120,
+      "flag_count": 127
+    },
+    "HEK": {
+      "tax_base": 0.0,
+      "capital": 566,
+      "research_points": 5814.085,
+      "technology_count": 120,
+      "flag_count": 107
+    },
+    "HOL": {
+      "tax_base": 0.0,
+      "capital": 369,
+      "research_points": 2737.5,
+      "technology_count": 144,
+      "flag_count": 119
+    },
+    "LIP": {
+      "tax_base": 0.0,
+      "capital": 585,
+      "research_points": 12624.985,
+      "technology_count": 120,
+      "flag_count": 122
+    },
+    "LUB": {
+      "tax_base": 0.0,
+      "capital": 530,
+      "research_points": 2737.5,
+      "technology_count": 144,
+      "flag_count": 120
+    },
+    "LUX": {
+      "tax_base": 0.99124,
+      "capital": 397,
+      "research_points": 27363.685,
+      "technology_count": 120,
+      "flag_count": 113
+    },
+    "MEC": {
+      "tax_base": 1.03552,
+      "capital": 544,
+      "research_points": 21888.685,
+      "technology_count": 144,
+      "flag_count": 121
+    },
+    "MEI": {
+      "tax_base": 0.01111,
+      "capital": 563,
+      "research_points": 14360.56,
+      "technology_count": 120,
+      "flag_count": 119
+    },
+    "NAS": {
+      "tax_base": 0.92438,
+      "capital": 565,
+      "research_points": 27363.685,
+      "technology_count": 120,
+      "flag_count": 112
+    },
+    "NGF": {
+      "tax_base": 0.0,
+      "capital": 549,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "OLD": {
+      "tax_base": 0.0,
+      "capital": 540,
+      "research_points": 2737.5,
+      "technology_count": 144,
+      "flag_count": 113
+    },
+    "SAX": {
+      "tax_base": 0.0,
+      "capital": 558,
+      "research_points": 2737.5,
+      "technology_count": 120,
+      "flag_count": 122
+    },
+    "SCH": {
+      "tax_base": 0.0,
+      "capital": 369,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "SGF": {
+      "tax_base": 0.0,
+      "capital": 599,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "WEI": {
+      "tax_base": 0.38971,
+      "capital": 561,
+      "research_points": 21888.685,
+      "technology_count": 120,
+      "flag_count": 110
+    },
+    "WUR": {
+      "tax_base": 0.0,
+      "capital": 589,
+      "research_points": 13676.185,
+      "technology_count": 120,
+      "flag_count": 116
+    },
+    "LOM": {
+      "tax_base": 0.0,
+      "capital": 726,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "LUC": {
+      "tax_base": 0.0,
+      "capital": 746,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 105
+    },
+    "MOD": {
+      "tax_base": 0.0,
+      "capital": 739,
+      "research_points": 1323.49,
+      "technology_count": 0,
+      "flag_count": 106
+    },
+    "PAP": {
+      "tax_base": 0.0,
+      "capital": 749,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 106
+    },
+    "PAR": {
+      "tax_base": 3.73355,
+      "capital": 738,
+      "research_points": 23709.67,
+      "technology_count": 120,
+      "flag_count": 120
+    },
+    "SAR": {
+      "tax_base": 0.0,
+      "capital": 749,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "SIC": {
+      "tax_base": 0.0,
+      "capital": 754,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 105
+    },
+    "TRE": {
+      "tax_base": 0.0,
+      "capital": 736,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "TUS": {
+      "tax_base": 0.0,
+      "capital": 744,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 105
+    },
+    "VEN": {
+      "tax_base": 0.0,
+      "capital": 729,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "BOH": {
+      "tax_base": 0.0,
+      "capital": 625,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "KRA": {
+      "tax_base": 0.0,
+      "capital": 703,
+      "research_points": 2737.5,
+      "technology_count": 120,
+      "flag_count": 123
+    },
+    "CRI": {
+      "tax_base": 0.0,
+      "capital": 967,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "EST": {
+      "tax_base": 0.0,
+      "capital": 349,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "HUN": {
+      "tax_base": 435.59924,
+      "capital": 641,
+      "research_points": 16639.62,
+      "technology_count": 150,
+      "flag_count": 116
+    },
+    "LIT": {
+      "tax_base": 0.0,
+      "capital": 360,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "LAT": {
+      "tax_base": 0.0,
+      "capital": 354,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "POL": {
+      "tax_base": 0.0,
+      "capital": 706,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "SLV": {
+      "tax_base": 0.0,
+      "capital": 633,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "SWI": {
+      "tax_base": 4.54373,
+      "capital": 605,
+      "research_points": 23724.27,
+      "technology_count": 120,
+      "flag_count": 128
+    },
+    "RUT": {
+      "tax_base": 0.0,
+      "capital": 702,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "SIE": {
+      "tax_base": 0.0,
+      "capital": 657,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "UKR": {
+      "tax_base": 0.0,
+      "capital": 958,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CZH": {
+      "tax_base": 0.0,
+      "capital": 625,
+      "research_points": 684.375,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "ALB": {
+      "tax_base": 0.0,
+      "capital": 849,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "BOS": {
+      "tax_base": 0.0,
+      "capital": 783,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "BUL": {
+      "tax_base": 0.0,
+      "capital": 809,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CRE": {
+      "tax_base": 0.80103,
+      "capital": 848,
+      "research_points": 10062.685,
+      "technology_count": 150,
+      "flag_count": 123
+    },
+    "CRO": {
+      "tax_base": 0.0,
+      "capital": 771,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CYP": {
+      "tax_base": 0.0,
+      "capital": 855,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "GRE": {
+      "tax_base": 0.0,
+      "capital": 834,
+      "research_points": 2737.5,
+      "technology_count": 144,
+      "flag_count": 127
+    },
+    "ION": {
+      "tax_base": 0.0,
+      "capital": 826,
+      "research_points": 1106.315,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "MOL": {
+      "tax_base": 0.0,
+      "capital": 664,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "MON": {
+      "tax_base": 0.0,
+      "capital": 2583,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 106
+    },
+    "ROM": {
+      "tax_base": 0.0,
+      "capital": 664,
+      "research_points": 2737.5,
+      "technology_count": 120,
+      "flag_count": 118
+    },
+    "SER": {
+      "tax_base": 0.0,
+      "capital": 625,
+      "research_points": 684.375,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "SLO": {
+      "tax_base": 0.0,
+      "capital": 768,
+      "research_points": 3421.875,
+      "technology_count": 120,
+      "flag_count": 106
+    },
+    "TUR": {
+      "tax_base": 337.3577,
+      "capital": 860,
+      "research_points": 10848.53,
+      "technology_count": 150,
+      "flag_count": 227
+    },
+    "WAL": {
+      "tax_base": 0.0,
+      "capital": 664,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 122
+    },
+    "YUG": {
+      "tax_base": 28.79846,
+      "capital": 794,
+      "research_points": 23168.01,
+      "technology_count": 150,
+      "flag_count": 119
+    },
+    "ALD": {
+      "tax_base": 14.4689,
+      "capital": 1700,
+      "research_points": 22147.835,
+      "technology_count": 144,
+      "flag_count": 111
+    },
+    "CNG": {
+      "tax_base": 0.0,
+      "capital": 1982,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "EGY": {
+      "tax_base": 84.8725,
+      "capital": 1745,
+      "research_points": 21409.805,
+      "technology_count": 150,
+      "flag_count": 122
+    },
+    "ETH": {
+      "tax_base": 86.12738,
+      "capital": 1852,
+      "research_points": 23633.75,
+      "technology_count": 120,
+      "flag_count": 133
+    },
+    "MAD": {
+      "tax_base": 25.64664,
+      "capital": 2115,
+      "research_points": 6967.12,
+      "technology_count": 150,
+      "flag_count": 124
+    },
+    "LIB": {
+      "tax_base": 22.36627,
+      "capital": 1887,
+      "research_points": 22143.455,
+      "technology_count": 144,
+      "flag_count": 130
+    },
+    "MOR": {
+      "tax_base": 0.0,
+      "capital": 1680,
+      "research_points": 7690.092,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "NAL": {
+      "tax_base": 0.0,
+      "capital": 2111,
+      "research_points": 684.375,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "ORA": {
+      "tax_base": 0.0,
+      "capital": 2101,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 106
+    },
+    "SAF": {
+      "tax_base": 0.0,
+      "capital": 2088,
+      "research_points": 2737.5,
+      "technology_count": 150,
+      "flag_count": 107
+    },
+    "SOK": {
+      "tax_base": 120.22772,
+      "capital": 1948,
+      "research_points": 7163.49,
+      "technology_count": 120,
+      "flag_count": 119
+    },
+    "RHO": {
+      "tax_base": 0.0,
+      "capital": 2068,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "TRI": {
+      "tax_base": 0.0,
+      "capital": 1741,
+      "research_points": 809.826,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "TRN": {
+      "tax_base": 0.0,
+      "capital": 2105,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 107
+    },
+    "TUN": {
+      "tax_base": 0.0,
+      "capital": 1725,
+      "research_points": 3789.918,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "ZAN": {
+      "tax_base": 7.62997,
+      "capital": 2048,
+      "research_points": 17180.55,
+      "technology_count": 150,
+      "flag_count": 115
+    },
+    "ZUL": {
+      "tax_base": 0.0,
+      "capital": 2113,
+      "research_points": 971.995,
+      "technology_count": 0,
+      "flag_count": 113
+    },
+    "ABU": {
+      "tax_base": 0.0,
+      "capital": 1167,
+      "research_points": 4595.807,
+      "technology_count": 0,
+      "flag_count": 107
+    },
+    "AFG": {
+      "tax_base": 35.48032,
+      "capital": 1211,
+      "research_points": 23218.745,
+      "technology_count": 120,
+      "flag_count": 113
+    },
+    "ARM": {
+      "tax_base": 0.0,
+      "capital": 1098,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "AZB": {
+      "tax_base": 0.0,
+      "capital": 1102,
+      "research_points": 684.375,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "BUK": {
+      "tax_base": 0.0,
+      "capital": 1200,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 115
+    },
+    "GEO": {
+      "tax_base": 0.0,
+      "capital": 1095,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "HDJ": {
+      "tax_base": 0.0,
+      "capital": 1151,
+      "research_points": 1193.185,
+      "technology_count": 0,
+      "flag_count": 112
+    },
+    "IRQ": {
+      "tax_base": 0.0,
+      "capital": 926,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "KHI": {
+      "tax_base": 13.5806,
+      "capital": 1191,
+      "research_points": 22394.21,
+      "technology_count": 120,
+      "flag_count": 116
+    },
+    "KOK": {
+      "tax_base": 0.0,
+      "capital": 1217,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 115
+    },
+    "MUG": {
+      "tax_base": 0.0,
+      "capital": 1236,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "NEJ": {
+      "tax_base": 0.0,
+      "capital": 1157,
+      "research_points": 6252.822,
+      "technology_count": 0,
+      "flag_count": 110
+    },
+    "OMA": {
+      "tax_base": 0.0,
+      "capital": 1166,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 114
+    },
+    "PER": {
+      "tax_base": 56.43594,
+      "capital": 1108,
+      "research_points": 15369.785,
+      "technology_count": 150,
+      "flag_count": 148
+    },
+    "YEM": {
+      "tax_base": 0.0,
+      "capital": 1178,
+      "research_points": 2044.791,
+      "technology_count": 0,
+      "flag_count": 106
+    },
+    "HND": {
+      "tax_base": 115.79016,
+      "capital": 1303,
+      "research_points": 15496.075,
+      "technology_count": 150,
+      "flag_count": 131
+    },
+    "AWA": {
+      "tax_base": 0.0,
+      "capital": 1244,
+      "research_points": 1127.485,
+      "technology_count": 0,
+      "flag_count": 112
+    },
+    "BAS": {
+      "tax_base": 0.0,
+      "capital": 1279,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 111
+    },
+    "BER": {
+      "tax_base": 0.0,
+      "capital": 1295,
+      "research_points": 4378.772,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "BHO": {
+      "tax_base": 0.1503,
+      "capital": 1272,
+      "research_points": 16672.835,
+      "technology_count": 120,
+      "flag_count": 114
+    },
+    "BIK": {
+      "tax_base": 0.0,
+      "capital": 1267,
+      "research_points": 2143.908,
+      "technology_count": 0,
+      "flag_count": 107
+    },
+    "BUN": {
+      "tax_base": 0.0,
+      "capital": 1274,
+      "research_points": 1072.735,
+      "technology_count": 0,
+      "flag_count": 113
+    },
+    "GWA": {
+      "tax_base": 0.03378,
+      "capital": 1270,
+      "research_points": 13676.185,
+      "technology_count": 120,
+      "flag_count": 115
+    },
+    "HYD": {
+      "tax_base": 26.33081,
+      "capital": 1283,
+      "research_points": 21804.37,
+      "technology_count": 120,
+      "flag_count": 115
+    },
+    "IND": {
+      "tax_base": 5.68533,
+      "capital": 1271,
+      "research_points": 24356.815,
+      "technology_count": 120,
+      "flag_count": 113
+    },
+    "JAI": {
+      "tax_base": 0.0,
+      "capital": 1268,
+      "research_points": 5281.216,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "JAS": {
+      "tax_base": 0.0,
+      "capital": 1265,
+      "research_points": 7754.884,
+      "technology_count": 0,
+      "flag_count": 106
+    },
+    "JOD": {
+      "tax_base": 0.42819,
+      "capital": 1266,
+      "research_points": 27363.685,
+      "technology_count": 120,
+      "flag_count": 115
+    },
+    "KAL": {
+      "tax_base": 0.0,
+      "capital": 1221,
+      "research_points": 1095.365,
+      "technology_count": 0,
+      "flag_count": 113
+    },
+    "KAS": {
+      "tax_base": 0.02069,
+      "capital": 1226,
+      "research_points": 13676.185,
+      "technology_count": 120,
+      "flag_count": 128
+    },
+    "KUT": {
+      "tax_base": 2.06189,
+      "capital": 1293,
+      "research_points": 25279.9,
+      "technology_count": 144,
+      "flag_count": 113
+    },
+    "LAD": {
+      "tax_base": 0.0,
+      "capital": 1226,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "MAK": {
+      "tax_base": 1.36908,
+      "capital": 1222,
+      "research_points": 22031.764,
+      "technology_count": 150,
+      "flag_count": 113
+    },
+    "MEW": {
+      "tax_base": 5.5842,
+      "capital": 1269,
+      "research_points": 23016.17,
+      "technology_count": 120,
+      "flag_count": 115
+    },
+    "MYS": {
+      "tax_base": 90.72885,
+      "capital": 1313,
+      "research_points": 12785.22,
+      "technology_count": 120,
+      "flag_count": 115
+    },
+    "NAG": {
+      "tax_base": 0.0,
+      "capital": 1275,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 112
+    },
+    "NEP": {
+      "tax_base": 0.0,
+      "capital": 1327,
+      "research_points": 6955.466,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "ORI": {
+      "tax_base": 0.0,
+      "capital": 1262,
+      "research_points": 1135.88,
+      "technology_count": 0,
+      "flag_count": 111
+    },
+    "PAN": {
+      "tax_base": 11.87906,
+      "capital": 1227,
+      "research_points": 22461.005,
+      "technology_count": 120,
+      "flag_count": 140
+    },
+    "SHI": {
+      "tax_base": 0.0,
+      "capital": 1235,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "SIK": {
+      "tax_base": 0.08102,
+      "capital": 1328,
+      "research_points": 25636.87,
+      "technology_count": 120,
+      "flag_count": 118
+    },
+    "SIN": {
+      "tax_base": 0.0,
+      "capital": 1288,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 112
+    },
+    "TRA": {
+      "tax_base": 1.62848,
+      "capital": 1319,
+      "research_points": 714.081,
+      "technology_count": 0,
+      "flag_count": 109
+    },
+    "ATJ": {
+      "tax_base": 30.37674,
+      "capital": 1405,
+      "research_points": 21822.985,
+      "technology_count": 150,
+      "flag_count": 172
+    },
+    "BAL": {
+      "tax_base": 4.14636,
+      "capital": 1438,
+      "research_points": 22071.915,
+      "technology_count": 150,
+      "flag_count": 136
+    },
+    "BHU": {
+      "tax_base": 0.0,
+      "capital": 1329,
+      "research_points": 1085.145,
+      "technology_count": 0,
+      "flag_count": 113
+    },
+    "BRU": {
+      "tax_base": 0.0,
+      "capital": 1393,
+      "research_points": 1069.085,
+      "technology_count": 0,
+      "flag_count": 112
+    },
+    "BUR": {
+      "tax_base": 17.47858,
+      "capital": 1334,
+      "research_points": 5026.627,
+      "technology_count": 120,
+      "flag_count": 116
+    },
+    "CAM": {
+      "tax_base": 0.69357,
+      "capital": 1364,
+      "research_points": 974.496,
+      "technology_count": 1,
+      "flag_count": 107
+    },
+    "CHI": {
+      "tax_base": 19271.60565,
+      "capital": 1612,
+      "research_points": 30199.005,
+      "technology_count": 150,
+      "flag_count": 322
+    },
+    "DAI": {
+      "tax_base": 19.27206,
+      "capital": 1369,
+      "research_points": 6554.305,
+      "technology_count": 150,
+      "flag_count": 115
+    },
+    "JAV": {
+      "tax_base": 28.35187,
+      "capital": 1413,
+      "research_points": 8393.175,
+      "technology_count": 150,
+      "flag_count": 117
+    },
+    "KOR": {
+      "tax_base": 27.00668,
+      "capital": 1624,
+      "research_points": 15768.0,
+      "technology_count": 150,
+      "flag_count": 117
+    },
+    "LUA": {
+      "tax_base": 0.0,
+      "capital": 1356,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 116
+    },
+    "JOH": {
+      "tax_base": 0.0,
+      "capital": 1385,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 115
+    },
+    "SIA": {
+      "tax_base": 42.79175,
+      "capital": 1346,
+      "research_points": 9467.005,
+      "technology_count": 150,
+      "flag_count": 169
+    },
+    "TIB": {
+      "tax_base": 0.0,
+      "capital": 1587,
+      "research_points": 3320.027,
+      "technology_count": 0,
+      "flag_count": 109
+    },
+    "MGL": {
+      "tax_base": 0.0,
+      "capital": 1465,
+      "research_points": 482.53,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "WIA": {
+      "tax_base": 0.0,
+      "capital": 1357,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "PHI": {
+      "tax_base": 0.0,
+      "capital": 1455,
+      "research_points": 684.375,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "MCK": {
+      "tax_base": 0.0,
+      "capital": 1002,
+      "research_points": 485.085,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "GXI": {
+      "tax_base": 0.0,
+      "capital": 1502,
+      "research_points": 470.12,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "SXI": {
+      "tax_base": 0.0,
+      "capital": 1576,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "YNN": {
+      "tax_base": 0.0,
+      "capital": 1601,
+      "research_points": 466.835,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "XBI": {
+      "tax_base": 0.0,
+      "capital": 2062,
+      "research_points": 467.93,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "XIN": {
+      "tax_base": 0.0,
+      "capital": 1600,
+      "research_points": 473.77,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CAL": {
+      "tax_base": 0.0,
+      "capital": 84,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CAN": {
+      "tax_base": 0.0,
+      "capital": 57,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CHE": {
+      "tax_base": 0.0,
+      "capital": 143,
+      "technology_count": 0,
+      "flag_count": 101
+    },
+    "COL": {
+      "tax_base": 130.27066,
+      "capital": 14,
+      "research_points": 13735.315,
+      "technology_count": 150,
+      "flag_count": 108
+    },
+    "COS": {
+      "tax_base": 0.0,
+      "capital": 2201,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CSA": {
+      "tax_base": 0.0,
+      "capital": 211,
+      "research_points": 685.105,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CUB": {
+      "tax_base": 0.0,
+      "capital": 2209,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "DES": {
+      "tax_base": 0.0,
+      "capital": 97,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "DOM": {
+      "tax_base": 0.0,
+      "capital": 2214,
+      "research_points": 685.105,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "ELS": {
+      "tax_base": 7.55475,
+      "capital": 2191,
+      "research_points": 22256.24,
+      "technology_count": 150,
+      "flag_count": 145
+    },
+    "GUA": {
+      "tax_base": 0.0,
+      "capital": 2186,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "HAI": {
+      "tax_base": 24.00299,
+      "capital": 2213,
+      "research_points": 20741.49,
+      "technology_count": 150,
+      "flag_count": 128
+    },
+    "HAW": {
+      "tax_base": 0.0,
+      "capital": 658,
+      "research_points": 787.67,
+      "technology_count": 0,
+      "flag_count": 112
+    },
+    "MAN": {
+      "tax_base": 0.0,
+      "capital": 232,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "MEX": {
+      "tax_base": 1113.91592,
+      "capital": 2172,
+      "research_points": 7302.555,
+      "technology_count": 150,
+      "flag_count": 164
+    },
+    "MTC": {
+      "tax_base": 0.0,
+      "capital": 37,
+      "research_points": 501.51,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "HON": {
+      "tax_base": 0.0,
+      "capital": 2193,
+      "research_points": 685.105,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "NEN": {
+      "tax_base": 0.0,
+      "capital": 243,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "NEW": {
+      "tax_base": 0.0,
+      "capital": 74,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "NIC": {
+      "tax_base": 16.20554,
+      "capital": 2199,
+      "research_points": 21678.445,
+      "technology_count": 144,
+      "flag_count": 122
+    },
+    "PNM": {
+      "tax_base": 0.0,
+      "capital": 2204,
+      "research_points": 1368.75,
+      "technology_count": 0,
+      "flag_count": 106
+    },
+    "QUE": {
+      "tax_base": 0.0,
+      "capital": 65,
+      "research_points": 465.01,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "TEX": {
+      "tax_base": 0.0,
+      "capital": 133,
+      "research_points": 694.595,
+      "technology_count": 0,
+      "flag_count": 107
+    },
+    "UCA": {
+      "tax_base": 65.20135,
+      "capital": 2186,
+      "research_points": 22429.25,
+      "technology_count": 150,
+      "flag_count": 137
+    },
+    "ARG": {
+      "tax_base": 81.41861,
+      "capital": 2348,
+      "research_points": 21100.65,
+      "technology_count": 150,
+      "flag_count": 123
+    },
+    "BOL": {
+      "tax_base": 47.37851,
+      "capital": 2313,
+      "research_points": 22513.2,
+      "technology_count": 120,
+      "flag_count": 107
+    },
+    "BRZ": {
+      "tax_base": 0.76581,
+      "capital": 2286,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "CHL": {
+      "tax_base": 0.0,
+      "capital": 2322,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "CLM": {
+      "tax_base": 0.0,
+      "capital": 2204,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "ECU": {
+      "tax_base": 0.0,
+      "capital": 2279,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "PEU": {
+      "tax_base": 0.0,
+      "capital": 2290,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "PRG": {
+      "tax_base": 0.0,
+      "capital": 2339,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "URU": {
+      "tax_base": 0.0,
+      "capital": 2344,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "VNZ": {
+      "tax_base": 0.0,
+      "capital": 2264,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "AST": {
+      "tax_base": 0.0,
+      "capital": 2468,
+      "technology_count": 0,
+      "flag_count": 104
+    },
+    "NZL": {
+      "tax_base": 0.0,
+      "capital": 2509,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "ISR": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "BYZ": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "ICL": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "BAB": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "TPG": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "ARA": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "UBD": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "BYE": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    },
+    "PLC": {
+      "tax_base": 0.0,
+      "capital": 349,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "GCO": {
+      "tax_base": 0.0,
+      "capital": 1723,
+      "technology_count": 0,
+      "flag_count": 103
+    },
+    "JAN": {
+      "tax_base": 0.0,
+      "capital": 0,
+      "technology_count": 0,
+      "flag_count": 102
+    }
+  },
+  "provinces": {
+    "total_provinces": 3248,
+    "sample_provinces": [
+      {
+        "name": "Sitka",
+        "owner": "CHI",
+        "controller": "CHI",
+        "id": 1
+      },
+      {
+        "name": "Yakutat",
+        "owner": "USA",
+        "controller": "USA",
+        "id": 2
+      },
+      {
+        "name": "Kenai",
+        "owner": "USA",
+        "controller": "USA",
+        "id": 3
+      },
+      {
+        "name": "Dutch Harbor",
+        "owner": "USA",
+        "controller": "USA",
+        "id": 4
+      },
+      {
+        "name": "Bethel",
+        "owner": "USA",
+        "controller": "USA",
+        "id": 5
+      },
+      {
+        "name": "Whitehorse",
+        "owner": "USA",
+        "controller": "USA",
+        "id": 6
+      },
+      {
+        "name": "Dawson",
+        "owner": "USA",
+        "controller": "USA",
+        "id": 7
+      },
+      {
+        "name": "Ross River",
+        "owner": "USA",
+        "controller": "USA",
+        "id": 8
+      },
+      {
+        "name": "Fort Simpson",
+        "owner": "ENG",
+        "controller": "ENG",
+        "id": 9
+      },
+      {
+        "name": "Inuvik",
+        "owner": "ENG",
+        "controller": "ENG",
+        "id": 10
+      }
+    ]
+  },
+  "worldmarket": {
+    "worldmarket_pool_commodities": 46,
+    "worldmarket_pool_sample": {
+      "ammunition": "23.38461",
+      "small_arms": "7.68747",
+      "artillery": "7.96539",
+      "canned_food": "13.30829",
+      "barrels": "0.00003"
+    },
+    "price_pool_commodities": 48,
+    "price_pool_sample": {
+      "ammunition": "14.37866",
+      "small_arms": "30.18335",
+      "artillery": "49.40967",
+      "canned_food": "13.75781",
+      "barrels": "223.91284"
+    },
+    "supply_pool_commodities": 48,
+    "supply_pool_sample": {
+      "ammunition": "57.68069",
+      "small_arms": "16.01483",
+      "artillery": "18.85239",
+      "canned_food": "37.74222",
+      "barrels": "1.00000"
+    }
+  }
+}
