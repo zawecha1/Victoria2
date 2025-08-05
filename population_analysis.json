@@ -1,0 +1,2387 @@
+{
+  "CHI": {
+    "tag": "CHI",
+    "total_population": 16073906,
+    "province_count": 655,
+    "population_by_culture": {
+      "native_american_minor": 944,
+      "yankee": 2607713,
+      "nanfaren": 1874356,
+      "beifaren": 7450317,
+      "manchu": 2851195,
+      "anglo_canadian": 14187,
+      "british": 26101,
+      "dixie": 251515,
+      "french_canadian": 2148,
+      "mexican": 15549,
+      "zhuang": 246853,
+      "texan": 17894,
+      "cherokee": 4519,
+      "nepali": 129480,
+      "russian": 45469,
+      "malay": 6105,
+      "irish": 1441,
+      "persian": 22235,
+      "baluchi": 5368,
+      "uighur": 9376,
+      "mashriqi": 18063,
+      "bedouin": 1008,
+      "kazak": 2607,
+      "kirgiz": 6200,
+      "uzbek": 22530,
+      "tajik": 325,
+      "pashtun": 17665,
+      "panjabi": 537,
+      "avadhi": 664,
+      "kanauji": 10270,
+      "marathi": 19063,
+      "tibetan": 72474,
+      "asian_minor": 9629,
+      "burmese": 399,
+      "mongol": 97256,
+      "tatar": 1383,
+      "yue": 24323,
+      "min": 9721,
+      "hakka": 5301,
+      "portuguese": 252,
+      "miao": 5252,
+      "maghrebi": 51177,
+      "berber": 1267,
+      "mossi": 32438,
+      "african_minor": 12996,
+      "fulbe": 4086,
+      "mande": 5031,
+      "dyula": 908,
+      "bambara": 2283,
+      "swahili": 1603,
+      "boer": 24259,
+      "sotho": 1817,
+      "zulu": 20261,
+      "brazilian": 7331,
+      "south_andean": 762
+    },
+    "population_by_religion": {
+      "mahayana": 12393202,
+      "protestant": 2960668,
+      "sunni": 276051,
+      "catholic": 30341,
+      "hindu": 158755,
+      "orthodox": 45469,
+      "shiite": 23243,
+      "animist": 14153,
+      "sikh": 512,
+      "gelugpa": 171113,
+      "theravada": 399
+    },
+    "population_by_type": {
+      "aristocrats": 58996,
+      "bureaucrats": 1129378,
+      "clergymen": 320147,
+      "craftsmen": 3836671,
+      "labourers": 3294603,
+      "officers": 60301,
+      "soldiers": 642410,
+      "clerks": 732997,
+      "farmers": 5960343,
+      "capitalists": 5301,
+      "artisans": 32759
+    },
+    "literacy_rate": 0.0,
+    "research_points": 30199.005,
+    "tax_base": 19271.60565
+  },
+  "USA": {
+    "tag": "USA",
+    "total_population": 1547110,
+    "province_count": 79,
+    "population_by_culture": {
+      "yankee": 1135936,
+      "dixie": 199159,
+      "russian": 88,
+      "native_american_minor": 11101,
+      "japanese": 8452,
+      "british": 13977,
+      "nanfaren": 3500,
+      "beifaren": 15853,
+      "javan": 17,
+      "spanish": 9,
+      "south_italian": 8,
+      "french": 14,
+      "korean": 2125,
+      "manchu": 5311,
+      "nepali": 5,
+      "malay": 5,
+      "south_german": 25,
+      "zhuang": 1951,
+      "cherokee": 130,
+      "slovene": 12,
+      "panjabi": 5,
+      "polynesian": 374,
+      "african_minor": 114471,
+      "texan": 448,
+      "avadhi": 5,
+      "fulbe": 3725,
+      "mande": 10491,
+      "kru": 4079,
+      "dyula": 1013,
+      "akan": 2335,
+      "fon": 5209,
+      "yoruba": 6924,
+      "south_andean": 349,
+      "yue": 4
+    },
+    "population_by_religion": {
+      "protestant": 1462946,
+      "orthodox": 88,
+      "animist": 3383,
+      "mahayana": 35946,
+      "catholic": 33240,
+      "sunni": 11486,
+      "hindu": 10,
+      "sikh": 5,
+      "jewish": 6
+    },
+    "population_by_type": {
+      "aristocrats": 2641,
+      "bureaucrats": 169942,
+      "clergymen": 84105,
+      "clerks": 7433,
+      "craftsmen": 201440,
+      "labourers": 189320,
+      "officers": 3373,
+      "soldiers": 31008,
+      "farmers": 811278,
+      "artisans": 46385,
+      "capitalists": 185
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23170.93,
+    "tax_base": 1886.78915
+  },
+  "ENG": {
+    "tag": "ENG",
+    "total_population": 149797,
+    "province_count": 140,
+    "population_by_culture": {
+      "british": 139025,
+      "vietnamese": 1149,
+      "anglo_canadian": 544,
+      "african_minor": 5966,
+      "irish": 716,
+      "mande": 2397
+    },
+    "population_by_religion": {
+      "protestant": 143742,
+      "mahayana": 1149,
+      "sunni": 3233,
+      "catholic": 1673
+    },
+    "population_by_type": {
+      "bureaucrats": 15355,
+      "clerks": 7623,
+      "officers": 326,
+      "soldiers": 1433,
+      "capitalists": 22,
+      "clergymen": 2231,
+      "craftsmen": 36245,
+      "labourers": 38484,
+      "aristocrats": 107,
+      "farmers": 47961,
+      "artisans": 10
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23796.905,
+    "tax_base": 256.44748
+  },
+  "COL": {
+    "tag": "COL",
+    "total_population": 159410,
+    "province_count": 5,
+    "population_by_culture": {
+      "british": 157847,
+      "native_american_minor": 846,
+      "zhuang": 503,
+      "japanese": 57,
+      "nanfaren": 68,
+      "beifaren": 89
+    },
+    "population_by_religion": {
+      "protestant": 157439,
+      "animist": 456,
+      "mahayana": 717,
+      "catholic": 798
+    },
+    "population_by_type": {
+      "aristocrats": 6175,
+      "bureaucrats": 13045,
+      "capitalists": 846,
+      "clerks": 1260,
+      "craftsmen": 47908,
+      "labourers": 65414,
+      "officers": 132,
+      "soldiers": 1267,
+      "farmers": 23363
+    },
+    "literacy_rate": 0.0,
+    "research_points": 13735.315,
+    "tax_base": 130.27066
+  },
+  "FRA": {
+    "tag": "FRA",
+    "total_population": 230500,
+    "province_count": 82,
+    "population_by_culture": {
+      "french": 230336,
+      "african_minor": 164
+    },
+    "population_by_religion": {
+      "catholic": 230500
+    },
+    "population_by_type": {
+      "bureaucrats": 24265,
+      "farmers": 98505,
+      "officers": 294,
+      "capitalists": 504,
+      "clerks": 5566,
+      "craftsmen": 32509,
+      "labourers": 68488,
+      "clergymen": 65,
+      "aristocrats": 9,
+      "artisans": 295
+    },
+    "literacy_rate": 0.0,
+    "research_points": 16157.455,
+    "tax_base": 385.25122
+  },
+  "SCA": {
+    "tag": "SCA",
+    "total_population": 27775,
+    "province_count": 28,
+    "population_by_culture": {
+      "icelandic": 792,
+      "norwegian": 8505,
+      "danish": 5352,
+      "swedish": 12469,
+      "akan": 657
+    },
+    "population_by_religion": {
+      "protestant": 27775
+    },
+    "population_by_type": {
+      "bureaucrats": 2704,
+      "farmers": 11945,
+      "officers": 48,
+      "artisans": 6,
+      "clergymen": 16,
+      "clerks": 1705,
+      "craftsmen": 6936,
+      "capitalists": 101,
+      "labourers": 4314
+    },
+    "literacy_rate": 0.0,
+    "research_points": 17079.81,
+    "tax_base": 122.58258
+  },
+  "IRE": {
+    "tag": "IRE",
+    "total_population": 151760,
+    "province_count": 11,
+    "population_by_culture": {
+      "irish": 140346,
+      "british": 11414
+    },
+    "population_by_religion": {
+      "catholic": 140346,
+      "protestant": 11414
+    },
+    "population_by_type": {
+      "bureaucrats": 15188,
+      "clergymen": 2247,
+      "clerks": 3264,
+      "craftsmen": 6353,
+      "farmers": 119991,
+      "officers": 236,
+      "soldiers": 4481
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22586.2,
+    "tax_base": 121.25455
+  },
+  "RUS": {
+    "tag": "RUS",
+    "total_population": 397168,
+    "province_count": 151,
+    "population_by_culture": {
+      "russian": 374008,
+      "ukrainian": 19901,
+      "turkish": 664,
+      "ugrian": 1248,
+      "north_german": 297,
+      "byelorussian": 1050
+    },
+    "population_by_religion": {
+      "orthodox": 396079,
+      "sunni": 664,
+      "protestant": 297,
+      "catholic": 128
+    },
+    "population_by_type": {
+      "aristocrats": 543,
+      "bureaucrats": 40393,
+      "clergymen": 5199,
+      "clerks": 22546,
+      "craftsmen": 79422,
+      "officers": 800,
+      "soldiers": 7788,
+      "labourers": 96466,
+      "farmers": 143579,
+      "artisans": 86,
+      "capitalists": 346
+    },
+    "literacy_rate": 0.0,
+    "research_points": 25395.24,
+    "tax_base": 2137.1431
+  },
+  "PLC": {
+    "tag": "PLC",
+    "total_population": 138410,
+    "province_count": 81,
+    "population_by_culture": {
+      "polish": 23782,
+      "russian": 24982,
+      "ukrainian": 67047,
+      "byelorussian": 21664,
+      "ugrian": 299,
+      "lithuanian": 636
+    },
+    "population_by_religion": {
+      "catholic": 24925,
+      "orthodox": 113485
+    },
+    "population_by_type": {
+      "farmers": 66606,
+      "soldiers": 9677,
+      "craftsmen": 16549,
+      "bureaucrats": 7539,
+      "labourers": 33578,
+      "officers": 1702,
+      "clergymen": 779,
+      "clerks": 1414,
+      "aristocrats": 479,
+      "artisans": 87
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "NET": {
+    "tag": "NET",
+    "total_population": 41780,
+    "province_count": 52,
+    "population_by_culture": {
+      "dutch": 31057,
+      "javan": 3715,
+      "moluccan": 2605,
+      "misri": 2079,
+      "afro_caribbean": 2324
+    },
+    "population_by_religion": {
+      "protestant": 35680,
+      "sunni": 3776,
+      "catholic": 2324
+    },
+    "population_by_type": {
+      "aristocrats": 299,
+      "bureaucrats": 4280,
+      "clergymen": 40,
+      "clerks": 1561,
+      "craftsmen": 6602,
+      "farmers": 21236,
+      "officers": 73,
+      "artisans": 193,
+      "labourers": 7448,
+      "capitalists": 48
+    },
+    "literacy_rate": 0.0,
+    "research_points": 17902.155,
+    "tax_base": 161.55173
+  },
+  "BEL": {
+    "tag": "BEL",
+    "total_population": 1,
+    "province_count": 1,
+    "population_by_culture": {
+      "flemish": 1
+    },
+    "population_by_religion": {
+      "catholic": 1
+    },
+    "population_by_type": {
+      "bureaucrats": 1
+    },
+    "literacy_rate": 0.0,
+    "research_points": 11409.535,
+    "tax_base": 0.0
+  },
+  "FLA": {
+    "tag": "FLA",
+    "total_population": 1798,
+    "province_count": 1,
+    "population_by_culture": {
+      "flemish": 1798
+    },
+    "population_by_religion": {
+      "catholic": 1798
+    },
+    "population_by_type": {
+      "bureaucrats": 318,
+      "clergymen": 116,
+      "farmers": 1364
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21888.685,
+    "tax_base": 1.76465
+  },
+  "WLL": {
+    "tag": "WLL",
+    "total_population": 1321,
+    "province_count": 1,
+    "population_by_culture": {
+      "wallonian": 1321
+    },
+    "population_by_religion": {
+      "catholic": 1321
+    },
+    "population_by_type": {
+      "bureaucrats": 1319,
+      "labourers": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 5616.985,
+    "tax_base": 1.28165
+  },
+  "LUX": {
+    "tag": "LUX",
+    "total_population": 1212,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 1010,
+      "french": 202
+    },
+    "population_by_religion": {
+      "catholic": 1212
+    },
+    "population_by_type": {
+      "artisans": 3,
+      "bureaucrats": 121,
+      "clergymen": 51,
+      "clerks": 52,
+      "craftsmen": 82,
+      "labourers": 903
+    },
+    "literacy_rate": 0.0,
+    "research_points": 27363.685,
+    "tax_base": 0.99124
+  },
+  "SPA": {
+    "tag": "SPA",
+    "total_population": 595273,
+    "province_count": 120,
+    "population_by_culture": {
+      "spanish": 536362,
+      "catalan": 7840,
+      "basque": 10716,
+      "mashriqi": 3496,
+      "turkish": 6642,
+      "bedouin": 1392,
+      "filipino": 7973,
+      "maghrebi": 8357,
+      "tigray": 2775,
+      "misri": 3049,
+      "somali": 6671
+    },
+    "population_by_religion": {
+      "catholic": 562891,
+      "sunni": 30042,
+      "coptic": 2023,
+      "shiite": 317
+    },
+    "population_by_type": {
+      "aristocrats": 2738,
+      "bureaucrats": 66477,
+      "clergymen": 30960,
+      "farmers": 299251,
+      "officers": 720,
+      "soldiers": 716,
+      "clerks": 14319,
+      "craftsmen": 67402,
+      "labourers": 103219,
+      "artisans": 9383,
+      "capitalists": 88
+    },
+    "literacy_rate": 0.0,
+    "research_points": 25385.02,
+    "tax_base": 925.02609
+  },
+  "ITA": {
+    "tag": "ITA",
+    "total_population": 194582,
+    "province_count": 28,
+    "population_by_culture": {
+      "north_italian": 35126,
+      "south_german": 2441,
+      "south_italian": 157015
+    },
+    "population_by_religion": {
+      "catholic": 194582
+    },
+    "population_by_type": {
+      "bureaucrats": 19472,
+      "capitalists": 31,
+      "clergymen": 20,
+      "clerks": 5277,
+      "craftsmen": 34097,
+      "labourers": 29674,
+      "officers": 299,
+      "farmers": 102562,
+      "aristocrats": 2648,
+      "soldiers": 502
+    },
+    "literacy_rate": 0.0,
+    "research_points": 15505.93,
+    "tax_base": 190.81622
+  },
+  "POR": {
+    "tag": "POR",
+    "total_population": 183841,
+    "province_count": 20,
+    "population_by_culture": {
+      "portuguese": 78013,
+      "melanesian": 898,
+      "african_minor": 102816,
+      "chewa": 384,
+      "yao": 1730
+    },
+    "population_by_religion": {
+      "catholic": 183841
+    },
+    "population_by_type": {
+      "bureaucrats": 18331,
+      "clergymen": 2044,
+      "craftsmen": 1695,
+      "farmers": 147605,
+      "soldiers": 4249,
+      "artisans": 3897,
+      "clerks": 470,
+      "officers": 1526,
+      "labourers": 2691,
+      "aristocrats": 1333
+    },
+    "literacy_rate": 0.0,
+    "research_points": 16460.405,
+    "tax_base": 71.58087
+  },
+  "HAM": {
+    "tag": "HAM",
+    "total_population": 127,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 127
+    },
+    "population_by_religion": {
+      "protestant": 127
+    },
+    "population_by_type": {
+      "artisans": 4,
+      "bureaucrats": 11,
+      "clergymen": 5,
+      "craftsmen": 71,
+      "farmers": 36
+    },
+    "literacy_rate": 0.0,
+    "research_points": 17034.449,
+    "tax_base": 0.03882
+  },
+  "HAN": {
+    "tag": "HAN",
+    "total_population": 1229,
+    "province_count": 4,
+    "population_by_culture": {
+      "north_german": 1229
+    },
+    "population_by_religion": {
+      "protestant": 1229
+    },
+    "population_by_type": {
+      "artisans": 2,
+      "bureaucrats": 119,
+      "clergymen": 35,
+      "farmers": 1059,
+      "officers": 6,
+      "soldiers": 8
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21888.685,
+    "tax_base": 1.15262
+  },
+  "BRA": {
+    "tag": "BRA",
+    "total_population": 144,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 144
+    },
+    "population_by_religion": {
+      "protestant": 144
+    },
+    "population_by_type": {
+      "clerks": 69,
+      "craftsmen": 75
+    },
+    "literacy_rate": 0.0,
+    "research_points": 13555.735,
+    "tax_base": 0.0
+  },
+  "MEC": {
+    "tag": "MEC",
+    "total_population": 2390,
+    "province_count": 2,
+    "population_by_culture": {
+      "north_german": 2390
+    },
+    "population_by_religion": {
+      "protestant": 2390
+    },
+    "population_by_type": {
+      "bureaucrats": 585,
+      "clergymen": 1079,
+      "farmers": 726
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21888.685,
+    "tax_base": 1.03552
+  },
+  "PRU": {
+    "tag": "PRU",
+    "total_population": 49977,
+    "province_count": 33,
+    "population_by_culture": {
+      "north_german": 49977
+    },
+    "population_by_religion": {
+      "protestant": 48217,
+      "catholic": 1760
+    },
+    "population_by_type": {
+      "artisans": 40,
+      "bureaucrats": 5014,
+      "clergymen": 325,
+      "clerks": 1381,
+      "craftsmen": 6394,
+      "farmers": 15460,
+      "officers": 87,
+      "soldiers": 24,
+      "aristocrats": 16,
+      "labourers": 21236
+    },
+    "literacy_rate": 0.0,
+    "research_points": 16438.14,
+    "tax_base": 76.33496
+  },
+  "ANH": {
+    "tag": "ANH",
+    "total_population": 243,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 243
+    },
+    "population_by_religion": {
+      "protestant": 243
+    },
+    "population_by_type": {
+      "bureaucrats": 19,
+      "clergymen": 6,
+      "clerks": 101,
+      "craftsmen": 99,
+      "farmers": 14,
+      "officers": 4
+    },
+    "literacy_rate": 0.0,
+    "research_points": 25026.225,
+    "tax_base": 0.02859
+  },
+  "WEI": {
+    "tag": "WEI",
+    "total_population": 482,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 482
+    },
+    "population_by_religion": {
+      "protestant": 482
+    },
+    "population_by_type": {
+      "bureaucrats": 50,
+      "clergymen": 13,
+      "farmers": 419
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21888.685,
+    "tax_base": 0.38971
+  },
+  "COB": {
+    "tag": "COB",
+    "total_population": 153,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 153
+    },
+    "population_by_religion": {
+      "protestant": 153
+    },
+    "population_by_type": {
+      "clerks": 82,
+      "craftsmen": 71
+    },
+    "literacy_rate": 0.0,
+    "research_points": 12778.285,
+    "tax_base": 0.0
+  },
+  "MEI": {
+    "tag": "MEI",
+    "total_population": 130,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 130
+    },
+    "population_by_religion": {
+      "protestant": 130
+    },
+    "population_by_type": {
+      "bureaucrats": 4,
+      "clergymen": 2,
+      "craftsmen": 59,
+      "labourers": 65
+    },
+    "literacy_rate": 0.0,
+    "research_points": 14360.56,
+    "tax_base": 0.01111
+  },
+  "NAS": {
+    "tag": "NAS",
+    "total_population": 1111,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 1111
+    },
+    "population_by_religion": {
+      "protestant": 1111
+    },
+    "population_by_type": {
+      "artisans": 326,
+      "bureaucrats": 113,
+      "clergymen": 29,
+      "clerks": 60,
+      "craftsmen": 43,
+      "farmers": 536,
+      "officers": 4
+    },
+    "literacy_rate": 0.0,
+    "research_points": 27363.685,
+    "tax_base": 0.92438
+  },
+  "HEK": {
+    "tag": "HEK",
+    "total_population": 4,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 4
+    },
+    "population_by_religion": {
+      "protestant": 4
+    },
+    "population_by_type": {
+      "bureaucrats": 2,
+      "farmers": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 5814.085,
+    "tax_base": 0.0
+  },
+  "BAD": {
+    "tag": "BAD",
+    "total_population": 15997,
+    "province_count": 4,
+    "population_by_culture": {
+      "south_german": 15997
+    },
+    "population_by_religion": {
+      "protestant": 471,
+      "catholic": 15526
+    },
+    "population_by_type": {
+      "craftsmen": 1896,
+      "farmers": 8583,
+      "soldiers": 34,
+      "bureaucrats": 3307,
+      "clergymen": 1476,
+      "clerks": 72,
+      "officers": 21,
+      "labourers": 608
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21467.475,
+    "tax_base": 13.20291
+  },
+  "HES": {
+    "tag": "HES",
+    "total_population": 559,
+    "province_count": 2,
+    "population_by_culture": {
+      "north_german": 559
+    },
+    "population_by_religion": {
+      "protestant": 559
+    },
+    "population_by_type": {
+      "bureaucrats": 21,
+      "clergymen": 21,
+      "craftsmen": 488,
+      "labourers": 16,
+      "farmers": 13
+    },
+    "literacy_rate": 0.0,
+    "research_points": 19917.685,
+    "tax_base": 0.12106
+  },
+  "LIP": {
+    "tag": "LIP",
+    "total_population": 98,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_german": 98
+    },
+    "population_by_religion": {
+      "protestant": 98
+    },
+    "population_by_type": {
+      "clerks": 28,
+      "craftsmen": 70
+    },
+    "literacy_rate": 0.0,
+    "research_points": 12624.985,
+    "tax_base": 0.0
+  },
+  "WUR": {
+    "tag": "WUR",
+    "total_population": 2,
+    "province_count": 1,
+    "population_by_culture": {
+      "south_german": 2
+    },
+    "population_by_religion": {
+      "catholic": 2
+    },
+    "population_by_type": {
+      "clergymen": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 13676.185,
+    "tax_base": 0.0
+  },
+  "BAV": {
+    "tag": "BAV",
+    "total_population": 17422,
+    "province_count": 9,
+    "population_by_culture": {
+      "south_german": 17422
+    },
+    "population_by_religion": {
+      "catholic": 16057,
+      "jewish": 895,
+      "protestant": 470
+    },
+    "population_by_type": {
+      "clergymen": 1004,
+      "clerks": 610,
+      "craftsmen": 1499,
+      "officers": 29,
+      "bureaucrats": 1658,
+      "farmers": 10155,
+      "labourers": 2467
+    },
+    "literacy_rate": 0.0,
+    "research_points": 26597.55,
+    "tax_base": 15.31989
+  },
+  "AUS": {
+    "tag": "AUS",
+    "total_population": 118265,
+    "province_count": 48,
+    "population_by_culture": {
+      "south_german": 90390,
+      "czech": 8062,
+      "north_italian": 18355,
+      "croat": 1458
+    },
+    "population_by_religion": {
+      "catholic": 118265
+    },
+    "population_by_type": {
+      "bureaucrats": 11774,
+      "farmers": 23603,
+      "craftsmen": 27773,
+      "labourers": 49229,
+      "capitalists": 137,
+      "clergymen": 193,
+      "clerks": 5198,
+      "officers": 144,
+      "soldiers": 205,
+      "aristocrats": 2,
+      "artisans": 7
+    },
+    "literacy_rate": 0.0,
+    "research_points": 17899.6,
+    "tax_base": 132.42065
+  },
+  "SWI": {
+    "tag": "SWI",
+    "total_population": 6029,
+    "province_count": 5,
+    "population_by_culture": {
+      "swiss": 6029
+    },
+    "population_by_religion": {
+      "protestant": 6029
+    },
+    "population_by_type": {
+      "clergymen": 320,
+      "clerks": 58,
+      "craftsmen": 545,
+      "officers": 2,
+      "bureaucrats": 593,
+      "labourers": 3281,
+      "farmers": 1230
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23724.27,
+    "tax_base": 4.54373
+  },
+  "HUN": {
+    "tag": "HUN",
+    "total_population": 20635,
+    "province_count": 26,
+    "population_by_culture": {
+      "hungarian": 13801,
+      "south_german": 3129,
+      "croat": 2467,
+      "slovak": 1238
+    },
+    "population_by_religion": {
+      "catholic": 18592,
+      "protestant": 2043
+    },
+    "population_by_type": {
+      "bureaucrats": 2063,
+      "capitalists": 66,
+      "clergymen": 56,
+      "clerks": 2159,
+      "craftsmen": 11520,
+      "farmers": 1031,
+      "officers": 25,
+      "labourers": 3695,
+      "aristocrats": 12,
+      "artisans": 8
+    },
+    "literacy_rate": 0.0,
+    "research_points": 16639.62,
+    "tax_base": 435.59924
+  },
+  "YUG": {
+    "tag": "YUG",
+    "total_population": 45724,
+    "province_count": 15,
+    "population_by_culture": {
+      "serb": 9753,
+      "slovene": 33658,
+      "north_italian": 398,
+      "south_german": 1379,
+      "croat": 536
+    },
+    "population_by_religion": {
+      "orthodox": 9753,
+      "catholic": 35971
+    },
+    "population_by_type": {
+      "clergymen": 5129,
+      "bureaucrats": 3714,
+      "craftsmen": 5468,
+      "farmers": 12851,
+      "soldiers": 1088,
+      "artisans": 8,
+      "capitalists": 1799,
+      "clerks": 484,
+      "labourers": 15179,
+      "officers": 4
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23168.01,
+    "tax_base": 28.79846
+  },
+  "TUR": {
+    "tag": "TUR",
+    "total_population": 197482,
+    "province_count": 93,
+    "population_by_culture": {
+      "turkish": 197381,
+      "mashriqi": 101
+    },
+    "population_by_religion": {
+      "sunni": 197482
+    },
+    "population_by_type": {
+      "aristocrats": 2930,
+      "artisans": 876,
+      "bureaucrats": 25209,
+      "clergymen": 1352,
+      "craftsmen": 31627,
+      "farmers": 90184,
+      "officers": 202,
+      "soldiers": 394,
+      "labourers": 42894,
+      "capitalists": 146,
+      "clerks": 1668
+    },
+    "literacy_rate": 0.0,
+    "research_points": 10848.53,
+    "tax_base": 337.3577
+  },
+  "PAR": {
+    "tag": "PAR",
+    "total_population": 3895,
+    "province_count": 1,
+    "population_by_culture": {
+      "north_italian": 3895
+    },
+    "population_by_religion": {
+      "catholic": 3895
+    },
+    "population_by_type": {
+      "artisans": 2,
+      "bureaucrats": 110,
+      "clergymen": 148,
+      "clerks": 53,
+      "craftsmen": 99,
+      "labourers": 3357,
+      "officers": 8,
+      "soldiers": 118
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23709.67,
+    "tax_base": 3.73355
+  },
+  "CRE": {
+    "tag": "CRE",
+    "total_population": 829,
+    "province_count": 1,
+    "population_by_culture": {
+      "greek": 829
+    },
+    "population_by_religion": {
+      "orthodox": 829
+    },
+    "population_by_type": {
+      "bureaucrats": 827,
+      "officers": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 10062.685,
+    "tax_base": 0.80103
+  },
+  "EGY": {
+    "tag": "EGY",
+    "total_population": 120663,
+    "province_count": 45,
+    "population_by_culture": {
+      "misri": 105976,
+      "turkish": 13848,
+      "mashriqi": 839
+    },
+    "population_by_religion": {
+      "sunni": 118916,
+      "coptic": 1747
+    },
+    "population_by_type": {
+      "artisans": 2761,
+      "bureaucrats": 14361,
+      "clergymen": 3545,
+      "clerks": 152,
+      "farmers": 93835,
+      "officers": 306,
+      "soldiers": 3600,
+      "craftsmen": 1201,
+      "labourers": 767,
+      "aristocrats": 135
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21409.805,
+    "tax_base": 84.8725
+  },
+  "PER": {
+    "tag": "PER",
+    "total_population": 63940,
+    "province_count": 23,
+    "population_by_culture": {
+      "azerbaijani": 14315,
+      "persian": 46404,
+      "kurdish": 754,
+      "african_minor": 802,
+      "swahili": 1665
+    },
+    "population_by_religion": {
+      "shiite": 61521,
+      "sunni": 2419
+    },
+    "population_by_type": {
+      "artisans": 530,
+      "bureaucrats": 6044,
+      "clergymen": 603,
+      "craftsmen": 16640,
+      "labourers": 26125,
+      "officers": 90,
+      "soldiers": 59,
+      "farmers": 13436,
+      "clerks": 413
+    },
+    "literacy_rate": 0.0,
+    "research_points": 15369.785,
+    "tax_base": 56.43594
+  },
+  "KHI": {
+    "tag": "KHI",
+    "total_population": 14790,
+    "province_count": 3,
+    "population_by_culture": {
+      "uzbek": 14732,
+      "turkmen": 58
+    },
+    "population_by_religion": {
+      "sunni": 14790
+    },
+    "population_by_type": {
+      "artisans": 1384,
+      "bureaucrats": 3180,
+      "clergymen": 2389,
+      "clerks": 56,
+      "craftsmen": 58,
+      "farmers": 7435,
+      "officers": 30,
+      "soldiers": 258
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22394.21,
+    "tax_base": 13.5806
+  },
+  "AFG": {
+    "tag": "AFG",
+    "total_population": 39629,
+    "province_count": 5,
+    "population_by_culture": {
+      "tajik": 11772,
+      "uzbek": 3265,
+      "pashtun": 19615,
+      "hazara": 4977
+    },
+    "population_by_religion": {
+      "sunni": 39629
+    },
+    "population_by_type": {
+      "clergymen": 487,
+      "clerks": 1788,
+      "craftsmen": 3740,
+      "farmers": 28472,
+      "officers": 38,
+      "soldiers": 1139,
+      "bureaucrats": 3965
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23218.745,
+    "tax_base": 35.48032
+  },
+  "MAK": {
+    "tag": "MAK",
+    "total_population": 1526,
+    "province_count": 1,
+    "population_by_culture": {
+      "baluchi": 1526
+    },
+    "population_by_religion": {
+      "sunni": 1526
+    },
+    "population_by_type": {
+      "bureaucrats": 32,
+      "clergymen": 38,
+      "clerks": 10,
+      "craftsmen": 96,
+      "farmers": 1350
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22031.764,
+    "tax_base": 1.36908
+  },
+  "HND": {
+    "tag": "HND",
+    "total_population": 113692,
+    "province_count": 13,
+    "population_by_culture": {
+      "avadhi": 66941,
+      "panjabi": 1909,
+      "marathi": 35083,
+      "oriya": 349,
+      "kanauji": 2501,
+      "uzbek": 2584,
+      "sindi": 4325
+    },
+    "population_by_religion": {
+      "hindu": 95508,
+      "sunni": 9180,
+      "shiite": 6730,
+      "sikh": 1004,
+      "catholic": 1270
+    },
+    "population_by_type": {
+      "bureaucrats": 7742,
+      "clergymen": 514,
+      "clerks": 1361,
+      "craftsmen": 27756,
+      "officers": 568,
+      "soldiers": 1151,
+      "farmers": 13653,
+      "labourers": 60945,
+      "capitalists": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 15496.075,
+    "tax_base": 115.79016
+  },
+  "KAS": {
+    "tag": "KAS",
+    "total_population": 104,
+    "province_count": 1,
+    "population_by_culture": {
+      "kashmiri": 41,
+      "tibetan": 63
+    },
+    "population_by_religion": {
+      "sunni": 41,
+      "mahayana": 63
+    },
+    "population_by_type": {
+      "bureaucrats": 12,
+      "clergymen": 1,
+      "craftsmen": 63,
+      "farmers": 26,
+      "officers": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 13676.185,
+    "tax_base": 0.02069
+  },
+  "PAN": {
+    "tag": "PAN",
+    "total_population": 24001,
+    "province_count": 1,
+    "population_by_culture": {
+      "panjabi": 24001
+    },
+    "population_by_religion": {
+      "sikh": 24001
+    },
+    "population_by_type": {
+      "bureaucrats": 2153,
+      "clergymen": 922,
+      "clerks": 101,
+      "craftsmen": 1853,
+      "farmers": 18213,
+      "officers": 14,
+      "soldiers": 745
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22461.005,
+    "tax_base": 11.87906
+  },
+  "JOD": {
+    "tag": "JOD",
+    "total_population": 655,
+    "province_count": 1,
+    "population_by_culture": {
+      "rajput": 655
+    },
+    "population_by_religion": {
+      "hindu": 655
+    },
+    "population_by_type": {
+      "bureaucrats": 20,
+      "clergymen": 21,
+      "clerks": 102,
+      "craftsmen": 100,
+      "farmers": 412
+    },
+    "literacy_rate": 0.0,
+    "research_points": 27363.685,
+    "tax_base": 0.42819
+  },
+  "MEW": {
+    "tag": "MEW",
+    "total_population": 12566,
+    "province_count": 1,
+    "population_by_culture": {
+      "rajput": 12566
+    },
+    "population_by_religion": {
+      "hindu": 12566
+    },
+    "population_by_type": {
+      "bureaucrats": 1167,
+      "clergymen": 291,
+      "clerks": 105,
+      "craftsmen": 99,
+      "farmers": 10497,
+      "officers": 26,
+      "soldiers": 381
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23016.17,
+    "tax_base": 5.5842
+  },
+  "GWA": {
+    "tag": "GWA",
+    "total_population": 183,
+    "province_count": 1,
+    "population_by_culture": {
+      "marathi": 183
+    },
+    "population_by_religion": {
+      "hindu": 183
+    },
+    "population_by_type": {
+      "artisans": 5,
+      "clergymen": 3,
+      "farmers": 70,
+      "officers": 4,
+      "soldiers": 101
+    },
+    "literacy_rate": 0.0,
+    "research_points": 13676.185,
+    "tax_base": 0.03378
+  },
+  "IND": {
+    "tag": "IND",
+    "total_population": 12182,
+    "province_count": 1,
+    "population_by_culture": {
+      "marathi": 12182
+    },
+    "population_by_religion": {
+      "hindu": 12182
+    },
+    "population_by_type": {
+      "artisans": 2,
+      "bureaucrats": 1223,
+      "clergymen": 389,
+      "clerks": 221,
+      "craftsmen": 108,
+      "farmers": 9948,
+      "officers": 26,
+      "soldiers": 265
+    },
+    "literacy_rate": 0.0,
+    "research_points": 24356.815,
+    "tax_base": 5.68533
+  },
+  "BHO": {
+    "tag": "BHO",
+    "total_population": 421,
+    "province_count": 1,
+    "population_by_culture": {
+      "marathi": 421
+    },
+    "population_by_religion": {
+      "hindu": 421
+    },
+    "population_by_type": {
+      "aristocrats": 3,
+      "artisans": 6,
+      "clergymen": 4,
+      "farmers": 373,
+      "officers": 3,
+      "soldiers": 32
+    },
+    "literacy_rate": 0.0,
+    "research_points": 16672.835,
+    "tax_base": 0.1503
+  },
+  "HYD": {
+    "tag": "HYD",
+    "total_population": 45197,
+    "province_count": 7,
+    "population_by_culture": {
+      "telegu": 25802,
+      "marathi": 14799,
+      "avadhi": 3165,
+      "kannada": 1431
+    },
+    "population_by_religion": {
+      "hindu": 42032,
+      "sunni": 3165
+    },
+    "population_by_type": {
+      "clergymen": 801,
+      "craftsmen": 4858,
+      "farmers": 35333,
+      "officers": 36,
+      "bureaucrats": 3730,
+      "clerks": 429,
+      "artisans": 2,
+      "capitalists": 4,
+      "soldiers": 4
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21804.37,
+    "tax_base": 26.33081
+  },
+  "KUT": {
+    "tag": "KUT",
+    "total_population": 6649,
+    "province_count": 1,
+    "population_by_culture": {
+      "gujarati": 6649
+    },
+    "population_by_religion": {
+      "hindu": 6649
+    },
+    "population_by_type": {
+      "bureaucrats": 664,
+      "clergymen": 167,
+      "clerks": 166,
+      "craftsmen": 100,
+      "farmers": 5396,
+      "officers": 13,
+      "soldiers": 143
+    },
+    "literacy_rate": 0.0,
+    "research_points": 25279.9,
+    "tax_base": 2.06189
+  },
+  "MYS": {
+    "tag": "MYS",
+    "total_population": 118240,
+    "province_count": 3,
+    "population_by_culture": {
+      "kannada": 118240
+    },
+    "population_by_religion": {
+      "hindu": 118240
+    },
+    "population_by_type": {
+      "clergymen": 1775,
+      "farmers": 91586,
+      "officers": 219,
+      "soldiers": 3565,
+      "aristocrats": 187,
+      "artisans": 278,
+      "bureaucrats": 17503,
+      "capitalists": 2935,
+      "clerks": 34,
+      "craftsmen": 158
+    },
+    "literacy_rate": 0.0,
+    "research_points": 12785.22,
+    "tax_base": 90.72885
+  },
+  "TRA": {
+    "tag": "TRA",
+    "total_population": 31393,
+    "province_count": 2,
+    "population_by_culture": {
+      "malayalam": 31393
+    },
+    "population_by_religion": {
+      "hindu": 31393
+    },
+    "population_by_type": {
+      "bureaucrats": 6569,
+      "clergymen": 8,
+      "labourers": 18790,
+      "soldiers": 1,
+      "farmers": 6025
+    },
+    "literacy_rate": 0.0,
+    "research_points": 714.081,
+    "tax_base": 1.62848
+  },
+  "SIK": {
+    "tag": "SIK",
+    "total_population": 170,
+    "province_count": 1,
+    "population_by_culture": {
+      "nepali": 170
+    },
+    "population_by_religion": {
+      "hindu": 170
+    },
+    "population_by_type": {
+      "bureaucrats": 18,
+      "clergymen": 4,
+      "clerks": 14,
+      "craftsmen": 76,
+      "farmers": 58
+    },
+    "literacy_rate": 0.0,
+    "research_points": 25636.87,
+    "tax_base": 0.08102
+  },
+  "BUR": {
+    "tag": "BUR",
+    "total_population": 15695,
+    "province_count": 8,
+    "population_by_culture": {
+      "burmese": 14331,
+      "shan": 1364
+    },
+    "population_by_religion": {
+      "theravada": 15695
+    },
+    "population_by_type": {
+      "artisans": 2,
+      "bureaucrats": 1446,
+      "clergymen": 46,
+      "craftsmen": 4778,
+      "labourers": 4761,
+      "farmers": 4660,
+      "aristocrats": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 5026.627,
+    "tax_base": 17.47858
+  },
+  "SIA": {
+    "tag": "SIA",
+    "total_population": 45253,
+    "province_count": 22,
+    "population_by_culture": {
+      "thai": 43762,
+      "malay": 1491
+    },
+    "population_by_religion": {
+      "theravada": 43762,
+      "sunni": 1491
+    },
+    "population_by_type": {
+      "craftsmen": 6318,
+      "farmers": 29050,
+      "artisans": 9,
+      "clergymen": 37,
+      "clerks": 371,
+      "labourers": 4771,
+      "bureaucrats": 4504,
+      "aristocrats": 177,
+      "officers": 16
+    },
+    "literacy_rate": 0.0,
+    "research_points": 9467.005,
+    "tax_base": 42.79175
+  },
+  "CAM": {
+    "tag": "CAM",
+    "total_population": 32154,
+    "province_count": 3,
+    "population_by_culture": {
+      "khmer": 32154
+    },
+    "population_by_religion": {
+      "theravada": 32154
+    },
+    "population_by_type": {
+      "labourers": 6207,
+      "bureaucrats": 10720,
+      "clergymen": 4,
+      "farmers": 15223
+    },
+    "literacy_rate": 0.0,
+    "research_points": 974.496,
+    "tax_base": 0.69357
+  },
+  "DAI": {
+    "tag": "DAI",
+    "total_population": 23079,
+    "province_count": 5,
+    "population_by_culture": {
+      "vietnamese": 23079
+    },
+    "population_by_religion": {
+      "mahayana": 23079
+    },
+    "population_by_type": {
+      "craftsmen": 2194,
+      "farmers": 18548,
+      "bureaucrats": 2309,
+      "clergymen": 5,
+      "labourers": 23
+    },
+    "literacy_rate": 0.0,
+    "research_points": 6554.305,
+    "tax_base": 19.27206
+  },
+  "ATJ": {
+    "tag": "ATJ",
+    "total_population": 31458,
+    "province_count": 3,
+    "population_by_culture": {
+      "malay": 31458
+    },
+    "population_by_religion": {
+      "sunni": 31458
+    },
+    "population_by_type": {
+      "bureaucrats": 8042,
+      "clergymen": 1207,
+      "farmers": 20140,
+      "officers": 2,
+      "labourers": 2067
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21822.985,
+    "tax_base": 30.37674
+  },
+  "JAV": {
+    "tag": "JAV",
+    "total_population": 23216,
+    "province_count": 8,
+    "population_by_culture": {
+      "javan": 23216
+    },
+    "population_by_religion": {
+      "sunni": 5651,
+      "animist": 12276,
+      "protestant": 5289
+    },
+    "population_by_type": {
+      "bureaucrats": 1739,
+      "clergymen": 18,
+      "craftsmen": 12185,
+      "farmers": 508,
+      "officers": 2,
+      "labourers": 8764
+    },
+    "literacy_rate": 0.0,
+    "research_points": 8393.175,
+    "tax_base": 28.35187
+  },
+  "BAL": {
+    "tag": "BAL",
+    "total_population": 6920,
+    "province_count": 2,
+    "population_by_culture": {
+      "malay": 6813,
+      "moluccan": 107
+    },
+    "population_by_religion": {
+      "hindu": 5958,
+      "sunni": 855,
+      "protestant": 107
+    },
+    "population_by_type": {
+      "bureaucrats": 603,
+      "clergymen": 314,
+      "clerks": 15,
+      "craftsmen": 1127,
+      "farmers": 4752,
+      "officers": 2,
+      "labourers": 107
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22071.915,
+    "tax_base": 4.14636
+  },
+  "KOR": {
+    "tag": "KOR",
+    "total_population": 36614,
+    "province_count": 19,
+    "population_by_culture": {
+      "korean": 36614
+    },
+    "population_by_religion": {
+      "mahayana": 36614
+    },
+    "population_by_type": {
+      "aristocrats": 111,
+      "bureaucrats": 3664,
+      "capitalists": 10,
+      "clergymen": 286,
+      "clerks": 751,
+      "craftsmen": 9744,
+      "labourers": 8125,
+      "officers": 40,
+      "soldiers": 76,
+      "artisans": 11,
+      "farmers": 13796
+    },
+    "literacy_rate": 0.0,
+    "research_points": 15768.0,
+    "tax_base": 27.00668
+  },
+  "JAP": {
+    "tag": "JAP",
+    "total_population": 106024,
+    "province_count": 42,
+    "population_by_culture": {
+      "japanese": 101134,
+      "ainu": 4890
+    },
+    "population_by_religion": {
+      "mahayana": 104221,
+      "shinto": 1803
+    },
+    "population_by_type": {
+      "clergymen": 72,
+      "craftsmen": 33019,
+      "farmers": 40992,
+      "clerks": 4031,
+      "labourers": 15719,
+      "bureaucrats": 11648,
+      "capitalists": 190,
+      "officers": 96,
+      "aristocrats": 257
+    },
+    "literacy_rate": 0.0,
+    "research_points": 16553.115,
+    "tax_base": 64.16812
+  },
+  "ALD": {
+    "tag": "ALD",
+    "total_population": 19197,
+    "province_count": 5,
+    "population_by_culture": {
+      "maghrebi": 19197
+    },
+    "population_by_religion": {
+      "sunni": 19197
+    },
+    "population_by_type": {
+      "bureaucrats": 618,
+      "clergymen": 437,
+      "clerks": 64,
+      "craftsmen": 4592,
+      "farmers": 12965,
+      "officers": 18,
+      "soldiers": 503
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22147.835,
+    "tax_base": 14.4689
+  },
+  "GCO": {
+    "tag": "GCO",
+    "total_population": 65957,
+    "province_count": 1,
+    "population_by_culture": {
+      "yankee": 409,
+      "north_andean": 64656,
+      "central_american": 892
+    },
+    "population_by_religion": {
+      "protestant": 409,
+      "catholic": 65548
+    },
+    "population_by_type": {
+      "artisans": 409,
+      "bureaucrats": 2739,
+      "clergymen": 892,
+      "farmers": 35780,
+      "officers": 2718,
+      "soldiers": 23419
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "ETH": {
+    "tag": "ETH",
+    "total_population": 110694,
+    "province_count": 19,
+    "population_by_culture": {
+      "oromo": 36427,
+      "misri": 3297,
+      "amhara": 54063,
+      "sudanese": 11209,
+      "mashriqi": 116,
+      "tigray": 877,
+      "afar": 3705,
+      "african_minor": 1000
+    },
+    "population_by_religion": {
+      "coptic": 91105,
+      "sunni": 19473,
+      "orthodox": 116
+    },
+    "population_by_type": {
+      "artisans": 1086,
+      "bureaucrats": 11076,
+      "clergymen": 3175,
+      "clerks": 1459,
+      "craftsmen": 18188,
+      "labourers": 10868,
+      "officers": 214,
+      "soldiers": 3531,
+      "farmers": 61097
+    },
+    "literacy_rate": 0.0,
+    "research_points": 23633.75,
+    "tax_base": 86.12738
+  },
+  "LIB": {
+    "tag": "LIB",
+    "total_population": 47354,
+    "province_count": 2,
+    "population_by_culture": {
+      "kru": 31905,
+      "afro_american": 15361,
+      "african_minor": 88
+    },
+    "population_by_religion": {
+      "protestant": 47354
+    },
+    "population_by_type": {
+      "artisans": 7680,
+      "bureaucrats": 7036,
+      "clergymen": 2062,
+      "clerks": 89,
+      "craftsmen": 176,
+      "farmers": 28778,
+      "officers": 114,
+      "soldiers": 1419
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22143.455,
+    "tax_base": 22.36627
+  },
+  "SOK": {
+    "tag": "SOK",
+    "total_population": 181761,
+    "province_count": 16,
+    "population_by_culture": {
+      "hausa": 121115,
+      "yoruba": 3138,
+      "tiv": 30683,
+      "african_minor": 8607,
+      "fulbe": 18218
+    },
+    "population_by_religion": {
+      "sunni": 181236,
+      "animist": 525
+    },
+    "population_by_type": {
+      "artisans": 1276,
+      "bureaucrats": 17275,
+      "clergymen": 446,
+      "craftsmen": 65728,
+      "farmers": 75432,
+      "soldiers": 176,
+      "clerks": 559,
+      "officers": 53,
+      "aristocrats": 346,
+      "labourers": 20470
+    },
+    "literacy_rate": 0.0,
+    "research_points": 7163.49,
+    "tax_base": 120.22772
+  },
+  "ZAN": {
+    "tag": "ZAN",
+    "total_population": 12076,
+    "province_count": 6,
+    "population_by_culture": {
+      "swahili": 12076
+    },
+    "population_by_religion": {
+      "sunni": 12076
+    },
+    "population_by_type": {
+      "artisans": 9,
+      "bureaucrats": 1208,
+      "capitalists": 1077,
+      "clergymen": 161,
+      "farmers": 9217,
+      "officers": 31,
+      "soldiers": 307,
+      "craftsmen": 46,
+      "clerks": 20
+    },
+    "literacy_rate": 0.0,
+    "research_points": 17180.55,
+    "tax_base": 7.62997
+  },
+  "MAD": {
+    "tag": "MAD",
+    "total_population": 42148,
+    "province_count": 8,
+    "population_by_culture": {
+      "malagasy": 42148
+    },
+    "population_by_religion": {
+      "animist": 1721,
+      "catholic": 36720,
+      "sunni": 3707
+    },
+    "population_by_type": {
+      "artisans": 4,
+      "clergymen": 5,
+      "craftsmen": 22920,
+      "labourers": 8930,
+      "bureaucrats": 1122,
+      "farmers": 9165,
+      "aristocrats": 2
+    },
+    "literacy_rate": 0.0,
+    "research_points": 6967.12,
+    "tax_base": 25.64664
+  },
+  "MEX": {
+    "tag": "MEX",
+    "total_population": 1244845,
+    "province_count": 43,
+    "population_by_culture": {
+      "mexican": 1244822,
+      "south_german": 2,
+      "malay": 13,
+      "spanish": 3,
+      "slovene": 5
+    },
+    "population_by_religion": {
+      "catholic": 1244832,
+      "sunni": 13
+    },
+    "population_by_type": {
+      "artisans": 22,
+      "bureaucrats": 80932,
+      "craftsmen": 521346,
+      "farmers": 435294,
+      "officers": 45,
+      "soldiers": 26759,
+      "clerks": 1819,
+      "labourers": 178499,
+      "clergymen": 9,
+      "aristocrats": 120
+    },
+    "literacy_rate": 0.0,
+    "research_points": 7302.555,
+    "tax_base": 1113.91592
+  },
+  "UCA": {
+    "tag": "UCA",
+    "total_population": 115320,
+    "province_count": 11,
+    "population_by_culture": {
+      "central_american": 114951,
+      "beifaren": 369
+    },
+    "population_by_religion": {
+      "catholic": 114951,
+      "mahayana": 369
+    },
+    "population_by_type": {
+      "aristocrats": 700,
+      "artisans": 4151,
+      "bureaucrats": 11311,
+      "clergymen": 16426,
+      "clerks": 764,
+      "craftsmen": 11568,
+      "farmers": 57994,
+      "officers": 106,
+      "labourers": 12300
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22429.25,
+    "tax_base": 65.20135
+  },
+  "ELS": {
+    "tag": "ELS",
+    "total_population": 11912,
+    "province_count": 2,
+    "population_by_culture": {
+      "central_american": 11912
+    },
+    "population_by_religion": {
+      "catholic": 11912
+    },
+    "population_by_type": {
+      "bureaucrats": 1192,
+      "clergymen": 487,
+      "clerks": 21,
+      "craftsmen": 1553,
+      "farmers": 7223,
+      "officers": 22,
+      "labourers": 1414
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22256.24,
+    "tax_base": 7.55475
+  },
+  "NIC": {
+    "tag": "NIC",
+    "total_population": 34319,
+    "province_count": 4,
+    "population_by_culture": {
+      "central_american": 34319
+    },
+    "population_by_religion": {
+      "catholic": 34319
+    },
+    "population_by_type": {
+      "artisans": 3511,
+      "bureaucrats": 4707,
+      "clergymen": 3925,
+      "farmers": 21719,
+      "officers": 69,
+      "soldiers": 388
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21678.445,
+    "tax_base": 16.20554
+  },
+  "CLM": {
+    "tag": "CLM",
+    "total_population": 510296,
+    "province_count": 26,
+    "population_by_culture": {
+      "north_andean": 486648,
+      "central_american": 9911,
+      "british": 13737
+    },
+    "population_by_religion": {
+      "catholic": 496559,
+      "protestant": 13737
+    },
+    "population_by_type": {
+      "bureaucrats": 18458,
+      "clergymen": 1958,
+      "clerks": 1199,
+      "craftsmen": 147509,
+      "farmers": 249183,
+      "soldiers": 34044,
+      "aristocrats": 1623,
+      "officers": 4422,
+      "artisans": 6,
+      "labourers": 51894
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "HAI": {
+    "tag": "HAI",
+    "total_population": 49604,
+    "province_count": 4,
+    "population_by_culture": {
+      "afro_antillean": 49552,
+      "nanfaren": 52
+    },
+    "population_by_religion": {
+      "catholic": 49552,
+      "mahayana": 52
+    },
+    "population_by_type": {
+      "artisans": 2,
+      "bureaucrats": 4828,
+      "clergymen": 569,
+      "clerks": 1242,
+      "craftsmen": 5446,
+      "farmers": 35142,
+      "officers": 78,
+      "soldiers": 2297
+    },
+    "literacy_rate": 0.0,
+    "research_points": 20741.49,
+    "tax_base": 24.00299
+  },
+  "VNZ": {
+    "tag": "VNZ",
+    "total_population": 28738,
+    "province_count": 10,
+    "population_by_culture": {
+      "north_andean": 20563,
+      "afro_caribeno": 8175
+    },
+    "population_by_religion": {
+      "catholic": 28738
+    },
+    "population_by_type": {
+      "bureaucrats": 1296,
+      "farmers": 12624,
+      "officers": 387,
+      "slaves": 8175,
+      "soldiers": 422,
+      "labourers": 5834
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "ECU": {
+    "tag": "ECU",
+    "total_population": 138613,
+    "province_count": 10,
+    "population_by_culture": {
+      "north_andean": 138613
+    },
+    "population_by_religion": {
+      "catholic": 138613
+    },
+    "population_by_type": {
+      "aristocrats": 2064,
+      "artisans": 5496,
+      "bureaucrats": 4591,
+      "clergymen": 4146,
+      "craftsmen": 2587,
+      "farmers": 81213,
+      "officers": 5056,
+      "soldiers": 9706,
+      "labourers": 23754
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "BRZ": {
+    "tag": "BRZ",
+    "total_population": 1575436,
+    "province_count": 102,
+    "population_by_culture": {
+      "brazilian": 1344768,
+      "south_andean": 105950,
+      "afro_brazilian": 52645,
+      "nanfaren": 2635,
+      "platinean": 69438
+    },
+    "population_by_religion": {
+      "catholic": 1572801,
+      "mahayana": 2635
+    },
+    "population_by_type": {
+      "artisans": 12631,
+      "bureaucrats": 55866,
+      "clergymen": 254212,
+      "labourers": 191635,
+      "officers": 130174,
+      "soldiers": 48374,
+      "craftsmen": 44834,
+      "farmers": 836458,
+      "clerks": 1252
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.76581
+  },
+  "PEU": {
+    "tag": "PEU",
+    "total_population": 105709,
+    "province_count": 11,
+    "population_by_culture": {
+      "south_andean": 105672,
+      "polish": 37
+    },
+    "population_by_religion": {
+      "catholic": 105709
+    },
+    "population_by_type": {
+      "bureaucrats": 3058,
+      "craftsmen": 43567,
+      "farmers": 13795,
+      "officers": 1508,
+      "soldiers": 5164,
+      "labourers": 38414,
+      "clergymen": 37,
+      "clerks": 166
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "ARG": {
+    "tag": "ARG",
+    "total_population": 85754,
+    "province_count": 34,
+    "population_by_culture": {
+      "platinean": 85449,
+      "japanese": 173,
+      "nanfaren": 20,
+      "beifaren": 106,
+      "british": 6
+    },
+    "population_by_religion": {
+      "catholic": 85449,
+      "mahayana": 299,
+      "protestant": 6
+    },
+    "population_by_type": {
+      "artisans": 851,
+      "bureaucrats": 8214,
+      "clergymen": 1425,
+      "craftsmen": 20214,
+      "labourers": 23551,
+      "officers": 165,
+      "soldiers": 2292,
+      "farmers": 28318,
+      "aristocrats": 88,
+      "clerks": 636
+    },
+    "literacy_rate": 0.0,
+    "research_points": 21100.65,
+    "tax_base": 81.41861
+  },
+  "BOL": {
+    "tag": "BOL",
+    "total_population": 107957,
+    "province_count": 4,
+    "population_by_culture": {
+      "south_andean": 104239,
+      "beifaren": 3713,
+      "south_german": 2,
+      "spanish": 3
+    },
+    "population_by_religion": {
+      "catholic": 104242,
+      "mahayana": 3713,
+      "jewish": 2
+    },
+    "population_by_type": {
+      "bureaucrats": 5321,
+      "capitalists": 20,
+      "clergymen": 2102,
+      "clerks": 1061,
+      "craftsmen": 61017,
+      "farmers": 20843,
+      "officers": 36,
+      "soldiers": 3841,
+      "labourers": 13716
+    },
+    "literacy_rate": 0.0,
+    "research_points": 22513.2,
+    "tax_base": 47.37851
+  },
+  "CHL": {
+    "tag": "CHL",
+    "total_population": 14937,
+    "province_count": 7,
+    "population_by_culture": {
+      "south_andean": 14937
+    },
+    "population_by_religion": {
+      "catholic": 14937
+    },
+    "population_by_type": {
+      "labourers": 2854,
+      "soldiers": 512,
+      "bureaucrats": 825,
+      "craftsmen": 9,
+      "farmers": 10589,
+      "officers": 148
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "PRG": {
+    "tag": "PRG",
+    "total_population": 8074,
+    "province_count": 2,
+    "population_by_culture": {
+      "platinean": 7480,
+      "afro_caribeno": 594
+    },
+    "population_by_religion": {
+      "catholic": 8074
+    },
+    "population_by_type": {
+      "bureaucrats": 436,
+      "clergymen": 205,
+      "farmers": 6408,
+      "slaves": 594,
+      "soldiers": 431
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "URU": {
+    "tag": "URU",
+    "total_population": 9043,
+    "province_count": 2,
+    "population_by_culture": {
+      "platinean": 8634,
+      "afro_caribeno": 409
+    },
+    "population_by_religion": {
+      "catholic": 9043
+    },
+    "population_by_type": {
+      "bureaucrats": 381,
+      "clergymen": 454,
+      "farmers": 7799,
+      "slaves": 409
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "AST": {
+    "tag": "AST",
+    "total_population": 447740,
+    "province_count": 33,
+    "population_by_culture": {
+      "british": 447740
+    },
+    "population_by_religion": {
+      "protestant": 447740
+    },
+    "population_by_type": {
+      "bureaucrats": 17439,
+      "clergymen": 409,
+      "clerks": 1564,
+      "craftsmen": 93588,
+      "farmers": 248224,
+      "officers": 11734,
+      "soldiers": 13573,
+      "labourers": 59430,
+      "aristocrats": 1779
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  },
+  "NZL": {
+    "tag": "NZL",
+    "total_population": 372074,
+    "province_count": 5,
+    "population_by_culture": {
+      "british": 372074
+    },
+    "population_by_religion": {
+      "protestant": 372074
+    },
+    "population_by_type": {
+      "aristocrats": 2056,
+      "bureaucrats": 12277,
+      "clergymen": 1681,
+      "clerks": 2448,
+      "craftsmen": 146728,
+      "farmers": 188683,
+      "officers": 9063,
+      "soldiers": 9138
+    },
+    "literacy_rate": 0.0,
+    "research_points": 0.0,
+    "tax_base": 0.0
+  }
+}

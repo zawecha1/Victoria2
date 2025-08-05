@@ -40,6 +40,7 @@ class Victoria2Modifier:
         self.ideology_changes = 0
         self.population_count = 0
         self.date_changes = 0
+        self.money_changes = 0  # 新增：金钱修改计数器
         
         # 默认存档路径
         self.default_save_path = r"c:\Users\zhangwc6\Documents\Paradox Interactive\Victoria II\save games"
@@ -1039,6 +1040,91 @@ class Victoria2Modifier:
         return '\n'.join(new_lines) + '\n\t\t'
     
     # ========================================
+    # 功能6: 中国人口金钱修改
+    # ========================================
+    
+    def modify_chinese_population_money(self, target_money: float = 9999999.0) -> bool:
+        """修改中国人口的金钱数量"""
+        print(f"\n💰 开始修改中国人口金钱 (目标金额: {target_money:,.0f})")
+        
+        # ✅ 使用与斗争性修改相同的逻辑
+        # 首先构建省份所有者映射
+        print("🗺️ 构建省份-国家映射...")
+        province_owners = self._build_province_owner_mapping()
+        chinese_province_count = sum(1 for owner in province_owners.values() if owner == "CHI")
+        print(f"找到 {chinese_province_count} 个中国省份")
+        
+        # 查找所有省份
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        
+        money_changes = 0
+        processed_provinces = 0
+        
+        # 从后往前处理，避免位置偏移问题
+        for i in reversed(range(len(province_matches))):
+            match = province_matches[i]
+            province_id = int(match.group(1))
+            start_pos = match.end()
+            
+            # 找到省份块的结束位置
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start()
+            else:
+                next_section = re.search(r'\n[a-z_]+=\s*{', self.content[start_pos:start_pos+10000])
+                if next_section:
+                    end_pos = start_pos + next_section.start()
+                else:
+                    end_pos = start_pos + 5000
+            
+            province_content = self.content[start_pos:end_pos]
+            owner = province_owners.get(province_id, "")
+            
+            # 只处理中国省份
+            if owner == "CHI":
+                # 修改这个省份中所有人口的金钱
+                new_province_content, changes = self._modify_province_money(
+                    province_content, target_money
+                )
+                
+                if changes > 0:
+                    # 替换省份内容
+                    self.content = (self.content[:start_pos] + 
+                                  new_province_content + 
+                                  self.content[end_pos:])
+                    
+                    money_changes += changes
+                
+                processed_provinces += 1
+                
+                # 进度显示
+                if processed_provinces % 50 == 0:
+                    print(f"已处理 {processed_provinces}/{chinese_province_count} 个中国省份...")
+        
+        print(f"✅ 中国人口金钱修改完成: {money_changes} 个人口组")
+        print(f"✅ 处理了 {processed_provinces} 个中国省份")
+        
+        # 更新计数器
+        self.money_changes = money_changes
+        
+        return money_changes > 0
+    
+    def _modify_province_money(self, province_content: str, target_money: float) -> tuple:
+        """修改单个省份中所有人口的金钱，返回内容和修改数量"""
+        # 查找所有人口组的金钱字段 (money=数值)
+        money_pattern = r'money=([\d.]+)'
+        changes = 0
+        
+        def replace_money(match):
+            nonlocal changes
+            changes += 1
+            return f'money={target_money:.5f}'
+        
+        modified_content = re.sub(money_pattern, replace_money, province_content)
+        
+        return modified_content, changes
+
+    # ========================================
     # 验证和总结功能
     # ========================================
     
@@ -1101,6 +1187,10 @@ class Victoria2Modifier:
             print("✓ 5. 游戏日期: 设为1836.1.1")
             selected_operations.append('date')
             selected_count += 1
+        if options.get('money', False):
+            print("✓ 6. 中国人口金钱: 设为9,999,999")
+            selected_operations.append('money')
+            selected_count += 1
         
         if selected_count == 0:
             print("❌ 未选择任何修改项目")
@@ -1110,7 +1200,7 @@ class Victoria2Modifier:
         print(f"{'='*70}")
         
         # 创建备份
-        operation_type = "selective" if selected_count < 5 else "unified"
+        operation_type = "selective" if selected_count < 6 else "unified"
         backup_filename = self.create_backup(filename, operation_type)
         
         success_count = 0
@@ -1199,6 +1289,23 @@ class Victoria2Modifier:
                     print(f"❌ 步骤{step}失败: 日期修改失败")
             else:
                 print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
+        
+        # 6. 中国人口金钱修改
+        if 'money' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行中国人口金钱修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_chinese_population_money():
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 金钱修改 {self.money_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 金钱修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
         
         # 最终验证
         if success_count > 0:
@@ -1241,6 +1348,7 @@ class Victoria2Modifier:
         print("3. 中国恶名度: 设为0")
         print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
         print("5. 游戏日期: 设为1836.1.1")
+        print("6. 中国人口金钱: 设为9,999,999")
         print("⚡ 每个功能独立执行，确保数据安全")
         print(f"{'='*70}")
         
@@ -1324,6 +1432,21 @@ class Victoria2Modifier:
         else:
             print(f"❌ 步骤5失败: 文件读取失败")
         
+        # 6. 中国人口金钱修改
+        print(f"\n🔄 步骤6: 执行中国人口金钱修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_chinese_population_money():
+                if self.save_file(filename):
+                    print(f"✅ 步骤6完成: 金钱修改 {self.money_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤6失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤6失败: 金钱修改失败")
+        else:
+            print(f"❌ 步骤6失败: 文件读取失败")
+        
         # 最终验证
         print(f"\n🔍 执行最终验证...")
         self.__init__()  # 重置计数器
@@ -1333,19 +1456,19 @@ class Victoria2Modifier:
         # 显示最终结果
         print(f"\n{'='*70}")
         print("安全模式修改完成统计:")
-        print(f"成功步骤: {success_count}/5")
+        print(f"成功步骤: {success_count}/6")
         print(f"每个功能都独立执行，确保数据安全")
         print(f"{'='*70}")
         
         print(f"\n📁 总备份文件: {backup_filename}")
         
-        if success_count == 5:
+        if success_count == 6:
             print("🎉 所有修改操作成功完成!")
             print("🎮 可以继续游戏了!")
         else:
             print("⚠️ 部分操作失败，请检查输出信息")
         
-        return success_count == 5
+        return success_count == 6
 
 def get_save_files_list():
     """获取存档文件列表"""
@@ -1372,7 +1495,8 @@ def show_modification_menu():
     print("3. 中国恶名度修改 (设为0)")
     print("4. 中国人口属性修改 (宗教=mahayana, 意识形态=温和派)")
     print("5. 游戏日期修改 (设为1836.1.1)")
-    print("6. 执行全部修改 (推荐)")
+    print("6. 中国人口金钱修改 (设为9,999,999)")
+    print("7. 执行全部修改 (推荐)")
     print("0. 退出程序")
     print("="*50)
 
@@ -1383,7 +1507,8 @@ def get_user_selection():
         'culture': False,
         'infamy': False,
         'population': False,
-        'date': False
+        'date': False,
+        'money': False
     }
     
     while True:
@@ -1392,14 +1517,15 @@ def get_user_selection():
             
             if choice == '0':
                 return None
-            elif choice == '6':
+            elif choice == '7':
                 # 全部修改
                 return {
                     'militancy': True,
                     'culture': True,
                     'infamy': True,
                     'population': True,
-                    'date': True
+                    'date': True,
+                    'money': True
                 }
             else:
                 # 解析选择
@@ -1420,6 +1546,8 @@ def get_user_selection():
                         options['population'] = True
                     elif num == 5:
                         options['date'] = True
+                    elif num == 6:
+                        options['money'] = True
                     else:
                         print(f"❌ 无效选项: {num}")
                         continue
@@ -1458,7 +1586,8 @@ def main():
             print("3. 中国恶名度: 设为0")
             print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
             print("5. 游戏日期: 设为1836.1.1")
-            print("6. 支持选择性修改和全部修改")
+            print("6. 中国人口金钱: 设为9,999,999")
+            print("7. 支持选择性修改和全部修改")
             print("\n意识形态映射 (已确认 Liberal=ID 6):")
             print("• Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
             print("• Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
@@ -1476,7 +1605,8 @@ def main():
             'culture': True,
             'infamy': True,
             'population': True,
-            'date': True
+            'date': True,
+            'money': True
         }
     else:
         # 交互式模式
@@ -1549,6 +1679,8 @@ def main():
         modification_list.append("5. 中国恶名度: 设为0")
     if options.get('date', False):
         modification_list.append("6. 游戏日期: 设为1836.1.1")
+    if options.get('money', False):
+        modification_list.append("7. 中国人口金钱: 设为9,999,999")
     
     for item in modification_list:
         print(item)
