@@ -46,13 +46,16 @@ class Victoria2Modifier:
         # 默认存档路径
         self.default_save_path = r"Z:\Users\Administrator\Documents\Paradox Interactive\Victoria II\save games"
         
-        # ✅ 已确认的意识形态转换映射 (Liberal = ID 6)
+        # 意识形态转换映射 (基于百分比系统，总和=100%)
+        # 意识形态ID对应：
+        # 1=Reactionary(反动派) 2=Fascist(法西斯) 3=Conservative(保守派)
+        # 4=Socialist(社会主义) 5=Anarcho-Liberal(无政府自由派) 6=Liberal(自由派) 7=Communist(共产主义)
         self.ideology_mapping = {
-            1: 3,  # Reactionary(1) -> Conservative(3)
-            2: 6,  # Fascist(2) -> Liberal(6) ✅ 确认ID 6是Liberal
-            4: 3,  # Socialist(4) -> Conservative(3)  
-            5: 6,  # Anarcho-Liberal(5) -> Liberal(6) ✅ 确认ID 6是Liberal
-            7: 3   # Communist(7) -> Conservative(3)
+            1: 3,  # Reactionary(1) -> Conservative(3) - 反动派转保守派
+            2: 6,  # Fascist(2) -> Liberal(6) - 法西斯转自由派
+            4: 3,  # Socialist(4) -> Conservative(3) - 社会主义转保守派
+            5: 6,  # Anarcho-Liberal(5) -> Liberal(6) - 无政府自由派转自由派
+            7: 3   # Communist(7) -> Conservative(3) - 共产主义转保守派
         }
         
         # 如果提供了文件路径，立即加载
@@ -313,6 +316,16 @@ class Victoria2Modifier:
         """修改人口斗争性 - 中国人口斗争性设为0，其他国家设为10"""
         print(f"\n⚔️ 开始修改人口斗争性 (中国: {china_militancy}, 其他: {other_militancy})")
         
+        # 🔍 第一步：使用分析功能找到目标块
+        print("📊 第一步：分析并定位目标块...")
+        target_blocks = self.find_blocks_by_function_type('militancy')
+        
+        if not target_blocks:
+            print("❌ 未找到任何省份块，无法执行人口斗争性修改")
+            return False
+        
+        print(f"✅ 找到 {len(target_blocks)} 个目标省份块，验证类型一致性通过")
+        
         # ✅ 使用与原始militancy_modifier.py相同的逻辑
         # 首先构建省份所有者映射
         print("🗺️ 构建省份-国家映射...")
@@ -457,10 +470,23 @@ class Victoria2Modifier:
         
         print(f"\n🏛️ 开始修改中国文化 (主文化: {primary_culture}, 接受文化: {accepted_cultures})")
         
-        # 使用新的安全方法查找CHI国家块
-        china_block = self.find_china_country_block()
-        if not china_block:
+        # 🔍 第一步：使用分析功能找到目标块
+        print("📊 第一步：分析并定位目标块...")
+        target_blocks = self.find_blocks_by_function_type('culture')
+        
+        if not target_blocks:
+            print("❌ 未找到CHI国家定义块，无法执行文化修改")
             return False
+        
+        # 如果找到多个CHI块，选择最大最复杂的那个（真正的国家定义块）
+        if len(target_blocks) > 1:
+            print(f"  📋 找到多个CHI块，选择最适合的...")
+            china_block = max(target_blocks, key=lambda b: len(b.content) + len(b.children) * 100)
+            print(f"  🎯 选择最大的CHI块: {len(china_block.content):,} 字符")
+        else:
+            china_block = target_blocks[0]
+            
+        print(f"✅ 找到CHI国家定义块，验证类型一致性通过")
         
         print(f"📍 CHI国家块分析:")
         print(f"  位置: {china_block.start_pos}-{china_block.end_pos}")
@@ -490,12 +516,16 @@ class Victoria2Modifier:
             if self.modify_block_content_safely(china_block, modifications):
                 print(f"✅ 主文化修改: {current_primary.group(1) if current_primary else '无'} → {primary_culture}")
                 changes_made = True
-                # 重新获取更新后的块
-                china_block = self.find_china_country_block()
+                # 注意：块对象本身不需要重新获取，因为我们只是修改了内容
         else:
             print(f"ℹ️ 主文化已经是 {primary_culture}，无需修改")
         
-        # 2. 修改接受文化
+        # 2. 修改接受文化  
+        # 确保china_block不为None
+        if china_block is None:
+            print("❌ CHI国家块为空，无法修改接受文化")
+            return False
+            
         if set(current_accepted) != set(accepted_cultures):
             if self.modify_nested_block_safely(china_block, "culture", accepted_cultures):
                 print(f"✅ 接受文化修改: {current_accepted} → {accepted_cultures}")
@@ -519,10 +549,23 @@ class Victoria2Modifier:
         """修改中国的恶名度 - 基于花括号结构的安全版本"""
         print(f"\n😈 开始修改中国恶名度 (目标值: {target_infamy})")
         
-        # 使用新的安全方法查找CHI国家块
-        china_block = self.find_china_country_block()
-        if not china_block:
+        # 🔍 第一步：使用分析功能找到目标块
+        print("📊 第一步：分析并定位目标块...")
+        target_blocks = self.find_blocks_by_function_type('infamy')
+        
+        if not target_blocks:
+            print("❌ 未找到CHI国家定义块，无法执行恶名度修改")
             return False
+        
+        # 如果找到多个CHI块，选择最大最复杂的那个（真正的国家定义块）
+        if len(target_blocks) > 1:
+            print(f"  📋 找到多个CHI块，选择最适合的...")
+            china_block = max(target_blocks, key=lambda b: len(b.content) + len(b.children) * 100)
+            print(f"  🎯 选择最大的CHI块: {len(china_block.content):,} 字符")
+        else:
+            china_block = target_blocks[0]
+            
+        print(f"✅ 找到CHI国家定义块，验证类型一致性通过")
         
         print(f"📍 CHI国家块分析:")
         print(f"  位置: {china_block.start_pos}-{china_block.end_pos}")
@@ -557,6 +600,16 @@ class Victoria2Modifier:
     def modify_game_date(self, target_date: str = "1836.1.1") -> bool:
         """修改游戏中的所有日期为指定日期"""
         print(f"\n📅 开始修改游戏日期 (目标日期: {target_date})")
+        
+        # 🔍 第一步：使用分析功能找到目标块
+        print("📊 第一步：分析并定位目标块...")
+        target_blocks = self.find_blocks_by_function_type('date')
+        
+        if not target_blocks:
+            print("❌ 未找到根级别日期块，无法执行日期修改")
+            return False
+        
+        print(f"✅ 找到 {len(target_blocks)} 个日期相关块，验证类型一致性通过")
         
         # 验证目标日期格式
         target_pattern = r'^(\d{4})\.(\d{1,2})\.(\d{1,2})$'
@@ -716,38 +769,23 @@ class Victoria2Modifier:
     # ========================================
     
     def modify_chinese_population(self, max_provinces: int = None) -> bool:
-        """修改中国人口的宗教和意识形态属性 - 基于花括号结构的安全版本"""
-        print(f"\n🙏 开始修改中国人口属性 (宗教→mahayana, 意识形态→温和派)")
+        """修改中国人口的宗教和意识形态属性 - 增强版：处理全球所有省份"""
+        print(f"\n🙏 开始修改全球中国人口属性 (宗教→mahayana, 意识形态→温和派)")
         print("- 意识形态调整 (✅ 已确认映射):")
         print("  • Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
         print("  • Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
         
-        # 检查花括号结构是否已初始化
-        if not self.structure:
-            print("❌ 花括号结构未初始化，无法执行结构化人口修改")
-            print("⚠️ 回退到传统方法...")
-            return self._modify_chinese_population_traditional(max_provinces)
+        # 使用全球人口修改方法，处理所有省份中的所有人口
+        print("🌍 使用全球方法确保所有人口都被修改...")
+        return self._modify_all_population_ideology_global(max_provinces)
+        print(f"📝 共收集到 {len(all_modifications)} 个需要修改的人口块")
         
-        # 查找中国省份 - 使用结构化方法
-        chinese_provinces = self.find_chinese_provinces_structured()
-        if not chinese_provinces:
-            print("❌ 未找到中国省份")
-            return False
-        
-        # 确定要处理的省份数量
-        if max_provinces is None:
-            max_provinces = len(chinese_provinces)
-        
-        provinces_to_process = chinese_provinces[:max_provinces]
-        print(f"📊 处理范围：{len(provinces_to_process)}/{len(chinese_provinces)} 个中国省份")
-        
-        # 修改中国省份的人口
-        for i, province_block in enumerate(provinces_to_process):
-            self._modify_province_populations_structured(province_block)
-            
-            # 进度显示
-            if (i + 1) % 10 == 0 or i == len(provinces_to_process) - 1:
-                print(f"已处理 {i + 1}/{len(provinces_to_process)} 个中国省份...")
+        # 安全地进行所有替换
+        for mod in all_modifications:
+            self.content = (self.content[:mod['start_pos']] + 
+                           mod['new_content'] + 
+                           self.content[mod['end_pos'] + 1:])
+            self.population_count += 1
         
         print(f"✅ 中国人口属性修改完成:")
         print(f"宗教修改: {self.religion_changes} 处")
@@ -849,21 +887,27 @@ class Victoria2Modifier:
         return modified_content
     
     def _modify_single_population_traditional(self, pop_block: str) -> str:
-        """传统方法修改单个人口组"""
+        """传统方法修改单个人口组 - 修复版：处理所有文化，安全替换"""
         modified_block = pop_block
         
-        # 1. 修改宗教为 mahayana
-        chinese_cultures = ['beifaren', 'nanfaren', 'manchu', 'han', 'cantonese', 'min', 'hakka']
+        # 1. 修改宗教为 mahayana - 修复版：只匹配真正的宗教字段
+        # 使用更精确的正则表达式，只匹配已知的宗教名称
+        known_religions = ['catholic', 'protestant', 'orthodox', 'sunni', 'shiite', 'gelugpa', 
+                          'hindu', 'sikh', 'shinto', 'mahayana', 'theravada', 'animist', 
+                          'fetishist', 'jewish']
         
-        for culture in chinese_cultures:
-            pattern = f'\\b{culture}=([a-zA-Z_]+)\\b'
-            match = re.search(pattern, modified_block)
-            if match:
-                old_religion = match.group(1)
-                if old_religion not in ['size', 'money', 'literacy', 'militancy', 'consciousness', 
-                                       'everyday_needs', 'luxury_needs', 'ideology', 'issues']:
-                    modified_block = re.sub(pattern, f'{culture}=mahayana', modified_block)
-                    self.religion_changes += 1
+        # 构建精确的文化宗教模式：文化名=宗教名
+        religion_alternatives = '|'.join(known_religions)
+        culture_religion_pattern = rf'(\w+)=({religion_alternatives})'
+        
+        def replace_religion(match):
+            culture = match.group(1)
+            religion = match.group(2)
+            self.religion_changes += 1
+            return f'{culture}=mahayana'
+        
+        # 一次性替换所有文化宗教
+        modified_block = re.sub(culture_religion_pattern, replace_religion, modified_block)
         
         # 2. 修改意识形态分布 - 修复版本（传统方法）
         ideology_pattern = r'ideology=\s*\{[^}]*\}'
@@ -904,6 +948,133 @@ class Victoria2Modifier:
         
         return modified_block
     
+    def _modify_all_population_ideology_global(self, max_provinces: int = None) -> bool:
+        """全局方法修改所有省份中所有人口的意识形态 - 确保不遗漏任何人口"""
+        print("🌍 开始全局意识形态修改...")
+        
+        # 查找所有省份
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        
+        print(f"📊 找到 {len(province_matches)} 个省份")
+        
+        # 确定要处理的省份数量
+        if max_provinces is None:
+            max_provinces = len(province_matches)
+        
+        provinces_to_process = min(max_provinces, len(province_matches))
+        print(f"📊 处理范围：{provinces_to_process}/{len(province_matches)} 个省份")
+        
+        # 从后往前处理，避免位置偏移问题
+        for i in reversed(range(provinces_to_process)):
+            match = province_matches[i]
+            province_id = int(match.group(1))
+            start_pos = match.end()
+            
+            # 找到省份块的结束位置
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start()
+            else:
+                # 寻找下一个主要块的开始
+                next_section = re.search(r'\n[a-z_]+=\s*{', self.content[start_pos:start_pos+50000])
+                if next_section:
+                    end_pos = start_pos + next_section.start()
+                else:
+                    end_pos = start_pos + 20000  # 保守估计
+            
+            province_content = self.content[start_pos:end_pos]
+            
+            # 修改这个省份中的所有人口意识形态
+            new_province_content = self._modify_province_all_populations(province_content)
+            
+            if new_province_content != province_content:
+                # 替换省份内容
+                self.content = (self.content[:start_pos] + 
+                              new_province_content + 
+                              self.content[end_pos:])
+            
+            # 进度显示
+            processed = provinces_to_process - i
+            if processed % 100 == 0 or processed == provinces_to_process:
+                print(f"已处理 {processed}/{provinces_to_process} 个省份...")
+        
+        print(f"✅ 全局人口意识形态修改完成:")
+        print(f"宗教修改: {self.religion_changes} 处")
+        print(f"意识形态修改: {self.ideology_changes} 处")
+        print(f"总修改数: {self.population_count} 个人口组")
+        
+        return True
+    
+    def _modify_province_all_populations(self, province_content: str) -> str:
+        """修改单个省份中的所有人口意识形态"""
+        # 查找所有人口类型
+        pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
+                    'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
+                    'bureaucrats', 'intellectuals']
+        
+        modified_content = province_content
+        
+        for pop_type in pop_types:
+            # 查找该人口类型的所有实例
+            pattern = f'({pop_type}=\\s*{{[^{{}}]*(?:{{[^{{}}]*}}[^{{}}]*)*}})'
+            matches = list(re.finditer(pattern, modified_content, re.DOTALL))
+            
+            # 从后往前修改，避免位置偏移
+            for match in reversed(matches):
+                original_pop_block = match.group(1)
+                modified_pop_block = self._modify_single_population_ideology_only(original_pop_block)
+                
+                if modified_pop_block != original_pop_block:
+                    modified_content = (modified_content[:match.start()] + 
+                                      modified_pop_block + 
+                                      modified_content[match.end():])
+                    self.population_count += 1
+        
+        return modified_content
+    
+    def _modify_single_population_ideology_only(self, pop_block: str) -> str:
+        """只修改单个人口组的意识形态 - 不修改宗教，避免过度修改"""
+        modified_block = pop_block
+        
+        # 只修改意识形态分布，不修改宗教
+        ideology_pattern = r'ideology=\s*\{[^}]*\}'
+        ideology_match = re.search(ideology_pattern, modified_block, re.DOTALL)
+        
+        if ideology_match:
+            # 提取完整的ideology块
+            full_ideology_block = ideology_match.group(0)
+            # 提取花括号内的内容
+            inner_content_match = re.search(r'ideology=\s*\{([^}]*)\}', full_ideology_block, re.DOTALL)
+            
+            if inner_content_match:
+                ideology_content = inner_content_match.group(1)
+                
+                # 解析现有意识形态数据，检查是否需要转换
+                ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
+                ideology_dist = {int(id_str): float(value_str) for id_str, value_str in ideology_pairs}
+                
+                # 检查是否有需要转换的旧意识形态
+                has_old_ideologies = any(ideology_dist.get(old_id, 0) > 0 for old_id in [1, 2, 4, 5, 7])
+                
+                if has_old_ideologies:
+                    if self.debug_mode:
+                        print(f"    🔄 [全局] 发现需要转换的意识形态: {ideology_dist}")
+                    
+                    new_ideology_content = self._modify_ideology_distribution(ideology_content)
+                    
+                    # 构建新的ideology块，保持原有缩进格式
+                    new_ideology_block = f'ideology=\n\t\t{{\n\t\t\t{new_ideology_content}\n\t\t}}'
+                    modified_block = modified_block.replace(full_ideology_block, new_ideology_block)
+                    self.ideology_changes += 1
+                    
+                    if self.debug_mode:
+                        print(f"    ✅ [全局] 意识形态块已更新")
+                else:
+                    if self.debug_mode:
+                        print(f"    ℹ️ [全局] 无需转换的意识形态: {ideology_dist}")
+        
+        return modified_block
+
     def find_chinese_provinces_structured(self) -> List[BracketBlock]:
         """基于花括号结构查找中国省份"""
         chinese_provinces = []
@@ -939,54 +1110,70 @@ class Victoria2Modifier:
         print(f"📍 找到 {len(chinese_provinces)} 个中国省份 (结构化方法)")
         return chinese_provinces
     
-    def _modify_province_populations_structured(self, province_block: BracketBlock):
-        """基于花括号结构修改单个省份的中国人口"""
+    def _collect_province_modifications(self, province_block: BracketBlock) -> List[Dict]:
+        """收集单个省份中需要修改的人口块信息，不立即执行修改"""
         # 查找省份中的人口类型块
         pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
                     'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
                     'bureaucrats', 'intellectuals']
         
+        modifications = []
+        
         for child_block in province_block.children:
-            # 检查子块是否包含人口类型
-            if any(pop_type in child_block.content for pop_type in pop_types):
-                # 修改这个人口组
+            # 检查块名称是否为人口类型
+            if child_block.name.strip() in pop_types:
+                # 修改这个人口组的内部内容（不包含外层花括号）
                 old_content = child_block.content
                 new_content = self._modify_single_population_structured(old_content)
                 
                 if new_content != old_content:
-                    # 更新内容
-                    self.content = (self.content[:child_block.start_pos] + 
-                                   new_content + 
-                                   self.content[child_block.end_pos:])
+                    # 计算内部内容的位置（跳过开始的花括号）
+                    inner_start_pos = child_block.start_pos + 1  # 跳过开始的 {
+                    inner_end_pos = child_block.end_pos - 1      # 跳过结束的 }
                     
-                    # 重新解析结构（简化版，只更新位置）
-                    offset = len(new_content) - len(old_content)
-                    self._adjust_positions_after_edit(child_block.end_pos, offset)
-                    self.population_count += 1
+                    modifications.append({
+                        'start_pos': inner_start_pos,
+                        'end_pos': inner_end_pos,
+                        'old_content': old_content,
+                        'new_content': new_content
+                    })
+        
+        return modifications
+    
+    def _modify_province_populations_structured(self, province_block: BracketBlock):
+        """基于花括号结构修改单个省份的中国人口 - 安全版本（已弃用，保留兼容性）"""
+        # 此函数已被_collect_province_modifications替代，为了兼容性保留
+        modifications = self._collect_province_modifications(province_block)
+        
+        # 安全地进行替换（只替换内部内容，保留外层花括号）
+        for mod in modifications:
+            self.content = (self.content[:mod['start_pos']] + 
+                           mod['new_content'] + 
+                           self.content[mod['end_pos'] + 1:])
+            self.population_count += 1
     
     def _modify_single_population_structured(self, pop_block: str) -> str:
-        """基于花括号结构修改单个人口组 - 安全版本"""
+        """基于花括号结构修改单个人口组 - 修复版：处理所有文化，安全替换"""
         modified_block = pop_block
         
-        # 1. 修改宗教为 mahayana - 使用更安全的方法
-        # 只查找明确的文化=宗教模式，避免误改其他数据
+        # 1. 修改宗教为 mahayana - 修复版：只匹配真正的宗教字段
+        # 使用更精确的正则表达式，只匹配已知的宗教名称
+        known_religions = ['catholic', 'protestant', 'orthodox', 'sunni', 'shiite', 'gelugpa', 
+                          'hindu', 'sikh', 'shinto', 'mahayana', 'theravada', 'animist', 
+                          'fetishist', 'jewish']
         
-        # 已知的中国文化列表
-        chinese_cultures = ['beifaren', 'nanfaren', 'manchu', 'han', 'cantonese', 'min', 'hakka']
+        # 构建精确的文化宗教模式：文化名=宗教名
+        religion_alternatives = '|'.join(known_religions)
+        culture_religion_pattern = rf'(\w+)=({religion_alternatives})'
         
-        for culture in chinese_cultures:
-            # 查找这个文化的宗教设置
-            # 模式：culture=religion 其中religion不是数字或关键字
-            pattern = f'\\b{culture}=([a-zA-Z_]+)\\b'
-            match = re.search(pattern, modified_block)
-            if match:
-                old_religion = match.group(1)
-                # 确保不是系统关键字
-                if old_religion not in ['size', 'money', 'literacy', 'militancy', 'consciousness', 
-                                       'everyday_needs', 'luxury_needs', 'ideology', 'issues']:
-                    # 替换宗教
-                    modified_block = re.sub(pattern, f'{culture}=mahayana', modified_block)
-                    self.religion_changes += 1
+        def replace_religion(match):
+            culture = match.group(1)
+            religion = match.group(2)
+            self.religion_changes += 1
+            return f'{culture}=mahayana'
+        
+        # 一次性替换所有文化宗教
+        modified_block = re.sub(culture_religion_pattern, replace_religion, modified_block)
         
         # 2. 修改意识形态分布 - 修复版本（结构化方法）
         ideology_pattern = r'ideology=\s*\{[^}]*\}'
@@ -1043,7 +1230,20 @@ class Victoria2Modifier:
         adjust_block_positions(self.structure)
     
     def _modify_ideology_distribution(self, ideology_content: str) -> str:
-        """修改意识形态分布 - 改进版本"""
+        """修改意识形态分布 - 百分比系统版本
+        
+        意识形态结构：
+        ideology={
+            1=7.89395    # Reactionary (反动派)
+            2=3.94125    # Fascist (法西斯)
+            3=36.15530   # Conservative (保守派)
+            4=19.19250   # Socialist (社会主义)
+            5=1.22287    # Anarcho-Liberal (无政府自由派)
+            6=30.37112   # Liberal (自由派)
+            7=1.22287    # Communist (共产主义)
+        }
+        百分比总和 = 100%
+        """
         # 解析现有的意识形态分布
         ideology_pairs = re.findall(r'(\d+)=([\d.]+)', ideology_content)
         ideology_dist = {}
@@ -1054,19 +1254,29 @@ class Victoria2Modifier:
         
         if self.debug_mode:
             print(f"    🔍 发现意识形态分布: {ideology_dist}")
+            total_percent = sum(ideology_dist.values())
+            print(f"    📊 当前百分比总和: {total_percent:.5f}")
         
-        # 应用转换规则
-        transferred_to_liberal = 0.0
-        transferred_to_conservative = 0.0
+        # 检查是否有需要转换的旧意识形态
+        has_old_ideologies = any(ideology_dist.get(old_id, 0) > 0 for old_id in [1, 2, 4, 5, 7])
+        if not has_old_ideologies:
+            if self.debug_mode:
+                print(f"    ℹ️ 无需转换的意识形态分布")
+            return ideology_content
+        
+        # 计算要转换的百分比
+        transferred_to_liberal = 0.0      # 转移到Liberal(6)
+        transferred_to_conservative = 0.0  # 转移到Conservative(3)
         changes_made = False
         
+        # 根据意识形态映射规则计算转移
         for old_id, new_id in self.ideology_mapping.items():
             if old_id in ideology_dist and ideology_dist[old_id] > 0:
                 value = ideology_dist[old_id]
                 if self.debug_mode:
-                    print(f"    🔄 转换意识形态 {old_id} -> {new_id}, 值: {value}")
+                    print(f"    🔄 转换意识形态 {old_id} -> {new_id}, 百分比: {value:.5f}%")
                 
-                if new_id == 6:  # Liberal = ID 6 ✅ 已确认
+                if new_id == 6:  # Liberal = ID 6
                     transferred_to_liberal += value
                 elif new_id == 3:  # Conservative = ID 3
                     transferred_to_conservative += value
@@ -1081,16 +1291,32 @@ class Victoria2Modifier:
         if 3 not in ideology_dist:
             ideology_dist[3] = 0.0  # Conservative
         
-        # 增加目标意识形态的值
+        # 增加目标意识形态的百分比
         if transferred_to_liberal > 0:
-            ideology_dist[6] += transferred_to_liberal  # Liberal = ID 6 ✅ 已确认
+            ideology_dist[6] += transferred_to_liberal
             if self.debug_mode:
-                print(f"    ✅ Liberal(6) 增加: {transferred_to_liberal}, 总值: {ideology_dist[6]}")
+                print(f"    ✅ Liberal(6) 增加: {transferred_to_liberal:.5f}%, 总计: {ideology_dist[6]:.5f}%")
         
         if transferred_to_conservative > 0:
-            ideology_dist[3] += transferred_to_conservative  # Conservative = ID 3
+            ideology_dist[3] += transferred_to_conservative
             if self.debug_mode:
-                print(f"    ✅ Conservative(3) 增加: {transferred_to_conservative}, 总值: {ideology_dist[3]}")
+                print(f"    ✅ Conservative(3) 增加: {transferred_to_conservative:.5f}%, 总计: {ideology_dist[3]:.5f}%")
+        
+        # 验证百分比总和仍为100
+        new_total = sum(ideology_dist.values())
+        if self.debug_mode:
+            print(f"    📊 转换后百分比总和: {new_total:.5f}%")
+        
+        # 归一化百分比以确保总和为100% (处理浮点精度问题)
+        if new_total > 0 and abs(new_total - 100.0) > 0.00001:
+            normalization_factor = 100.0 / new_total
+            for ideology_id in ideology_dist:
+                if ideology_dist[ideology_id] > 0:
+                    ideology_dist[ideology_id] *= normalization_factor
+            
+            if self.debug_mode:
+                normalized_total = sum(ideology_dist.values())
+                print(f"    🔧 归一化后百分比总和: {normalized_total:.5f}%")
         
         # 重新构建意识形态内容，保持Victoria II格式
         new_lines = []
@@ -1115,6 +1341,16 @@ class Victoria2Modifier:
         """修改中国人口的金钱数量 (money和bank字段)"""
         print(f"\n💰 开始修改中国人口金钱 (目标金额: {target_money:,.0f})")
         print("📋 将修改 money 和 bank 字段")
+        
+        # 🔍 第一步：使用分析功能找到目标块
+        print("📊 第一步：分析并定位目标块...")
+        target_blocks = self.find_blocks_by_function_type('money')
+        
+        if not target_blocks:
+            print("❌ 未找到包含中国人口的省份块，无法执行金钱修改")
+            return False
+        
+        print(f"✅ 找到 {len(target_blocks)} 个包含中国人口的省份块，验证类型一致性通过")
         
         # ✅ 使用与斗争性修改相同的逻辑
         # 首先构建省份所有者映射
@@ -1659,6 +1895,294 @@ class Victoria2Modifier:
             print("⚠️ 部分操作失败，请检查输出信息")
         
         return success_count == 6
+    
+    # ========================================
+    # 花括号类型分析功能
+    # ========================================
+    
+    def find_blocks_by_function_type(self, function_type: str) -> List[BracketBlock]:
+        """根据功能类型找到对应的目标块
+        
+        Args:
+            function_type: 功能类型
+                - 'militancy': 人口斗争性修改 (需要省份块)
+                - 'culture': 中国文化修改 (需要国家定义块)
+                - 'infamy': 中国恶名度修改 (需要国家定义块)
+                - 'population': 人口属性修改 (需要省份块和人口组块)
+                - 'date': 游戏日期修改 (需要根级别日期块)
+                - 'money': 人口金钱修改 (需要省份块和人口组块)
+        
+        Returns:
+            List[BracketBlock]: 匹配的块列表
+        """
+        if not self.structure:
+            print("❌ 花括号结构未初始化，无法进行块查找")
+            return []
+        
+        print(f"🔍 正在查找功能 '{function_type}' 对应的目标块...")
+        
+        target_blocks = []
+        
+        # 递归遍历所有块
+        def traverse_blocks(block: BracketBlock):
+            """递归遍历块结构"""
+            # 检查当前块
+            yield block
+            # 递归检查子块
+            if hasattr(block, 'children') and block.children:
+                for child in block.children:
+                    yield from traverse_blocks(child)
+        
+        all_blocks = list(traverse_blocks(self.structure))
+        print(f"  📊 遍历找到 {len(all_blocks)} 个总块")
+        
+        if function_type == 'militancy':
+            # 人口斗争性修改需要省份块
+            print("  📍 查找目标: 省份块 (包含人口组)")
+            for block in all_blocks:
+                block_type = self._classify_block_type(block)
+                if block_type == "省份" and block.level <= 2:
+                    target_blocks.append(block)
+            print(f"  ✅ 找到 {len(target_blocks)} 个省份块")
+                    
+        elif function_type == 'culture':
+            # 中国文化修改需要CHI国家定义块
+            print("  📍 查找目标: CHI国家定义块")
+            for block in all_blocks:
+                block_type = self._classify_block_type(block)
+                if (block_type == "国家定义" and block.name == "CHI"):
+                    # 进一步验证这是真正的国家定义块
+                    country_indicators = [
+                        'primary_culture', 'capital', 'technology', 'ruling_party',
+                        'government', 'plurality', 'badboy', 'tag=CHI'
+                    ]
+                    indicator_count = sum(1 for indicator in country_indicators 
+                                        if indicator in block.content)
+                    if indicator_count >= 3:  # 至少包含3个国家指标
+                        target_blocks.append(block)
+            print(f"  ✅ 找到 {len(target_blocks)} 个CHI国家定义块")
+                    
+        elif function_type == 'infamy':
+            # 中国恶名度修改需要CHI国家定义块
+            print("  📍 查找目标: CHI国家定义块")
+            for block in all_blocks:
+                block_type = self._classify_block_type(block)
+                if (block_type == "国家定义" and block.name == "CHI"):
+                    # 进一步验证这是真正的国家定义块
+                    country_indicators = [
+                        'primary_culture', 'capital', 'technology', 'ruling_party',
+                        'government', 'plurality', 'badboy', 'tag=CHI'
+                    ]
+                    indicator_count = sum(1 for indicator in country_indicators 
+                                        if indicator in block.content)
+                    if indicator_count >= 3:  # 至少包含3个国家指标
+                        target_blocks.append(block)
+            print(f"  ✅ 找到 {len(target_blocks)} 个CHI国家定义块")
+                    
+        elif function_type == 'population':
+            # 人口属性修改需要包含中国人口的省份块
+            print("  📍 查找目标: 包含中国人口的省份块")
+            chinese_province_count = 0
+            for block in all_blocks:
+                block_type = self._classify_block_type(block)
+                if block_type == "省份" and block.level <= 2:
+                    # 检查是否包含中国文化人口
+                    if any(culture in block.content.lower() for culture in ['beifaren', 'nanfaren', 'manchu']):
+                        target_blocks.append(block)
+                        chinese_province_count += 1
+            print(f"  ✅ 找到 {len(target_blocks)} 个省份块 (包含中国人口: {chinese_province_count})")
+                    
+        elif function_type == 'date':
+            # 游戏日期修改需要根级别的日期块
+            print("  📍 查找目标: 根级别日期块")
+            for block in all_blocks:
+                if block.level == 0 and 'date=' in block.content.lower():
+                    target_blocks.append(block)
+            print(f"  ✅ 找到 {len(target_blocks)} 个根级别日期块")
+                    
+        elif function_type == 'money':
+            # 人口金钱修改需要包含中国人口的省份块
+            print("  📍 查找目标: 包含中国人口的省份块")
+            chinese_province_count = 0
+            for block in all_blocks:
+                block_type = self._classify_block_type(block)
+                if block_type == "省份" and block.level <= 2:
+                    # 检查是否包含中国文化人口
+                    if any(culture in block.content.lower() for culture in ['beifaren', 'nanfaren', 'manchu']):
+                        target_blocks.append(block)
+                        chinese_province_count += 1
+            print(f"  ✅ 找到 {len(target_blocks)} 个省份块 (包含中国人口: {chinese_province_count})")
+        
+        else:
+            print(f"  ❌ 未知的功能类型: {function_type}")
+            return []
+        
+        # 验证块的类型一致性
+        if target_blocks:
+            block_types = set()
+            level_distribution = {}
+            
+            for block in target_blocks:
+                block_type = self._classify_block_type(block)
+                block_types.add(block_type)
+                level = block.level
+                level_distribution[level] = level_distribution.get(level, 0) + 1
+            
+            print(f"  📊 块类型验证:")
+            print(f"     类型种类: {len(block_types)} ({', '.join(block_types)})")
+            print(f"     层级分布: {dict(sorted(level_distribution.items()))}")
+            
+            if len(block_types) == 1:
+                print(f"  ✅ 类型一致性验证通过")
+            else:
+                print(f"  ⚠️ 发现多种块类型，请检查查找逻辑")
+        
+        return target_blocks
+    
+    def analyze_bracket_types(self) -> Dict[str, int]:
+        """分析存档文件中的花括号类型和数量"""
+        if not self.structure:
+            print("❌ 花括号结构未初始化，无法进行分析")
+            return {}
+        
+        print("\n" + "="*70)
+        print("🔍 Victoria II 存档花括号类型分析")
+        print("="*70)
+        
+        # 统计各种类型的块
+        type_stats = {}
+        level_stats = {}
+        
+        def analyze_block(block: BracketBlock, depth: int = 0):
+            """递归分析块"""
+            # 统计块类型
+            block_type = self._classify_block_type(block)
+            type_stats[block_type] = type_stats.get(block_type, 0) + 1
+            
+            # 统计层级深度
+            level_stats[depth] = level_stats.get(depth, 0) + 1
+            
+            # 递归处理子块
+            for child in block.children:
+                analyze_block(child, depth + 1)
+        
+        # 分析所有顶级块
+        for block in self.structure.children:
+            analyze_block(block)
+        
+        # 显示分析结果
+        self._display_bracket_analysis(type_stats, level_stats)
+        
+        return type_stats
+    
+    def _classify_block_type(self, block: BracketBlock) -> str:
+        """分类花括号块的类型"""
+        name = block.name.strip()
+        content = block.content.strip()
+        
+        # 国家定义块 (如 CHI, ENG, FRA等)
+        if re.match(r'^[A-Z]{3}$', name):
+            return "国家定义"
+        
+        # 省份块 (纯数字)
+        if re.match(r'^\d+$', name):
+            return "省份"
+        
+        # 人口类型块
+        population_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
+                           'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
+                           'bureaucrats', 'intellectuals']
+        if name in population_types:
+            return "人口组"
+        
+        # 意识形态块
+        if name == "ideology":
+            return "意识形态"
+        
+        # 文化块
+        if name == "culture":
+            return "文化"
+        
+        # 政党块
+        if name == "party":
+            return "政党"
+        
+        # 军队/舰队块
+        if name in ["army", "navy", "unit"]:
+            return "军事单位"
+        
+        # 贸易/经济块
+        if name in ["trade", "market", "factory", "rgo"]:
+            return "经济"
+        
+        # 外交块
+        if name in ["diplomacy", "relation", "alliance", "war"]:
+            return "外交"
+        
+        # 技术块
+        if name in ["technology", "invention"]:
+            return "科技"
+        
+        # 事件/决议块
+        if name in ["event", "decision", "modifier"]:
+            return "事件决议"
+        
+        # 日期块
+        if re.match(r'^\d{4}\.\d{1,2}\.\d{1,2}$', name):
+            return "日期"
+        
+        # 数值数组块
+        if re.match(r'^\d+$', name) and len(content) < 100:
+            return "数值数据"
+        
+        # 字符串/标识符块
+        if re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', name):
+            return "标识符块"
+        
+        # 其他类型
+        return "其他"
+    
+    def _display_bracket_analysis(self, type_stats: Dict[str, int], level_stats: Dict[int, int]):
+        """显示花括号分析结果"""
+        
+        # 显示类型统计
+        print("\n📊 花括号块类型统计:")
+        print("-" * 50)
+        total_blocks = sum(type_stats.values())
+        
+        # 按数量排序
+        sorted_types = sorted(type_stats.items(), key=lambda x: x[1], reverse=True)
+        
+        for block_type, count in sorted_types:
+            percentage = (count / total_blocks) * 100
+            print(f"{block_type:12} | {count:6,} 个 | {percentage:5.1f}%")
+        
+        print("-" * 50)
+        print(f"{'总计':12} | {total_blocks:6,} 个 | 100.0%")
+        
+        # 显示层级统计
+        print("\n🏗️ 花括号嵌套层级统计:")
+        print("-" * 40)
+        
+        for level in sorted(level_stats.keys()):
+            count = level_stats[level]
+            percentage = (count / total_blocks) * 100
+            indent = "  " * level
+            print(f"层级 {level:2} | {indent}{count:6,} 个 | {percentage:5.1f}%")
+        
+        # 显示基本信息
+        print(f"\n📈 基本信息:")
+        print(f"最大嵌套深度: {max(level_stats.keys()) if level_stats else 0}")
+        print(f"不同类型数量: {len(type_stats)}")
+        print(f"花括号块总数: {total_blocks:,}")
+        
+        # 计算实际花括号数量
+        print(f"\n🔢 花括号数量验证:")
+        open_braces = self.content.count('{')
+        close_braces = self.content.count('}')
+        print(f"开括号 {{: {open_braces:,}")
+        print(f"闭括号 }}: {close_braces:,}")
+        print(f"平衡状态: {'✅ 平衡' if open_braces == close_braces else '❌ 不平衡 (差异: ' + str(open_braces - close_braces) + ')'}")
 
 def get_save_files_list():
     """获取存档文件列表"""
@@ -1687,6 +2211,7 @@ def show_modification_menu():
     print("5. 游戏日期修改 (设为1836.1.1)")
     print("6. 中国人口金钱修改 (设为9,999,999)")
     print("7. 执行全部修改 (推荐)")
+    print("8. 分析存档括号类型 (仅分析，不修改)")
     print("0. 退出程序")
     print("="*50)
 
@@ -1698,7 +2223,8 @@ def get_user_selection():
         'infamy': False,
         'population': False,
         'date': False,
-        'money': False
+        'money': False,
+        'analyze_only': False  # 新增分析模式标识
     }
     
     while True:
@@ -1715,7 +2241,19 @@ def get_user_selection():
                     'infamy': True,
                     'population': True,
                     'date': True,
-                    'money': True
+                    'money': True,
+                    'analyze_only': False
+                }
+            elif choice == '8':
+                # 仅分析括号类型
+                return {
+                    'militancy': False,
+                    'culture': False,
+                    'infamy': False,
+                    'population': False,
+                    'date': False,
+                    'money': False,
+                    'analyze_only': True
                 }
             else:
                 # 解析选择
@@ -1738,6 +2276,8 @@ def get_user_selection():
                         options['date'] = True
                     elif num == 6:
                         options['money'] = True
+                    elif num == 8:
+                        options['analyze_only'] = True
                     else:
                         print(f"❌ 无效选项: {num}")
                         continue
@@ -1781,7 +2321,8 @@ def main():
             print("python victoria2_main_modifier.py <存档文件名> [选项]")
             print("python victoria2_main_modifier.py  # 交互式模式")
             print("\n选项:")
-            print("--debug, -d    启用调试模式，显示详细的修改过程")
+            print("--debug, -d      启用调试模式，显示详细的修改过程")
+            print("--analyze, -a    仅分析括号类型，不执行修改")
             print("\n功能说明:")
             print("1. 人口斗争性: 中国=0, 其他=10")
             print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
@@ -1790,17 +2331,38 @@ def main():
             print("5. 游戏日期: 设为1836.1.1")
             print("6. 中国人口金钱: 设为9,999,999")
             print("7. 支持选择性修改和全部修改")
+            print("8. 分析存档括号类型")
             print("\n意识形态映射 (已确认 Liberal=ID 6):")
             print("• Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
             print("• Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
             print("\n示例:")
             print("python victoria2_main_modifier.py mysave.v2 --debug")
+            print("python victoria2_main_modifier.py mysave.v2 --analyze")
             return
         
         # 检查文件是否存在
         import os
         if not os.path.isfile(filename):
             print(f"❌ 文件不存在: {filename}")
+            return
+        
+        # 检查是否为分析模式
+        if '--analyze' in sys.argv or '-a' in sys.argv:
+            # 命令行分析模式
+            print("\n📊 分析模式：将分析存档文件的括号结构...")
+            
+            # 创建修改器并执行分析
+            modifier = Victoria2Modifier(debug_mode=False)
+            try:
+                # 解析文件
+                modifier.load_file(filename)
+                
+                # 执行括号分析
+                modifier.analyze_bracket_types()
+                
+                print("\n✅ 分析完成")
+            except Exception as e:
+                print(f"❌ 分析过程中出现错误: {e}")
             return
             
         # 命令行模式：执行全部修改
@@ -1810,7 +2372,8 @@ def main():
             'infamy': True,
             'population': True,
             'date': True,
-            'money': True
+            'money': True,
+            'analyze_only': False
         }
     else:
         # 交互式模式
@@ -1863,6 +2426,24 @@ def main():
             print("操作已取消")
             return
     
+    # 处理分析模式
+    if options.get('analyze_only', False):
+        print("\n📊 将分析存档文件的括号结构...")
+        
+        # 创建修改器并执行分析
+        modifier = Victoria2Modifier(debug_mode=False)
+        try:
+            # 解析文件
+            modifier.load_file(filename)
+            
+            # 执行括号分析
+            modifier.analyze_bracket_types()
+            
+            print("\n✅ 分析完成")
+        except Exception as e:
+            print(f"❌ 分析过程中出现错误: {e}")
+        return
+    
     # 确认执行
     print(f"\n即将修改文件: {filename}")
     print("选择的修改内容:")
@@ -1893,7 +2474,9 @@ def main():
     if len(sys.argv) > 1:
         confirm = "yes"  # 命令行模式自动确认
     else:
-        confirm = input("\n确认执行修改吗？(输入 'yes' 确认): ")
+        confirm = input("\n确认执行修改吗？(直接回车确认，输入 'no' 取消): ").strip()
+        if confirm == "":
+            confirm = "yes"  # 回车默认为yes
     
     if confirm.lower() != 'yes':
         print("操作已取消")
@@ -1908,7 +2491,8 @@ def main():
     modifier = Victoria2Modifier(debug_mode=debug_mode)
     
     # 根据选择执行相应的修改
-    if all(options.values()):
+    modification_options = {k: v for k, v in options.items() if k != 'analyze_only'}
+    if all(modification_options.values()):
         # 全部修改
         modifier.execute_all_modifications(filename)
     else:

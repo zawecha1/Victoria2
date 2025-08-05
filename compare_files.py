@@ -6,12 +6,21 @@
 
 def main():
     try:
-        # 读取两个文件
-        with open('China2281_01_01.v2', 'r', encoding='utf-8-sig') as f:
-            current = f.read()
+        # 读取两个文件 - 使用多种编码尝试
+        def read_file_with_multiple_encodings(filename):
+            encodings = ['utf-8-sig', 'utf-8', 'latin-1', 'cp1252', 'iso-8859-1']
+            for encoding in encodings:
+                try:
+                    with open(filename, 'r', encoding=encoding, errors='ignore') as f:
+                        content = f.read()
+                    print(f"✅ {filename} 读取成功 (编码: {encoding})")
+                    return content
+                except UnicodeDecodeError:
+                    continue
+            raise Exception(f"无法读取文件 {filename} - 所有编码尝试失败")
         
-        with open('China2281_01_01_selective_backup_20250728_213116.v2', 'r', encoding='utf-8-sig') as f:
-            backup = f.read()
+        current = read_file_with_multiple_encodings('autosave3.v2')
+        backup = read_file_with_multiple_encodings('autosave - 副本 (2).v2')
         
         print("=== 文件对比报告 ===")
         print(f"当前文件大小: {len(current):,} 字符")
