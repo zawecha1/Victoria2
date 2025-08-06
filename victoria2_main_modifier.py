@@ -1337,7 +1337,7 @@ class Victoria2Modifier:
     # 功能6: 中国人口金钱修改
     # ========================================
     
-    def modify_chinese_population_money(self, target_money: float = 9999999.0) -> bool:
+    def modify_chinese_population_money(self, target_money: float = 9999999999.0) -> bool:
         """修改中国人口的金钱数量 (money和bank字段)"""
         print(f"\n💰 开始修改中国人口金钱 (目标金额: {target_money:,.0f})")
         print("📋 将修改 money 和 bank 字段")
@@ -1604,7 +1604,7 @@ class Victoria2Modifier:
             selected_operations.append('date')
             selected_count += 1
         if options.get('money', False):
-            print("✓ 6. 中国人口金钱: 设为9,999,999")
+            print("✓ 6. 中国人口金钱: 设为9,999,999,999")
             selected_operations.append('money')
             selected_count += 1
         
@@ -1769,7 +1769,7 @@ class Victoria2Modifier:
         print("3. 中国恶名度: 设为0")
         print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
         print("5. 游戏日期: 设为1836.1.1")
-        print("6. 中国人口金钱: 设为9,999,999")
+        print("6. 中国人口金钱: 设为9,999,999,999")
         print("⚡ 每个功能独立执行，确保数据安全")
         print(f"{'='*70}")
         
@@ -2209,7 +2209,7 @@ def show_modification_menu():
     print("3. 中国恶名度修改 (设为0)")
     print("4. 中国人口属性修改 (宗教=mahayana, 意识形态=温和派)")
     print("5. 游戏日期修改 (设为1836.1.1)")
-    print("6. 中国人口金钱修改 (设为9,999,999)")
+    print("6. 中国人口金钱修改 (设为9,999,999,999)")
     print("7. 执行全部修改 (推荐)")
     print("8. 分析存档括号类型 (仅分析，不修改)")
     print("0. 退出程序")
@@ -2329,7 +2329,7 @@ def main():
             print("3. 中国恶名度: 设为0")
             print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
             print("5. 游戏日期: 设为1836.1.1")
-            print("6. 中国人口金钱: 设为9,999,999")
+            print("6. 中国人口金钱: 设为9,999,999,999")
             print("7. 支持选择性修改和全部修改")
             print("8. 分析存档括号类型")
             print("\n意识形态映射 (已确认 Liberal=ID 6):")
@@ -2465,7 +2465,7 @@ def main():
     if options.get('date', False):
         modification_list.append("6. 游戏日期: 设为1836.1.1")
     if options.get('money', False):
-        modification_list.append("7. 中国人口金钱: 设为9,999,999")
+        modification_list.append("7. 中国人口金钱: 设为9,999,999,999")
     
     for item in modification_list:
         print(item)
