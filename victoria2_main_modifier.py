@@ -1338,9 +1338,11 @@ class Victoria2Modifier:
     # 功能6: 中国人口金钱修改
     # ========================================
     
-    def modify_chinese_population_money(self, target_money: float = 9999999999.0) -> bool:
-        """修改中国人口的金钱数量 (money和bank字段)"""
-        print(f"\n💰 开始修改中国人口金钱 (目标金额: {target_money:,.0f})")
+    def modify_chinese_population_money(self, chinese_money: float = 9999999999.0, non_chinese_money: float = 0.0) -> bool:
+        """修改所有人口的金钱数量：中国人口设为指定金额，非中国人口清零"""
+        print(f"\n💰 开始修改人口金钱")
+        print(f"📋 中国人口金钱 → {chinese_money:,.0f}")
+        print(f"📋 非中国人口金钱 → {non_chinese_money:,.0f}")
         print("📋 将修改 money 和 bank 字段")
         
         # 🔍 第一步：使用分析功能找到目标块
@@ -1348,24 +1350,28 @@ class Victoria2Modifier:
         target_blocks = self.find_blocks_by_function_type('money')
         
         if not target_blocks:
-            print("❌ 未找到包含中国人口的省份块，无法执行金钱修改")
+            print("❌ 未找到包含人口的省份块，无法执行金钱修改")
             return False
         
-        print(f"✅ 找到 {len(target_blocks)} 个包含中国人口的省份块，验证类型一致性通过")
+        print(f"✅ 找到 {len(target_blocks)} 个包含人口的省份块，验证类型一致性通过")
         
         # ✅ 使用与斗争性修改相同的逻辑
         # 首先构建省份所有者映射
         print("🗺️ 构建省份-国家映射...")
         province_owners = self._build_province_owner_mapping()
         chinese_province_count = sum(1 for owner in province_owners.values() if owner == "CHI")
+        total_province_count = len(province_owners)
         print(f"找到 {chinese_province_count} 个中国省份")
+        print(f"找到 {total_province_count - chinese_province_count} 个非中国省份")
         
         # 查找所有省份
         province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
         province_matches = list(province_pattern.finditer(self.content))
         
-        money_changes = 0
-        processed_provinces = 0
+        chinese_money_changes = 0
+        non_chinese_money_changes = 0
+        chinese_provinces_processed = 0
+        non_chinese_provinces_processed = 0
         
         # 从后往前处理，避免位置偏移问题
         for i in reversed(range(len(province_matches))):
@@ -1386,11 +1392,11 @@ class Victoria2Modifier:
             province_content = self.content[start_pos:end_pos]
             owner = province_owners.get(province_id, "")
             
-            # 只处理中国省份
+            # 根据省份所有者决定金钱数额
             if owner == "CHI":
-                # 修改这个省份中所有人口的金钱
+                # 中国省份：设为指定金额
                 new_province_content, changes = self._modify_province_money(
-                    province_content, target_money
+                    province_content, chinese_money, is_chinese=True
                 )
                 
                 if changes > 0:
@@ -1399,28 +1405,63 @@ class Victoria2Modifier:
                                   new_province_content + 
                                   self.content[end_pos:])
                     
-                    money_changes += changes
+                    chinese_money_changes += changes
                 
-                processed_provinces += 1
+                chinese_provinces_processed += 1
                 
                 # 进度显示
-                if processed_provinces % 50 == 0:
-                    print(f"已处理 {processed_provinces}/{chinese_province_count} 个中国省份...")
+                if chinese_provinces_processed % 50 == 0:
+                    print(f"已处理 {chinese_provinces_processed}/{chinese_province_count} 个中国省份...")
+            
+            elif owner and owner != "CHI":
+                # 非中国省份：金钱清零
+                new_province_content, changes = self._modify_province_money(
+                    province_content, non_chinese_money, is_chinese=False
+                )
+                
+                if changes > 0:
+                    # 替换省份内容
+                    self.content = (self.content[:start_pos] + 
+                                  new_province_content + 
+                                  self.content[end_pos:])
+                    
+                    non_chinese_money_changes += changes
+                
+                non_chinese_provinces_processed += 1
+                
+                # 进度显示（减少频率以避免刷屏）
+                if non_chinese_provinces_processed % 100 == 0:
+                    print(f"已处理 {non_chinese_provinces_processed} 个非中国省份...")
         
-        print(f"✅ 中国人口金钱修改完成: {money_changes} 个人口组")
-        print(f"✅ 处理了 {processed_provinces} 个中国省份")
+        print(f"✅ 人口金钱修改完成:")
+        print(f"  🇨🇳 中国人口: {chinese_money_changes} 个人口组 (金钱设为 {chinese_money:,.0f})")
+        print(f"  🌍 非中国人口: {non_chinese_money_changes} 个人口组 (金钱清零)")
+        print(f"✅ 处理省份统计:")
+        print(f"  🇨🇳 中国省份: {chinese_provinces_processed} 个")
+        print(f"  🌍 非中国省份: {non_chinese_provinces_processed} 个")
         
         # 更新计数器
-        self.money_changes = money_changes
+        self.money_changes = chinese_money_changes + non_chinese_money_changes
         
-        return money_changes > 0
+        return (chinese_money_changes + non_chinese_money_changes) > 0
     
-    def _modify_province_money(self, province_content: str, target_money: float) -> tuple:
-        """修改单个省份中所有人口的金钱，返回内容和修改数量"""
+    def _modify_province_money(self, province_content: str, target_money: float, is_chinese: bool = True) -> tuple:
+        """修改单个省份中所有人口的金钱，返回内容和修改数量
+        
+        Args:
+            province_content: 省份内容
+            target_money: 目标金钱数额
+            is_chinese: 是否为中国省份（用于日志显示）
+        
+        Returns:
+            tuple: (修改后的内容, 修改次数)
+        """
         # 查找所有人口组的金钱字段 (money=数值 和 bank=数值)
         money_pattern = r'money=([\d.]+)'
         bank_pattern = r'bank=([\d.]+)'
         changes = 0
+        
+        population_type = "中国人口" if is_chinese else "非中国人口"
         
         def replace_money(match):
             nonlocal changes
@@ -1436,6 +1477,10 @@ class Victoria2Modifier:
         modified_content = re.sub(money_pattern, replace_money, province_content)
         # 修改bank字段
         modified_content = re.sub(bank_pattern, replace_bank, modified_content)
+        
+        # 如果是调试模式且有修改，显示详细信息
+        if changes > 0 and self.debug_mode:
+            print(f"    💰 {population_type}: 修改了 {changes} 个金钱字段 → {target_money:,.0f}")
         
         return modified_content, changes
 
@@ -1605,7 +1650,7 @@ class Victoria2Modifier:
             selected_operations.append('date')
             selected_count += 1
         if options.get('money', False):
-            print("✓ 6. 中国人口金钱: 设为9,999,999,999")
+            print("✓ 6. 人口金钱: 中国=9,999,999,999, 非中国=0")
             selected_operations.append('money')
             selected_count += 1
         
@@ -1770,7 +1815,7 @@ class Victoria2Modifier:
         print("3. 中国恶名度: 设为0")
         print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
         print("5. 游戏日期: 设为1836.1.1")
-        print("6. 中国人口金钱: 设为9,999,999,999")
+        print("6. 人口金钱: 中国=9,999,999,999, 非中国=0")
         print("⚡ 每个功能独立执行，确保数据安全")
         print(f"{'='*70}")
         
@@ -2222,7 +2267,7 @@ def show_modification_menu():
     print("3. 中国恶名度修改 (设为0)")
     print("4. 中国人口属性修改 (宗教=mahayana, 意识形态=温和派)")
     print("5. 游戏日期修改 (设为1836.1.1)")
-    print("6. 中国人口金钱修改 (设为9,999,999,999)")
+    print("6. 人口金钱修改 (中国=9,999,999,999, 非中国=0)")
     print("7. 执行全部修改 (推荐)")
     print("8. 分析存档括号类型 (仅分析，不修改)")
     print("0. 退出程序")
@@ -2342,7 +2387,7 @@ def main():
             print("3. 中国恶名度: 设为0")
             print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
             print("5. 游戏日期: 设为1836.1.1")
-            print("6. 中国人口金钱: 设为9,999,999,999")
+            print("6. 人口金钱修改: 中国=9,999,999,999, 非中国=0")
             print("7. 支持选择性修改和全部修改")
             print("8. 分析存档括号类型")
             print("\n意识形态映射 (已确认 Liberal=ID 6):")
@@ -2478,7 +2523,7 @@ def main():
     if options.get('date', False):
         modification_list.append("6. 游戏日期: 设为1836.1.1")
     if options.get('money', False):
-        modification_list.append("7. 中国人口金钱: 设为9,999,999,999")
+        modification_list.append("7. 人口金钱: 中国=9,999,999,999, 非中国=0")
     
     for item in modification_list:
         print(item)
