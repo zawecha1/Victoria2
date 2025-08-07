@@ -466,7 +466,7 @@ class Victoria2Modifier:
                            accepted_cultures: List[str] = None) -> bool:
         """修改中国的文化设置 - 基于花括号结构的安全版本"""
         if accepted_cultures is None:
-            accepted_cultures = ["nanfaren", "manchu"]
+            accepted_cultures = ["nanfaren", "manchu", "yankee"]
         
         print(f"\n🏛️ 开始修改中国文化 (主文化: {primary_culture}, 接受文化: {accepted_cultures})")
         
@@ -1634,7 +1634,7 @@ class Victoria2Modifier:
             selected_operations.append('militancy')
             selected_count += 1
         if options.get('culture', False):
-            print("✓ 2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+            print("✓ 2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu+yankee")
             selected_operations.append('culture')
             selected_count += 1
         if options.get('infamy', False):
@@ -1811,7 +1811,7 @@ class Victoria2Modifier:
         print(f"目标文件: {filename}")
         print("修改内容:")
         print("1. 人口斗争性: 中国=0, 其他=10")
-        print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+        print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu+yankee")
         print("3. 中国恶名度: 设为0")
         print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
         print("5. 游戏日期: 设为1836.1.1")
@@ -2033,7 +2033,7 @@ class Victoria2Modifier:
                 block_type = self._classify_block_type(block)
                 if block_type == "省份" and block.level <= 2:
                     # 检查是否包含中国文化人口
-                    if any(culture in block.content.lower() for culture in ['beifaren', 'nanfaren', 'manchu']):
+                    if any(culture in block.content.lower() for culture in ['beifaren', 'nanfaren', 'manchu', 'yankee']):
                         target_blocks.append(block)
                         chinese_province_count += 1
             print(f"  ✅ 找到 {len(target_blocks)} 个省份块 (包含中国人口: {chinese_province_count})")
@@ -2054,7 +2054,7 @@ class Victoria2Modifier:
                 block_type = self._classify_block_type(block)
                 if block_type == "省份" and block.level <= 2:
                     # 检查是否包含中国文化人口
-                    if any(culture in block.content.lower() for culture in ['beifaren', 'nanfaren', 'manchu']):
+                    if any(culture in block.content.lower() for culture in ['beifaren', 'nanfaren', 'manchu', 'yankee']):
                         target_blocks.append(block)
                         chinese_province_count += 1
             print(f"  ✅ 找到 {len(target_blocks)} 个省份块 (包含中国人口: {chinese_province_count})")
@@ -2263,7 +2263,7 @@ def show_modification_menu():
     print("请选择要执行的修改操作:")
     print("="*50)
     print("1. 人口斗争性修改 (中国=0, 其他=10)")
-    print("2. 中国文化修改 (主文化=beifaren, 接受=nanfaren+manchu)")
+    print("2. 中国文化修改 (主文化=beifaren, 接受=nanfaren+manchu+yankee)")
     print("3. 中国恶名度修改 (设为0)")
     print("4. 中国人口属性修改 (宗教=mahayana, 意识形态=温和派)")
     print("5. 游戏日期修改 (设为1836.1.1)")
@@ -2383,7 +2383,7 @@ def main():
             print("--analyze, -a    仅分析括号类型，不执行修改")
             print("\n功能说明:")
             print("1. 人口斗争性: 中国=0, 其他=10")
-            print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+            print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu+yankee")
             print("3. 中国恶名度: 设为0")
             print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
             print("5. 游戏日期: 设为1836.1.1")
@@ -2517,7 +2517,7 @@ def main():
     if options.get('militancy', False):
         modification_list.append("3. 人口斗争性: 中国=0, 其他=10")
     if options.get('culture', False):
-        modification_list.append("4. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu")
+        modification_list.append("4. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu+yankee")
     if options.get('infamy', False):
         modification_list.append("5. 中国恶名度: 设为0")
     if options.get('date', False):
