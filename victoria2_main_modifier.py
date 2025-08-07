@@ -598,18 +598,8 @@ class Victoria2Modifier:
     # ========================================
     
     def modify_game_date(self, target_date: str = "1836.1.1") -> bool:
-        """修改游戏中的所有日期为指定日期"""
+        """修改游戏中的所有日期为指定日期 - 优化版本"""
         print(f"\n📅 开始修改游戏日期 (目标日期: {target_date})")
-        
-        # 🔍 第一步：使用分析功能找到目标块
-        print("📊 第一步：分析并定位目标块...")
-        target_blocks = self.find_blocks_by_function_type('date')
-        
-        if not target_blocks:
-            print("❌ 未找到根级别日期块，无法执行日期修改")
-            return False
-        
-        print(f"✅ 找到 {len(target_blocks)} 个日期相关块，验证类型一致性通过")
         
         # 验证目标日期格式
         target_pattern = r'^(\d{4})\.(\d{1,2})\.(\d{1,2})$'
@@ -618,31 +608,34 @@ class Victoria2Modifier:
             print("正确格式: YYYY.M.D (例如: 1836.1.1)")
             return False
         
-        # 使用正则表达式查找所有日期
+        # 🚀 优化：使用单次正则替换，避免字符串重复拆分
         date_pattern = r'(?<![a-zA-Z0-9_])(\d{4})\.(\d{1,2})\.(\d{1,2})(?![a-zA-Z0-9_])'
         
-        # 查找所有匹配的日期
+        # 先分析要修改的日期（用于统计和显示）
+        print("🔍 分析日期分布...")
         matches = list(re.finditer(date_pattern, self.content))
         
         if not matches:
             print("❌ 未找到任何日期格式")
             return False
         
-        print(f"🔍 找到 {len(matches)} 个日期需要修改:")
+        print(f"🔍 找到 {len(matches)} 个日期需要修改")
         
-        # 统计不同类型的日期
+        # 🚀 优化：快速统计日期类型（仅采样前100个以提高速度）
+        sample_size = min(100, len(matches))
         date_types = {}
-        for match in matches:
+        
+        for i, match in enumerate(matches[:sample_size]):
             original_date = match.group(0)
             start_pos = max(0, match.start() - 20)
             end_pos = min(len(self.content), match.end() + 20)
             context = self.content[start_pos:end_pos]
             
-            # 分析日期类型
+            # 快速分析日期类型
             if 'date=' in context or 'start_date=' in context:
                 date_type = "游戏开始日期"
             elif 'last_election=' in context:
-                date_type = "选举日期"
+                date_type = "选举日期" 
             elif 'birth_date=' in context:
                 date_type = "出生日期"
             elif 'end_date=' in context:
@@ -654,26 +647,31 @@ class Victoria2Modifier:
                 date_types[date_type] = []
             date_types[date_type].append(original_date)
         
-        # 显示日期类型统计
+        # 显示采样的日期类型统计
+        print(f"📊 日期类型分析 (采样前{sample_size}个):")
         for date_type, dates in date_types.items():
             unique_dates = list(set(dates))
-            print(f"  • {date_type}: {len(dates)} 处 (示例: {unique_dates[:3]})")
+            estimated_total = len(dates) * len(matches) // sample_size
+            print(f"  • {date_type}: ~{estimated_total} 处 (示例: {unique_dates[:2]})")
         
-        # 从后往前替换，避免位置偏移
-        modified_content = self.content
-        for match in reversed(matches):
-            original_date = match.group(0)
-            
-            # 替换为目标日期
-            modified_content = (modified_content[:match.start()] + 
-                              target_date + 
-                              modified_content[match.end():])
+        # 🚀 关键优化：使用单次正则替换代替逐个替换
+        print("⚡ 执行高速批量替换...")
+        
+        def replace_date(match):
+            """替换函数"""
             self.date_changes += 1
+            return target_date
+        
+        # 单次正则替换 - O(n) 时间复杂度
+        start_time = __import__('time').time()
+        modified_content = re.sub(date_pattern, replace_date, self.content)
+        end_time = __import__('time').time()
         
         # 更新内容
         self.content = modified_content
         
         print(f"✅ 日期修改完成: {self.date_changes} 处修改")
+        print(f"⚡ 处理时间: {end_time - start_time:.2f} 秒")
         print(f"🎯 所有日期已修改为: {target_date}")
         
         return True
@@ -748,16 +746,19 @@ class Victoria2Modifier:
         
         print(f"🔍 找到 {len(matches_to_modify)} 个符合条件的日期需要修改")
         
-        # 从后往前替换
-        modified_content = self.content
-        for match in reversed(matches_to_modify):
-            original_date = match.group(0)
-            modified_content = (modified_content[:match.start()] + 
-                              target_date + 
-                              modified_content[match.end():])
-            self.date_changes += 1
-        
-        self.content = modified_content
+        # 优化的批量替换 - 使用正则表达式一次性替换所有匹配的日期
+        if matches_to_modify:
+            # 创建一个集合，包含所有需要替换的起始位置
+            positions_to_replace = {match.start() for match in matches_to_modify}
+            
+            # 使用正则表达式替换，但只替换指定位置的匹配
+            def replace_func(match):
+                if match.start() in positions_to_replace:
+                    self.date_changes += 1
+                    return target_date
+                return match.group(0)
+            
+            self.content = re.sub(date_pattern, replace_func, self.content)
         
         print(f"✅ 选择性日期修改完成: {self.date_changes} 处修改")
         print(f"🎯 符合条件的日期已修改为: {target_date}")
