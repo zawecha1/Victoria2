@@ -43,8 +43,8 @@ class Victoria2Modifier:
         self.date_changes = 0
         self.money_changes = 0  # 新增：金钱修改计数器
         
-        # 默认存档路径
-        self.default_save_path = r"Z:\Users\Administrator\Documents\Paradox Interactive\Victoria II\save games"
+        # 默认存档路径 - 使用当前目录
+        self.default_save_path = "."
         
         # 意识形态转换映射 (基于百分比系统，总和=100%)
         # 意识形态ID对应：
@@ -2189,11 +2189,23 @@ def get_save_files_list():
     import os
     import glob
     
-    save_path = r"Z:\Users\Administrator\Documents\Paradox Interactive\Victoria II\save games"
+    # 使用当前目录
+    save_path = "."
     try:
-        os.chdir(save_path)
+        # 保存当前工作目录
+        original_cwd = os.getcwd()
+        
+        # 切换到存档目录（如果需要）
+        if save_path != ".":
+            os.chdir(save_path)
+        
         save_files = glob.glob("*.v2")
         save_files.sort(key=os.path.getmtime, reverse=True)  # 按修改时间排序
+        
+        # 恢复原始工作目录
+        if save_path != ".":
+            os.chdir(original_cwd)
+            
         return save_files
     except Exception as e:
         print(f"❌ 无法访问存档目录: {e}")
