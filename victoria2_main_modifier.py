@@ -500,9 +500,35 @@ class Victoria2Modifier:
         culture_block = self.find_nested_block_safely(china_block, "culture")
         current_accepted = []
         if culture_block:
-            # 解析当前接受文化
-            culture_matches = re.findall(r'"([^"]+)"', culture_block.content)
-            current_accepted = culture_matches
+            # 解析当前接受文化 - 修复版：只匹配独立的文化项
+            lines = culture_block.content.split('\n')
+            raw_matches = []  # 用于调试
+            for line in lines:
+                line = line.strip()
+                # 收集所有引号内容用于调试
+                if '"' in line:
+                    raw_matches.extend(re.findall(r'"([^"]+)"', line))
+                
+                # 只匹配形如 "culture_name" 的行（独立的文化项，不包含等号）
+                if re.match(r'^"[^"]+"\s*$', line) and '=' not in line:
+                    match = re.search(r'"([^"]+)"', line)
+                    if match:
+                        culture_name = match.group(1)
+                        # 过滤掉明显不是文化的项目
+                        if culture_name != "noculture" and not culture_name.startswith("no"):
+                            current_accepted.append(culture_name)
+            
+            # 调试输出
+            if self.debug_mode and raw_matches != current_accepted:
+                print(f"  🔍 文化解析调试:")
+                print(f"    原始匹配: {raw_matches}")
+                print(f"    过滤后: {current_accepted}")
+                filtered_out = [item for item in raw_matches if item not in current_accepted]
+                if filtered_out:
+                    print(f"    已过滤: {filtered_out}")
+        else:
+            if self.debug_mode:
+                print(f"  ⚠️ 未找到culture子块")
         
         print(f"📊 当前文化配置:")
         print(f"  主文化: {current_primary.group(1) if current_primary else '未设置'}")
