@@ -63,13 +63,17 @@ class Victoria2Modifier:
         if file_path:
             self.load_file(file_path)
     
-    def create_backup(self, filename: str, operation: str = "unified") -> str:
+    def create_backup(self, source_file: str, operation: str = "unified") -> str:
         """创建备份文件"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        backup_filename = f"{filename.replace('.v2', '')}_{operation}_backup_{timestamp}.v2"
+        backup_filename = f"{source_file.replace('.v2', '')}_{operation}_backup_{timestamp}.v2"
         print(f"创建备份文件: {backup_filename}")
-        shutil.copy2(filename, backup_filename)
-        return backup_filename
+        try:
+            shutil.copy2(source_file, backup_filename)
+            return backup_filename
+        except Exception as e:
+            print(f"❌ 备份失败: {e}")
+            return None
     
     def load_file(self, filename: str) -> bool:
         """加载存档文件并初始化解析器"""
@@ -149,6 +153,492 @@ class Victoria2Modifier:
         
         print(f"找到 {len(chinese_provinces)} 个中国省份")
         return chinese_provinces
+
+    def analyze_all_countries_provinces(self) -> Dict[str, Dict]:
+        """分析所有国家的省份数量和ID"""
+        print("🌍 开始分析所有国家的省份分布...")
+        
+        # 查找所有省份
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        
+        print(f"📊 找到 {len(province_matches)} 个省份")
+        
+        # 初始化国家省份字典
+        countries_provinces = {}
+        
+        for i, match in enumerate(province_matches):
+            province_id = int(match.group(1))
+            start_pos = match.end()
+            
+            # 确定省份块的结束位置
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start()
+            else:
+                # 最后一个省份，查找下一个顶级块
+                next_section = re.search(r'\n[a-z_]+=\s*{', self.content[start_pos:start_pos+20000])
+                if next_section:
+                    end_pos = start_pos + next_section.start()
+                else:
+                    end_pos = start_pos + 10000
+            
+            province_content = self.content[start_pos:end_pos]
+            
+            # 提取省份信息
+            province_info = {
+                'id': province_id,
+                'name': 'Unknown',
+                'owner': None,
+                'controller': None,
+                'cores': []
+            }
+            
+            # 查找省份名称
+            name_match = re.search(r'name="([^"]+)"', province_content)
+            if name_match:
+                province_info['name'] = name_match.group(1)
+            
+            # 查找拥有者
+            owner_match = re.search(r'owner="?([A-Z]{2,3})"?', province_content)
+            if owner_match:
+                province_info['owner'] = owner_match.group(1)
+            
+            # 查找控制者
+            controller_match = re.search(r'controller="?([A-Z]{2,3})"?', province_content)
+            if controller_match:
+                province_info['controller'] = controller_match.group(1)
+            
+            # 查找核心声明
+            core_matches = re.findall(r'core="?([A-Z]{2,3})"?', province_content)
+            province_info['cores'] = core_matches
+            
+            # 如果有拥有者，添加到相应国家
+            if province_info['owner']:
+                owner = province_info['owner']
+                if owner not in countries_provinces:
+                    countries_provinces[owner] = {
+                        'country_tag': owner,
+                        'province_count': 0,
+                        'provinces': []
+                    }
+                
+                countries_provinces[owner]['province_count'] += 1
+                countries_provinces[owner]['provinces'].append({
+                    'id': province_id,
+                    'name': province_info['name'],
+                    'controller': province_info['controller'],
+                    'cores': province_info['cores']
+                })
+            
+            # 显示进度
+            if (i + 1) % 500 == 0:
+                print(f"  处理进度: {i + 1}/{len(province_matches)} ({(i + 1)/len(province_matches)*100:.1f}%)")
+        
+        # 排序国家（按省份数量降序）
+        sorted_countries = dict(sorted(countries_provinces.items(), 
+                                     key=lambda x: x[1]['province_count'], reverse=True))
+        
+        print(f"✅ 分析完成！找到 {len(sorted_countries)} 个拥有省份的国家")
+        
+        return sorted_countries
+
+    def save_countries_provinces_analysis(self, filename: str = None) -> str:
+        """保存国家省份分析到JSON文件"""
+        from datetime import datetime
+        
+        if filename is None:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"countries_provinces_analysis_{timestamp}.json"
+        
+        print(f"📊 开始分析并保存国家省份数据到: {filename}")
+        
+        # 执行分析
+        countries_data = self.analyze_all_countries_provinces()
+        
+        # 准备输出数据
+        from datetime import datetime as dt
+        output_data = {
+            'analysis_info': {
+                'total_countries': len(countries_data),
+                'total_provinces': sum(country['province_count'] for country in countries_data.values()),
+                'analysis_date': dt.now().isoformat(),
+                'file_analyzed': getattr(self, 'current_filename', 'unknown')
+            },
+            'countries': countries_data,
+            'summary': {
+                'top_10_countries': []
+            }
+        }
+        
+        # 生成前10大国家摘要
+        top_countries = list(countries_data.items())[:10]
+        for country_tag, country_info in top_countries:
+            output_data['summary']['top_10_countries'].append({
+                'country': country_tag,
+                'province_count': country_info['province_count'],
+                'sample_provinces': [p['name'] for p in country_info['provinces'][:5]]  # 前5个省份作为样例
+            })
+        
+        # 保存到JSON文件
+        try:
+            import json
+            with open(filename, 'w', encoding='utf-8') as f:
+                json.dump(output_data, f, ensure_ascii=False, indent=2)
+            
+            print(f"✅ 分析结果已保存到: {filename}")
+            
+            # 显示统计摘要
+            print(f"\n📈 统计摘要:")
+            print(f"   总国家数: {output_data['analysis_info']['total_countries']}")
+            print(f"   总省份数: {output_data['analysis_info']['total_provinces']}")
+            print(f"\n🏆 前10大国家:")
+            for i, country_summary in enumerate(output_data['summary']['top_10_countries'], 1):
+                print(f"   {i:2d}. {country_summary['country']}: {country_summary['province_count']} 个省份")
+            
+            return filename
+            
+        except Exception as e:
+            print(f"❌ 保存文件失败: {e}")
+            return None
+    
+    def check_bracket_balance(self) -> bool:
+        """检查花括号平衡"""
+        try:
+            open_count = self.content.count('{')
+            close_count = self.content.count('}')
+            difference = open_count - close_count
+            
+            print(f"🔍 花括号检查:")
+            print(f"   开括号: {open_count:,}")
+            print(f"   闭括号: {close_count:,}")
+            print(f"   差异: {difference}")
+            
+            # Victoria II 存档通常有 -1 的差异是正常的
+            if difference in [-1, 0]:
+                print("✅ 花括号平衡正常")
+                return True
+            else:
+                print(f"❌ 花括号不平衡，差异: {difference}")
+                return False
+                
+        except Exception as e:
+            print(f"❌ 花括号检查失败: {e}")
+            return False
+
+    def find_dead_countries(self) -> Dict[str, Dict]:
+        """查找已灭亡的国家（存在但无省份的国家）"""
+        print("🔍 查找已灭亡国家...")
+        
+        # 直接在这里实现分析逻辑，避免导入问题
+        # 查找所有国家
+        country_pattern = re.compile(r'^([A-Z]{2,3})=\s*{', re.MULTILINE)
+        country_matches = list(country_pattern.finditer(self.content))
+        
+        all_countries = {}
+        for i, match in enumerate(country_matches):
+            country_tag = match.group(1)
+            start_pos = match.end()
+            
+            # 确定国家块的结束位置
+            if i + 1 < len(country_matches):
+                end_pos = country_matches[i + 1].start()
+            else:
+                next_section = re.search(r'\n[a-z_]+=\s*{', self.content[start_pos:start_pos+50000])
+                if next_section:
+                    end_pos = start_pos + next_section.start()
+                else:
+                    end_pos = start_pos + 30000
+            
+            country_content = self.content[start_pos:end_pos]
+            
+            # 提取基本信息
+            country_info = {
+                'tag': country_tag,
+                'capital': 0,
+                'government': None,
+                'primary_culture': None,
+                'technology_school': None
+            }
+            
+            # 查找首都
+            capital_match = re.search(r'capital=(\d+)', country_content)
+            if capital_match:
+                country_info['capital'] = int(capital_match.group(1))
+            
+            # 查找政府类型
+            gov_match = re.search(r'government="?([^"\\n]+)"?', country_content)
+            if gov_match:
+                country_info['government'] = gov_match.group(1)
+            
+            # 查找主要文化
+            culture_match = re.search(r'primary_culture="?([^"\\n]+)"?', country_content)
+            if culture_match:
+                country_info['primary_culture'] = culture_match.group(1)
+            
+            # 查找技术学派
+            tech_match = re.search(r'technology_school="?([^"\\n]+)"?', country_content)
+            if tech_match:
+                country_info['technology_school'] = tech_match.group(1)
+            
+            all_countries[country_tag] = country_info
+        
+        # 查找拥有省份的国家
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        
+        province_owners = set()
+        for i, match in enumerate(province_matches):
+            start_pos = match.end()
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start()
+            else:
+                end_pos = start_pos + 10000
+            
+            province_content = self.content[start_pos:end_pos]
+            owner_match = re.search(r'owner="?([A-Z]{2,3})"?', province_content)
+            if owner_match:
+                province_owners.add(owner_match.group(1))
+        
+        # 找出已灭亡国家
+        dead_countries = {}
+        for tag, info in all_countries.items():
+            if tag not in province_owners and tag != 'REB':  # 排除叛军
+                # 检查是否真的是灭亡国家（有首都或其他信息）
+                if (info.get('capital', 0) > 0 or 
+                    info.get('government') or 
+                    info.get('primary_culture') or
+                    info.get('technology_school')):
+                    dead_countries[tag] = info
+        
+        print(f"✅ 找到 {len(dead_countries)} 个已灭亡国家")
+        return dead_countries
+
+    def count_country_references(self, country_tags: List[str]) -> Dict[str, int]:
+        """统计国家代码在存档中的出现次数"""
+        print(f"📊 统计 {len(country_tags)} 个国家代码的引用次数...")
+        
+        reference_counts = {}
+        
+        for tag in country_tags:
+            count = 0
+            # 使用多种模式搜索国家代码
+            patterns = [
+                f'"{tag}"',           # 带引号
+                f'={tag}',            # 赋值
+                f' {tag} ',           # 空格包围
+                f'\\n{tag}=',         # 行开头赋值
+                f'core="{tag}"',      # 核心声明
+                f'owner="{tag}"',     # 拥有者
+                f'controller="{tag}"', # 控制者
+                f'overlord="{tag}"',  # 宗主国
+                f'{tag}={{',          # 国家块开始
+            ]
+            
+            for pattern in patterns:
+                matches = re.findall(re.escape(pattern), self.content)
+                count += len(matches)
+            
+            # 额外搜索不带引号的情况
+            unquoted_patterns = [
+                f'owner={tag}\\s',
+                f'controller={tag}\\s',
+                f'overlord={tag}\\s',
+                f'core={tag}\\s',
+            ]
+            
+            for pattern in unquoted_patterns:
+                matches = re.findall(pattern, self.content)
+                count += len(matches)
+            
+            reference_counts[tag] = count
+            
+            # 显示进度
+            if len(reference_counts) % 20 == 0:
+                print(f"  处理进度: {len(reference_counts)}/{len(country_tags)}")
+        
+        return reference_counts
+
+    def remove_dead_country_blocks(self, dry_run: bool = True) -> Dict:
+        """移除已灭亡国家的数据块"""
+        print("🗑️ 开始清理已灭亡国家数据块...")
+        
+        # 查找已灭亡国家
+        dead_countries = self.find_dead_countries()
+        
+        if not dead_countries:
+            print("✅ 未找到需要清理的已灭亡国家")
+            return {'removed_countries': [], 'references': {}}
+        
+        # 统计引用次数
+        dead_tags = list(dead_countries.keys())
+        reference_counts = self.count_country_references(dead_tags)
+        
+        # 显示统计信息
+        print(f"\\n📊 已灭亡国家统计:")
+        print(f"   总数: {len(dead_countries)}")
+        print(f"\\n🔗 引用次数统计:")
+        sorted_refs = sorted(reference_counts.items(), key=lambda x: x[1], reverse=True)
+        for i, (tag, count) in enumerate(sorted_refs[:20], 1):
+            country_info = dead_countries.get(tag, {})
+            capital = country_info.get('capital', 0)
+            print(f"   {i:2d}. {tag}: {count:3d} 次引用 (首都:{capital})")
+        
+        if len(sorted_refs) > 20:
+            print(f"   ... 还有 {len(sorted_refs) - 20} 个国家")
+        
+        if dry_run:
+            print(f"\\n🔍 这是预览模式，未实际删除数据")
+            return {
+                'removed_countries': list(dead_countries.keys()),
+                'references': reference_counts,
+                'dead_countries_info': dead_countries
+            }
+        
+        # 实际删除操作
+        print(f"\\n⚠️ 开始实际删除操作...")
+        
+        removed_blocks = []
+        content_modified = self.content
+        
+        # 查找并删除国家块
+        for tag in dead_countries.keys():
+            pattern = re.compile(f'^{tag}=\\s*{{', re.MULTILINE)
+            match = pattern.search(content_modified)
+            
+            if match:
+                # 找到国家块的开始位置
+                start_pos = match.start()
+                block_start = match.end()
+                
+                # 使用花括号解析器找到完整的块
+                try:
+                    # 从国家块开始解析
+                    brace_count = 0
+                    pos = block_start
+                    while pos < len(content_modified):
+                        char = content_modified[pos]
+                        if char == '{':
+                            brace_count += 1
+                        elif char == '}':
+                            brace_count -= 1
+                            if brace_count == -1:  # 找到匹配的闭括号
+                                end_pos = pos + 1
+                                break
+                        pos += 1
+                    else:
+                        print(f"⚠️ 未找到 {tag} 的完整块")
+                        continue
+                    
+                    # 提取要删除的块
+                    block_content = content_modified[start_pos:end_pos]
+                    
+                    # 检查块的完整性
+                    open_braces = block_content.count('{')
+                    close_braces = block_content.count('}')
+                    
+                    if open_braces == close_braces:
+                        # 删除块（包括前后的换行符）
+                        # 查找前面的换行符
+                        actual_start = start_pos
+                        if start_pos > 0 and content_modified[start_pos-1] == '\\n':
+                            actual_start = start_pos - 1
+                        
+                        # 查找后面的换行符
+                        actual_end = end_pos
+                        if end_pos < len(content_modified) and content_modified[end_pos] == '\\n':
+                            actual_end = end_pos + 1
+                        
+                        # 执行删除
+                        content_modified = content_modified[:actual_start] + content_modified[actual_end:]
+                        
+                        removed_blocks.append({
+                            'tag': tag,
+                            'size': actual_end - actual_start,
+                            'open_braces': open_braces,
+                            'close_braces': close_braces
+                        })
+                        
+                        print(f"✅ 删除 {tag} 块 ({actual_end - actual_start} 字符, {open_braces}个花括号对)")
+                    else:
+                        print(f"⚠️ {tag} 块花括号不平衡 (开:{open_braces}, 闭:{close_braces})")
+                        
+                except Exception as e:
+                    print(f"❌ 处理 {tag} 时出错: {e}")
+        
+        # 更新内容
+        self.content = content_modified
+        
+        print(f"\\n✅ 清理完成:")
+        print(f"   删除国家块: {len(removed_blocks)}")
+        print(f"   总共节省: {sum(block['size'] for block in removed_blocks)} 字符")
+        
+        return {
+            'removed_countries': [block['tag'] for block in removed_blocks],
+            'references': reference_counts,
+            'removed_blocks': removed_blocks,
+            'dead_countries_info': dead_countries
+        }
+
+    def clean_dead_countries_with_backup(self, backup_suffix: str = None) -> str:
+        """安全清理已灭亡国家（自动备份）"""
+        if backup_suffix is None:
+            from datetime import datetime
+            backup_suffix = f"before_cleanup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        
+        print("🛡️ 安全清理已灭亡国家数据")
+        print("=" * 40)
+        
+        # 创建备份
+        backup_name = self.create_backup(self.file_path, backup_suffix)
+        if not backup_name:
+            print("❌ 备份失败，取消清理操作")
+            return None
+        
+        # 先进行预览
+        print("\\n1️⃣ 执行预览分析...")
+        preview_result = self.remove_dead_country_blocks(dry_run=True)
+        
+        # 询问确认
+        print(f"\\n⚠️ 将要删除 {len(preview_result['removed_countries'])} 个已灭亡国家的数据块")
+        print(f"   备份文件: {backup_name}")
+        
+        confirm = input("\\n确认执行清理? (y/N): ").strip().lower()
+        if confirm not in ['y', 'yes', '是']:
+            print("❌ 用户取消操作")
+            return None
+        
+        # 执行实际清理
+        print("\\n2️⃣ 执行实际清理...")
+        result = self.remove_dead_country_blocks(dry_run=False)
+        
+        # 检查花括号平衡
+        print("\\n3️⃣ 检查文件完整性...")
+        if self.check_bracket_balance():
+            # 保存修改后的文件
+            try:
+                with open(self.file_path, 'w', encoding='utf-8-sig') as f:
+                    f.write(self.content)
+                
+                print(f"✅ 清理完成并保存到原文件")
+                
+                # 保存清理报告
+                report_filename = f"dead_countries_cleanup_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+                try:
+                    import json
+                    with open(report_filename, 'w', encoding='utf-8') as f:
+                        json.dump(result, f, ensure_ascii=False, indent=2)
+                    print(f"📋 清理报告已保存: {report_filename}")
+                except:
+                    pass
+                
+                return result
+                
+            except Exception as e:
+                print(f"❌ 保存文件失败: {e}")
+                return None
+        else:
+            print("❌ 花括号平衡检查失败，未保存修改")
+            return None
     
     # ========================================
     # 花括号结构安全修改方法
