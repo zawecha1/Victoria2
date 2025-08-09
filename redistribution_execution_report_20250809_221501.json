@@ -1,0 +1,507 @@
+{
+  "timestamp": "20250809_221501",
+  "original_file": "autosave.v2",
+  "backup_file": "autosave.v2.backup_20250809_221501",
+  "modifications_made": 0,
+  "china_gains": 0,
+  "affected_countries": 0,
+  "plan": {
+    "kept_provinces": {
+      "USA": {
+        "province_id": 2,
+        "province_name": "Yakutat",
+        "reason": "首都保护"
+      },
+      "COL": {
+        "province_id": 14,
+        "province_name": "Vancouver Island",
+        "reason": "首都保护"
+      },
+      "IRE": {
+        "province_id": 263,
+        "province_name": "Dublin",
+        "reason": "首都保护"
+      },
+      "ENG": {
+        "province_id": 300,
+        "province_name": "London",
+        "reason": "首都保护"
+      },
+      "SCA": {
+        "province_id": 322,
+        "province_name": "Stockholm",
+        "reason": "首都保护"
+      },
+      "HOL": {
+        "province_id": 369,
+        "province_name": "Kiel",
+        "reason": "首都保护"
+      },
+      "NET": {
+        "province_id": 375,
+        "province_name": "Amsterdam",
+        "reason": "首都保护"
+      },
+      "BEL": {
+        "province_id": 387,
+        "province_name": "Brussels",
+        "reason": "首都保护"
+      },
+      "FLA": {
+        "province_id": 388,
+        "province_name": "Bruges",
+        "reason": "首都保护"
+      },
+      "WLL": {
+        "province_id": 392,
+        "province_name": "Namur",
+        "reason": "首都保护"
+      },
+      "LUX": {
+        "province_id": 397,
+        "province_name": "Luxembourg",
+        "reason": "首都保护"
+      },
+      "FRA": {
+        "province_id": 425,
+        "province_name": "Paris",
+        "reason": "首都保护"
+      },
+      "SPA": {
+        "province_id": 487,
+        "province_name": "Madrid",
+        "reason": "首都保护"
+      },
+      "POR": {
+        "province_id": 521,
+        "province_name": "Lisbon",
+        "reason": "首都保护"
+      },
+      "HAM": {
+        "province_id": 528,
+        "province_name": "Hamburg",
+        "reason": "首都保护"
+      },
+      "LUB": {
+        "province_id": 530,
+        "province_name": "Lbeck",
+        "reason": "首都保护"
+      },
+      "HAN": {
+        "province_id": 534,
+        "province_name": "Hanover",
+        "reason": "首都保护"
+      },
+      "BRA": {
+        "province_id": 536,
+        "province_name": "Brunswick",
+        "reason": "首都保护"
+      },
+      "BRE": {
+        "province_id": 539,
+        "province_name": "Bremen",
+        "reason": "首都保护"
+      },
+      "OLD": {
+        "province_id": 540,
+        "province_name": "Oldenburg",
+        "reason": "首都保护"
+      },
+      "MEC": {
+        "province_id": 544,
+        "province_name": "Schwerin",
+        "reason": "首都保护"
+      },
+      "PRU": {
+        "province_id": 549,
+        "province_name": "Berlin",
+        "reason": "首都保护"
+      },
+      "ANH": {
+        "province_id": 555,
+        "province_name": "Dessau",
+        "reason": "首都保护"
+      },
+      "SAX": {
+        "province_id": 558,
+        "province_name": "Dresden",
+        "reason": "首都保护"
+      },
+      "WEI": {
+        "province_id": 561,
+        "province_name": "Weimar",
+        "reason": "首都保护"
+      },
+      "COB": {
+        "province_id": 562,
+        "province_name": "Gotha",
+        "reason": "首都保护"
+      },
+      "MEI": {
+        "province_id": 563,
+        "province_name": "Meiningen",
+        "reason": "首都保护"
+      },
+      "FRM": {
+        "province_id": 564,
+        "province_name": "Frankfurt",
+        "reason": "首都保护"
+      },
+      "NAS": {
+        "province_id": 565,
+        "province_name": "Wiesbaden",
+        "reason": "首都保护"
+      },
+      "HEK": {
+        "province_id": 566,
+        "province_name": "Kassel",
+        "reason": "首都保护"
+      },
+      "LIP": {
+        "province_id": 585,
+        "province_name": "Detmold",
+        "reason": "首都保护"
+      },
+      "BAD": {
+        "province_id": 586,
+        "province_name": "Karlsruhe",
+        "reason": "首都保护"
+      },
+      "WUR": {
+        "province_id": 589,
+        "province_name": "Stuttgart",
+        "reason": "首都保护"
+      },
+      "BAV": {
+        "province_id": 599,
+        "province_name": "Munich",
+        "reason": "首都保护"
+      },
+      "AUS": {
+        "province_id": 619,
+        "province_name": "Vienna",
+        "reason": "首都保护"
+      },
+      "HUN": {
+        "province_id": 641,
+        "province_name": "Budapest",
+        "reason": "首都保护"
+      },
+      "ROM": {
+        "province_id": 664,
+        "province_name": "Bucharest",
+        "reason": "首都保护"
+      },
+      "KRA": {
+        "province_id": 703,
+        "province_name": "Krakow",
+        "reason": "首都保护"
+      },
+      "PAR": {
+        "province_id": 738,
+        "province_name": "Parma",
+        "reason": "首都保护"
+      },
+      "ITA": {
+        "province_id": 749,
+        "province_name": "Rome",
+        "reason": "首都保护"
+      },
+      "YUG": {
+        "province_id": 794,
+        "province_name": "Belgrade",
+        "reason": "首都保护"
+      },
+      "GRE": {
+        "province_id": 834,
+        "province_name": "Athens",
+        "reason": "首都保护"
+      },
+      "TUR": {
+        "province_id": 860,
+        "province_name": "Istanbul",
+        "reason": "首都保护"
+      },
+      "RUS": {
+        "province_id": 1008,
+        "province_name": "Moscow",
+        "reason": "首都保护"
+      },
+      "PER": {
+        "province_id": 1108,
+        "province_name": "Tabriz",
+        "reason": "首都保护"
+      },
+      "KHI": {
+        "province_id": 1191,
+        "province_name": "Khiva",
+        "reason": "首都保护"
+      },
+      "AFG": {
+        "province_id": 1211,
+        "province_name": "Balkh",
+        "reason": "首都保护"
+      },
+      "MAK": {
+        "province_id": 1222,
+        "province_name": "Bela",
+        "reason": "首都保护"
+      },
+      "KAS": {
+        "province_id": 1226,
+        "province_name": "Leh",
+        "reason": "首都保护"
+      },
+      "PAN": {
+        "province_id": 1227,
+        "province_name": "Lahore",
+        "reason": "首都保护"
+      },
+      "JOD": {
+        "province_id": 1266,
+        "province_name": "Jodhpur",
+        "reason": "首都保护"
+      },
+      "MEW": {
+        "province_id": 1269,
+        "province_name": "Udaipur",
+        "reason": "首都保护"
+      },
+      "GWA": {
+        "province_id": 1270,
+        "province_name": "Gwalior",
+        "reason": "首都保护"
+      },
+      "IND": {
+        "province_id": 1271,
+        "province_name": "Indore",
+        "reason": "首都保护"
+      },
+      "BHO": {
+        "province_id": 1272,
+        "province_name": "Bhopal",
+        "reason": "首都保护"
+      },
+      "BAS": {
+        "province_id": 1279,
+        "province_name": "Jagdalpur",
+        "reason": "首都保护"
+      },
+      "HYD": {
+        "province_id": 1283,
+        "province_name": "Hyderabad",
+        "reason": "首都保护"
+      },
+      "KUT": {
+        "province_id": 1293,
+        "province_name": "Mandvi",
+        "reason": "首都保护"
+      },
+      "HND": {
+        "province_id": 1303,
+        "province_name": "Goa",
+        "reason": "首都保护"
+      },
+      "TRA": {
+        "province_id": 1319,
+        "province_name": "Trivandrum",
+        "reason": "首都保护"
+      },
+      "SIK": {
+        "province_id": 1328,
+        "province_name": "Tumlong",
+        "reason": "首都保护"
+      },
+      "BUR": {
+        "province_id": 1334,
+        "province_name": "Ava",
+        "reason": "首都保护"
+      },
+      "SIA": {
+        "province_id": 1346,
+        "province_name": "Bangkok",
+        "reason": "首都保护"
+      },
+      "CAM": {
+        "province_id": 1364,
+        "province_name": "Oudong",
+        "reason": "首都保护"
+      },
+      "DAI": {
+        "province_id": 1369,
+        "province_name": "Hanoi",
+        "reason": "首都保护"
+      },
+      "ATJ": {
+        "province_id": 1405,
+        "province_name": "Banda Aceh",
+        "reason": "首都保护"
+      },
+      "JAV": {
+        "province_id": 1413,
+        "province_name": "Batavia",
+        "reason": "首都保护"
+      },
+      "BAL": {
+        "province_id": 1438,
+        "province_name": "Bali",
+        "reason": "首都保护"
+      },
+      "KOR": {
+        "province_id": 1624,
+        "province_name": "Seoul",
+        "reason": "首都保护"
+      },
+      "JAP": {
+        "province_id": 1649,
+        "province_name": "Edo",
+        "reason": "首都保护"
+      },
+      "ALD": {
+        "province_id": 1700,
+        "province_name": "Algiers",
+        "reason": "首都保护"
+      },
+      "GCO": {
+        "province_id": 1723,
+        "province_name": "Balboa",
+        "reason": "首都保护"
+      },
+      "ARA": {
+        "province_id": 1745,
+        "province_name": "Cairo",
+        "reason": "首都保护"
+      },
+      "ETH": {
+        "province_id": 1852,
+        "province_name": "Gonder",
+        "reason": "首都保护"
+      },
+      "LIB": {
+        "province_id": 1887,
+        "province_name": "Monrovia",
+        "reason": "首都保护"
+      },
+      "SOK": {
+        "province_id": 1948,
+        "province_name": "Sokoto",
+        "reason": "首都保护"
+      },
+      "ZAN": {
+        "province_id": 2048,
+        "province_name": "Zanzibar",
+        "reason": "首都保护"
+      },
+      "SAF": {
+        "province_id": 2088,
+        "province_name": "Springbok",
+        "reason": "首都保护"
+      },
+      "MAD": {
+        "province_id": 2115,
+        "province_name": "Tananarive",
+        "reason": "首都保护"
+      },
+      "MEX": {
+        "province_id": 2172,
+        "province_name": "Mexico City",
+        "reason": "首都保护"
+      },
+      "UCA": {
+        "province_id": 2186,
+        "province_name": "Guatemala",
+        "reason": "首都保护"
+      },
+      "ELS": {
+        "province_id": 2191,
+        "province_name": "San Salvador",
+        "reason": "首都保护"
+      },
+      "NIC": {
+        "province_id": 2199,
+        "province_name": "Len",
+        "reason": "首都保护"
+      },
+      "COS": {
+        "province_id": 2201,
+        "province_name": "San Jos",
+        "reason": "首都保护"
+      },
+      "CLM": {
+        "province_id": 2204,
+        "province_name": "Panama City",
+        "reason": "首都保护"
+      },
+      "HAI": {
+        "province_id": 2213,
+        "province_name": "Port Au Prince",
+        "reason": "首都保护"
+      },
+      "VNZ": {
+        "province_id": 2264,
+        "province_name": "Caracas",
+        "reason": "首都保护"
+      },
+      "ECU": {
+        "province_id": 2279,
+        "province_name": "Quito",
+        "reason": "首都保护"
+      },
+      "BRZ": {
+        "province_id": 2286,
+        "province_name": "Iquitos",
+        "reason": "首都保护"
+      },
+      "PEU": {
+        "province_id": 2290,
+        "province_name": "Cajamarca",
+        "reason": "首都保护"
+      },
+      "BOL": {
+        "province_id": 2313,
+        "province_name": "Chuquisaca",
+        "reason": "首都保护"
+      },
+      "CHL": {
+        "province_id": 2322,
+        "province_name": "Copiap",
+        "reason": "首都保护"
+      },
+      "PRG": {
+        "province_id": 2339,
+        "province_name": "Asuncion",
+        "reason": "首都保护"
+      },
+      "URU": {
+        "province_id": 2344,
+        "province_name": "Montevideo",
+        "reason": "首都保护"
+      },
+      "ARG": {
+        "province_id": 2348,
+        "province_name": "Buenos Aires",
+        "reason": "首都保护"
+      },
+      "AST": {
+        "province_id": 2468,
+        "province_name": "Sydney",
+        "reason": "首都保护"
+      },
+      "NZL": {
+        "province_id": 2509,
+        "province_name": "Auckland",
+        "reason": "首都保护"
+      },
+      "HES": {
+        "province_id": 2560,
+        "province_name": "Darmstadt",
+        "reason": "首都保护"
+      }
+    },
+    "transferred_provinces": [],
+    "china_gains": 0,
+    "capital_protected": 98,
+    "fallback_used": 0,
+    "affected_countries": 0
+  }
+}

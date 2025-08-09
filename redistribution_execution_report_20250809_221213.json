@@ -1,0 +1,8028 @@
+{
+  "timestamp": "20250809_221213",
+  "original_file": "China1837_07_15.v2",
+  "backup_file": "China1837_07_15.v2.backup_20250809_221213",
+  "modifications_made": 1504,
+  "china_gains": 1504,
+  "affected_countries": 70,
+  "plan": {
+    "kept_provinces": {
+      "USA": {
+        "province_id": 2,
+        "province_name": "Yakutat",
+        "reason": "首都保护"
+      },
+      "ENG": {
+        "province_id": 300,
+        "province_name": "London",
+        "reason": "首都保护"
+      },
+      "COL": {
+        "province_id": 14,
+        "province_name": "Vancouver Island",
+        "reason": "首都保护"
+      },
+      "FRA": {
+        "province_id": 425,
+        "province_name": "Paris",
+        "reason": "首都保护"
+      },
+      "SCA": {
+        "province_id": 322,
+        "province_name": "Stockholm",
+        "reason": "首都保护"
+      },
+      "IRE": {
+        "province_id": 263,
+        "province_name": "Dublin",
+        "reason": "首都保护"
+      },
+      "HOL": {
+        "province_id": 369,
+        "province_name": "Kiel",
+        "reason": "首都保护"
+      },
+      "NET": {
+        "province_id": 375,
+        "province_name": "Amsterdam",
+        "reason": "首都保护"
+      },
+      "BEL": {
+        "province_id": 387,
+        "province_name": "Brussels",
+        "reason": "首都保护"
+      },
+      "FLA": {
+        "province_id": 388,
+        "province_name": "Bruges",
+        "reason": "首都保护"
+      },
+      "WLL": {
+        "province_id": 392,
+        "province_name": "Namur",
+        "reason": "首都保护"
+      },
+      "LUX": {
+        "province_id": 397,
+        "province_name": "Luxembourg",
+        "reason": "首都保护"
+      },
+      "SPA": {
+        "province_id": 487,
+        "province_name": "Madrid",
+        "reason": "首都保护"
+      },
+      "ITA": {
+        "province_id": 749,
+        "province_name": "Rome",
+        "reason": "首都保护"
+      },
+      "POR": {
+        "province_id": 521,
+        "province_name": "Lisbon",
+        "reason": "首都保护"
+      },
+      "HAM": {
+        "province_id": 528,
+        "province_name": "Hamburg",
+        "reason": "首都保护"
+      },
+      "LUB": {
+        "province_id": 530,
+        "province_name": "Lbeck",
+        "reason": "首都保护"
+      },
+      "HAN": {
+        "province_id": 534,
+        "province_name": "Hanover",
+        "reason": "首都保护"
+      },
+      "BRA": {
+        "province_id": 536,
+        "province_name": "Brunswick",
+        "reason": "首都保护"
+      },
+      "BRE": {
+        "province_id": 539,
+        "province_name": "Bremen",
+        "reason": "首都保护"
+      },
+      "OLD": {
+        "province_id": 540,
+        "province_name": "Oldenburg",
+        "reason": "首都保护"
+      },
+      "MEC": {
+        "province_id": 544,
+        "province_name": "Schwerin",
+        "reason": "首都保护"
+      },
+      "PRU": {
+        "province_id": 549,
+        "province_name": "Berlin",
+        "reason": "首都保护"
+      },
+      "ANH": {
+        "province_id": 555,
+        "province_name": "Dessau",
+        "reason": "首都保护"
+      },
+      "SAX": {
+        "province_id": 558,
+        "province_name": "Dresden",
+        "reason": "首都保护"
+      },
+      "WEI": {
+        "province_id": 561,
+        "province_name": "Weimar",
+        "reason": "首都保护"
+      },
+      "COB": {
+        "province_id": 562,
+        "province_name": "Gotha",
+        "reason": "首都保护"
+      },
+      "MEI": {
+        "province_id": 563,
+        "province_name": "Meiningen",
+        "reason": "首都保护"
+      },
+      "FRM": {
+        "province_id": 564,
+        "province_name": "Frankfurt",
+        "reason": "首都保护"
+      },
+      "NAS": {
+        "province_id": 565,
+        "province_name": "Wiesbaden",
+        "reason": "首都保护"
+      },
+      "HEK": {
+        "province_id": 566,
+        "province_name": "Kassel",
+        "reason": "首都保护"
+      },
+      "HES": {
+        "province_id": 2560,
+        "province_name": "Darmstadt",
+        "reason": "首都保护"
+      },
+      "BAD": {
+        "province_id": 586,
+        "province_name": "Karlsruhe",
+        "reason": "首都保护"
+      },
+      "LIP": {
+        "province_id": 585,
+        "province_name": "Detmold",
+        "reason": "首都保护"
+      },
+      "WUR": {
+        "province_id": 589,
+        "province_name": "Stuttgart",
+        "reason": "首都保护"
+      },
+      "BAV": {
+        "province_id": 599,
+        "province_name": "Munich",
+        "reason": "首都保护"
+      },
+      "AUS": {
+        "province_id": 619,
+        "province_name": "Vienna",
+        "reason": "首都保护"
+      },
+      "HUN": {
+        "province_id": 641,
+        "province_name": "Budapest",
+        "reason": "首都保护"
+      },
+      "YUG": {
+        "province_id": 794,
+        "province_name": "Belgrade",
+        "reason": "首都保护"
+      },
+      "ROM": {
+        "province_id": 664,
+        "province_name": "Bucharest",
+        "reason": "首都保护"
+      },
+      "TUR": {
+        "province_id": 860,
+        "province_name": "Istanbul",
+        "reason": "首都保护"
+      },
+      "RUS": {
+        "province_id": 1008,
+        "province_name": "Moscow",
+        "reason": "首都保护"
+      },
+      "KRA": {
+        "province_id": 703,
+        "province_name": "Krakow",
+        "reason": "首都保护"
+      },
+      "PAR": {
+        "province_id": 738,
+        "province_name": "Parma",
+        "reason": "首都保护"
+      },
+      "GRE": {
+        "province_id": 834,
+        "province_name": "Athens",
+        "reason": "首都保护"
+      },
+      "ARA": {
+        "province_id": 1745,
+        "province_name": "Cairo",
+        "reason": "首都保护"
+      },
+      "PER": {
+        "province_id": 1108,
+        "province_name": "Tabriz",
+        "reason": "首都保护"
+      },
+      "KHI": {
+        "province_id": 1191,
+        "province_name": "Khiva",
+        "reason": "首都保护"
+      },
+      "AFG": {
+        "province_id": 1211,
+        "province_name": "Balkh",
+        "reason": "首都保护"
+      },
+      "MAK": {
+        "province_id": 1222,
+        "province_name": "Bela",
+        "reason": "首都保护"
+      },
+      "HND": {
+        "province_id": 1303,
+        "province_name": "Goa",
+        "reason": "首都保护"
+      },
+      "KAS": {
+        "province_id": 1226,
+        "province_name": "Leh",
+        "reason": "首都保护"
+      },
+      "PAN": {
+        "province_id": 1227,
+        "province_name": "Lahore",
+        "reason": "首都保护"
+      },
+      "JOD": {
+        "province_id": 1266,
+        "province_name": "Jodhpur",
+        "reason": "首都保护"
+      },
+      "MEW": {
+        "province_id": 1269,
+        "province_name": "Udaipur",
+        "reason": "首都保护"
+      },
+      "GWA": {
+        "province_id": 1270,
+        "province_name": "Gwalior",
+        "reason": "首都保护"
+      },
+      "IND": {
+        "province_id": 1271,
+        "province_name": "Indore",
+        "reason": "首都保护"
+      },
+      "BHO": {
+        "province_id": 1272,
+        "province_name": "Bhopal",
+        "reason": "首都保护"
+      },
+      "HYD": {
+        "province_id": 1283,
+        "province_name": "Hyderabad",
+        "reason": "首都保护"
+      },
+      "BAS": {
+        "province_id": 1279,
+        "province_name": "Jagdalpur",
+        "reason": "首都保护"
+      },
+      "KUT": {
+        "province_id": 1293,
+        "province_name": "Mandvi",
+        "reason": "首都保护"
+      },
+      "TRA": {
+        "province_id": 1319,
+        "province_name": "Trivandrum",
+        "reason": "首都保护"
+      },
+      "SIK": {
+        "province_id": 1328,
+        "province_name": "Tumlong",
+        "reason": "首都保护"
+      },
+      "BUR": {
+        "province_id": 1334,
+        "province_name": "Ava",
+        "reason": "首都保护"
+      },
+      "SIA": {
+        "province_id": 1346,
+        "province_name": "Bangkok",
+        "reason": "首都保护"
+      },
+      "CAM": {
+        "province_id": 1364,
+        "province_name": "Oudong",
+        "reason": "首都保护"
+      },
+      "DAI": {
+        "province_id": 1369,
+        "province_name": "Hanoi",
+        "reason": "首都保护"
+      },
+      "ATJ": {
+        "province_id": 1405,
+        "province_name": "Banda Aceh",
+        "reason": "首都保护"
+      },
+      "JAV": {
+        "province_id": 1413,
+        "province_name": "Batavia",
+        "reason": "首都保护"
+      },
+      "BAL": {
+        "province_id": 1438,
+        "province_name": "Bali",
+        "reason": "首都保护"
+      },
+      "KOR": {
+        "province_id": 1624,
+        "province_name": "Seoul",
+        "reason": "首都保护"
+      },
+      "JAP": {
+        "province_id": 1649,
+        "province_name": "Edo",
+        "reason": "首都保护"
+      },
+      "ALD": {
+        "province_id": 1700,
+        "province_name": "Algiers",
+        "reason": "首都保护"
+      },
+      "GCO": {
+        "province_id": 1723,
+        "province_name": "Balboa",
+        "reason": "首都保护"
+      },
+      "ECU": {
+        "province_id": 2279,
+        "province_name": "Quito",
+        "reason": "首都保护"
+      },
+      "ETH": {
+        "province_id": 1852,
+        "province_name": "Gonder",
+        "reason": "首都保护"
+      },
+      "LIB": {
+        "province_id": 1887,
+        "province_name": "Monrovia",
+        "reason": "首都保护"
+      },
+      "SOK": {
+        "province_id": 1948,
+        "province_name": "Sokoto",
+        "reason": "首都保护"
+      },
+      "ZAN": {
+        "province_id": 2048,
+        "province_name": "Zanzibar",
+        "reason": "首都保护"
+      },
+      "SAF": {
+        "province_id": 2088,
+        "province_name": "Springbok",
+        "reason": "首都保护"
+      },
+      "MAD": {
+        "province_id": 2115,
+        "province_name": "Tananarive",
+        "reason": "首都保护"
+      },
+      "MEX": {
+        "province_id": 2172,
+        "province_name": "Mexico City",
+        "reason": "首都保护"
+      },
+      "UCA": {
+        "province_id": 2186,
+        "province_name": "Guatemala",
+        "reason": "首都保护"
+      },
+      "ELS": {
+        "province_id": 2191,
+        "province_name": "San Salvador",
+        "reason": "首都保护"
+      },
+      "NIC": {
+        "province_id": 2199,
+        "province_name": "Len",
+        "reason": "首都保护"
+      },
+      "COS": {
+        "province_id": 2201,
+        "province_name": "San Jos",
+        "reason": "首都保护"
+      },
+      "CLM": {
+        "province_id": 2204,
+        "province_name": "Panama City",
+        "reason": "首都保护"
+      },
+      "HAI": {
+        "province_id": 2213,
+        "province_name": "Port Au Prince",
+        "reason": "首都保护"
+      },
+      "VNZ": {
+        "province_id": 2264,
+        "province_name": "Caracas",
+        "reason": "首都保护"
+      },
+      "BRZ": {
+        "province_id": 2286,
+        "province_name": "Iquitos",
+        "reason": "首都保护"
+      },
+      "PEU": {
+        "province_id": 2290,
+        "province_name": "Cajamarca",
+        "reason": "首都保护"
+      },
+      "ARG": {
+        "province_id": 2348,
+        "province_name": "Buenos Aires",
+        "reason": "首都保护"
+      },
+      "BOL": {
+        "province_id": 2313,
+        "province_name": "Chuquisaca",
+        "reason": "首都保护"
+      },
+      "CHL": {
+        "province_id": 2322,
+        "province_name": "Copiap",
+        "reason": "首都保护"
+      },
+      "PRG": {
+        "province_id": 2339,
+        "province_name": "Asuncion",
+        "reason": "首都保护"
+      },
+      "URU": {
+        "province_id": 2344,
+        "province_name": "Montevideo",
+        "reason": "首都保护"
+      },
+      "AST": {
+        "province_id": 2468,
+        "province_name": "Sydney",
+        "reason": "首都保护"
+      },
+      "NZL": {
+        "province_id": 2509,
+        "province_name": "Auckland",
+        "reason": "首都保护"
+      }
+    },
+    "transferred_provinces": [
+      {
+        "province_id": 3,
+        "province_name": "Kenai",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 4,
+        "province_name": "Dutch Harbor",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 5,
+        "province_name": "Bethel",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 6,
+        "province_name": "Whitehorse",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 7,
+        "province_name": "Dawson",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 8,
+        "province_name": "Ross River",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 78,
+        "province_name": "Seattle",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 79,
+        "province_name": "Spokane",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 80,
+        "province_name": "Walla Walla",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 81,
+        "province_name": "Portland",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 82,
+        "province_name": "Baker City",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 84,
+        "province_name": "San Francisco",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 92,
+        "province_name": "Coeur D'Alene",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 114,
+        "province_name": "Missoula",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 192,
+        "province_name": "Jackson",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 194,
+        "province_name": "Biloxi",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 195,
+        "province_name": "Montgomery",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 197,
+        "province_name": "Mobile",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 198,
+        "province_name": "Tallahassee",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 199,
+        "province_name": "St Augustine",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 200,
+        "province_name": "Tampa",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 201,
+        "province_name": "Atlanta",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 202,
+        "province_name": "Valdosta",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 204,
+        "province_name": "Savannah",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 205,
+        "province_name": "Charleston",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 206,
+        "province_name": "Columbia",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 210,
+        "province_name": "Wilmington",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 610,
+        "province_name": "Ponape",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 658,
+        "province_name": "Hawaii",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 686,
+        "province_name": "Line Islands",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 801,
+        "province_name": "Tahiti",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1097,
+        "province_name": "New Caledonia",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1788,
+        "province_name": "Kaolack",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1791,
+        "province_name": "Bakel",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1792,
+        "province_name": "Ziguinchor",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1793,
+        "province_name": "Velingara",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1794,
+        "province_name": "Bamako",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1795,
+        "province_name": "Kayes",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1796,
+        "province_name": "Nioro",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1797,
+        "province_name": "Kita",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1801,
+        "province_name": "Mourdiah",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1878,
+        "province_name": "Gabu",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1879,
+        "province_name": "Boffa",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1880,
+        "province_name": "Timbo",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1881,
+        "province_name": "Dinguiraye",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1882,
+        "province_name": "Kankan",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1883,
+        "province_name": "Beyla",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1885,
+        "province_name": "Falaba",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1886,
+        "province_name": "Bo",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1889,
+        "province_name": "Bopolu",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1890,
+        "province_name": "Gbarnga",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1891,
+        "province_name": "Zwedru",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1892,
+        "province_name": "Grand Lahou",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1893,
+        "province_name": "Sassandra",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1895,
+        "province_name": "Bouake",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1896,
+        "province_name": "Man",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1897,
+        "province_name": "Akoupe",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1898,
+        "province_name": "Kong",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1899,
+        "province_name": "Bondouku",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1900,
+        "province_name": "Odienne",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1914,
+        "province_name": "Lome",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1915,
+        "province_name": "Ho",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1916,
+        "province_name": "Yendi",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1917,
+        "province_name": "Atakpame",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1918,
+        "province_name": "Sokode",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1919,
+        "province_name": "Cotonou",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1920,
+        "province_name": "Abomey",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1921,
+        "province_name": "Nikki",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1922,
+        "province_name": "Jugu",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1923,
+        "province_name": "Lagos",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1924,
+        "province_name": "Abeokuta",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1925,
+        "province_name": "Ibadan",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1926,
+        "province_name": "Ife",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 1938,
+        "province_name": "Bussa",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2332,
+        "province_name": "Osorno",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2333,
+        "province_name": "Puerto Aisn",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2334,
+        "province_name": "Punta Arenas",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2335,
+        "province_name": "Porvenir",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2519,
+        "province_name": "Yap",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2522,
+        "province_name": "Marshall Islands",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2524,
+        "province_name": "Wake",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2526,
+        "province_name": "Palmyra",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2527,
+        "province_name": "Gilbert Islands",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2542,
+        "province_name": "Wallis and Futuna",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2551,
+        "province_name": "Marquesas",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2553,
+        "province_name": "Tuamotus",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2555,
+        "province_name": "Augusta",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2579,
+        "province_name": "Truk",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2599,
+        "province_name": "Fairbanks",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2623,
+        "province_name": "Midway Island",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2630,
+        "province_name": "Cordova",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 2631,
+        "province_name": "Unalakeet",
+        "original_owner": "USA"
+      },
+      {
+        "province_id": 9,
+        "province_name": "Fort Simpson",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 10,
+        "province_name": "Inuvik",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 11,
+        "province_name": "Echo Bay",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 18,
+        "province_name": "Fort Saint John",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 19,
+        "province_name": "Prince George",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 20,
+        "province_name": "Kelowna",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 21,
+        "province_name": "Vernon",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 45,
+        "province_name": "Baffin Island",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 68,
+        "province_name": "Fredericton",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 69,
+        "province_name": "Bathurst",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 70,
+        "province_name": "Prince Edward Island",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 71,
+        "province_name": "Halifax",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 72,
+        "province_name": "Truro",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 73,
+        "province_name": "Cape Breton Island",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 74,
+        "province_name": "Saint Johns",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 75,
+        "province_name": "Millertown",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 76,
+        "province_name": "Hopedale",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 203,
+        "province_name": "Bermuda",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 266,
+        "province_name": "Aberdeen",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 267,
+        "province_name": "Inverness",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 268,
+        "province_name": "Dundee",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 269,
+        "province_name": "Edinburgh",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 270,
+        "province_name": "Stirling",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 271,
+        "province_name": "Glasgow",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 272,
+        "province_name": "Dumfries",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 273,
+        "province_name": "Cardiff",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 274,
+        "province_name": "Cardigan",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 275,
+        "province_name": "Llandrindod",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 276,
+        "province_name": "Holyhead",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 277,
+        "province_name": "Liverpool",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 278,
+        "province_name": "Manchester",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 279,
+        "province_name": "Carlisle",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 280,
+        "province_name": "Newcastle-upon-Tyne",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 281,
+        "province_name": "Hull",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 282,
+        "province_name": "Leeds",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 283,
+        "province_name": "Sheffield",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 284,
+        "province_name": "Birmingham",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 285,
+        "province_name": "Chester",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 286,
+        "province_name": "Shrewsbury",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 287,
+        "province_name": "Coventry",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 288,
+        "province_name": "Nottingham",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 289,
+        "province_name": "Leicester",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 290,
+        "province_name": "Lincoln",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 291,
+        "province_name": "Cambridge",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 292,
+        "province_name": "Ipswich",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 293,
+        "province_name": "Chelmsford",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 294,
+        "province_name": "Oxford",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 295,
+        "province_name": "St Albans",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 296,
+        "province_name": "Bristol",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 297,
+        "province_name": "Salisbury",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 298,
+        "province_name": "Bath",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 299,
+        "province_name": "Plymouth",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 301,
+        "province_name": "Canterbury",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 302,
+        "province_name": "Brighton",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 303,
+        "province_name": "Southampton",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 304,
+        "province_name": "Isle of Man",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 419,
+        "province_name": "Channel Islands",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 517,
+        "province_name": "Gibraltar",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 533,
+        "province_name": "Heligoland",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 854,
+        "province_name": "Malta",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1249,
+        "province_name": "Kharswari",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1251,
+        "province_name": "Calcutta",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1253,
+        "province_name": "Bardwan",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1254,
+        "province_name": "Dacca",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1255,
+        "province_name": "Rajshahi",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1256,
+        "province_name": "Jessore",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1257,
+        "province_name": "Chittagong",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1261,
+        "province_name": "Cuttack",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1276,
+        "province_name": "Hoshangabad",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1291,
+        "province_name": "Ahmedabad",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1292,
+        "province_name": "Rajkot",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1294,
+        "province_name": "Patan",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1295,
+        "province_name": "Baroda",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1296,
+        "province_name": "Surat",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1297,
+        "province_name": "Bombay",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1298,
+        "province_name": "Nasik",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1299,
+        "province_name": "Poona",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1301,
+        "province_name": "Kolhapur",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1304,
+        "province_name": "Madras",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1307,
+        "province_name": "Nellore",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1309,
+        "province_name": "Tanjore",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1320,
+        "province_name": "Andaman Islands",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1321,
+        "province_name": "Colombo",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1322,
+        "province_name": "Jaffna",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1323,
+        "province_name": "Kandy",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1324,
+        "province_name": "Trincomalee",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1325,
+        "province_name": "Maldives",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1374,
+        "province_name": "Thanh Hoa",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1375,
+        "province_name": "Hue",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1376,
+        "province_name": "Vinh",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1377,
+        "province_name": "Tourane",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1378,
+        "province_name": "Pleiku",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1379,
+        "province_name": "Qui Nhon",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1380,
+        "province_name": "Saigon",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1381,
+        "province_name": "Dong Quai",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1382,
+        "province_name": "Hatien",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1383,
+        "province_name": "Vinhlong",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1384,
+        "province_name": "Singapore",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1386,
+        "province_name": "Malacca",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1388,
+        "province_name": "Penang",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1785,
+        "province_name": "Banjul",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1884,
+        "province_name": "Freetown",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1908,
+        "province_name": "Cape Coast",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 1979,
+        "province_name": "Biloka",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2002,
+        "province_name": "Quibala",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2005,
+        "province_name": "Huambo",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2006,
+        "province_name": "Kuito",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2008,
+        "province_name": "Ondjiva",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2009,
+        "province_name": "Malanje",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2010,
+        "province_name": "Saurimo",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2076,
+        "province_name": "Nokaneng",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2077,
+        "province_name": "Tsabong",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2078,
+        "province_name": "Windhoek",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2079,
+        "province_name": "Swakopmund",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2080,
+        "province_name": "Tsumeb",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2081,
+        "province_name": "Linyati",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2082,
+        "province_name": "Otjinene",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2083,
+        "province_name": "Walvis Bay",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2084,
+        "province_name": "Angra Pequena",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2085,
+        "province_name": "Nu-gouses",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2086,
+        "province_name": "Karasburg",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2087,
+        "province_name": "Cape Town",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2089,
+        "province_name": "Worcester",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2090,
+        "province_name": "Swettenham",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2091,
+        "province_name": "Mossel Bay",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2092,
+        "province_name": "Beaufort",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2093,
+        "province_name": "Calvinia",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2094,
+        "province_name": "Kimberley",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2096,
+        "province_name": "Port Elizabeth",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2097,
+        "province_name": "Graaf Reinet",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2098,
+        "province_name": "Bisho",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2099,
+        "province_name": "Mathele",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2100,
+        "province_name": "Umtata",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2125,
+        "province_name": "Mauritius",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2127,
+        "province_name": "Seychelles",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2128,
+        "province_name": "Diego Garcia",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2129,
+        "province_name": "Saint Helena",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2130,
+        "province_name": "Ascension",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2131,
+        "province_name": "Falkland Islands",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2132,
+        "province_name": "Tristan da Cunha",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2133,
+        "province_name": "South Georgia",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2190,
+        "province_name": "Belize",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2217,
+        "province_name": "Jamaica",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2218,
+        "province_name": "Cayman Islands",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2219,
+        "province_name": "Bahamas",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2220,
+        "province_name": "Turks And Caicos",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2224,
+        "province_name": "Antigua",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2225,
+        "province_name": "Montserrat",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2226,
+        "province_name": "Tortola",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2227,
+        "province_name": "Saint Kitts",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2229,
+        "province_name": "Barbados",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2231,
+        "province_name": "Saint Lucia",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2232,
+        "province_name": "Dominica",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2233,
+        "province_name": "Grenada",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2237,
+        "province_name": "Trinidad",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2238,
+        "province_name": "Tobago",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2239,
+        "province_name": "Georgetown",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2242,
+        "province_name": "Mahdia",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2243,
+        "province_name": "Essequibo",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2336,
+        "province_name": "Easter Island",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2409,
+        "province_name": "Saint Vincent",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2454,
+        "province_name": "Fiji",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2511,
+        "province_name": "Napier",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2513,
+        "province_name": "Dunedin",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2514,
+        "province_name": "Hokitika",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2515,
+        "province_name": "Christchurch",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2520,
+        "province_name": "Taveuni",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2523,
+        "province_name": "Nauru",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2528,
+        "province_name": "Port Moresby",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2529,
+        "province_name": "Kerema",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2534,
+        "province_name": "Solomon Islands",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2535,
+        "province_name": "New Hebrides",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2536,
+        "province_name": "Santa Cruz Islands",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2540,
+        "province_name": "Tonga",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2541,
+        "province_name": "Ellice Islands",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2543,
+        "province_name": "Apia",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2544,
+        "province_name": "Pago Pago",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2545,
+        "province_name": "Rarotonga",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2546,
+        "province_name": "Tongareva",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2547,
+        "province_name": "Tokelau",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2548,
+        "province_name": "Niue",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2552,
+        "province_name": "Pitcairn",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2558,
+        "province_name": "De Aar",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2566,
+        "province_name": "Agartala",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2598,
+        "province_name": "Fort Liard",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2625,
+        "province_name": "Port Hope Simpson",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 2629,
+        "province_name": "Beatton River",
+        "original_owner": "ENG"
+      },
+      {
+        "province_id": 13,
+        "province_name": "Vancouver",
+        "original_owner": "COL"
+      },
+      {
+        "province_id": 15,
+        "province_name": "Prince Rupert",
+        "original_owner": "COL"
+      },
+      {
+        "province_id": 16,
+        "province_name": "Glenora",
+        "original_owner": "COL"
+      },
+      {
+        "province_id": 17,
+        "province_name": "Atlin",
+        "original_owner": "COL"
+      },
+      {
+        "province_id": 77,
+        "province_name": "St Pierre & Miquelon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 399,
+        "province_name": "Lille",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 400,
+        "province_name": "Dunkirk",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 401,
+        "province_name": "Arras",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 402,
+        "province_name": "Amiens",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 403,
+        "province_name": "Laon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 404,
+        "province_name": "Cambrai",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 405,
+        "province_name": "Charleville",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 406,
+        "province_name": "Troyes",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 407,
+        "province_name": "Chaumont",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 408,
+        "province_name": "Chalons",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 409,
+        "province_name": "Strasbourg",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 410,
+        "province_name": "Colmar",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 411,
+        "province_name": "Nancy",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 412,
+        "province_name": "Metz",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 413,
+        "province_name": "Verdun",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 414,
+        "province_name": "pinal",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 415,
+        "province_name": "Rouen",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 416,
+        "province_name": "vreux",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 417,
+        "province_name": "Alenon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 418,
+        "province_name": "Caen",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 420,
+        "province_name": "Brest",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 421,
+        "province_name": "St Brieuc",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 422,
+        "province_name": "Vannes",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 423,
+        "province_name": "Nantes",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 424,
+        "province_name": "Rennes",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 426,
+        "province_name": "Chartres",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 427,
+        "province_name": "Melun",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 428,
+        "province_name": "Dijon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 429,
+        "province_name": "Auxerre",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 430,
+        "province_name": "Moulins",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 431,
+        "province_name": "Macon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 432,
+        "province_name": "Besanon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 433,
+        "province_name": "Lons",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 434,
+        "province_name": "Angers",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 435,
+        "province_name": "Laval",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 436,
+        "province_name": "Le Mans",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 437,
+        "province_name": "La Roche",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 438,
+        "province_name": "Orlans",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 439,
+        "province_name": "Bourges",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 440,
+        "province_name": "Blois",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 441,
+        "province_name": "Tours",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 442,
+        "province_name": "La Rochelle",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 443,
+        "province_name": "Poitiers",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 444,
+        "province_name": "Angoulme",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 445,
+        "province_name": "Limoges",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 446,
+        "province_name": "Chteauroux",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 447,
+        "province_name": "Tulle",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 448,
+        "province_name": "Clermont-Ferrand",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 449,
+        "province_name": "Aurillac",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 450,
+        "province_name": "Cahors",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 451,
+        "province_name": "Lyon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 452,
+        "province_name": "St tienne",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 453,
+        "province_name": "Valence",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 454,
+        "province_name": "Grenoble",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 455,
+        "province_name": "Toulouse",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 456,
+        "province_name": "Montauban",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 457,
+        "province_name": "Foix",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 461,
+        "province_name": "Montpellier",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 462,
+        "province_name": "Rodez",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 463,
+        "province_name": "Carcassonne",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 464,
+        "province_name": "Perpignan",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 467,
+        "province_name": "Marseilles",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 468,
+        "province_name": "Avignon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 469,
+        "province_name": "Digne",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 470,
+        "province_name": "Toulon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 471,
+        "province_name": "Frejus",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 473,
+        "province_name": "Corsica",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 531,
+        "province_name": "Stade",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 532,
+        "province_name": "Lneburg",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 1312,
+        "province_name": "Pondicherry",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 1755,
+        "province_name": "Suez",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 1894,
+        "province_name": "Grand Bassam",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2123,
+        "province_name": "Comoros",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2124,
+        "province_name": "Mayotte",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2126,
+        "province_name": "Bourbon",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2228,
+        "province_name": "Martinique",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2230,
+        "province_name": "Guadeloupe",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2241,
+        "province_name": "Cayenne",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2244,
+        "province_name": "Christmas Island",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2246,
+        "province_name": "Maripasoula",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2406,
+        "province_name": "Cocos Islands",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 2570,
+        "province_name": "Beauvais",
+        "original_owner": "FRA"
+      },
+      {
+        "province_id": 251,
+        "province_name": "Godthab",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 252,
+        "province_name": "Iceland",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 253,
+        "province_name": "Faroe Islands",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 305,
+        "province_name": "Trondheim",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 306,
+        "province_name": "Bodo",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 307,
+        "province_name": "Hammerfest",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 308,
+        "province_name": "Alesund",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 309,
+        "province_name": "Bergen",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 310,
+        "province_name": "Christianssand",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 311,
+        "province_name": "Skien",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 312,
+        "province_name": "Drammen",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 313,
+        "province_name": "Christiania",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 314,
+        "province_name": "Hamar",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 315,
+        "province_name": "Lillehammer",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 316,
+        "province_name": "Frederiksstad",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 317,
+        "province_name": "Gvle",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 318,
+        "province_name": "Sundsvall",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 319,
+        "province_name": "stersund",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 320,
+        "province_name": "Ume",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 321,
+        "province_name": "Lule",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 323,
+        "province_name": "Falun",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 324,
+        "province_name": "Uppsala",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 325,
+        "province_name": "Norrkping",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 326,
+        "province_name": "Vsters",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 327,
+        "province_name": "rebro",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 328,
+        "province_name": "Karlstad",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 329,
+        "province_name": "Gteborg",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 330,
+        "province_name": "Bors",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 331,
+        "province_name": "Gotland",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 332,
+        "province_name": "Kalmar",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 333,
+        "province_name": "Vxj",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 334,
+        "province_name": "Malm",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 335,
+        "province_name": "Karlskrona",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 366,
+        "province_name": "Aarhus",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 367,
+        "province_name": "Aalborg",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 368,
+        "province_name": "Ribe",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 370,
+        "province_name": "Flensburg",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 371,
+        "province_name": "Aabenraa",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 372,
+        "province_name": "Copenhagen",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 373,
+        "province_name": "Odense",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 374,
+        "province_name": "Bornholm",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 1907,
+        "province_name": "Accra",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 2223,
+        "province_name": "Saint Thomas",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 2557,
+        "province_name": "Esbjerg",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 2591,
+        "province_name": "Holsteinsborg",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 2632,
+        "province_name": "Ammassalik",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 2636,
+        "province_name": "Egedesminde",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 3246,
+        "province_name": "Jan Mayen",
+        "original_owner": "SCA"
+      },
+      {
+        "province_id": 254,
+        "province_name": "Belfast",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 255,
+        "province_name": "Londonderry",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 256,
+        "province_name": "Armagh",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 257,
+        "province_name": "Donegal",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 258,
+        "province_name": "Galway",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 259,
+        "province_name": "Sligo",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 260,
+        "province_name": "Cork",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 261,
+        "province_name": "Limerick",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 262,
+        "province_name": "Waterford",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 264,
+        "province_name": "Kildare",
+        "original_owner": "IRE"
+      },
+      {
+        "province_id": 529,
+        "province_name": "Lauenburg",
+        "original_owner": "HOL"
+      },
+      {
+        "province_id": 376,
+        "province_name": "Rotterdam",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 377,
+        "province_name": "Utrecht",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 378,
+        "province_name": "Middelburg",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 379,
+        "province_name": "Eindhoven",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 380,
+        "province_name": "Breda",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 381,
+        "province_name": "Maastricht",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 382,
+        "province_name": "Arnhem",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 383,
+        "province_name": "Groningen",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 384,
+        "province_name": "Zwolle",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 385,
+        "province_name": "Leeuwarden",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 386,
+        "province_name": "Assen",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1398,
+        "province_name": "Jambi",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1399,
+        "province_name": "Palembang",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1400,
+        "province_name": "Inderagiri",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1401,
+        "province_name": "Siak",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1402,
+        "province_name": "Tanjungpinang",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1403,
+        "province_name": "Lampung",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1404,
+        "province_name": "Palak Pinang",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1408,
+        "province_name": "Padang",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1410,
+        "province_name": "Bencoolen",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1411,
+        "province_name": "Gunungsitoli",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1421,
+        "province_name": "Madura",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1437,
+        "province_name": "Bulon",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1439,
+        "province_name": "Flores",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1440,
+        "province_name": "Sumbawa",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1441,
+        "province_name": "Sumba",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1443,
+        "province_name": "Roti",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1445,
+        "province_name": "Kaupeng",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1447,
+        "province_name": "Ternate",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1448,
+        "province_name": "Jilolo",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1449,
+        "province_name": "Ambon",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1450,
+        "province_name": "Ceram",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1451,
+        "province_name": "Aru",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1452,
+        "province_name": "Biak",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1752,
+        "province_name": "Matruh",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1753,
+        "province_name": "Sidi Barrani",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1754,
+        "province_name": "Siwa",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1758,
+        "province_name": "Farafra",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1759,
+        "province_name": "Bawiti",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1760,
+        "province_name": "Mut",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1761,
+        "province_name": "Baris",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1766,
+        "province_name": "Aswan",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1818,
+        "province_name": "Massenya",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1819,
+        "province_name": "Moundou",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1820,
+        "province_name": "Bongor",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1822,
+        "province_name": "Am Timan",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1823,
+        "province_name": "Mongo",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1963,
+        "province_name": "Ngaoundere",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 1964,
+        "province_name": "Maroua",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 2234,
+        "province_name": "Curacao",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 2235,
+        "province_name": "Aruba",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 2236,
+        "province_name": "Saint Martin",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 2539,
+        "province_name": "Bougainville",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 2576,
+        "province_name": "Natuna",
+        "original_owner": "NET"
+      },
+      {
+        "province_id": 389,
+        "province_name": "Ghent",
+        "original_owner": "FLA"
+      },
+      {
+        "province_id": 390,
+        "province_name": "Antwerp",
+        "original_owner": "FLA"
+      },
+      {
+        "province_id": 391,
+        "province_name": "Hasselt",
+        "original_owner": "FLA"
+      },
+      {
+        "province_id": 393,
+        "province_name": "Tournai",
+        "original_owner": "WLL"
+      },
+      {
+        "province_id": 394,
+        "province_name": "Charleroi",
+        "original_owner": "WLL"
+      },
+      {
+        "province_id": 395,
+        "province_name": "Lige",
+        "original_owner": "WLL"
+      },
+      {
+        "province_id": 396,
+        "province_name": "Spa",
+        "original_owner": "WLL"
+      },
+      {
+        "province_id": 398,
+        "province_name": "Arlon",
+        "original_owner": "WLL"
+      },
+      {
+        "province_id": 458,
+        "province_name": "Bordeaux",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 459,
+        "province_name": "Mont de Marsan",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 460,
+        "province_name": "Pau",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 474,
+        "province_name": "La Corua",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 475,
+        "province_name": "Oviedo",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 476,
+        "province_name": "Vigo",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 477,
+        "province_name": "Len",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 478,
+        "province_name": "Santander",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 479,
+        "province_name": "Burgos",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 480,
+        "province_name": "Valladolid",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 481,
+        "province_name": "Soria",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 482,
+        "province_name": "Salamanca",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 483,
+        "province_name": "vila",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 484,
+        "province_name": "Badajoz",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 485,
+        "province_name": "Almendralejo",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 486,
+        "province_name": "Cceres",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 488,
+        "province_name": "Sigenza",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 489,
+        "province_name": "Toledo",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 490,
+        "province_name": "Cuenca",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 491,
+        "province_name": "Ciudad Real",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 492,
+        "province_name": "Bilbao",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 493,
+        "province_name": "Pamplona",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 494,
+        "province_name": "Logroo",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 495,
+        "province_name": "Zaragoza",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 496,
+        "province_name": "Huesca",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 497,
+        "province_name": "Teruel",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 498,
+        "province_name": "Barcelona",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 499,
+        "province_name": "Gerona",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 500,
+        "province_name": "Lrida",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 501,
+        "province_name": "Tarragona",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 502,
+        "province_name": "Balearic Islands",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 503,
+        "province_name": "Valencia",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 504,
+        "province_name": "Castelln",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 505,
+        "province_name": "Alicante",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 506,
+        "province_name": "Cartagena",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 507,
+        "province_name": "Murcia",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 508,
+        "province_name": "Albacete",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 509,
+        "province_name": "Seville",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 510,
+        "province_name": "Crdoba",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 511,
+        "province_name": "Huelva",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 512,
+        "province_name": "Cdiz",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 513,
+        "province_name": "Granada",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 514,
+        "province_name": "Mlaga",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 515,
+        "province_name": "Almera",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 516,
+        "province_name": "Jan",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 926,
+        "province_name": "Baghdad",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 927,
+        "province_name": "Samarra",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 929,
+        "province_name": "Karbala",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 931,
+        "province_name": "Rutbah",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 934,
+        "province_name": "Najaf",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1156,
+        "province_name": "Kaf",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1157,
+        "province_name": "Riyadh",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1158,
+        "province_name": "Rafha",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1159,
+        "province_name": "Halaban",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1160,
+        "province_name": "Hail",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1161,
+        "province_name": "Sharurah",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1163,
+        "province_name": "Qatif",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1164,
+        "province_name": "Hufuf",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1173,
+        "province_name": "Mukalla",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1175,
+        "province_name": "Ghayda",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1176,
+        "province_name": "Bayda",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1177,
+        "province_name": "Socotra",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1178,
+        "province_name": "Sana",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1179,
+        "province_name": "Hodeida",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1180,
+        "province_name": "Taizz",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1412,
+        "province_name": "Aden",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1444,
+        "province_name": "Alor",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1455,
+        "province_name": "Manila",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1456,
+        "province_name": "Vigan",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1457,
+        "province_name": "Legazpi",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1458,
+        "province_name": "Mindoro",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1459,
+        "province_name": "Palawan",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1460,
+        "province_name": "Iloilo",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1461,
+        "province_name": "Tacloban",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1462,
+        "province_name": "Zamboanga",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1463,
+        "province_name": "Davao",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1464,
+        "province_name": "Sulu",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1680,
+        "province_name": "Fez",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1681,
+        "province_name": "Wazzan",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1682,
+        "province_name": "Meknes",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1683,
+        "province_name": "Taza",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1684,
+        "province_name": "Wujda",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1685,
+        "province_name": "Rabat",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1686,
+        "province_name": "Tangier",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1687,
+        "province_name": "Tetouan",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1688,
+        "province_name": "Ajdir",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1689,
+        "province_name": "Melilla",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1690,
+        "province_name": "Marrakesh",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1691,
+        "province_name": "Casablanca",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1692,
+        "province_name": "Huribka",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1693,
+        "province_name": "Sawira",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1694,
+        "province_name": "Agadir",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1697,
+        "province_name": "Figuig",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1698,
+        "province_name": "Rashidia",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1699,
+        "province_name": "Warzazat",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1833,
+        "province_name": "Suakin",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1834,
+        "province_name": "Halaib",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1835,
+        "province_name": "Dongola",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1837,
+        "province_name": "Atbara",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1848,
+        "province_name": "Asmara",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1849,
+        "province_name": "Massawa",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1850,
+        "province_name": "Akordat",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1851,
+        "province_name": "Assab",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1868,
+        "province_name": "Mogadishu",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 1955,
+        "province_name": "Fernando P",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2136,
+        "province_name": "Canary Islands",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2209,
+        "province_name": "Havana",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2210,
+        "province_name": "Jagua",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2211,
+        "province_name": "Camagey",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2212,
+        "province_name": "Santiago de Cuba",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2222,
+        "province_name": "Puerto Rico",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2517,
+        "province_name": "Guam",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2518,
+        "province_name": "Palau",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2521,
+        "province_name": "Saipan",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2563,
+        "province_name": "Safi",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2564,
+        "province_name": "Salima",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2565,
+        "province_name": "Cebu",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 2586,
+        "province_name": "Al-Ahsa",
+        "original_owner": "SPA"
+      },
+      {
+        "province_id": 465,
+        "province_name": "Annecy",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 466,
+        "province_name": "Chambry",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 472,
+        "province_name": "Nice",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 734,
+        "province_name": "Trent",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 735,
+        "province_name": "Bozen",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 744,
+        "province_name": "Florence",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 745,
+        "province_name": "Leghorn",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 747,
+        "province_name": "Siena",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 748,
+        "province_name": "Grosetto",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 750,
+        "province_name": "Viterbo",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 751,
+        "province_name": "Perugia",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 752,
+        "province_name": "Ancona",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 753,
+        "province_name": "Aquila",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 754,
+        "province_name": "Naples",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 755,
+        "province_name": "Salerno",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 756,
+        "province_name": "Bari",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 757,
+        "province_name": "Foggia",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 758,
+        "province_name": "Brindisi",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 759,
+        "province_name": "Reggio di Calabria",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 760,
+        "province_name": "Catanzaro",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 761,
+        "province_name": "Potenza",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 762,
+        "province_name": "Palermo",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 763,
+        "province_name": "Messina",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 764,
+        "province_name": "Catania",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 765,
+        "province_name": "Cagliari",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 766,
+        "province_name": "Sassari",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 2567,
+        "province_name": "Gaeta",
+        "original_owner": "ITA"
+      },
+      {
+        "province_id": 518,
+        "province_name": "Oporto",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 519,
+        "province_name": "Vila Real",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 520,
+        "province_name": "Covilh",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 522,
+        "province_name": "Coimbra",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 523,
+        "province_name": "Abrantes",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 524,
+        "province_name": "Setubal",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 525,
+        "province_name": "vora",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 526,
+        "province_name": "Beja",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 527,
+        "province_name": "Faro",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 1446,
+        "province_name": "Dili",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 1695,
+        "province_name": "Ifni",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 1696,
+        "province_name": "Tarfaya",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 1876,
+        "province_name": "Cape Verde",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 1877,
+        "province_name": "Bissau",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 1954,
+        "province_name": "So Tom",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 2064,
+        "province_name": "Nampula",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 2066,
+        "province_name": "Zomba",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 2134,
+        "province_name": "Azores",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 2135,
+        "province_name": "Madeira",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 2581,
+        "province_name": "Mataka",
+        "original_owner": "POR"
+      },
+      {
+        "province_id": 535,
+        "province_name": "Nienburg",
+        "original_owner": "HAN"
+      },
+      {
+        "province_id": 537,
+        "province_name": "Gttingen",
+        "original_owner": "HAN"
+      },
+      {
+        "province_id": 538,
+        "province_name": "Osnabrck",
+        "original_owner": "HAN"
+      },
+      {
+        "province_id": 542,
+        "province_name": "Lingen",
+        "original_owner": "HAN"
+      },
+      {
+        "province_id": 543,
+        "province_name": "Emden",
+        "original_owner": "HAN"
+      },
+      {
+        "province_id": 541,
+        "province_name": "Cloppenburg",
+        "original_owner": "OLD"
+      },
+      {
+        "province_id": 545,
+        "province_name": "Neustrelitz",
+        "original_owner": "MEC"
+      },
+      {
+        "province_id": 546,
+        "province_name": "Stettin",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 547,
+        "province_name": "Swinemnde",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 548,
+        "province_name": "Stralsund",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 550,
+        "province_name": "Prenzlau",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 551,
+        "province_name": "Pritzwalk",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 552,
+        "province_name": "Cottbus",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 553,
+        "province_name": "Magdeburg",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 554,
+        "province_name": "Erfurt",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 556,
+        "province_name": "Halle",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 557,
+        "province_name": "Stendal",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 571,
+        "province_name": "Kaiserslautern",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 572,
+        "province_name": "Trier",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 573,
+        "province_name": "Saarbrcken",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 574,
+        "province_name": "Kreuznach",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 575,
+        "province_name": "Cologne",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 576,
+        "province_name": "Aachen",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 577,
+        "province_name": "Cleves",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 578,
+        "province_name": "Dsseldorf",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 579,
+        "province_name": "Koblenz",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 580,
+        "province_name": "Dortmund",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 581,
+        "province_name": "Mnster",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 582,
+        "province_name": "Minden",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 583,
+        "province_name": "Siegen",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 584,
+        "province_name": "Korbach",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 679,
+        "province_name": "Kolberg",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 680,
+        "province_name": "Kslin",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 681,
+        "province_name": "Kstrin",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 687,
+        "province_name": "Grlitz",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 695,
+        "province_name": "Knigsberg",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 697,
+        "province_name": "Gumbinnen",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 698,
+        "province_name": "Memel",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 2561,
+        "province_name": "Siegburg",
+        "original_owner": "PRU"
+      },
+      {
+        "province_id": 559,
+        "province_name": "Leipzig",
+        "original_owner": "SAX"
+      },
+      {
+        "province_id": 560,
+        "province_name": "Chemnitz",
+        "original_owner": "SAX"
+      },
+      {
+        "province_id": 568,
+        "province_name": "Fulda",
+        "original_owner": "HEK"
+      },
+      {
+        "province_id": 567,
+        "province_name": "Giessen",
+        "original_owner": "HES"
+      },
+      {
+        "province_id": 570,
+        "province_name": "Mainz",
+        "original_owner": "HES"
+      },
+      {
+        "province_id": 569,
+        "province_name": "Mannheim",
+        "original_owner": "BAD"
+      },
+      {
+        "province_id": 587,
+        "province_name": "Freiburg",
+        "original_owner": "BAD"
+      },
+      {
+        "province_id": 588,
+        "province_name": "Konstanz",
+        "original_owner": "BAD"
+      },
+      {
+        "province_id": 590,
+        "province_name": "Heilbronn",
+        "original_owner": "WUR"
+      },
+      {
+        "province_id": 591,
+        "province_name": "Tbingen",
+        "original_owner": "WUR"
+      },
+      {
+        "province_id": 593,
+        "province_name": "Ulm",
+        "original_owner": "WUR"
+      },
+      {
+        "province_id": 592,
+        "province_name": "Augsburg",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 595,
+        "province_name": "Nuremberg",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 596,
+        "province_name": "Aschaffenburg",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 597,
+        "province_name": "Wrzburg",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 598,
+        "province_name": "Bayreuth",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 600,
+        "province_name": "Landshut",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 601,
+        "province_name": "Ingolstadt",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 602,
+        "province_name": "Regensburg",
+        "original_owner": "BAV"
+      },
+      {
+        "province_id": 603,
+        "province_name": "Zurich",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 606,
+        "province_name": "Lucerne",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 611,
+        "province_name": "Chur",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 612,
+        "province_name": "Innsbruck",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 613,
+        "province_name": "Salzburg",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 614,
+        "province_name": "Bregenz",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 615,
+        "province_name": "Lienz",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 616,
+        "province_name": "Graz",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 617,
+        "province_name": "Judenburg",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 618,
+        "province_name": "Klagenfurt",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 620,
+        "province_name": "Sankt Plten",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 621,
+        "province_name": "Krems",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 622,
+        "province_name": "Linz",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 624,
+        "province_name": "Eisenstadt",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 625,
+        "province_name": "Prague",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 626,
+        "province_name": "Hradec Krlov",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 627,
+        "province_name": "Karlsbad",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 628,
+        "province_name": "Aussig",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 629,
+        "province_name": "Plzen",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 630,
+        "province_name": "Budejovice",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 631,
+        "province_name": "Brno",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 632,
+        "province_name": "Olomouc",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 688,
+        "province_name": "Troppau",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 689,
+        "province_name": "Tesin",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 720,
+        "province_name": "Turin",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 721,
+        "province_name": "Aosta",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 722,
+        "province_name": "Novara",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 723,
+        "province_name": "Alessandria",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 724,
+        "province_name": "Genoa",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 725,
+        "province_name": "Savona",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 726,
+        "province_name": "Milan",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 727,
+        "province_name": "Bergamo",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 728,
+        "province_name": "Brescia",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 729,
+        "province_name": "Venice",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 730,
+        "province_name": "Verona",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 731,
+        "province_name": "Padua",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 732,
+        "province_name": "Treviso",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 733,
+        "province_name": "Udine",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 739,
+        "province_name": "Modena",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 740,
+        "province_name": "Massa",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 741,
+        "province_name": "Bologna",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 742,
+        "province_name": "Ferrara",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 743,
+        "province_name": "Ravenna",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 746,
+        "province_name": "Lucca",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 780,
+        "province_name": "Split",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 781,
+        "province_name": "Zadar",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 782,
+        "province_name": "Dubrovnik",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 2568,
+        "province_name": "Lugano",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 2582,
+        "province_name": "Kotor",
+        "original_owner": "AUS"
+      },
+      {
+        "province_id": 623,
+        "province_name": "Sopron",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 633,
+        "province_name": "Bratislava",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 634,
+        "province_name": "Trencn",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 635,
+        "province_name": "Nitra",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 636,
+        "province_name": "Bansk Bystrica",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 637,
+        "province_name": "Koice",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 638,
+        "province_name": "Ronava",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 640,
+        "province_name": "Pcs",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 642,
+        "province_name": "Gyor",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 643,
+        "province_name": "Szkesfehrvr",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 644,
+        "province_name": "Kaposvr",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 645,
+        "province_name": "Kecskemt",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 646,
+        "province_name": "Miskolc",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 647,
+        "province_name": "Oradea",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 648,
+        "province_name": "Debrecen",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 649,
+        "province_name": "Szeged",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 650,
+        "province_name": "Bkscsaba",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 651,
+        "province_name": "Szatmr",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 652,
+        "province_name": "Temesvar",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 653,
+        "province_name": "Resicabnya",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 657,
+        "province_name": "Nagyszeben",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 659,
+        "province_name": "Brasso",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 660,
+        "province_name": "Udvarhely",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 771,
+        "province_name": "Zagreb",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 772,
+        "province_name": "Sisak",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 773,
+        "province_name": "Karlovac",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 774,
+        "province_name": "Senj",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 775,
+        "province_name": "Varadin",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 776,
+        "province_name": "Bjelovar",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 777,
+        "province_name": "Poega",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 779,
+        "province_name": "Osijek",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 793,
+        "province_name": "Vukovar",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 950,
+        "province_name": "Uzgorord",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 2533,
+        "province_name": "Targu Mures",
+        "original_owner": "HUN"
+      },
+      {
+        "province_id": 639,
+        "province_name": "Zalaegerszeg",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 736,
+        "province_name": "Trieste",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 737,
+        "province_name": "Gorizia",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 767,
+        "province_name": "Maribor",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 768,
+        "province_name": "Ljubljana",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 769,
+        "province_name": "Postojna",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 770,
+        "province_name": "Pola",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 778,
+        "province_name": "Fiume",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 791,
+        "province_name": "Mitrovica",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 792,
+        "province_name": "Pancevo",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 795,
+        "province_name": "Bor",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 796,
+        "province_name": "Kragujevac",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 797,
+        "province_name": "Uice",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 2538,
+        "province_name": "Novi Sad",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 2583,
+        "province_name": "Cetinje",
+        "original_owner": "YUG"
+      },
+      {
+        "province_id": 665,
+        "province_name": "Tirgu Jiu",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 666,
+        "province_name": "Craiova",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 667,
+        "province_name": "Tirgoviste",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 668,
+        "province_name": "Braila",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 669,
+        "province_name": "Calarasi",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 670,
+        "province_name": "Iasi",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 671,
+        "province_name": "Botosani",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 672,
+        "province_name": "Bacau",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 673,
+        "province_name": "Galati",
+        "original_owner": "ROM"
+      },
+      {
+        "province_id": 674,
+        "province_name": "Constanta",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 675,
+        "province_name": "Tulcea",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 783,
+        "province_name": "Sarajevo",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 784,
+        "province_name": "Bihac",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 785,
+        "province_name": "Banja Luka",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 786,
+        "province_name": "Tuzla",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 787,
+        "province_name": "Foca",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 788,
+        "province_name": "Mostar",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 789,
+        "province_name": "Livno",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 798,
+        "province_name": "Ni",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 799,
+        "province_name": "Leskovac",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 800,
+        "province_name": "Ulcinj",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 802,
+        "province_name": "Pristina",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 803,
+        "province_name": "Prizren",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 804,
+        "province_name": "Novi Pazar",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 805,
+        "province_name": "Salonika",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 806,
+        "province_name": "Skopje",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 807,
+        "province_name": "Bitola",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 808,
+        "province_name": "Petrich",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 809,
+        "province_name": "Sofia",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 810,
+        "province_name": "Vidin",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 811,
+        "province_name": "Ruse",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 812,
+        "province_name": "Pleven",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 813,
+        "province_name": "Shumen",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 814,
+        "province_name": "Varna",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 815,
+        "province_name": "Plovdiv",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 816,
+        "province_name": "Stara Zagora",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 817,
+        "province_name": "Burgas",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 818,
+        "province_name": "Silistre",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 819,
+        "province_name": "Florina",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 820,
+        "province_name": "Grevena",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 821,
+        "province_name": "Edessa",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 822,
+        "province_name": "Polygyros",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 823,
+        "province_name": "Kavala",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 824,
+        "province_name": "Janina",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 825,
+        "province_name": "Arta",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 828,
+        "province_name": "Edirne",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 829,
+        "province_name": "Xanthe",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 830,
+        "province_name": "Dedeagatch",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 831,
+        "province_name": "Larissa",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 832,
+        "province_name": "Volos",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 833,
+        "province_name": "Trikkala",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 843,
+        "province_name": "Chios",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 844,
+        "province_name": "Myteline",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 846,
+        "province_name": "Dodecanese",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 849,
+        "province_name": "Tirana",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 850,
+        "province_name": "Shkoder",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 851,
+        "province_name": "Durres",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 852,
+        "province_name": "Vlore",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 853,
+        "province_name": "Gjirokaster",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 855,
+        "province_name": "Nicosia",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 856,
+        "province_name": "Limassol",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 857,
+        "province_name": "Famagusta",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 858,
+        "province_name": "Kirklareli",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 859,
+        "province_name": "Gallipoli",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 861,
+        "province_name": "skdar",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 862,
+        "province_name": "Izmit",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 863,
+        "province_name": "Bursa",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 864,
+        "province_name": "Balikesir",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 865,
+        "province_name": "Canakkale",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 866,
+        "province_name": "Afyon",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 867,
+        "province_name": "Ktahya",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 868,
+        "province_name": "Eskishehir",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 869,
+        "province_name": "Izmir",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 870,
+        "province_name": "Manisa",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 871,
+        "province_name": "Denizli",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 872,
+        "province_name": "Mugla",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 873,
+        "province_name": "Konya",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 874,
+        "province_name": "Burdur",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 875,
+        "province_name": "Antalya",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 879,
+        "province_name": "Sivas",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 880,
+        "province_name": "Kastamonu",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 881,
+        "province_name": "Bolu",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 882,
+        "province_name": "Trabzon",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 883,
+        "province_name": "Sinop",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 884,
+        "province_name": "Giresun",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 887,
+        "province_name": "Erzurum",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 888,
+        "province_name": "Erzincan",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 889,
+        "province_name": "Malatya",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 890,
+        "province_name": "Van",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 891,
+        "province_name": "Bitlis",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 892,
+        "province_name": "Hakkari",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 893,
+        "province_name": "Diyarbakir",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 895,
+        "province_name": "Mersin",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 899,
+        "province_name": "Urfa",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 923,
+        "province_name": "Mosul",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 924,
+        "province_name": "Arbil",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 925,
+        "province_name": "Kirkuk",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 928,
+        "province_name": "Mendeli",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 930,
+        "province_name": "Kut",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 932,
+        "province_name": "Basra",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 933,
+        "province_name": "Nasiriyya",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 935,
+        "province_name": "Kuwait",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1731,
+        "province_name": "Tripoli",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1732,
+        "province_name": "Gharyan",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1733,
+        "province_name": "Misratah",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1734,
+        "province_name": "Sirt",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1735,
+        "province_name": "Benghazi",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1736,
+        "province_name": "Darna",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1737,
+        "province_name": "Tobruk",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1741,
+        "province_name": "Murzuk",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1742,
+        "province_name": "Sabha",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1743,
+        "province_name": "Ghat",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 1744,
+        "province_name": "Ghadamis",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 2569,
+        "province_name": "Niksic",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 2577,
+        "province_name": "Pljevlja",
+        "original_owner": "TUR"
+      },
+      {
+        "province_id": 682,
+        "province_name": "Breslau",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 683,
+        "province_name": "Liegnitz",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 684,
+        "province_name": "Oppeln",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 685,
+        "province_name": "Kattowitz",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 885,
+        "province_name": "Kars",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 886,
+        "province_name": "Ardahan",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1011,
+        "province_name": "Tula",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1012,
+        "province_name": "Ryazan",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1013,
+        "province_name": "Vladimir",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1022,
+        "province_name": "Ivanovo",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1066,
+        "province_name": "Tobolsk",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1096,
+        "province_name": "Batum",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1098,
+        "province_name": "Erivan",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1099,
+        "province_name": "Gyumri",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1100,
+        "province_name": "Kapan",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 1101,
+        "province_name": "Nakhichevan",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 2686,
+        "province_name": "Ishim",
+        "original_owner": "RUS"
+      },
+      {
+        "province_id": 826,
+        "province_name": "Corfu",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 827,
+        "province_name": "Zante",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 835,
+        "province_name": "Amfissa",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 836,
+        "province_name": "Lamia",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 837,
+        "province_name": "Missolonghi",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 838,
+        "province_name": "Khalkis",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 839,
+        "province_name": "Nafplion",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 840,
+        "province_name": "Corinth",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 841,
+        "province_name": "Kalamata",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 842,
+        "province_name": "Patras",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 845,
+        "province_name": "Cyclades",
+        "original_owner": "GRE"
+      },
+      {
+        "province_id": 876,
+        "province_name": "Ankara",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 877,
+        "province_name": "Amasya",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 878,
+        "province_name": "Kayseri",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 894,
+        "province_name": "Adana",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 896,
+        "province_name": "Marash",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 897,
+        "province_name": "Aleppo",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 898,
+        "province_name": "Antep",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 900,
+        "province_name": "Antioch",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 901,
+        "province_name": "Dayr al-Zour",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 902,
+        "province_name": "Damascus",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 903,
+        "province_name": "Homs",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 904,
+        "province_name": "Hama",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 905,
+        "province_name": "Latakia",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 906,
+        "province_name": "Suwayda",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 907,
+        "province_name": "Palmyra",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 912,
+        "province_name": "Baalbeck",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 913,
+        "province_name": "Beirut",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 914,
+        "province_name": "Askaleh",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 915,
+        "province_name": "Sidon",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 916,
+        "province_name": "Acre",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 917,
+        "province_name": "Jerusalem",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 918,
+        "province_name": "Nablus",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 919,
+        "province_name": "Jaffa",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 920,
+        "province_name": "Gaza",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 921,
+        "province_name": "Beersheba",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1746,
+        "province_name": "Dumyat",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1747,
+        "province_name": "Tanta",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1748,
+        "province_name": "Mansura",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1749,
+        "province_name": "Ziqaziq",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1750,
+        "province_name": "Giza",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1751,
+        "province_name": "Alexandria",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1756,
+        "province_name": "Al Arish",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1757,
+        "province_name": "Sharm al-Shaykh",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1762,
+        "province_name": "Asyut",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1763,
+        "province_name": "Bani Suwayf",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1764,
+        "province_name": "Minya",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1765,
+        "province_name": "Fayyum",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1767,
+        "province_name": "Luxor",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1768,
+        "province_name": "Idfu",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1769,
+        "province_name": "Qina",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1770,
+        "province_name": "Qusayr",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1771,
+        "province_name": "Marsa Alam",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1772,
+        "province_name": "Ras Gharib",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1827,
+        "province_name": "Khartoum",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1828,
+        "province_name": "Wad Madani",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1829,
+        "province_name": "Kassala",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1830,
+        "province_name": "Sennar",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1831,
+        "province_name": "Rabak",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1832,
+        "province_name": "Fashoda",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 2559,
+        "province_name": "Suhaj",
+        "original_owner": "ARA"
+      },
+      {
+        "province_id": 1109,
+        "province_name": "Khvoy",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1110,
+        "province_name": "Urumia",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1111,
+        "province_name": "Mahabad",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1112,
+        "province_name": "Ardabil",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1113,
+        "province_name": "Rasht",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1115,
+        "province_name": "Sari",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1116,
+        "province_name": "Gorgan",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1117,
+        "province_name": "Kermanshah",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1118,
+        "province_name": "Sanandaj",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1119,
+        "province_name": "Ilam",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1120,
+        "province_name": "Khoramabad",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1122,
+        "province_name": "Hamadan",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1123,
+        "province_name": "Zanjan",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1124,
+        "province_name": "Qazvin",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1131,
+        "province_name": "Ahvaz",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1132,
+        "province_name": "Abadan",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1133,
+        "province_name": "Dezful",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1136,
+        "province_name": "Bushire",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1162,
+        "province_name": "Bahrain",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1165,
+        "province_name": "Doha",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1168,
+        "province_name": "Dubai",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 2030,
+        "province_name": "Lamu",
+        "original_owner": "PER"
+      },
+      {
+        "province_id": 1192,
+        "province_name": "Nukus",
+        "original_owner": "KHI"
+      },
+      {
+        "province_id": 1196,
+        "province_name": "Dashhowuz",
+        "original_owner": "KHI"
+      },
+      {
+        "province_id": 1212,
+        "province_name": "Herat",
+        "original_owner": "AFG"
+      },
+      {
+        "province_id": 1213,
+        "province_name": "Bamyan",
+        "original_owner": "AFG"
+      },
+      {
+        "province_id": 1214,
+        "province_name": "Farrah",
+        "original_owner": "AFG"
+      },
+      {
+        "province_id": 1215,
+        "province_name": "Kandahar",
+        "original_owner": "AFG"
+      },
+      {
+        "province_id": 1224,
+        "province_name": "Srinagar",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1225,
+        "province_name": "Gilgit",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1242,
+        "province_name": "Lucknow",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1244,
+        "province_name": "Fyzabad",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1262,
+        "province_name": "Keunjahr",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1263,
+        "province_name": "Sambalpur",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1273,
+        "province_name": "Chhatarpur",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1274,
+        "province_name": "Rewa",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1275,
+        "province_name": "Jubbulpore",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1288,
+        "province_name": "Karachi",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1289,
+        "province_name": "Sukkur",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1290,
+        "province_name": "Umarkot",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1313,
+        "province_name": "Bangalore",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1314,
+        "province_name": "Mysore",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1315,
+        "province_name": "Chitaldroog",
+        "original_owner": "HND"
+      },
+      {
+        "province_id": 1278,
+        "province_name": "Amarati",
+        "original_owner": "HYD"
+      },
+      {
+        "province_id": 1284,
+        "province_name": "Aurangabad",
+        "original_owner": "HYD"
+      },
+      {
+        "province_id": 1285,
+        "province_name": "Nizamabad",
+        "original_owner": "HYD"
+      },
+      {
+        "province_id": 1286,
+        "province_name": "Gulbarga",
+        "original_owner": "HYD"
+      },
+      {
+        "province_id": 1287,
+        "province_name": "Warangal",
+        "original_owner": "HYD"
+      },
+      {
+        "province_id": 1318,
+        "province_name": "Cochin",
+        "original_owner": "TRA"
+      },
+      {
+        "province_id": 1335,
+        "province_name": "Kyaukse",
+        "original_owner": "BUR"
+      },
+      {
+        "province_id": 1336,
+        "province_name": "Magwe",
+        "original_owner": "BUR"
+      },
+      {
+        "province_id": 1337,
+        "province_name": "Prome",
+        "original_owner": "BUR"
+      },
+      {
+        "province_id": 1338,
+        "province_name": "Taunggyi",
+        "original_owner": "BUR"
+      },
+      {
+        "province_id": 1340,
+        "province_name": "Lashio",
+        "original_owner": "BUR"
+      },
+      {
+        "province_id": 1341,
+        "province_name": "Putao",
+        "original_owner": "BUR"
+      },
+      {
+        "province_id": 1342,
+        "province_name": "Myitkyina",
+        "original_owner": "BUR"
+      },
+      {
+        "province_id": 1347,
+        "province_name": "Lopburi",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1348,
+        "province_name": "Nakhon Sawan",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1349,
+        "province_name": "Sukhothai",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1350,
+        "province_name": "Nakhon Ratchasima",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1351,
+        "province_name": "Prachinburi",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1352,
+        "province_name": "Phuket",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1353,
+        "province_name": "Ratchaburi",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1354,
+        "province_name": "Nakhon Si Thammarat",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1355,
+        "province_name": "Chiang Mai",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1356,
+        "province_name": "Luang Prabang",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1357,
+        "province_name": "Vientiane",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1358,
+        "province_name": "Udon Thani",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1359,
+        "province_name": "Sisaket",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1360,
+        "province_name": "Xiangabouli",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1361,
+        "province_name": "Savannakhet",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1362,
+        "province_name": "Salavan",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1363,
+        "province_name": "Pakche",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1365,
+        "province_name": "Chanthaburi",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1366,
+        "province_name": "Battambang",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1385,
+        "province_name": "Johor Bahru",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1387,
+        "province_name": "Kuala Lumpur",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1389,
+        "province_name": "Alor Setar",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1390,
+        "province_name": "Kuantan",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1391,
+        "province_name": "Kota Bahru",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1392,
+        "province_name": "Pattani",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 2572,
+        "province_name": "Nan",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 2575,
+        "province_name": "Ipoh",
+        "original_owner": "SIA"
+      },
+      {
+        "province_id": 1367,
+        "province_name": "Kampot",
+        "original_owner": "CAM"
+      },
+      {
+        "province_id": 1368,
+        "province_name": "Stongtreng",
+        "original_owner": "CAM"
+      },
+      {
+        "province_id": 1370,
+        "province_name": "Hai Phong",
+        "original_owner": "DAI"
+      },
+      {
+        "province_id": 1371,
+        "province_name": "Cao Bang",
+        "original_owner": "DAI"
+      },
+      {
+        "province_id": 1372,
+        "province_name": "Son La",
+        "original_owner": "DAI"
+      },
+      {
+        "province_id": 1373,
+        "province_name": "Lang Son",
+        "original_owner": "DAI"
+      },
+      {
+        "province_id": 1406,
+        "province_name": "Medan",
+        "original_owner": "ATJ"
+      },
+      {
+        "province_id": 1407,
+        "province_name": "Tapaktuan",
+        "original_owner": "ATJ"
+      },
+      {
+        "province_id": 1409,
+        "province_name": "Sibolga",
+        "original_owner": "ATJ"
+      },
+      {
+        "province_id": 1414,
+        "province_name": "Bogor",
+        "original_owner": "JAV"
+      },
+      {
+        "province_id": 1415,
+        "province_name": "Cirebon",
+        "original_owner": "JAV"
+      },
+      {
+        "province_id": 1416,
+        "province_name": "Yogyakarta",
+        "original_owner": "JAV"
+      },
+      {
+        "province_id": 1417,
+        "province_name": "Semarang",
+        "original_owner": "JAV"
+      },
+      {
+        "province_id": 1418,
+        "province_name": "Surabaya",
+        "original_owner": "JAV"
+      },
+      {
+        "province_id": 1419,
+        "province_name": "Surakarta",
+        "original_owner": "JAV"
+      },
+      {
+        "province_id": 1420,
+        "province_name": "Probolinggo",
+        "original_owner": "JAV"
+      },
+      {
+        "province_id": 1442,
+        "province_name": "Lombok",
+        "original_owner": "BAL"
+      },
+      {
+        "province_id": 1619,
+        "province_name": "Pyongyang",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1620,
+        "province_name": "Chonchon",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1621,
+        "province_name": "Hamhung",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1622,
+        "province_name": "Chongjin",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1623,
+        "province_name": "Kimchaek",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1625,
+        "province_name": "Kaesong",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1626,
+        "province_name": "Haeju",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1627,
+        "province_name": "Sariwon",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1628,
+        "province_name": "Inchon",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1629,
+        "province_name": "Wonsan",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1630,
+        "province_name": "Kangnung",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1631,
+        "province_name": "Wonju",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1632,
+        "province_name": "Pusan",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1633,
+        "province_name": "Taegu",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1634,
+        "province_name": "Pohang",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1635,
+        "province_name": "Kwangju",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1636,
+        "province_name": "Taejon",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1637,
+        "province_name": "Cheju",
+        "original_owner": "KOR"
+      },
+      {
+        "province_id": 1638,
+        "province_name": "Hiroshima",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1639,
+        "province_name": "Okayama",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1640,
+        "province_name": "Yamaguchi",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1641,
+        "province_name": "Matsue",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1642,
+        "province_name": "Hakodate",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1643,
+        "province_name": "Ishikara",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1644,
+        "province_name": "Nemuru",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1645,
+        "province_name": "Niigata",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1646,
+        "province_name": "Kanazawa",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1647,
+        "province_name": "Fukui",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1648,
+        "province_name": "Toyama",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1650,
+        "province_name": "Chiba",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1651,
+        "province_name": "Yokohama",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1652,
+        "province_name": "Urawa",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1653,
+        "province_name": "Mito",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1654,
+        "province_name": "Bonin",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1655,
+        "province_name": "Osaka",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1656,
+        "province_name": "Wakayama",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1657,
+        "province_name": "Kyoto",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1658,
+        "province_name": "Nara",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1659,
+        "province_name": "Kobe",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1660,
+        "province_name": "Fukuoka",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1661,
+        "province_name": "Nagasaki",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1662,
+        "province_name": "Kagoshima",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1663,
+        "province_name": "Miyazaki",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1664,
+        "province_name": "Kumamoto",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1665,
+        "province_name": "Kochi",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1666,
+        "province_name": "Matsuyama",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1667,
+        "province_name": "Tokushima",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1668,
+        "province_name": "Sendai",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1669,
+        "province_name": "Fukushima",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1670,
+        "province_name": "Morioka",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1671,
+        "province_name": "Akita",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1672,
+        "province_name": "Aomori",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1673,
+        "province_name": "Yamagata",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1674,
+        "province_name": "Utsunomiya",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1675,
+        "province_name": "Nagoya",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1676,
+        "province_name": "Shizuoka",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1677,
+        "province_name": "Nagano",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1678,
+        "province_name": "Okinawa",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1679,
+        "province_name": "Amari",
+        "original_owner": "JAP"
+      },
+      {
+        "province_id": 1701,
+        "province_name": "Bougie",
+        "original_owner": "ALD"
+      },
+      {
+        "province_id": 1704,
+        "province_name": "Oran",
+        "original_owner": "ALD"
+      },
+      {
+        "province_id": 1706,
+        "province_name": "Mustaghanim",
+        "original_owner": "ALD"
+      },
+      {
+        "province_id": 1709,
+        "province_name": "Bone",
+        "original_owner": "ALD"
+      },
+      {
+        "province_id": 1836,
+        "province_name": "Esmereldas",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2280,
+        "province_name": "Guayaquil",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2282,
+        "province_name": "Loja",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2283,
+        "province_name": "Zamora",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2284,
+        "province_name": "Tena",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2285,
+        "province_name": "Galpagos",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2287,
+        "province_name": "Yurimaguas",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2288,
+        "province_name": "Yuncos",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 2289,
+        "province_name": "Puca Urco",
+        "original_owner": "ECU"
+      },
+      {
+        "province_id": 1838,
+        "province_name": "Obeid",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1839,
+        "province_name": "Nuhud",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1840,
+        "province_name": "Kaduqli",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1853,
+        "province_name": "Debre Tabor",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1854,
+        "province_name": "Matamma",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1855,
+        "province_name": "Debre Markos",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1856,
+        "province_name": "Aksum",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1857,
+        "province_name": "Antalo",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1858,
+        "province_name": "Awsa",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1860,
+        "province_name": "Awasa",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1862,
+        "province_name": "Bonga",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1863,
+        "province_name": "Asosa",
+        "original_owner": "ETH"
+      },
+      {
+        "province_id": 1888,
+        "province_name": "Harper",
+        "original_owner": "LIB"
+      },
+      {
+        "province_id": 1927,
+        "province_name": "Ilorin",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1930,
+        "province_name": "Lokoja",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1936,
+        "province_name": "Makurdi",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1937,
+        "province_name": "Tukari",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1939,
+        "province_name": "Zaria",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1940,
+        "province_name": "Bida",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1941,
+        "province_name": "Abuja",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1942,
+        "province_name": "Bauchi",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1943,
+        "province_name": "Jos",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1944,
+        "province_name": "Gombe",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1945,
+        "province_name": "Kano",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1946,
+        "province_name": "Kebbi",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1947,
+        "province_name": "Katsina",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1949,
+        "province_name": "Hadejia",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 1950,
+        "province_name": "Yola",
+        "original_owner": "SOK"
+      },
+      {
+        "province_id": 2029,
+        "province_name": "Mombasa",
+        "original_owner": "ZAN"
+      },
+      {
+        "province_id": 2033,
+        "province_name": "Voi",
+        "original_owner": "ZAN"
+      },
+      {
+        "province_id": 2036,
+        "province_name": "Dar Es Salaam",
+        "original_owner": "ZAN"
+      },
+      {
+        "province_id": 2037,
+        "province_name": "Tanga",
+        "original_owner": "ZAN"
+      },
+      {
+        "province_id": 2045,
+        "province_name": "Morogoro",
+        "original_owner": "ZAN"
+      },
+      {
+        "province_id": 2116,
+        "province_name": "Fianarantsoa",
+        "original_owner": "MAD"
+      },
+      {
+        "province_id": 2117,
+        "province_name": "Ampanihy",
+        "original_owner": "MAD"
+      },
+      {
+        "province_id": 2118,
+        "province_name": "Tolanaro",
+        "original_owner": "MAD"
+      },
+      {
+        "province_id": 2119,
+        "province_name": "Toamasina",
+        "original_owner": "MAD"
+      },
+      {
+        "province_id": 2120,
+        "province_name": "Antsiranana",
+        "original_owner": "MAD"
+      },
+      {
+        "province_id": 2121,
+        "province_name": "Mahajanga",
+        "original_owner": "MAD"
+      },
+      {
+        "province_id": 2122,
+        "province_name": "Toliara",
+        "original_owner": "MAD"
+      },
+      {
+        "province_id": 2137,
+        "province_name": "Hermosillo",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2138,
+        "province_name": "Loreto",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2139,
+        "province_name": "Rosarito",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2140,
+        "province_name": "Nogales",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2141,
+        "province_name": "Guaymas",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2146,
+        "province_name": "Monterrey",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2148,
+        "province_name": "Reynosa",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2149,
+        "province_name": "Matamoros",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2150,
+        "province_name": "Ciudad Victoria",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2151,
+        "province_name": "Saltillo",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2153,
+        "province_name": "Durango",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2154,
+        "province_name": "Santa Mara del Oro",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2155,
+        "province_name": "Torren",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2156,
+        "province_name": "Mazatln",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2157,
+        "province_name": "Culiacn",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2158,
+        "province_name": "Zacatecas",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2159,
+        "province_name": "San Luis Potos",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2160,
+        "province_name": "Aguascalientes",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2161,
+        "province_name": "Tepic",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2162,
+        "province_name": "Veracruz",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2163,
+        "province_name": "Tampico",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2164,
+        "province_name": "Minatitln",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2165,
+        "province_name": "Villahermosa",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2166,
+        "province_name": "Guadalajara",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2167,
+        "province_name": "Guanajuato",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2168,
+        "province_name": "Puerto Vallarta",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2169,
+        "province_name": "Colima",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2170,
+        "province_name": "Morelia",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2171,
+        "province_name": "Los Albailes",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2173,
+        "province_name": "Quertaro",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2174,
+        "province_name": "Toluca",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2175,
+        "province_name": "Tulancingo",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2176,
+        "province_name": "Puebla",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2177,
+        "province_name": "Oaxaca",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2178,
+        "province_name": "Collataro",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2179,
+        "province_name": "Acapulco",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2180,
+        "province_name": "Chilpancingo",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2181,
+        "province_name": "Tuxtla",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2182,
+        "province_name": "Tapachula",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2183,
+        "province_name": "Mrida",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2184,
+        "province_name": "Campeche",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2185,
+        "province_name": "Bacalar",
+        "original_owner": "MEX"
+      },
+      {
+        "province_id": 2187,
+        "province_name": "Quetzaltenango",
+        "original_owner": "UCA"
+      },
+      {
+        "province_id": 2188,
+        "province_name": "Puerto Barrios",
+        "original_owner": "UCA"
+      },
+      {
+        "province_id": 2189,
+        "province_name": "Sayaxch",
+        "original_owner": "UCA"
+      },
+      {
+        "province_id": 2193,
+        "province_name": "Comayagua",
+        "original_owner": "UCA"
+      },
+      {
+        "province_id": 2194,
+        "province_name": "San Pedro Sula",
+        "original_owner": "UCA"
+      },
+      {
+        "province_id": 2195,
+        "province_name": "La Ceiba",
+        "original_owner": "UCA"
+      },
+      {
+        "province_id": 2196,
+        "province_name": "Puerto Lempira",
+        "original_owner": "UCA"
+      },
+      {
+        "province_id": 2192,
+        "province_name": "San Miguel",
+        "original_owner": "ELS"
+      },
+      {
+        "province_id": 2197,
+        "province_name": "Managua",
+        "original_owner": "NIC"
+      },
+      {
+        "province_id": 2198,
+        "province_name": "Rivas",
+        "original_owner": "NIC"
+      },
+      {
+        "province_id": 2200,
+        "province_name": "Bluefields",
+        "original_owner": "NIC"
+      },
+      {
+        "province_id": 2202,
+        "province_name": "Liberia",
+        "original_owner": "COS"
+      },
+      {
+        "province_id": 2203,
+        "province_name": "Limn",
+        "original_owner": "COS"
+      },
+      {
+        "province_id": 2205,
+        "province_name": "David",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2206,
+        "province_name": "Penonom",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2208,
+        "province_name": "Yaviza",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2247,
+        "province_name": "Bogot",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2248,
+        "province_name": "Ibagu",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2249,
+        "province_name": "Tunja",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2250,
+        "province_name": "Manizales",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2251,
+        "province_name": "Ccuta",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2252,
+        "province_name": "Medelln",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2253,
+        "province_name": "Quibd",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2254,
+        "province_name": "Cartagena de Indias",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2255,
+        "province_name": "Barranquilla",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2256,
+        "province_name": "Cali",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2257,
+        "province_name": "Popayn",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2258,
+        "province_name": "Buenaventura",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2259,
+        "province_name": "Pasto",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2260,
+        "province_name": "San Jos del Guaviare",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2261,
+        "province_name": "Obando",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2262,
+        "province_name": "Casanare",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2263,
+        "province_name": "El Encanto",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2269,
+        "province_name": "Giria",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2275,
+        "province_name": "Angostura",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2276,
+        "province_name": "Curiapo",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2277,
+        "province_name": "El Jobal",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2278,
+        "province_name": "San Fernando de Atabapo",
+        "original_owner": "CLM"
+      },
+      {
+        "province_id": 2214,
+        "province_name": "Santo Domingo",
+        "original_owner": "HAI"
+      },
+      {
+        "province_id": 2215,
+        "province_name": "Cap Haitien",
+        "original_owner": "HAI"
+      },
+      {
+        "province_id": 2216,
+        "province_name": "La Vega",
+        "original_owner": "HAI"
+      },
+      {
+        "province_id": 2265,
+        "province_name": "Guanare",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2266,
+        "province_name": "Calabozo",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2267,
+        "province_name": "Cuman",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2268,
+        "province_name": "San Felipe",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2270,
+        "province_name": "Maracaibo",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2271,
+        "province_name": "Valera",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2272,
+        "province_name": "Coro",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2273,
+        "province_name": "Barquisimeto",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2274,
+        "province_name": "Barinas",
+        "original_owner": "VNZ"
+      },
+      {
+        "province_id": 2297,
+        "province_name": "Ica",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2299,
+        "province_name": "Ayacucho",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2301,
+        "province_name": "Puerto Maldonado",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2302,
+        "province_name": "Cusco",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2303,
+        "province_name": "Puno",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2304,
+        "province_name": "Arequipa",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2306,
+        "province_name": "Sorocaba",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2310,
+        "province_name": "La Paz",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2311,
+        "province_name": "Cochabamba",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2319,
+        "province_name": "Santa Ana",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2320,
+        "province_name": "Riberalta",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2321,
+        "province_name": "Cobija",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2356,
+        "province_name": "Corrientes",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2357,
+        "province_name": "Curuz Cuati",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2358,
+        "province_name": "Santo Toms",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2359,
+        "province_name": "Coln",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2360,
+        "province_name": "Paran",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2361,
+        "province_name": "Sancti Spiritu",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2362,
+        "province_name": "Reconquista",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2363,
+        "province_name": "Rosario",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2364,
+        "province_name": "Resistencia",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2365,
+        "province_name": "Villa ngela",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2373,
+        "province_name": "Tucumn",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2374,
+        "province_name": "Catamarca",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2375,
+        "province_name": "Vinchina",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2376,
+        "province_name": "Santiago del Estero",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2377,
+        "province_name": "Aatuya",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2378,
+        "province_name": "Mailn",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2379,
+        "province_name": "Crdoba de Argentina",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2380,
+        "province_name": "Villa Nueva",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2381,
+        "province_name": "Ro Cuarto",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2382,
+        "province_name": "Renanc",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2383,
+        "province_name": "San Luis",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2384,
+        "province_name": "Mercedes",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2385,
+        "province_name": "La Rioja",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2386,
+        "province_name": "Santa Rita",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2387,
+        "province_name": "San Juan",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2388,
+        "province_name": "Calingasta",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2402,
+        "province_name": "Manaus",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2408,
+        "province_name": "Oriximina",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2410,
+        "province_name": "Belm",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2411,
+        "province_name": "Santarm",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2412,
+        "province_name": "bidos",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2413,
+        "province_name": "Marab",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2414,
+        "province_name": "Amap",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2415,
+        "province_name": "Macap",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2416,
+        "province_name": "Dourados",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2417,
+        "province_name": "Vila Bela",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2418,
+        "province_name": "Cuiab",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2419,
+        "province_name": "Corumb",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2420,
+        "province_name": "Iguatemi",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2421,
+        "province_name": "Vila Boa",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2422,
+        "province_name": "Aganja",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2423,
+        "province_name": "Palmas",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2424,
+        "province_name": "So Lus",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2425,
+        "province_name": "Chapada",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2426,
+        "province_name": "Teresina",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2427,
+        "province_name": "Oeiras",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2428,
+        "province_name": "Paraba",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2429,
+        "province_name": "Fortaleza",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2430,
+        "province_name": "Crato",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2431,
+        "province_name": "Natal",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2432,
+        "province_name": "Recife",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2433,
+        "province_name": "Cabrobo",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2434,
+        "province_name": "Macei",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2435,
+        "province_name": "Aracaju",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2436,
+        "province_name": "Salvador de Bahia",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2437,
+        "province_name": "Juazeiro",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2438,
+        "province_name": "Vila do Barra",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2439,
+        "province_name": "Porto Seguro",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2440,
+        "province_name": "Vitria da Conquista",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2441,
+        "province_name": "Ouro Preto",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2442,
+        "province_name": "Sabar",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2443,
+        "province_name": "Januria",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2444,
+        "province_name": "Paracatu",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2445,
+        "province_name": "Uberaba",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2446,
+        "province_name": "So Joo del Rey",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2447,
+        "province_name": "Rio de Janeiro",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2448,
+        "province_name": "Campos",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2449,
+        "province_name": "Vitria",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2450,
+        "province_name": "So Paulo",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2451,
+        "province_name": "Santos",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2452,
+        "province_name": "Campinas",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2453,
+        "province_name": "Assis",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2455,
+        "province_name": "Iguape",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2456,
+        "province_name": "Araraquara",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2457,
+        "province_name": "Curitiba",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2458,
+        "province_name": "Guarapuava",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2459,
+        "province_name": "Lajes",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2460,
+        "province_name": "Castro",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2461,
+        "province_name": "Desterro",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2462,
+        "province_name": "So Miguel",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2463,
+        "province_name": "Porto Alegre",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2464,
+        "province_name": "Pelotas",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2465,
+        "province_name": "Passo Fundo",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2466,
+        "province_name": "Santa Maria",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2467,
+        "province_name": "Alegrete",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2550,
+        "province_name": "Forte do Prncipe",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2554,
+        "province_name": "Posadas",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2578,
+        "province_name": "Tacna",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2600,
+        "province_name": "Altamira",
+        "original_owner": "BRZ"
+      },
+      {
+        "province_id": 2291,
+        "province_name": "Piura",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2292,
+        "province_name": "Trujillo",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2293,
+        "province_name": "Hunuco",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2294,
+        "province_name": "Moyobamba",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2295,
+        "province_name": "Lima",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2296,
+        "province_name": "Huancavelica",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2298,
+        "province_name": "Huaraz",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2300,
+        "province_name": "Pucallpa",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2307,
+        "province_name": "Iquique",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2308,
+        "province_name": "Arica",
+        "original_owner": "PEU"
+      },
+      {
+        "province_id": 2305,
+        "province_name": "Antofagasta",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2309,
+        "province_name": "Calama",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2312,
+        "province_name": "Oruro",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2314,
+        "province_name": "Potos",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2315,
+        "province_name": "Tarija",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2337,
+        "province_name": "Fortin Falcon",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2338,
+        "province_name": "Puerto Guaran",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2349,
+        "province_name": "Junn",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2350,
+        "province_name": "Azul",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2351,
+        "province_name": "La Plata",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2352,
+        "province_name": "Mar del Plata",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2353,
+        "province_name": "Trenque Lauquen",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2354,
+        "province_name": "Baha Blanca",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2355,
+        "province_name": "Carmen",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2366,
+        "province_name": "Formosa",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2367,
+        "province_name": "Xolotas",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2368,
+        "province_name": "Salta",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2369,
+        "province_name": "Jujuy",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2370,
+        "province_name": "Cochinoca",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2371,
+        "province_name": "Equia",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2372,
+        "province_name": "Rivadavia",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2389,
+        "province_name": "Mendoza",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2390,
+        "province_name": "San Rafael",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2391,
+        "province_name": "Neuqun",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2392,
+        "province_name": "Viedma",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2393,
+        "province_name": "Teln",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2394,
+        "province_name": "Bariloche",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2395,
+        "province_name": "Curac",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2396,
+        "province_name": "Rawson",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2397,
+        "province_name": "Esquel",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2398,
+        "province_name": "Puerto Deseado",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2399,
+        "province_name": "Ro Gallegos",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2400,
+        "province_name": "Ro Grande",
+        "original_owner": "ARG"
+      },
+      {
+        "province_id": 2316,
+        "province_name": "Santa Cruz",
+        "original_owner": "BOL"
+      },
+      {
+        "province_id": 2317,
+        "province_name": "San Ignacio",
+        "original_owner": "BOL"
+      },
+      {
+        "province_id": 2318,
+        "province_name": "Robor",
+        "original_owner": "BOL"
+      },
+      {
+        "province_id": 2323,
+        "province_name": "La Serena",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2324,
+        "province_name": "Santiago",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2325,
+        "province_name": "Valparaso",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2326,
+        "province_name": "Via del Mar",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2327,
+        "province_name": "Talca",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2328,
+        "province_name": "Valdivia",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2329,
+        "province_name": "Temuco",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2330,
+        "province_name": "Cauquenes",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2331,
+        "province_name": "Chilln",
+        "original_owner": "CHL"
+      },
+      {
+        "province_id": 2340,
+        "province_name": "Pilar",
+        "original_owner": "PRG"
+      },
+      {
+        "province_id": 2341,
+        "province_name": "Encarnacin",
+        "original_owner": "PRG"
+      },
+      {
+        "province_id": 2342,
+        "province_name": "San Pedro",
+        "original_owner": "PRG"
+      },
+      {
+        "province_id": 2343,
+        "province_name": "Concepcin",
+        "original_owner": "PRG"
+      },
+      {
+        "province_id": 2345,
+        "province_name": "Paysand",
+        "original_owner": "URU"
+      },
+      {
+        "province_id": 2346,
+        "province_name": "Tacuaremb",
+        "original_owner": "URU"
+      },
+      {
+        "province_id": 2347,
+        "province_name": "Melo",
+        "original_owner": "URU"
+      },
+      {
+        "province_id": 2469,
+        "province_name": "Newcastle",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2470,
+        "province_name": "Port Macquarie",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2471,
+        "province_name": "Ophir",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2472,
+        "province_name": "Eden",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2473,
+        "province_name": "Wagga Wagga",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2474,
+        "province_name": "Moree",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2475,
+        "province_name": "Broken Hill",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2483,
+        "province_name": "Brisbane",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2484,
+        "province_name": "Gladstone",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2485,
+        "province_name": "Clermont",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2486,
+        "province_name": "Toowoomba",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2487,
+        "province_name": "Townsville",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2488,
+        "province_name": "Cooktown",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2489,
+        "province_name": "Longreach",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2491,
+        "province_name": "Adelaide",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2492,
+        "province_name": "Port Lincoln",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2493,
+        "province_name": "Robe",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2494,
+        "province_name": "Port Augusta",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2496,
+        "province_name": "Tarcoola",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2497,
+        "province_name": "Perth",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2498,
+        "province_name": "Kojonup",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2499,
+        "province_name": "Geraldton",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2500,
+        "province_name": "Kalgoorlie",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2501,
+        "province_name": "Broome",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2502,
+        "province_name": "Dampier",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2503,
+        "province_name": "Wiluna",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2504,
+        "province_name": "Esperance",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2508,
+        "province_name": "Norfolk Island",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2601,
+        "province_name": "Sandy Desert",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2602,
+        "province_name": "Roebourne",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2604,
+        "province_name": "Normanton",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2605,
+        "province_name": "Gibson's Desert",
+        "original_owner": "AST"
+      },
+      {
+        "province_id": 2510,
+        "province_name": "New Plymouth",
+        "original_owner": "NZL"
+      },
+      {
+        "province_id": 2512,
+        "province_name": "Wellington",
+        "original_owner": "NZL"
+      },
+      {
+        "province_id": 2516,
+        "province_name": "Nelson",
+        "original_owner": "NZL"
+      },
+      {
+        "province_id": 2571,
+        "province_name": "Tauranga",
+        "original_owner": "NZL"
+      }
+    ],
+    "china_gains": 1504,
+    "capital_protected": 98,
+    "fallback_used": 0,
+    "affected_countries": 70
+  }
+}
