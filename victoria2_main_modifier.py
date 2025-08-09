@@ -42,6 +42,7 @@ class Victoria2Modifier:
         self.population_count = 0
         self.date_changes = 0
         self.money_changes = 0  # 新增：金钱修改计数器
+        self.civilized_changes = 0  # 新增：文明化状态修改计数器
         
         # 默认存档路径 - 使用当前目录
         self.default_save_path = "."
@@ -209,50 +210,56 @@ class Victoria2Modifier:
     
     def modify_block_content_safely(self, block: BracketBlock, 
                                    modifications: Dict[str, str]) -> bool:
-        """在花括号块内安全地修改内容"""
+        """在花括号块内安全地修改内容 - 改进版本"""
         if not block:
             return False
         
         # 获取块的完整内容（包括花括号）
         block_start = block.start_pos
         block_end = block.end_pos + 1
-        original_block_content = self.content[block_start:block_end]
-        
-        # 获取内部内容（不包括花括号）
-        inner_content = block.content
-        modified_inner_content = inner_content
         
         changes_made = False
         
         for key, value in modifications.items():
+            # 在整个文件内容中直接查找和替换，使用块的位置限制范围
+            block_content = self.content[block_start:block_end]
+            
             # 检查是否已存在这个键
             existing_pattern = r'\b' + re.escape(key) + r'\s*=\s*[^{}\n]+'
-            if re.search(existing_pattern, modified_inner_content):
-                # 替换现有值
-                new_inner_content = re.sub(
-                    existing_pattern,
-                    f'{key}={value}',
-                    modified_inner_content
-                )
-                if new_inner_content != modified_inner_content:
-                    modified_inner_content = new_inner_content
+            if re.search(existing_pattern, block_content):
+                # 替换现有值 - 在原始位置直接替换
+                replacement = f'{key}={value}'
+                new_block_content = re.sub(existing_pattern, replacement, block_content)
+                
+                if new_block_content != block_content:
+                    # 直接替换块内容，不改变结构
+                    self.content = (self.content[:block_start] + 
+                                  new_block_content + 
+                                  self.content[block_end:])
                     changes_made = True
                     print(f"  🔄 修改现有字段: {key}={value}")
+                    
+                    # 更新位置（因为内容长度可能变化）
+                    length_diff = len(new_block_content) - len(block_content)
+                    block_end += length_diff
             else:
-                # 添加新字段（在开头添加）
-                modified_inner_content = f'\n\t{key}={value}' + modified_inner_content
-                changes_made = True
-                print(f"  ➕ 添加新字段: {key}={value}")
+                # 添加新字段 - 在第一个开括号后插入
+                first_brace_pos = block_content.find('{')
+                if first_brace_pos != -1:
+                    insertion_point = block_start + first_brace_pos + 1
+                    new_field = f'\n\t{key}={value}'
+                    
+                    # 在指定位置插入新字段
+                    self.content = (self.content[:insertion_point] + 
+                                  new_field + 
+                                  self.content[insertion_point:])
+                    changes_made = True
+                    print(f"  ➕ 添加新字段: {key}={value}")
+                    
+                    # 更新后续位置
+                    block_end += len(new_field)
         
         if changes_made:
-            # 重构完整的块内容
-            new_block_content = f'{{\n\t{modified_inner_content.strip()}\n}}'
-            
-            # 替换原始内容
-            self.content = (self.content[:block_start] + 
-                          new_block_content + 
-                          self.content[block_end:])
-            
             # 重新解析结构
             self.parser.load_content(self.content)
             return True
@@ -1541,6 +1548,166 @@ class Victoria2Modifier:
         return modified_content, changes
 
     # ========================================
+    # 功能7: 所有国家文明化状态修改
+    # ========================================
+    
+    def modify_all_countries_civilized(self, target_civilized: str = "no", exclude_china: bool = True) -> bool:
+        """修改所有国家的文明化状态为指定值
+        
+        Args:
+            target_civilized: 目标文明化状态 ("yes" 或 "no")
+            exclude_china: 是否排除中国 (默认为True)
+            
+        Returns:
+            bool: 修改是否成功
+        """
+        print(f"\n🏛️ 开始修改所有国家文明化状态")
+        print(f"🎯 目标状态: civilized=\"{target_civilized}\"")
+        if exclude_china:
+            print(f"🇨🇳 排除中国 (CHI)")
+        
+        # 验证目标值
+        if target_civilized not in ["yes", "no"]:
+            print(f"❌ 无效的文明化状态值: {target_civilized}")
+            print("有效值: 'yes' 或 'no'")
+            return False
+        
+        # 查找所有国家块
+        country_blocks = self.find_blocks_by_function_type('countries')
+        if not country_blocks:
+            print("❌ 未找到任何国家块")
+            return False
+        
+        print(f"📊 找到 {len(country_blocks)} 个国家块")
+        
+        modified_count = 0
+        skipped_count = 0
+        china_skipped = 0
+        
+        # 处理每个国家块
+        for i, block in enumerate(country_blocks, 1):
+            # 使用块名称作为国家标识符
+            country_tag = block.name
+            
+            if not country_tag or len(country_tag) < 2:
+                if self.debug_mode:
+                    print(f"  ⚠️ 块 {i}: 无效的国家标识符 '{country_tag}'")
+                skipped_count += 1
+                continue
+            
+            # 如果需要排除中国且当前是中国，跳过
+            if exclude_china and country_tag == "CHI":
+                if self.debug_mode:
+                    print(f"  🇨🇳 {country_tag}: 跳过中国 (根据exclude_china设置)")
+                china_skipped += 1
+                skipped_count += 1
+                continue
+            
+            # 检查当前文明化状态
+            current_civilized_match = re.search(r'civilized\s*=\s*"?([^"\s}]+)"?', block.content)
+            current_civilized = current_civilized_match.group(1) if current_civilized_match else None
+            
+            # 如果已经是目标状态，跳过
+            if current_civilized == target_civilized:
+                if self.debug_mode:
+                    print(f"  ℹ️ {country_tag}: 已是目标状态 ({target_civilized})")
+                skipped_count += 1
+                continue
+            
+            # 修改文明化状态
+            modifications = {"civilized": f'"{target_civilized}"'}
+            if self.modify_block_content_safely(block, modifications):
+                print(f"  ✅ {country_tag}: {current_civilized or '未设置'} → {target_civilized}")
+                modified_count += 1
+                self.civilized_changes += 1
+            else:
+                print(f"  ❌ {country_tag}: 修改失败")
+                skipped_count += 1
+        
+        # 输出统计信息
+        print(f"\n📊 文明化状态修改统计:")
+        print(f"  修改成功: {modified_count} 个国家")
+        print(f"  跳过/失败: {skipped_count} 个国家")
+        if exclude_china and china_skipped > 0:
+            print(f"  跳过中国: {china_skipped} 个")
+        print(f"  总计处理: {len(country_blocks)} 个国家")
+        
+        if modified_count > 0:
+            print(f"🎉 所有国家文明化状态修改完成!")
+            return True
+        else:
+            print(f"ℹ️ 无需修改或修改失败")
+            return False
+
+    def modify_china_civilized(self, target_civilized: str = "yes") -> bool:
+        """修改中国的文明化状态为指定值
+        
+        Args:
+            target_civilized: 目标文明化状态 ("yes" 或 "no")
+            
+        Returns:
+            bool: 修改是否成功
+        """
+        print(f"\n🇨🇳 开始修改中国文明化状态")
+        print(f"🎯 目标状态: civilized=\"{target_civilized}\"")
+        
+        # 验证目标值
+        if target_civilized not in ["yes", "no"]:
+            print(f"❌ 无效的文明化状态值: {target_civilized}")
+            print("有效值: 'yes' 或 'no'")
+            return False
+        
+        # 查找中国块
+        country_blocks = self.find_blocks_by_function_type('countries')
+        if not country_blocks:
+            print("❌ 未找到任何国家块")
+            return False
+        
+        china_block = None
+        for block in country_blocks:
+            if block.name == "CHI":
+                china_block = block
+                break
+        
+        if not china_block:
+            print("❌ 未找到中国(CHI)块")
+            return False
+        
+        print("✅ 找到中国块")
+        
+        # 检查当前文明化状态
+        current_civilized_match = re.search(r'civilized\s*=\s*"?([^"\s}]+)"?', china_block.content)
+        current_civilized = current_civilized_match.group(1) if current_civilized_match else None
+        
+        if current_civilized:
+            print(f"📊 当前状态: civilized={current_civilized}")
+            if current_civilized == target_civilized:
+                print(f"ℹ️ 中国已经是目标状态 ({target_civilized})")
+                return True
+        else:
+            print("📊 当前状态: 无civilized字段")
+        
+        # 修改文明化状态
+        print(f"🔧 正在设置中国文明化状态为 \"{target_civilized}\"...")
+        modifications = {"civilized": f'"{target_civilized}"'}
+        
+        if self.modify_block_content_safely(china_block, modifications):
+            print(f"✅ 中国: {current_civilized or '未设置'} → {target_civilized}")
+            self.civilized_changes += 1
+            
+            # 验证修改
+            civilized_match_new = re.search(r'civilized\s*=\s*"?([^"\s}]+)"?', china_block.content)
+            if civilized_match_new:
+                new_status = civilized_match_new.group(1)
+                print(f"🔍 验证成功: civilized={new_status}")
+            
+            print(f"🎉 中国文明化状态修改完成!")
+            return True
+        else:
+            print(f"❌ 中国文明化状态修改失败")
+            return False
+
+    # ========================================
     # 验证和总结功能
     # ========================================
     
@@ -1709,6 +1876,14 @@ class Victoria2Modifier:
             print("✓ 6. 人口属性: 中国金钱=9,999,999,999+需求=1.0, 非中国金钱=0+需求=0.0")
             selected_operations.append('money')
             selected_count += 1
+        if options.get('civilized', False):
+            print("✓ 7. 🆕 文明化状态: 除中国外所有国家设为\"no\"")
+            selected_operations.append('civilized')
+            selected_count += 1
+        if options.get('china_civilized', False):
+            print("✓ 8. 🆕 中国文明化状态: 设置中国为\"yes\"")
+            selected_operations.append('china_civilized')
+            selected_count += 1
         
         if selected_count == 0:
             print("❌ 未选择任何修改项目")
@@ -1824,6 +1999,41 @@ class Victoria2Modifier:
                     print(f"❌ 步骤{step}失败: 金钱修改失败")
             else:
                 print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
+        
+        # 7. 所有国家文明化状态修改
+        if 'civilized' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行所有国家文明化状态修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_all_countries_civilized("no"):
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 文明化状态修改 {self.civilized_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 文明化状态修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
+        
+        # 8. 中国文明化状态修改
+        if 'china_civilized' in selected_operations:
+            print(f"\n🔄 步骤{step}: 执行中国文明化状态修改...")
+            self.__init__()  # 重置计数器
+            if self.load_file(filename):
+                if self.modify_china_civilized("yes"):
+                    if self.save_file(filename):
+                        print(f"✅ 步骤{step}完成: 中国文明化状态修改 {self.civilized_changes} 处")
+                        success_count += 1
+                    else:
+                        print(f"❌ 步骤{step}失败: 文件保存失败")
+                else:
+                    print(f"❌ 步骤{step}失败: 中国文明化状态修改失败")
+            else:
+                print(f"❌ 步骤{step}失败: 文件读取失败")
+            step += 1
         
         # 最终验证
         if success_count > 0:
@@ -1872,6 +2082,7 @@ class Victoria2Modifier:
         print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
         print("5. 游戏日期: 设为1836.1.1")
         print("6. 人口属性: 中国金钱=9,999,999,999+需求=1.0, 非中国金钱=0+需求=0.0")
+        print("7. 所有国家文明化状态: 设为 \"no\"")
         print("⚡ 每个功能独立执行，确保数据安全")
         print(f"{'='*70}")
         
@@ -1969,6 +2180,36 @@ class Victoria2Modifier:
                 print(f"❌ 步骤6失败: 金钱修改失败")
         else:
             print(f"❌ 步骤6失败: 文件读取失败")
+        
+        # 7. 所有国家文明化状态修改
+        print(f"\n🔄 步骤7: 执行所有国家文明化状态修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_all_countries_civilized("no", exclude_china=True):
+                if self.save_file(filename):
+                    print(f"✅ 步骤7完成: 文明化状态修改 {self.civilized_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤7失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤7失败: 文明化状态修改失败")
+        else:
+            print(f"❌ 步骤7失败: 文件读取失败")
+        
+        # 8. 中国文明化状态修改
+        print(f"\n🔄 步骤8: 执行中国文明化状态修改...")
+        self.__init__()  # 重置计数器
+        if self.load_file(filename):
+            if self.modify_china_civilized("yes"):
+                if self.save_file(filename):
+                    print(f"✅ 步骤8完成: 中国文明化状态修改 {self.civilized_changes} 处")
+                    success_count += 1
+                else:
+                    print(f"❌ 步骤8失败: 文件保存失败")
+            else:
+                print(f"❌ 步骤8失败: 中国文明化状态修改失败")
+        else:
+            print(f"❌ 步骤8失败: 文件读取失败")
         
         # 最终验证
         print(f"\n🔍 执行最终验证...")
@@ -2115,6 +2356,23 @@ class Victoria2Modifier:
                         chinese_province_count += 1
             print(f"  ✅ 找到 {len(target_blocks)} 个省份块 (包含中国人口: {chinese_province_count})")
         
+        elif function_type == 'countries':
+            # 所有国家文明化状态修改需要所有国家定义块
+            print("  📍 查找目标: 所有国家定义块")
+            for block in all_blocks:
+                block_type = self._classify_block_type(block)
+                if block_type == "国家定义":
+                    # 验证这是真正的国家定义块 (检查国家指标)
+                    country_indicators = [
+                        'primary_culture', 'capital', 'technology', 'ruling_party',
+                        'government', 'plurality', 'civilized'
+                    ]
+                    indicator_count = sum(1 for indicator in country_indicators 
+                                        if indicator in block.content)
+                    if indicator_count >= 2:  # 至少包含2个国家指标
+                        target_blocks.append(block)
+            print(f"  ✅ 找到 {len(target_blocks)} 个国家定义块")
+        
         else:
             print(f"  ❌ 未知的功能类型: {function_type}")
             return []
@@ -2182,8 +2440,8 @@ class Victoria2Modifier:
         name = block.name.strip()
         content = block.content.strip()
         
-        # 国家定义块 (如 CHI, ENG, FRA等)
-        if re.match(r'^[A-Z]{3}$', name):
+        # 国家定义块 (2-3个大写字母，如 CHI, ENG, FRA, US, UK等)
+        if re.match(r'^[A-Z]{2,3}$', name):
             return "国家定义"
         
         # 省份块 (纯数字)
@@ -2324,8 +2582,10 @@ def show_modification_menu():
     print("4. 中国人口属性修改 (宗教=mahayana, 意识形态=温和派)")
     print("5. 游戏日期修改 (设为1836.1.1)")
     print("6. 人口属性修改 (中国金钱=9,999,999,999+需求=1.0, 非中国金钱=0+需求=0.0)")
-    print("7. 执行全部修改 (推荐)")
-    print("8. 分析存档括号类型 (仅分析，不修改)")
+    print("7. 🆕 所有国家文明化状态修改 (除中国外全部设为\"no\")")
+    print("8. 🆕 中国文明化状态修改 (设置中国为\"yes\")")
+    print("9. 执行全部修改 (推荐)")
+    print("10. 分析存档括号类型 (仅分析，不修改)")
     print("0. 退出程序")
     print("="*50)
 
@@ -2338,7 +2598,9 @@ def get_user_selection():
         'population': False,
         'date': False,
         'money': False,
-        'analyze_only': False  # 新增分析模式标识
+        'civilized': False,  # 新增：文明化状态修改
+        'china_civilized': False,  # 新增：中国文明化状态修改
+        'analyze_only': False  # 分析模式标识
     }
     
     while True:
@@ -2347,7 +2609,7 @@ def get_user_selection():
             
             if choice == '0':
                 return None
-            elif choice == '7':
+            elif choice == '9':
                 # 全部修改
                 return {
                     'militancy': True,
@@ -2356,9 +2618,11 @@ def get_user_selection():
                     'population': True,
                     'date': True,
                     'money': True,
+                    'civilized': True,  # 包含文明化状态修改
+                    'china_civilized': True,  # 包含中国文明化状态修改
                     'analyze_only': False
                 }
-            elif choice == '8':
+            elif choice == '10':
                 # 仅分析括号类型
                 return {
                     'militancy': False,
@@ -2367,6 +2631,8 @@ def get_user_selection():
                     'population': False,
                     'date': False,
                     'money': False,
+                    'civilized': False,
+                    'china_civilized': False,
                     'analyze_only': True
                 }
             else:
@@ -2390,7 +2656,11 @@ def get_user_selection():
                         options['date'] = True
                     elif num == 6:
                         options['money'] = True
+                    elif num == 7:
+                        options['civilized'] = True  # 所有国家文明化状态修改
                     elif num == 8:
+                        options['china_civilized'] = True  # 中国文明化状态修改
+                    elif num == 10:
                         options['analyze_only'] = True
                     else:
                         print(f"❌ 无效选项: {num}")
@@ -2444,8 +2714,9 @@ def main():
             print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
             print("5. 游戏日期: 设为1836.1.1")
             print("6. 人口金钱修改: 中国=9,999,999,999, 非中国=0")
-            print("7. 支持选择性修改和全部修改")
-            print("8. 分析存档括号类型")
+            print("7. 🆕 文明化状态修改: 除中国外所有国家设为\"no\"")
+            print("8. 支持选择性修改和全部修改")
+            print("9. 分析存档括号类型")
             print("\n意识形态映射 (已确认 Liberal=ID 6):")
             print("• Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
             print("• Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
@@ -2487,6 +2758,7 @@ def main():
             'population': True,
             'date': True,
             'money': True,
+            'civilized': True,  # 新增：文明化状态修改
             'analyze_only': False
         }
     else:
@@ -2580,6 +2852,10 @@ def main():
         modification_list.append("6. 游戏日期: 设为1836.1.1")
     if options.get('money', False):
         modification_list.append("7. 人口金钱: 中国=9,999,999,999, 非中国=0")
+    if options.get('civilized', False):
+        modification_list.append("8. 🆕 文明化状态: 除中国外所有国家设为\"no\"")
+    if options.get('china_civilized', False):
+        modification_list.append("9. 🆕 中国文明化状态: 设置中国为\"yes\"")
     
     for item in modification_list:
         print(item)
