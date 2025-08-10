@@ -1,0 +1,96 @@
+{
+  "timestamp": "20250810_014528",
+  "file_sizes": {
+    "autosave.v2": 20227616,
+    "China1844_09_16.v2": 24813524,
+    "difference": -4585908
+  },
+  "brace_counts": {
+    "autosave.v2": {
+      "open": 270372,
+      "close": 270373,
+      "diff": -1
+    },
+    "China1844_09_16.v2": {
+      "open": 297640,
+      "close": 297641,
+      "diff": -1
+    }
+  },
+  "population_analysis": {
+    "file1": "autosave.v2",
+    "file2": "China1844_09_16.v2",
+    "pop_counts": {
+      "aristocrats": {
+        "file1": 195,
+        "file2": 399,
+        "difference": -204
+      },
+      "artisans": {
+        "file1": 612,
+        "file2": 1001,
+        "difference": -389
+      },
+      "bureaucrats": {
+        "file1": 633,
+        "file2": 753,
+        "difference": -120
+      },
+      "capitalists": {
+        "file1": 216,
+        "file2": 308,
+        "difference": -92
+      },
+      "clergymen": {
+        "file1": 1292,
+        "file2": 2510,
+        "difference": -1218
+      },
+      "clerks": {
+        "file1": 1159,
+        "file2": 1785,
+        "difference": -626
+      },
+      "craftsmen": {
+        "file1": 1576,
+        "file2": 4388,
+        "difference": -2812
+      },
+      "farmers": {
+        "file1": 1281,
+        "file2": 2142,
+        "difference": -861
+      },
+      "labourers": {
+        "file1": 798,
+        "file2": 1167,
+        "difference": -369
+      },
+      "officers": {
+        "file1": 1312,
+        "file2": 2214,
+        "difference": -902
+      },
+      "soldiers": {
+        "file1": 1268,
+        "file2": 2344,
+        "difference": -1076
+      }
+    },
+    "province_analysis": [],
+    "structure_issues": []
+  },
+  "deletion_pattern": {
+    "china_provinces_file1": 2497,
+    "china_provinces_file2": 2497,
+    "lost_provinces": []
+  },
+  "format_issues": {
+    "autosave.v2": [
+      "发现不完整的人口块: 10342 个"
+    ],
+    "China1844_09_16.v2": [
+      "发现不完整的人口块: 19011 个"
+    ]
+  }
+}

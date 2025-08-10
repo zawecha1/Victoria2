@@ -1,0 +1,520 @@
+{
+  "timestamp": "20250810_020927",
+  "valid_pop_ids_count": 1452,
+  "provinces_checked": 200,
+  "orphaned_references_count": 206,
+  "orphaned_by_type": {
+    "direct_id": 19,
+    "large_number": 187
+  },
+  "orphaned_references_sample": [
+    {
+      "id": "3109238",
+      "type": "direct_id",
+      "position": 14884119,
+      "context": "\t\t}\n\t\t\tname=\"1st Mosega Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=3109238\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.000\n\t\t\tstren"
+    },
+    {
+      "id": "12889203",
+      "type": "direct_id",
+      "position": 14897533,
+      "context": "\t}\n\t\t\tname=\"1st Hadejia Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12889203\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=138.240\n\t\t\tstren"
+    },
+    {
+      "id": "10507795",
+      "type": "direct_id",
+      "position": 14909437,
+      "context": "}\n\t\t\tname=\"1st Chaozhou Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10507795\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstren"
+    },
+    {
+      "id": "12433953",
+      "type": "direct_id",
+      "position": 14923777,
+      "context": "\n\t\t\tname=\"1st Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12442540",
+      "type": "direct_id",
+      "position": 14924009,
+      "context": "}\n\t\t\tname=\"1st El Jobal Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12442540\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12442540",
+      "type": "direct_id",
+      "position": 14924241,
+      "context": "}\n\t\t\tname=\"2nd El Jobal Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12442540\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12433953",
+      "type": "direct_id",
+      "position": 14924474,
+      "context": "\n\t\t\tname=\"2nd Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12433953",
+      "type": "direct_id",
+      "position": 14924707,
+      "context": "\n\t\t\tname=\"3rd Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "7797770",
+      "type": "direct_id",
+      "position": 14925109,
+      "context": "\t\t\t}\n\t\t\tname=\"1st Cuiab Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=7797770\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstren"
+    },
+    {
+      "id": "12833030",
+      "type": "direct_id",
+      "position": 14925340,
+      "context": "}\n\t\t\tname=\"1st Juazeiro Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12833030\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstren"
+    },
+    {
+      "id": "7797770",
+      "type": "direct_id",
+      "position": 14925569,
+      "context": "\t\t\t}\n\t\t\tname=\"2nd Cuiab Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=7797770\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstren"
+    },
+    {
+      "id": "7797770",
+      "type": "direct_id",
+      "position": 14925797,
+      "context": "\t\t\t}\n\t\t\tname=\"3rd Cuiab Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=7797770\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstren"
+    },
+    {
+      "id": "13230227",
+      "type": "direct_id",
+      "position": 14926268,
+      "context": "}\n\t\t\tname=\"1st Khartoum Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=13230227\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstren"
+    },
+    {
+      "id": "1898143",
+      "type": "direct_id",
+      "position": 14926497,
+      "context": "\t\t\t}\n\t\t\tname=\"1st Setif Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=1898143\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstren"
+    },
+    {
+      "id": "10382231",
+      "type": "direct_id",
+      "position": 14926951,
+      "context": "\t}\n\t\t\tname=\"1st Tlemcen Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10382231\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstren"
+    },
+    {
+      "id": "10382231",
+      "type": "direct_id",
+      "position": 14927396,
+      "context": "\t}\n\t\t\tname=\"2nd Tlemcen Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10382231\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "1898143",
+      "type": "direct_id",
+      "position": 14927625,
+      "context": "\t\t\t}\n\t\t\tname=\"2nd Setif Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=1898143\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "1898143",
+      "type": "direct_id",
+      "position": 14927853,
+      "context": "\t\t\t}\n\t\t\tname=\"3rd Setif Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=1898143\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "10382231",
+      "type": "direct_id",
+      "position": 14928083,
+      "context": "\t}\n\t\t\tname=\"3rd Tlemcen Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10382231\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "2077416",
+      "type": "large_number",
+      "position": 14766123,
+      "context": "x=\n\t{\n\t\tcurrent=0.39999\n\t\ttax_income=\n\t\t{\n0.00000 2077416.34714 0.00000 0.00000 21488323.62460 0.00000 0.00"
+    },
+    {
+      "id": "21488323",
+      "type": "large_number",
+      "position": 14766153,
+      "context": "income=\n\t\t{\n0.00000 2077416.34714 0.00000 0.00000 21488323.62460 0.00000 0.00000 0.00000 0.00000 0.00000 0.0"
+    },
+    {
+      "id": "5194092",
+      "type": "large_number",
+      "position": 14766259,
+      "context": ".00000 0.00000 0.00000 \t\t}\n\t\ttax_eff=\n\t\t{\n0.00000 5194092.01370 0.00000 0.00000 53680113.34158 0.00000 0.00"
+    },
+    {
+      "id": "53680113",
+      "type": "large_number",
+      "position": 14766289,
+      "context": "ax_eff=\n\t\t{\n0.00000 5194092.01370 0.00000 0.00000 53680113.34158 0.00000 0.00000 0.00000 0.00000 0.00000 0.0"
+    },
+    {
+      "id": "58874205",
+      "type": "large_number",
+      "position": 14766380,
+      "context": "00000 0.00000 0.00000 0.00000 0.00000 \t\t}\n\t\ttotal=58874205.35529\n\t\trangeLimitMax=1.00000\n\t\trangeLimitMin=0.2"
+    },
+    {
+      "id": "3154053",
+      "type": "large_number",
+      "position": 14766553,
+      "context": "00\n\t\ttax_income=\n\t\t{\n0.00000 0.00000 254778.28223 3154053.10474 0.00000 220905.42511 395042.68933 0.00000 0"
+    },
+    {
+      "id": "1101106",
+      "type": "large_number",
+      "position": 14766689,
+      "context": ".00000 0.00000 \t\t}\n\t\ttax_eff=\n\t\t{\n0.00000 0.00000 1101106.86255 12616241.16409 0.00000 883161.36472 1577858"
+    },
+    {
+      "id": "12616241",
+      "type": "large_number",
+      "position": 14766703,
+      "context": " \t\t}\n\t\ttax_eff=\n\t\t{\n0.00000 0.00000 1101106.86255 12616241.16409 0.00000 883161.36472 1577858.25366 0.00000 "
+    },
+    {
+      "id": "1577858",
+      "type": "large_number",
+      "position": 14766739,
+      "context": "1101106.86255 12616241.16409 0.00000 883161.36472 1577858.25366 0.00000 0.00000 0.00000 2068316.42456 0.000"
+    },
+    {
+      "id": "2068316",
+      "type": "large_number",
+      "position": 14766777,
+      "context": "83161.36472 1577858.25366 0.00000 0.00000 0.00000 2068316.42456 0.00000 0.00000 \t\t}\n\t\ttotal=18246684.06958\n"
+    },
+    {
+      "id": "18246684",
+      "type": "large_number",
+      "position": 14766819,
+      "context": "0.00000 2068316.42456 0.00000 0.00000 \t\t}\n\t\ttotal=18246684.06958\n\t\trangeLimitMax=1.00000\n\t\trangeLimitMin=0.2"
+    },
+    {
+      "id": "1820134",
+      "type": "large_number",
+      "position": 14767017,
+      "context": "0 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 1820134.84512 3416135.88620 6601203.49164 0.00000 0.00000"
+    },
+    {
+      "id": "3416135",
+      "type": "large_number",
+      "position": 14767031,
+      "context": "000 0.00000 0.00000 0.00000 0.00000 1820134.84512 3416135.88620 6601203.49164 0.00000 0.00000 589943.60864 "
+    },
+    {
+      "id": "6601203",
+      "type": "large_number",
+      "position": 14767045,
+      "context": "00000 0.00000 0.00000 1820134.84512 3416135.88620 6601203.49164 0.00000 0.00000 589943.60864 \t\t}\n\t\ttax_eff="
+    },
+    {
+      "id": "7266546",
+      "type": "large_number",
+      "position": 14767163,
+      "context": "0 0.00000 0.00000 0.00000 0.00000 0.00000 0.00000 7266546.35641 13664454.24194 26408011.81613 0.00000 0.000"
+    },
+    {
+      "id": "13664454",
+      "type": "large_number",
+      "position": 14767177,
+      "context": "000 0.00000 0.00000 0.00000 0.00000 7266546.35641 13664454.24194 26408011.81613 0.00000 0.00000 2359454.8283"
+    },
+    {
+      "id": "26408011",
+      "type": "large_number",
+      "position": 14767192,
+      "context": "0000 0.00000 0.00000 7266546.35641 13664454.24194 26408011.81613 0.00000 0.00000 2359454.82837 \t\t}\n\t\ttotal=4"
+    },
+    {
+      "id": "2359454",
+      "type": "large_number",
+      "position": 14767223,
+      "context": "641 13664454.24194 26408011.81613 0.00000 0.00000 2359454.82837 \t\t}\n\t\ttotal=49698467.24286\n\t\trangeLimitMax="
+    },
+    {
+      "id": "49698467",
+      "type": "large_number",
+      "position": 14767249,
+      "context": "1.81613 0.00000 0.00000 2359454.82837 \t\t}\n\t\ttotal=49698467.24286\n\t\trangeLimitMax=1.00000\n\t\trangeLimitMin=0.2"
+    },
+    {
+      "id": "1239409",
+      "type": "large_number",
+      "position": 14767454,
+      "context": "000\n\t\tfactor=0.00998\n\t\treserve=0.00000\n\t\tmaxValue=1239409.72726\n\t\trangeLimitMax=1.00000\n\t\trangeLimitMin=0.0"
+    },
+    {
+      "id": "17435869",
+      "type": "large_number",
+      "position": 14767652,
+      "context": "000\n\t\tfactor=0.00998\n\t\treserve=0.00000\n\t\tmaxValue=17435869.34348\n\t\trangeLimitMax=1.00000\n\t\trangeLimitMin=0.0"
+    },
+    {
+      "id": "1249125",
+      "type": "large_number",
+      "position": 14767852,
+      "context": "000\n\t\tfactor=0.00998\n\t\treserve=0.00000\n\t\tmaxValue=1249125.53583\n\t\trangeLimitMax=1.00000\n\t\trangeLimitMin=0.0"
+    },
+    {
+      "id": "6170114",
+      "type": "large_number",
+      "position": 14768054,
+      "context": "000\n\t\tfactor=0.00998\n\t\treserve=0.00000\n\t\tmaxValue=6170114.87299\n\t\trangeLimitMax=1.00000\n\t\trangeLimitMin=0.0"
+    },
+    {
+      "id": "3109238",
+      "type": "large_number",
+      "position": 14884122,
+      "context": "\n\t\t\tname=\"1st Mosega Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=3109238\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.000\n\t\t\tstren"
+    },
+    {
+      "id": "12889203",
+      "type": "large_number",
+      "position": 14897536,
+      "context": "\t\t\tname=\"1st Hadejia Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12889203\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=138.240\n\t\t\tstren"
+    },
+    {
+      "id": "10507795",
+      "type": "large_number",
+      "position": 14909440,
+      "context": "\t\tname=\"1st Chaozhou Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10507795\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstren"
+    },
+    {
+      "id": "12433953",
+      "type": "large_number",
+      "position": 14923780,
+      "context": "\tname=\"1st Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12442540",
+      "type": "large_number",
+      "position": 14924012,
+      "context": "\t\tname=\"1st El Jobal Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12442540\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12442540",
+      "type": "large_number",
+      "position": 14924244,
+      "context": "\t\tname=\"2nd El Jobal Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12442540\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12433953",
+      "type": "large_number",
+      "position": 14924477,
+      "context": "\tname=\"2nd Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    },
+    {
+      "id": "12433953",
+      "type": "large_number",
+      "position": 14924710,
+      "context": "\tname=\"3rd Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstren"
+    }
+  ],
+  "all_orphaned_ids": [
+    "3109238",
+    "12889203",
+    "10507795",
+    "12433953",
+    "12442540",
+    "12442540",
+    "12433953",
+    "12433953",
+    "7797770",
+    "12833030",
+    "7797770",
+    "7797770",
+    "13230227",
+    "1898143",
+    "10382231",
+    "10382231",
+    "1898143",
+    "1898143",
+    "10382231",
+    "2077416",
+    "21488323",
+    "5194092",
+    "53680113",
+    "58874205",
+    "3154053",
+    "1101106",
+    "12616241",
+    "1577858",
+    "2068316",
+    "18246684",
+    "1820134",
+    "3416135",
+    "6601203",
+    "7266546",
+    "13664454",
+    "26408011",
+    "2359454",
+    "49698467",
+    "1239409",
+    "17435869",
+    "1249125",
+    "6170114",
+    "3109238",
+    "12889203",
+    "10507795",
+    "12433953",
+    "12442540",
+    "12442540",
+    "12433953",
+    "12433953",
+    "7797770",
+    "12833030",
+    "7797770",
+    "7797770",
+    "13230227",
+    "1898143",
+    "10382231",
+    "10382231",
+    "1898143",
+    "1898143",
+    "10382231",
+    "37268483",
+    "602555655",
+    "884901888",
+    "22974431",
+    "38000000",
+    "626242066",
+    "27881546",
+    "35000000",
+    "1026980",
+    "9002610",
+    "2448086",
+    "47000000",
+    "1007969",
+    "2161042",
+    "3000000",
+    "2737174",
+    "1005864",
+    "1027037845",
+    "29000000",
+    "1915823",
+    "53000000",
+    "4852659",
+    "6189765",
+    "1000000",
+    "1305402446",
+    "3000000",
+    "1000000",
+    "1000000",
+    "356285899",
+    "2000000",
+    "225310925",
+    "58000000",
+    "42000000",
+    "3994848",
+    "7342371",
+    "855793493",
+    "10000000",
+    "6602677",
+    "2303458",
+    "712320496",
+    "10000000",
+    "1443414",
+    "4329890",
+    "8000000",
+    "1301402",
+    "4000000",
+    "2958369",
+    "2958351",
+    "1982631",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1146176629",
+    "77000000",
+    "4301289",
+    "5497433",
+    "2000000",
+    "920143139",
+    "1128129",
+    "64000000",
+    "531026184",
+    "88000000",
+    "2825337",
+    "3030701",
+    "2000000",
+    "716829033",
+    "6000000",
+    "1288082",
+    "1000000",
+    "1000000",
+    "972252990",
+    "12000000",
+    "1883816",
+    "5970864",
+    "1369749",
+    "1000000",
+    "11000000",
+    "1819902",
+    "2442129",
+    "1000000",
+    "4000000",
+    "1125853",
+    "1000000",
+    "1103430",
+    "1000000",
+    "944887197",
+    "3000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1003622874",
+    "2000000",
+    "1000000",
+    "1000000",
+    "676725797",
+    "1000000",
+    "1000000",
+    "1000000",
+    "494721106",
+    "1000000",
+    "1000000",
+    "830221079",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "564743909",
+    "57379047",
+    "661889955",
+    "1000000",
+    "1000000",
+    "1000000",
+    "457551422",
+    "1000000",
+    "1000000",
+    "2000000",
+    "1599590",
+    "1000000",
+    "788827935",
+    "8000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "814258808",
+    "14000000",
+    "1001449",
+    "1465305",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1115877",
+    "1000000",
+    "1000000",
+    "1185808866",
+    "6000000",
+    "2000000",
+    "1000000",
+    "1000000",
+    "1000000",
+    "1000000"
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "timestamp": "20250810_021641",
+  "file_analyzed": "autosave.v2",
+  "valid_pop_ids_count": 11203,
+  "orphaned_units_count": 18,
+  "orphaned_units": [
+    {
+      "name": "1st Mosega Dragoon",
+      "pop_id": "3109238",
+      "unit_type": "46",
+      "start_pos": 14884028,
+      "end_pos": 14884240,
+      "relative_start": 125706,
+      "relative_end": 125918,
+      "pop_match_pos": 125783,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290039\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Mosega Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=3109238\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.000\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st Hadejia Dragoon",
+      "pop_id": "12889203",
+      "unit_type": "46",
+      "start_pos": 14897441,
+      "end_pos": 14897655,
+      "relative_start": 139119,
+      "relative_end": 139333,
+      "pop_match_pos": 139197,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290021\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Hadejia Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12889203\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=138.240\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st Angostura Dragoon",
+      "pop_id": "12433953",
+      "unit_type": "46",
+      "start_pos": 14923683,
+      "end_pos": 14923899,
+      "relative_start": 165361,
+      "relative_end": 165577,
+      "pop_match_pos": 165441,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287527\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st El Jobal Dragoon",
+      "pop_id": "12442540",
+      "unit_type": "46",
+      "start_pos": 14923916,
+      "end_pos": 14924131,
+      "relative_start": 165594,
+      "relative_end": 165809,
+      "pop_match_pos": 165673,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287536\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st El Jobal Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12442540\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "2nd El Jobal Dragoon",
+      "pop_id": "12442540",
+      "unit_type": "46",
+      "start_pos": 14924148,
+      "end_pos": 14924363,
+      "relative_start": 165826,
+      "relative_end": 166041,
+      "pop_match_pos": 165905,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287539\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"2nd El Jobal Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12442540\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=2\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "2nd Angostura Dragoon",
+      "pop_id": "12433953",
+      "unit_type": "46",
+      "start_pos": 14924380,
+      "end_pos": 14924596,
+      "relative_start": 166058,
+      "relative_end": 166274,
+      "pop_match_pos": 166138,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287530\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"2nd Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=2\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "3rd Angostura Dragoon",
+      "pop_id": "12433953",
+      "unit_type": "46",
+      "start_pos": 14924613,
+      "end_pos": 14924829,
+      "relative_start": 166291,
+      "relative_end": 166507,
+      "pop_match_pos": 166371,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287533\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"3rd Angostura Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12433953\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=3\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st Cuiab Dragoon",
+      "pop_id": "7797770",
+      "unit_type": "46",
+      "start_pos": 14925019,
+      "end_pos": 14925230,
+      "relative_start": 166697,
+      "relative_end": 166908,
+      "pop_match_pos": 166773,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287515\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Cuiab Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=7797770\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st Juazeiro Dragoon",
+      "pop_id": "12833030",
+      "unit_type": "46",
+      "start_pos": 14925247,
+      "end_pos": 14925462,
+      "relative_start": 166925,
+      "relative_end": 167140,
+      "pop_match_pos": 167004,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287524\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Juazeiro Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=12833030\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "2nd Cuiab Dragoon",
+      "pop_id": "7797770",
+      "unit_type": "46",
+      "start_pos": 14925479,
+      "end_pos": 14925690,
+      "relative_start": 167157,
+      "relative_end": 167368,
+      "pop_match_pos": 167233,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287518\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"2nd Cuiab Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=7797770\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=2\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "3rd Cuiab Dragoon",
+      "pop_id": "7797770",
+      "unit_type": "46",
+      "start_pos": 14925707,
+      "end_pos": 14925918,
+      "relative_start": 167385,
+      "relative_end": 167596,
+      "pop_match_pos": 167461,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=287521\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"3rd Cuiab Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=7797770\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=121.320\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=3\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st Khartoum Dragoon",
+      "pop_id": "13230227",
+      "unit_type": "46",
+      "start_pos": 14926175,
+      "end_pos": 14926390,
+      "relative_start": 167853,
+      "relative_end": 168068,
+      "pop_match_pos": 167932,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290042\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Khartoum Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=13230227\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st Setif Dragoon",
+      "pop_id": "1898143",
+      "unit_type": "46",
+      "start_pos": 14926407,
+      "end_pos": 14926618,
+      "relative_start": 168085,
+      "relative_end": 168296,
+      "pop_match_pos": 168161,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290054\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Setif Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=1898143\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "1st Tlemcen Dragoon",
+      "pop_id": "10382231",
+      "unit_type": "46",
+      "start_pos": 14926859,
+      "end_pos": 14927073,
+      "relative_start": 168537,
+      "relative_end": 168751,
+      "pop_match_pos": 168615,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290045\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"1st Tlemcen Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10382231\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.240\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=1\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "2nd Tlemcen Dragoon",
+      "pop_id": "10382231",
+      "unit_type": "46",
+      "start_pos": 14927304,
+      "end_pos": 14927518,
+      "relative_start": 168982,
+      "relative_end": 169196,
+      "pop_match_pos": 169060,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290048\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"2nd Tlemcen Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10382231\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=2\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "2nd Setif Dragoon",
+      "pop_id": "1898143",
+      "unit_type": "46",
+      "start_pos": 14927535,
+      "end_pos": 14927746,
+      "relative_start": 169213,
+      "relative_end": 169424,
+      "pop_match_pos": 169289,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290057\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"2nd Setif Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=1898143\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=2\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "3rd Setif Dragoon",
+      "pop_id": "1898143",
+      "unit_type": "46",
+      "start_pos": 14927763,
+      "end_pos": 14927974,
+      "relative_start": 169441,
+      "relative_end": 169652,
+      "pop_match_pos": 169517,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290060\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"3rd Setif Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=1898143\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=3\n\t\t\ttype=dragoon\n\t\t}"
+    },
+    {
+      "name": "3rd Tlemcen Dragoon",
+      "pop_id": "10382231",
+      "unit_type": "46",
+      "start_pos": 14927991,
+      "end_pos": 14928205,
+      "relative_start": 169669,
+      "relative_end": 169883,
+      "pop_match_pos": 169747,
+      "full_context": "\t\t\tid=\n\t\t\t{\n\t\t\t\tid=290051\n\t\t\t\ttype=4713\n\t\t\t}\n\t\t\tname=\"3rd Tlemcen Dragoon\"\n\t\t\tpop=\n\t\t\t{\n\t\t\t\tid=10382231\n\t\t\t\ttype=46\n\t\t\t}\n\t\t\torganisation=120.840\n\t\t\tstrength=3.000\n\t\t\texperience=30.000\n\t\t\tcount=3\n\t\t\ttype=dragoon\n\t\t}"
+    }
+  ]
+}
