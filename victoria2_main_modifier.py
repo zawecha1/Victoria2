@@ -1861,7 +1861,7 @@ class Victoria2Modifier:
     # 功能6: 中国人口金钱和需求修改
     # ========================================
     
-    def modify_chinese_population_money(self, chinese_money: float = 9999999999.0, non_chinese_money: float = 0.0,
+    def modify_chinese_population_money(self, chinese_money: float = 9999.0, non_chinese_money: float = 0.0,
                                       chinese_needs: float = 1.0, non_chinese_needs: float = 0.0) -> bool:
         """修改所有人口的金钱数量和需求满足度：中国人口设为指定金额和满足度，非中国人口清零"""
         print(f"\n💰 开始修改人口金钱和需求满足度")
@@ -2363,7 +2363,7 @@ class Victoria2Modifier:
             selected_operations.append('date')
             selected_count += 1
         if options.get('money', False):
-            print("✓ 6. 人口属性: 中国金钱=9,999,999,999+需求=1.0, 非中国金钱=0+需求=0.0")
+            print("✓ 6. 人口属性: 中国金钱=9,999+需求=1.0, 非中国金钱=0+需求=0.0")
             selected_operations.append('money')
             selected_count += 1
         if options.get('civilized', False):
@@ -2570,9 +2570,9 @@ class Victoria2Modifier:
         print("2. 中国文化: 主文化=beifaren, 接受=nanfaren+manchu+yankee")
         print("3. 中国恶名度: 设为0")
         print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
-        print("5. 游戏日期: 设为1836.1.1")
-        print("6. 人口属性: 中国金钱=9,999,999,999+需求=1.0, 非中国金钱=0+需求=0.0")
-        print("7. 所有国家文明化状态: 设为 \"no\"")
+        # print("5. 游戏日期: 设为1836.1.1")
+        print("6. 人口属性: 中国金钱=9,999+需求=1.0, 非中国金钱=0+需求=0.0")
+        # print("7. 所有国家文明化状态: 设为 \"no\"")
         print("⚡ 每个功能独立执行，确保数据安全")
         print(f"{'='*70}")
         
@@ -2641,20 +2641,20 @@ class Victoria2Modifier:
         else:
             print(f"❌ 步骤4失败: 文件读取失败")
         
-        # 5. 游戏日期修改
-        print(f"\n🔄 步骤5: 执行游戏日期修改...")
-        self.__init__()  # 重置计数器
-        if self.load_file(filename):
-            if self.modify_game_date():
-                if self.save_file(filename):
-                    print(f"✅ 步骤5完成: 日期修改 {self.date_changes} 处")
-                    success_count += 1
-                else:
-                    print(f"❌ 步骤5失败: 文件保存失败")
-            else:
-                print(f"❌ 步骤5失败: 日期修改失败")
-        else:
-            print(f"❌ 步骤5失败: 文件读取失败")
+        # # 5. 游戏日期修改
+        # print(f"\n🔄 步骤5: 执行游戏日期修改...")
+        # self.__init__()  # 重置计数器
+        # if self.load_file(filename):
+        #     if self.modify_game_date():
+        #         if self.save_file(filename):
+        #             print(f"✅ 步骤5完成: 日期修改 {self.date_changes} 处")
+        #             success_count += 1
+        #         else:
+        #             print(f"❌ 步骤5失败: 文件保存失败")
+        #     else:
+        #         print(f"❌ 步骤5失败: 日期修改失败")
+        # else:
+        #     print(f"❌ 步骤5失败: 文件读取失败")
         
         # 6. 中国人口金钱和需求修改
         print(f"\n🔄 步骤6: 执行中国人口金钱和需求修改...")
@@ -2671,35 +2671,35 @@ class Victoria2Modifier:
         else:
             print(f"❌ 步骤6失败: 文件读取失败")
         
-        # 7. 所有国家文明化状态修改
-        print(f"\n🔄 步骤7: 执行所有国家文明化状态修改...")
-        self.__init__()  # 重置计数器
-        if self.load_file(filename):
-            if self.modify_all_countries_civilized("no", exclude_china=True):
-                if self.save_file(filename):
-                    print(f"✅ 步骤7完成: 文明化状态修改 {self.civilized_changes} 处")
-                    success_count += 1
-                else:
-                    print(f"❌ 步骤7失败: 文件保存失败")
-            else:
-                print(f"❌ 步骤7失败: 文明化状态修改失败")
-        else:
-            print(f"❌ 步骤7失败: 文件读取失败")
+        # # 7. 所有国家文明化状态修改
+        # print(f"\n🔄 步骤7: 执行所有国家文明化状态修改...")
+        # self.__init__()  # 重置计数器
+        # if self.load_file(filename):
+        #     if self.modify_all_countries_civilized("no", exclude_china=True):
+        #         if self.save_file(filename):
+        #             print(f"✅ 步骤7完成: 文明化状态修改 {self.civilized_changes} 处")
+        #             success_count += 1
+        #         else:
+        #             print(f"❌ 步骤7失败: 文件保存失败")
+        #     else:
+        #         print(f"❌ 步骤7失败: 文明化状态修改失败")
+        # else:
+        #     print(f"❌ 步骤7失败: 文件读取失败")
         
-        # 8. 中国文明化状态修改
-        print(f"\n🔄 步骤8: 执行中国文明化状态修改...")
-        self.__init__()  # 重置计数器
-        if self.load_file(filename):
-            if self.modify_china_civilized("yes"):
-                if self.save_file(filename):
-                    print(f"✅ 步骤8完成: 中国文明化状态修改 {self.civilized_changes} 处")
-                    success_count += 1
-                else:
-                    print(f"❌ 步骤8失败: 文件保存失败")
-            else:
-                print(f"❌ 步骤8失败: 中国文明化状态修改失败")
-        else:
-            print(f"❌ 步骤8失败: 文件读取失败")
+        # # 8. 中国文明化状态修改
+        # print(f"\n🔄 步骤8: 执行中国文明化状态修改...")
+        # self.__init__()  # 重置计数器
+        # if self.load_file(filename):
+        #     if self.modify_china_civilized("yes"):
+        #         if self.save_file(filename):
+        #             print(f"✅ 步骤8完成: 中国文明化状态修改 {self.civilized_changes} 处")
+        #             success_count += 1
+        #         else:
+        #             print(f"❌ 步骤8失败: 文件保存失败")
+        #     else:
+        #         print(f"❌ 步骤8失败: 中国文明化状态修改失败")
+        # else:
+        #     print(f"❌ 步骤8失败: 文件读取失败")
         
         # 最终验证
         print(f"\n🔍 执行最终验证...")
@@ -3071,7 +3071,7 @@ def show_modification_menu():
     print("3. 中国恶名度修改 (设为0)")
     print("4. 中国人口属性修改 (宗教=mahayana, 意识形态=温和派)")
     print("5. 游戏日期修改 (设为1836.1.1)")
-    print("6. 人口属性修改 (中国金钱=9,999,999,999+需求=1.0, 非中国金钱=0+需求=0.0)")
+    print("6. 人口属性修改 (中国金钱=9,999+需求=1.0, 非中国金钱=0+需求=0.0)")
     print("7. 🆕 所有国家文明化状态修改 (除中国外全部设为\"no\")")
     print("8. 🆕 中国文明化状态修改 (设置中国为\"yes\")")
     print("9. 执行全部修改 (推荐)")
@@ -3203,7 +3203,7 @@ def main():
             print("3. 中国恶名度: 设为0")
             print("4. 中国人口属性: 宗教=mahayana, 意识形态=温和派")
             print("5. 游戏日期: 设为1836.1.1")
-            print("6. 人口金钱修改: 中国=9,999,999,999, 非中国=0")
+            print("6. 人口金钱修改: 中国=9,999, 非中国=0")
             print("7. 🆕 文明化状态修改: 除中国外所有国家设为\"no\"")
             print("8. 支持选择性修改和全部修改")
             print("9. 分析存档括号类型")
@@ -3341,7 +3341,7 @@ def main():
     if options.get('date', False):
         modification_list.append("6. 游戏日期: 设为1836.1.1")
     if options.get('money', False):
-        modification_list.append("7. 人口金钱: 中国=9,999,999,999, 非中国=0")
+        modification_list.append("7. 人口金钱: 中国=9,999, 非中国=0")
     if options.get('civilized', False):
         modification_list.append("8. 🆕 文明化状态: 除中国外所有国家设为\"no\"")
     if options.get('china_civilized', False):
