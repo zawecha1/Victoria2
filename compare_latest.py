@@ -23,6 +23,6 @@ def check_braces(filename):
             return
 
 # 检查两个文件
-check_braces("China1836_04_17.v2")
+check_braces("autosave.v2")
 print("-" * 50)
-check_braces("China1836_04_17_manu_bak.v2")
+check_braces("China1844_09_16.v2")

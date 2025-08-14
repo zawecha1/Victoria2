@@ -1,0 +1,2470 @@
+{
+  "metadata": {
+    "source_file": "China1838_12_26.v2",
+    "total_countries": 221,
+    "active_countries": 98,
+    "extraction_time": "2025-08-13T17:37:22.670673"
+  },
+  "countries": {
+    "REB": {
+      "name": "REB",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "ENG": {
+      "name": "England",
+      "capital": 300,
+      "culture": "british",
+      "civilized": true,
+      "active": true
+    },
+    "RUS": {
+      "name": "Russia",
+      "capital": 1008,
+      "culture": "russian",
+      "civilized": true,
+      "active": true
+    },
+    "FRA": {
+      "name": "France",
+      "capital": 425,
+      "culture": "french",
+      "civilized": true,
+      "active": true
+    },
+    "PRU": {
+      "name": "Prussia",
+      "capital": 549,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "GER": {
+      "name": "Germany",
+      "capital": 549,
+      "culture": "north_german",
+      "civilized": false,
+      "active": false
+    },
+    "AUS": {
+      "name": "Austria",
+      "capital": 619,
+      "culture": "south_german",
+      "civilized": true,
+      "active": true
+    },
+    "USA": {
+      "name": "United States",
+      "capital": 2,
+      "culture": "yankee",
+      "civilized": true,
+      "active": true
+    },
+    "JAP": {
+      "name": "Japan",
+      "capital": 1649,
+      "culture": "japanese",
+      "civilized": true,
+      "active": true
+    },
+    "ITA": {
+      "name": "Italy",
+      "capital": 749,
+      "culture": "north_italian",
+      "civilized": true,
+      "active": true
+    },
+    "KUK": {
+      "name": "KUK",
+      "capital": 619,
+      "culture": "south_german",
+      "civilized": false,
+      "active": false
+    },
+    "DEN": {
+      "name": "Denmark",
+      "capital": 372,
+      "culture": "danish",
+      "civilized": false,
+      "active": false
+    },
+    "FIN": {
+      "name": "Finland",
+      "capital": 343,
+      "culture": "finnish",
+      "civilized": false,
+      "active": false
+    },
+    "NOR": {
+      "name": "Norway",
+      "capital": 313,
+      "culture": "norwegian",
+      "civilized": false,
+      "active": false
+    },
+    "SCA": {
+      "name": "SCA",
+      "capital": 322,
+      "culture": "swedish",
+      "civilized": true,
+      "active": true
+    },
+    "SWE": {
+      "name": "Sweden",
+      "capital": 322,
+      "culture": "swedish",
+      "civilized": false,
+      "active": false
+    },
+    "BEL": {
+      "name": "Baluchistan",
+      "capital": 387,
+      "culture": "wallonian",
+      "civilized": false,
+      "active": true
+    },
+    "CAT": {
+      "name": "CAT",
+      "capital": 498,
+      "culture": "catalan",
+      "civilized": false,
+      "active": false
+    },
+    "FLA": {
+      "name": "FLA",
+      "capital": 388,
+      "culture": "flemish",
+      "civilized": true,
+      "active": true
+    },
+    "IRE": {
+      "name": "IRE",
+      "capital": 263,
+      "culture": "irish",
+      "civilized": true,
+      "active": true
+    },
+    "NET": {
+      "name": "Netherlands",
+      "capital": 375,
+      "culture": "dutch",
+      "civilized": true,
+      "active": true
+    },
+    "POR": {
+      "name": "Portugal",
+      "capital": 521,
+      "culture": "portuguese",
+      "civilized": true,
+      "active": true
+    },
+    "SCO": {
+      "name": "SCO",
+      "capital": 269,
+      "culture": "british",
+      "civilized": false,
+      "active": false
+    },
+    "SPA": {
+      "name": "Spain",
+      "capital": 487,
+      "culture": "spanish",
+      "civilized": true,
+      "active": true
+    },
+    "WLL": {
+      "name": "WLL",
+      "capital": 392,
+      "culture": "wallonian",
+      "civilized": true,
+      "active": true
+    },
+    "ANH": {
+      "name": "ANH",
+      "capital": 555,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "BAD": {
+      "name": "BAD",
+      "capital": 586,
+      "culture": "south_german",
+      "civilized": true,
+      "active": false
+    },
+    "BAV": {
+      "name": "Bavaria",
+      "capital": 599,
+      "culture": "south_german",
+      "civilized": false,
+      "active": false
+    },
+    "BRA": {
+      "name": "Brazil",
+      "capital": 536,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "BRE": {
+      "name": "BRE",
+      "capital": 539,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "COB": {
+      "name": "COB",
+      "capital": 562,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "DZG": {
+      "name": "DZG",
+      "capital": 690,
+      "culture": "north_german",
+      "civilized": false,
+      "active": false
+    },
+    "FRM": {
+      "name": "FRM",
+      "capital": 564,
+      "culture": "north_german",
+      "civilized": false,
+      "active": true
+    },
+    "HAM": {
+      "name": "HAM",
+      "capital": 528,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "HAN": {
+      "name": "Hannover",
+      "capital": 534,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "HES": {
+      "name": "Hesse-Darmstadt",
+      "capital": 2560,
+      "culture": "north_german",
+      "civilized": false,
+      "active": true
+    },
+    "HEK": {
+      "name": "HEK",
+      "capital": 566,
+      "culture": "north_german",
+      "civilized": false,
+      "active": true
+    },
+    "HOL": {
+      "name": "Holstein",
+      "capital": 369,
+      "culture": "north_german",
+      "civilized": false,
+      "active": true
+    },
+    "LIP": {
+      "name": "LIP",
+      "capital": 585,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "LUB": {
+      "name": "LUB",
+      "capital": 530,
+      "culture": "north_german",
+      "civilized": false,
+      "active": true
+    },
+    "LUX": {
+      "name": "LUX",
+      "capital": 397,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "MEC": {
+      "name": "Mecklenburg",
+      "capital": 544,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "MEI": {
+      "name": "MEI",
+      "capital": 563,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "NAS": {
+      "name": "NAS",
+      "capital": 565,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "NGF": {
+      "name": "NGF",
+      "capital": 549,
+      "culture": "north_german",
+      "civilized": false,
+      "active": false
+    },
+    "OLD": {
+      "name": "Oldenburg",
+      "capital": 540,
+      "culture": "north_german",
+      "civilized": true,
+      "active": true
+    },
+    "SAX": {
+      "name": "Saxony",
+      "capital": 558,
+      "culture": "north_german",
+      "civilized": false,
+      "active": true
+    },
+    "SCH": {
+      "name": "SCH",
+      "capital": 369,
+      "culture": "danish",
+      "civilized": false,
+      "active": false
+    },
+    "SGF": {
+      "name": "SGF",
+      "capital": 599,
+      "culture": "south_german",
+      "civilized": true,
+      "active": true
+    },
+    "WEI": {
+      "name": "WEI",
+      "capital": 561,
+      "culture": "north_german",
+      "civilized": false,
+      "active": true
+    },
+    "WUR": {
+      "name": "Württemberg",
+      "capital": 589,
+      "culture": "south_german",
+      "civilized": false,
+      "active": true
+    },
+    "LOM": {
+      "name": "LOM",
+      "capital": 726,
+      "culture": "north_italian",
+      "civilized": false,
+      "active": false
+    },
+    "LUC": {
+      "name": "LUC",
+      "capital": 746,
+      "culture": "north_italian",
+      "civilized": false,
+      "active": false
+    },
+    "MOD": {
+      "name": "MOD",
+      "capital": 739,
+      "culture": "north_italian",
+      "civilized": false,
+      "active": false
+    },
+    "PAP": {
+      "name": "PAP",
+      "capital": 749,
+      "culture": "south_italian",
+      "civilized": false,
+      "active": false
+    },
+    "PAR": {
+      "name": "Paraguay",
+      "capital": 738,
+      "culture": "north_italian",
+      "civilized": true,
+      "active": true
+    },
+    "SAR": {
+      "name": "Sardinia-Piedmont",
+      "capital": 749,
+      "culture": "north_italian",
+      "civilized": false,
+      "active": false
+    },
+    "SIC": {
+      "name": "SIC",
+      "capital": 754,
+      "culture": "south_italian",
+      "civilized": false,
+      "active": false
+    },
+    "TRE": {
+      "name": "TRE",
+      "capital": 736,
+      "culture": "north_italian",
+      "civilized": false,
+      "active": false
+    },
+    "TUS": {
+      "name": "TUS",
+      "capital": 744,
+      "culture": "north_italian",
+      "civilized": false,
+      "active": false
+    },
+    "VEN": {
+      "name": "Venezuela",
+      "capital": 729,
+      "culture": "north_italian",
+      "civilized": false,
+      "active": false
+    },
+    "BOH": {
+      "name": "BOH",
+      "capital": 625,
+      "culture": "czech",
+      "civilized": false,
+      "active": false
+    },
+    "KRA": {
+      "name": "KRA",
+      "capital": 703,
+      "culture": "polish",
+      "civilized": false,
+      "active": true
+    },
+    "CRI": {
+      "name": "CRI",
+      "capital": 967,
+      "culture": "tatar",
+      "civilized": false,
+      "active": false
+    },
+    "EST": {
+      "name": "Estonia",
+      "capital": 349,
+      "culture": "estonian",
+      "civilized": false,
+      "active": false
+    },
+    "HUN": {
+      "name": "Hungary",
+      "capital": 641,
+      "culture": "hungarian",
+      "civilized": true,
+      "active": true
+    },
+    "LIT": {
+      "name": "Lithuania",
+      "capital": 360,
+      "culture": "lithuanian",
+      "civilized": false,
+      "active": false
+    },
+    "LAT": {
+      "name": "Latvia",
+      "capital": 354,
+      "culture": "latvian",
+      "civilized": false,
+      "active": false
+    },
+    "POL": {
+      "name": "Poland",
+      "capital": 706,
+      "culture": "polish",
+      "civilized": false,
+      "active": false
+    },
+    "SLV": {
+      "name": "SLV",
+      "capital": 633,
+      "culture": "slovak",
+      "civilized": false,
+      "active": false
+    },
+    "SWI": {
+      "name": "Switzerland",
+      "capital": 605,
+      "culture": "swiss",
+      "civilized": false,
+      "active": false
+    },
+    "RUT": {
+      "name": "RUT",
+      "capital": 702,
+      "culture": "ukrainian",
+      "civilized": false,
+      "active": false
+    },
+    "SIE": {
+      "name": "SIE",
+      "capital": 657,
+      "culture": "hungarian",
+      "civilized": false,
+      "active": false
+    },
+    "UKR": {
+      "name": "Ukraine",
+      "capital": 958,
+      "culture": "ukrainian",
+      "civilized": false,
+      "active": false
+    },
+    "CZH": {
+      "name": "CZH",
+      "capital": 625,
+      "culture": "czech",
+      "civilized": false,
+      "active": false
+    },
+    "ALB": {
+      "name": "Albania",
+      "capital": 849,
+      "culture": "albanian",
+      "civilized": false,
+      "active": false
+    },
+    "BOS": {
+      "name": "BOS",
+      "capital": 783,
+      "culture": "bosniak",
+      "civilized": false,
+      "active": false
+    },
+    "BUL": {
+      "name": "Bulgaria",
+      "capital": 809,
+      "culture": "bulgarian",
+      "civilized": false,
+      "active": false
+    },
+    "CRE": {
+      "name": "CRE",
+      "capital": 848,
+      "culture": "greek",
+      "civilized": false,
+      "active": false
+    },
+    "CRO": {
+      "name": "CRO",
+      "capital": 771,
+      "culture": "croat",
+      "civilized": false,
+      "active": false
+    },
+    "CYP": {
+      "name": "CYP",
+      "capital": 855,
+      "culture": "greek",
+      "civilized": false,
+      "active": false
+    },
+    "GRE": {
+      "name": "Greece",
+      "capital": 834,
+      "culture": "greek",
+      "civilized": false,
+      "active": true
+    },
+    "ION": {
+      "name": "Ionian Islands",
+      "capital": 826,
+      "culture": "greek",
+      "civilized": false,
+      "active": false
+    },
+    "MOL": {
+      "name": "Moldavia",
+      "capital": 664,
+      "culture": "romanian",
+      "civilized": false,
+      "active": false
+    },
+    "MON": {
+      "name": "Montenegro",
+      "capital": 2583,
+      "culture": "serb",
+      "civilized": false,
+      "active": false
+    },
+    "ROM": {
+      "name": "Romania",
+      "capital": 664,
+      "culture": "romanian",
+      "civilized": false,
+      "active": true
+    },
+    "SER": {
+      "name": "Serbia",
+      "capital": 625,
+      "culture": "serb",
+      "civilized": false,
+      "active": false
+    },
+    "SLO": {
+      "name": "SLO",
+      "capital": 768,
+      "culture": "slovene",
+      "civilized": false,
+      "active": false
+    },
+    "TUR": {
+      "name": "Turkmenistan",
+      "capital": 860,
+      "culture": "turkish",
+      "civilized": true,
+      "active": true
+    },
+    "WAL": {
+      "name": "Wallachia",
+      "capital": 664,
+      "culture": "romanian",
+      "civilized": false,
+      "active": false
+    },
+    "YUG": {
+      "name": "Yugoslavia",
+      "capital": 794,
+      "culture": "serb",
+      "civilized": true,
+      "active": true
+    },
+    "ALD": {
+      "name": "ALD",
+      "capital": 1700,
+      "culture": "maghrebi",
+      "civilized": true,
+      "active": true
+    },
+    "CNG": {
+      "name": "CNG",
+      "capital": 1982,
+      "culture": "bakongo",
+      "civilized": false,
+      "active": false
+    },
+    "EGY": {
+      "name": "Egypt",
+      "capital": 1745,
+      "culture": "misri",
+      "civilized": true,
+      "active": true
+    },
+    "ETH": {
+      "name": "Ethiopia",
+      "capital": 1852,
+      "culture": "amhara",
+      "civilized": true,
+      "active": true
+    },
+    "MAD": {
+      "name": "MAD",
+      "capital": 2115,
+      "culture": "malagasy",
+      "civilized": true,
+      "active": true
+    },
+    "LIB": {
+      "name": "LIB",
+      "capital": 1887,
+      "culture": "afro_american",
+      "civilized": true,
+      "active": true
+    },
+    "MOR": {
+      "name": "MOR",
+      "capital": 1680,
+      "culture": "maghrebi",
+      "civilized": false,
+      "active": false
+    },
+    "NAL": {
+      "name": "NAL",
+      "capital": 2111,
+      "culture": "boer",
+      "civilized": false,
+      "active": false
+    },
+    "ORA": {
+      "name": "ORA",
+      "capital": 2101,
+      "culture": "boer",
+      "civilized": false,
+      "active": false
+    },
+    "SAF": {
+      "name": "SAF",
+      "capital": 2088,
+      "culture": "british",
+      "civilized": false,
+      "active": true
+    },
+    "SOK": {
+      "name": "SOK",
+      "capital": 1948,
+      "culture": "hausa",
+      "civilized": true,
+      "active": true
+    },
+    "RHO": {
+      "name": "RHO",
+      "capital": 2068,
+      "culture": "british",
+      "civilized": false,
+      "active": false
+    },
+    "TRI": {
+      "name": "TRI",
+      "capital": 1741,
+      "culture": "maghrebi",
+      "civilized": false,
+      "active": false
+    },
+    "TRN": {
+      "name": "TRN",
+      "capital": 2105,
+      "culture": "boer",
+      "civilized": false,
+      "active": false
+    },
+    "TUN": {
+      "name": "Tunisia",
+      "capital": 1725,
+      "culture": "maghrebi",
+      "civilized": false,
+      "active": false
+    },
+    "ZAN": {
+      "name": "ZAN",
+      "capital": 2048,
+      "culture": "swahili",
+      "civilized": true,
+      "active": true
+    },
+    "ZUL": {
+      "name": "ZUL",
+      "capital": 2113,
+      "culture": "zulu",
+      "civilized": false,
+      "active": false
+    },
+    "ABU": {
+      "name": "ABU",
+      "capital": 1167,
+      "culture": "bedouin",
+      "civilized": false,
+      "active": false
+    },
+    "AFG": {
+      "name": "Afghanistan",
+      "capital": 1211,
+      "culture": "pashtun",
+      "civilized": true,
+      "active": true
+    },
+    "ARM": {
+      "name": "Armenia",
+      "capital": 1098,
+      "culture": "armenian",
+      "civilized": false,
+      "active": false
+    },
+    "AZB": {
+      "name": "Azerbaijan",
+      "capital": 1112,
+      "culture": "azerbaijani",
+      "civilized": false,
+      "active": true
+    },
+    "BUK": {
+      "name": "BUK",
+      "capital": 1200,
+      "culture": "uzbek",
+      "civilized": false,
+      "active": false
+    },
+    "GEO": {
+      "name": "Georgia",
+      "capital": 1095,
+      "culture": "georgian",
+      "civilized": false,
+      "active": false
+    },
+    "HDJ": {
+      "name": "HDJ",
+      "capital": 1151,
+      "culture": "mashriqi",
+      "civilized": false,
+      "active": false
+    },
+    "IRQ": {
+      "name": "IRQ",
+      "capital": 926,
+      "culture": "mashriqi",
+      "civilized": false,
+      "active": false
+    },
+    "KHI": {
+      "name": "KHI",
+      "capital": 1191,
+      "culture": "uzbek",
+      "civilized": true,
+      "active": true
+    },
+    "KOK": {
+      "name": "KOK",
+      "capital": 1217,
+      "culture": "kirgiz",
+      "civilized": false,
+      "active": false
+    },
+    "MUG": {
+      "name": "MUG",
+      "capital": 1236,
+      "culture": "panjabi",
+      "civilized": false,
+      "active": false
+    },
+    "NEJ": {
+      "name": "NEJ",
+      "capital": 1157,
+      "culture": "bedouin",
+      "civilized": false,
+      "active": false
+    },
+    "OMA": {
+      "name": "OMA",
+      "capital": 1166,
+      "culture": "bedouin",
+      "civilized": false,
+      "active": false
+    },
+    "PER": {
+      "name": "Persia",
+      "capital": 1108,
+      "culture": "persian",
+      "civilized": true,
+      "active": true
+    },
+    "YEM": {
+      "name": "YEM",
+      "capital": 1178,
+      "culture": "mashriqi",
+      "civilized": false,
+      "active": false
+    },
+    "HND": {
+      "name": "HND",
+      "capital": 1303,
+      "culture": "marathi",
+      "civilized": true,
+      "active": true
+    },
+    "AWA": {
+      "name": "AWA",
+      "capital": 1244,
+      "culture": "avadhi",
+      "civilized": false,
+      "active": false
+    },
+    "BAS": {
+      "name": "BAS",
+      "capital": 1279,
+      "culture": "telegu",
+      "civilized": true,
+      "active": true
+    },
+    "BER": {
+      "name": "BER",
+      "capital": 1295,
+      "culture": "gujarati",
+      "civilized": false,
+      "active": false
+    },
+    "BHO": {
+      "name": "BHO",
+      "capital": 1272,
+      "culture": "marathi",
+      "civilized": true,
+      "active": true
+    },
+    "BIK": {
+      "name": "BIK",
+      "capital": 1267,
+      "culture": "rajput",
+      "civilized": false,
+      "active": false
+    },
+    "BUN": {
+      "name": "BUN",
+      "capital": 1274,
+      "culture": "kanauji",
+      "civilized": false,
+      "active": false
+    },
+    "GWA": {
+      "name": "GWA",
+      "capital": 1270,
+      "culture": "marathi",
+      "civilized": true,
+      "active": true
+    },
+    "HYD": {
+      "name": "Hyderabad",
+      "capital": 1283,
+      "culture": "avadhi",
+      "civilized": true,
+      "active": true
+    },
+    "IND": {
+      "name": "IND",
+      "capital": 1271,
+      "culture": "marathi",
+      "civilized": true,
+      "active": true
+    },
+    "JAI": {
+      "name": "JAI",
+      "capital": 1268,
+      "culture": "rajput",
+      "civilized": false,
+      "active": false
+    },
+    "JAS": {
+      "name": "JAS",
+      "capital": 1265,
+      "culture": "rajput",
+      "civilized": false,
+      "active": false
+    },
+    "JOD": {
+      "name": "JOD",
+      "capital": 1266,
+      "culture": "rajput",
+      "civilized": true,
+      "active": true
+    },
+    "KAL": {
+      "name": "Kalat",
+      "capital": 1221,
+      "culture": "baluchi",
+      "civilized": false,
+      "active": false
+    },
+    "KAS": {
+      "name": "Kashmir",
+      "capital": 1226,
+      "culture": "kashmiri",
+      "civilized": true,
+      "active": true
+    },
+    "KUT": {
+      "name": "KUT",
+      "capital": 1293,
+      "culture": "gujarati",
+      "civilized": true,
+      "active": true
+    },
+    "LAD": {
+      "name": "LAD",
+      "capital": 1226,
+      "culture": "tibetan",
+      "civilized": false,
+      "active": false
+    },
+    "MAK": {
+      "name": "Makran",
+      "capital": 1222,
+      "culture": "baluchi",
+      "civilized": true,
+      "active": true
+    },
+    "MEW": {
+      "name": "MEW",
+      "capital": 1269,
+      "culture": "rajput",
+      "civilized": true,
+      "active": true
+    },
+    "MYS": {
+      "name": "Mysore",
+      "capital": 1313,
+      "culture": "kannada",
+      "civilized": false,
+      "active": false
+    },
+    "NAG": {
+      "name": "NAG",
+      "capital": 1275,
+      "culture": "marathi",
+      "civilized": false,
+      "active": false
+    },
+    "NEP": {
+      "name": "NEP",
+      "capital": 1327,
+      "culture": "nepali",
+      "civilized": false,
+      "active": false
+    },
+    "ORI": {
+      "name": "Orissa",
+      "capital": 1262,
+      "culture": "oriya",
+      "civilized": false,
+      "active": false
+    },
+    "PAN": {
+      "name": "Punjab",
+      "capital": 1227,
+      "culture": "panjabi",
+      "civilized": true,
+      "active": true
+    },
+    "SHI": {
+      "name": "SHI",
+      "capital": 1235,
+      "culture": "nepali",
+      "civilized": false,
+      "active": false
+    },
+    "SIK": {
+      "name": "SIK",
+      "capital": 1328,
+      "culture": "nepali",
+      "civilized": true,
+      "active": true
+    },
+    "SIN": {
+      "name": "Sindh",
+      "capital": 1288,
+      "culture": "sindi",
+      "civilized": false,
+      "active": false
+    },
+    "TRA": {
+      "name": "Travancore",
+      "capital": 1319,
+      "culture": "malayalam",
+      "civilized": true,
+      "active": true
+    },
+    "ATJ": {
+      "name": "ATJ",
+      "capital": 1405,
+      "culture": "malay",
+      "civilized": true,
+      "active": true
+    },
+    "BAL": {
+      "name": "BAL",
+      "capital": 1438,
+      "culture": "malay",
+      "civilized": true,
+      "active": true
+    },
+    "BHU": {
+      "name": "BHU",
+      "capital": 1329,
+      "culture": "tibetan",
+      "civilized": false,
+      "active": false
+    },
+    "BRU": {
+      "name": "BRU",
+      "capital": 1393,
+      "culture": "malay",
+      "civilized": false,
+      "active": false
+    },
+    "BUR": {
+      "name": "Burma",
+      "capital": 1334,
+      "culture": "burmese",
+      "civilized": true,
+      "active": true
+    },
+    "CAM": {
+      "name": "CAM",
+      "capital": 1364,
+      "culture": "khmer",
+      "civilized": false,
+      "active": true
+    },
+    "CHI": {
+      "name": "China",
+      "capital": 1612,
+      "culture": "beifaren",
+      "civilized": true,
+      "active": true
+    },
+    "DAI": {
+      "name": "Dai Nam",
+      "capital": 1369,
+      "culture": "vietnamese",
+      "civilized": true,
+      "active": true
+    },
+    "JAV": {
+      "name": "JAV",
+      "capital": 1413,
+      "culture": "javan",
+      "civilized": true,
+      "active": true
+    },
+    "KOR": {
+      "name": "Korea",
+      "capital": 1624,
+      "culture": "korean",
+      "civilized": true,
+      "active": true
+    },
+    "LUA": {
+      "name": "LUA",
+      "capital": 1356,
+      "culture": "lao",
+      "civilized": false,
+      "active": false
+    },
+    "JOH": {
+      "name": "JOH",
+      "capital": 1385,
+      "culture": "malay",
+      "civilized": false,
+      "active": false
+    },
+    "SIA": {
+      "name": "Siam",
+      "capital": 1346,
+      "culture": "thai",
+      "civilized": true,
+      "active": true
+    },
+    "TIB": {
+      "name": "TIB",
+      "capital": 1587,
+      "culture": "tibetan",
+      "civilized": false,
+      "active": false
+    },
+    "MGL": {
+      "name": "MGL",
+      "capital": 1465,
+      "culture": "mongol",
+      "civilized": false,
+      "active": false
+    },
+    "WIA": {
+      "name": "WIA",
+      "capital": 1357,
+      "culture": "lao",
+      "civilized": false,
+      "active": false
+    },
+    "PHI": {
+      "name": "PHI",
+      "capital": 1455,
+      "culture": "filipino",
+      "civilized": false,
+      "active": false
+    },
+    "MCK": {
+      "name": "MCK",
+      "capital": 1002,
+      "culture": "manchu",
+      "civilized": false,
+      "active": false
+    },
+    "GXI": {
+      "name": "GXI",
+      "capital": 1502,
+      "culture": "zhuang",
+      "civilized": false,
+      "active": false
+    },
+    "SXI": {
+      "name": "SXI",
+      "capital": 1576,
+      "culture": "beifaren",
+      "civilized": false,
+      "active": false
+    },
+    "YNN": {
+      "name": "YNN",
+      "capital": 1601,
+      "culture": "nanfaren",
+      "civilized": false,
+      "active": false
+    },
+    "XBI": {
+      "name": "XBI",
+      "capital": 2062,
+      "culture": "beifaren",
+      "civilized": false,
+      "active": false
+    },
+    "XIN": {
+      "name": "XIN",
+      "capital": 1600,
+      "culture": "beifaren",
+      "civilized": false,
+      "active": false
+    },
+    "CAL": {
+      "name": "California",
+      "capital": 84,
+      "culture": "yankee",
+      "civilized": false,
+      "active": false
+    },
+    "CAN": {
+      "name": "Canada",
+      "capital": 57,
+      "culture": "anglo_canadian",
+      "civilized": false,
+      "active": false
+    },
+    "CHE": {
+      "name": "CHE",
+      "capital": 143,
+      "culture": "cherokee",
+      "civilized": false,
+      "active": false
+    },
+    "COL": {
+      "name": "Colombia",
+      "capital": 14,
+      "culture": "anglo_canadian",
+      "civilized": true,
+      "active": true
+    },
+    "COS": {
+      "name": "COS",
+      "capital": 2201,
+      "culture": "central_american",
+      "civilized": true,
+      "active": true
+    },
+    "CSA": {
+      "name": "Confederate States",
+      "capital": 211,
+      "culture": "dixie",
+      "civilized": false,
+      "active": false
+    },
+    "CUB": {
+      "name": "CUB",
+      "capital": 2209,
+      "culture": "caribeno",
+      "civilized": false,
+      "active": false
+    },
+    "DES": {
+      "name": "DES",
+      "capital": 97,
+      "culture": "yankee",
+      "civilized": false,
+      "active": false
+    },
+    "DOM": {
+      "name": "DOM",
+      "capital": 2214,
+      "culture": "caribeno",
+      "civilized": false,
+      "active": false
+    },
+    "ELS": {
+      "name": "ELS",
+      "capital": 2191,
+      "culture": "central_american",
+      "civilized": true,
+      "active": true
+    },
+    "GUA": {
+      "name": "GUA",
+      "capital": 2186,
+      "culture": "central_american",
+      "civilized": false,
+      "active": false
+    },
+    "HAI": {
+      "name": "HAI",
+      "capital": 2213,
+      "culture": "afro_antillean",
+      "civilized": true,
+      "active": true
+    },
+    "HAW": {
+      "name": "Hawaii",
+      "capital": 658,
+      "culture": "polynesian",
+      "civilized": false,
+      "active": false
+    },
+    "MAN": {
+      "name": "MAN",
+      "capital": 232,
+      "culture": "yankee",
+      "civilized": false,
+      "active": false
+    },
+    "MEX": {
+      "name": "Mexico",
+      "capital": 2172,
+      "culture": "mexican",
+      "civilized": true,
+      "active": true
+    },
+    "MTC": {
+      "name": "MTC",
+      "capital": 37,
+      "culture": "metis",
+      "civilized": false,
+      "active": false
+    },
+    "HON": {
+      "name": "HON",
+      "capital": 2193,
+      "culture": "central_american",
+      "civilized": false,
+      "active": false
+    },
+    "NEN": {
+      "name": "NEN",
+      "capital": 243,
+      "culture": "yankee",
+      "civilized": false,
+      "active": false
+    },
+    "NEW": {
+      "name": "NEW",
+      "capital": 74,
+      "culture": "anglo_canadian",
+      "civilized": false,
+      "active": false
+    },
+    "NIC": {
+      "name": "NIC",
+      "capital": 2199,
+      "culture": "central_american",
+      "civilized": true,
+      "active": true
+    },
+    "PNM": {
+      "name": "PNM",
+      "capital": 2204,
+      "culture": "central_american",
+      "civilized": false,
+      "active": false
+    },
+    "QUE": {
+      "name": "Quebec",
+      "capital": 65,
+      "culture": "french_canadian",
+      "civilized": false,
+      "active": false
+    },
+    "TEX": {
+      "name": "Texas",
+      "capital": 133,
+      "culture": "texan",
+      "civilized": false,
+      "active": false
+    },
+    "UCA": {
+      "name": "UCA",
+      "capital": 2186,
+      "culture": "central_american",
+      "civilized": true,
+      "active": true
+    },
+    "ARG": {
+      "name": "Argentina",
+      "capital": 2348,
+      "culture": "platinean",
+      "civilized": true,
+      "active": true
+    },
+    "BOL": {
+      "name": "Bolivia",
+      "capital": 2313,
+      "culture": "south_andean",
+      "civilized": true,
+      "active": true
+    },
+    "BRZ": {
+      "name": "BRZ",
+      "capital": 2286,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "CHL": {
+      "name": "Chile",
+      "capital": 2322,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "CLM": {
+      "name": "CLM",
+      "capital": 2204,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "ECU": {
+      "name": "Ecuador",
+      "capital": 2279,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "PEU": {
+      "name": "Peru",
+      "capital": 2290,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "PRG": {
+      "name": "PRG",
+      "capital": 2339,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "URU": {
+      "name": "Uruguay",
+      "capital": 2344,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "VNZ": {
+      "name": "VNZ",
+      "capital": 2264,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "AST": {
+      "name": "AST",
+      "capital": 2468,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "NZL": {
+      "name": "NZL",
+      "capital": 2509,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "ISR": {
+      "name": "ISR",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "BYZ": {
+      "name": "BYZ",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "ICL": {
+      "name": "ICL",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "BAB": {
+      "name": "BAB",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "TPG": {
+      "name": "TPG",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "ARA": {
+      "name": "ARA",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "UBD": {
+      "name": "UBD",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "BYE": {
+      "name": "Belarus",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "PLC": {
+      "name": "PLC",
+      "capital": 349,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    },
+    "GCO": {
+      "name": "GCO",
+      "capital": 1723,
+      "culture": null,
+      "civilized": false,
+      "active": true
+    },
+    "JAN": {
+      "name": "JAN",
+      "capital": 0,
+      "culture": null,
+      "civilized": false,
+      "active": false
+    }
+  },
+  "active_countries_only": {
+    "BEL": {
+      "name": "Baluchistan",
+      "capital": 387,
+      "culture": "wallonian",
+      "civilized": false
+    },
+    "EGY": {
+      "name": "Egypt",
+      "capital": 1745,
+      "culture": "misri",
+      "civilized": true
+    },
+    "CHI": {
+      "name": "China",
+      "capital": 1612,
+      "culture": "beifaren",
+      "civilized": true
+    },
+    "LUB": {
+      "name": "LUB",
+      "capital": 530,
+      "culture": "north_german",
+      "civilized": false
+    },
+    "BUR": {
+      "name": "Burma",
+      "capital": 1334,
+      "culture": "burmese",
+      "civilized": true
+    },
+    "KOR": {
+      "name": "Korea",
+      "capital": 1624,
+      "culture": "korean",
+      "civilized": true
+    },
+    "FRA": {
+      "name": "France",
+      "capital": 425,
+      "culture": "french",
+      "civilized": true
+    },
+    "IND": {
+      "name": "IND",
+      "capital": 1271,
+      "culture": "marathi",
+      "civilized": true
+    },
+    "KHI": {
+      "name": "KHI",
+      "capital": 1191,
+      "culture": "uzbek",
+      "civilized": true
+    },
+    "JAP": {
+      "name": "Japan",
+      "capital": 1649,
+      "culture": "japanese",
+      "civilized": true
+    },
+    "SIA": {
+      "name": "Siam",
+      "capital": 1346,
+      "culture": "thai",
+      "civilized": true
+    },
+    "WUR": {
+      "name": "Württemberg",
+      "capital": 589,
+      "culture": "south_german",
+      "civilized": false
+    },
+    "AZB": {
+      "name": "Azerbaijan",
+      "capital": 1112,
+      "culture": "azerbaijani",
+      "civilized": false
+    },
+    "USA": {
+      "name": "United States",
+      "capital": 2,
+      "culture": "yankee",
+      "civilized": true
+    },
+    "GWA": {
+      "name": "GWA",
+      "capital": 1270,
+      "culture": "marathi",
+      "civilized": true
+    },
+    "SOK": {
+      "name": "SOK",
+      "capital": 1948,
+      "culture": "hausa",
+      "civilized": true
+    },
+    "ATJ": {
+      "name": "ATJ",
+      "capital": 1405,
+      "culture": "malay",
+      "civilized": true
+    },
+    "PEU": {
+      "name": "Peru",
+      "capital": 2290,
+      "culture": null,
+      "civilized": false
+    },
+    "BAS": {
+      "name": "BAS",
+      "capital": 1279,
+      "culture": "telegu",
+      "civilized": true
+    },
+    "HOL": {
+      "name": "Holstein",
+      "capital": 369,
+      "culture": "north_german",
+      "civilized": false
+    },
+    "BAL": {
+      "name": "BAL",
+      "capital": 1438,
+      "culture": "malay",
+      "civilized": true
+    },
+    "BHO": {
+      "name": "BHO",
+      "capital": 1272,
+      "culture": "marathi",
+      "civilized": true
+    },
+    "ROM": {
+      "name": "Romania",
+      "capital": 664,
+      "culture": "romanian",
+      "civilized": false
+    },
+    "AUS": {
+      "name": "Austria",
+      "capital": 619,
+      "culture": "south_german",
+      "civilized": true
+    },
+    "RUS": {
+      "name": "Russia",
+      "capital": 1008,
+      "culture": "russian",
+      "civilized": true
+    },
+    "OLD": {
+      "name": "Oldenburg",
+      "capital": 540,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "SPA": {
+      "name": "Spain",
+      "capital": 487,
+      "culture": "spanish",
+      "civilized": true
+    },
+    "ECU": {
+      "name": "Ecuador",
+      "capital": 2279,
+      "culture": null,
+      "civilized": false
+    },
+    "IRE": {
+      "name": "IRE",
+      "capital": 263,
+      "culture": "irish",
+      "civilized": true
+    },
+    "TUR": {
+      "name": "Turkmenistan",
+      "capital": 860,
+      "culture": "turkish",
+      "civilized": true
+    },
+    "JOD": {
+      "name": "JOD",
+      "capital": 1266,
+      "culture": "rajput",
+      "civilized": true
+    },
+    "MEW": {
+      "name": "MEW",
+      "capital": 1269,
+      "culture": "rajput",
+      "civilized": true
+    },
+    "PAN": {
+      "name": "Punjab",
+      "capital": 1227,
+      "culture": "panjabi",
+      "civilized": true
+    },
+    "URU": {
+      "name": "Uruguay",
+      "capital": 2344,
+      "culture": null,
+      "civilized": false
+    },
+    "ETH": {
+      "name": "Ethiopia",
+      "capital": 1852,
+      "culture": "amhara",
+      "civilized": true
+    },
+    "LUX": {
+      "name": "LUX",
+      "capital": 397,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "FLA": {
+      "name": "FLA",
+      "capital": 388,
+      "culture": "flemish",
+      "civilized": true
+    },
+    "WEI": {
+      "name": "WEI",
+      "capital": 561,
+      "culture": "north_german",
+      "civilized": false
+    },
+    "PRU": {
+      "name": "Prussia",
+      "capital": 549,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "CLM": {
+      "name": "CLM",
+      "capital": 2204,
+      "culture": null,
+      "civilized": false
+    },
+    "NAS": {
+      "name": "NAS",
+      "capital": 565,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "SIK": {
+      "name": "SIK",
+      "capital": 1328,
+      "culture": "nepali",
+      "civilized": true
+    },
+    "WLL": {
+      "name": "WLL",
+      "capital": 392,
+      "culture": "wallonian",
+      "civilized": true
+    },
+    "GCO": {
+      "name": "GCO",
+      "capital": 1723,
+      "culture": null,
+      "civilized": false
+    },
+    "HAI": {
+      "name": "HAI",
+      "capital": 2213,
+      "culture": "afro_antillean",
+      "civilized": true
+    },
+    "ARG": {
+      "name": "Argentina",
+      "capital": 2348,
+      "culture": "platinean",
+      "civilized": true
+    },
+    "FRM": {
+      "name": "FRM",
+      "capital": 564,
+      "culture": "north_german",
+      "civilized": false
+    },
+    "SAF": {
+      "name": "SAF",
+      "capital": 2088,
+      "culture": "british",
+      "civilized": false
+    },
+    "BRZ": {
+      "name": "BRZ",
+      "capital": 2286,
+      "culture": null,
+      "civilized": false
+    },
+    "NZL": {
+      "name": "NZL",
+      "capital": 2509,
+      "culture": null,
+      "civilized": false
+    },
+    "KRA": {
+      "name": "KRA",
+      "capital": 703,
+      "culture": "polish",
+      "civilized": false
+    },
+    "SGF": {
+      "name": "SGF",
+      "capital": 599,
+      "culture": "south_german",
+      "civilized": true
+    },
+    "YUG": {
+      "name": "Yugoslavia",
+      "capital": 794,
+      "culture": "serb",
+      "civilized": true
+    },
+    "PRG": {
+      "name": "PRG",
+      "capital": 2339,
+      "culture": null,
+      "civilized": false
+    },
+    "BOL": {
+      "name": "Bolivia",
+      "capital": 2313,
+      "culture": "south_andean",
+      "civilized": true
+    },
+    "MAK": {
+      "name": "Makran",
+      "capital": 1222,
+      "culture": "baluchi",
+      "civilized": true
+    },
+    "NIC": {
+      "name": "NIC",
+      "capital": 2199,
+      "culture": "central_american",
+      "civilized": true
+    },
+    "JAV": {
+      "name": "JAV",
+      "capital": 1413,
+      "culture": "javan",
+      "civilized": true
+    },
+    "UCA": {
+      "name": "UCA",
+      "capital": 2186,
+      "culture": "central_american",
+      "civilized": true
+    },
+    "SAX": {
+      "name": "Saxony",
+      "capital": 558,
+      "culture": "north_german",
+      "civilized": false
+    },
+    "DAI": {
+      "name": "Dai Nam",
+      "capital": 1369,
+      "culture": "vietnamese",
+      "civilized": true
+    },
+    "MEI": {
+      "name": "MEI",
+      "capital": 563,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "AFG": {
+      "name": "Afghanistan",
+      "capital": 1211,
+      "culture": "pashtun",
+      "civilized": true
+    },
+    "ALD": {
+      "name": "ALD",
+      "capital": 1700,
+      "culture": "maghrebi",
+      "civilized": true
+    },
+    "COS": {
+      "name": "COS",
+      "capital": 2201,
+      "culture": "central_american",
+      "civilized": true
+    },
+    "LIP": {
+      "name": "LIP",
+      "capital": 585,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "COL": {
+      "name": "Colombia",
+      "capital": 14,
+      "culture": "anglo_canadian",
+      "civilized": true
+    },
+    "CHL": {
+      "name": "Chile",
+      "capital": 2322,
+      "culture": null,
+      "civilized": false
+    },
+    "KAS": {
+      "name": "Kashmir",
+      "capital": 1226,
+      "culture": "kashmiri",
+      "civilized": true
+    },
+    "MAD": {
+      "name": "MAD",
+      "capital": 2115,
+      "culture": "malagasy",
+      "civilized": true
+    },
+    "COB": {
+      "name": "COB",
+      "capital": 562,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "MEX": {
+      "name": "Mexico",
+      "capital": 2172,
+      "culture": "mexican",
+      "civilized": true
+    },
+    "PER": {
+      "name": "Persia",
+      "capital": 1108,
+      "culture": "persian",
+      "civilized": true
+    },
+    "HND": {
+      "name": "HND",
+      "capital": 1303,
+      "culture": "marathi",
+      "civilized": true
+    },
+    "GRE": {
+      "name": "Greece",
+      "capital": 834,
+      "culture": "greek",
+      "civilized": false
+    },
+    "VNZ": {
+      "name": "VNZ",
+      "capital": 2264,
+      "culture": null,
+      "civilized": false
+    },
+    "MEC": {
+      "name": "Mecklenburg",
+      "capital": 544,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "HAN": {
+      "name": "Hannover",
+      "capital": 534,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "ANH": {
+      "name": "ANH",
+      "capital": 555,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "ELS": {
+      "name": "ELS",
+      "capital": 2191,
+      "culture": "central_american",
+      "civilized": true
+    },
+    "ITA": {
+      "name": "Italy",
+      "capital": 749,
+      "culture": "north_italian",
+      "civilized": true
+    },
+    "HUN": {
+      "name": "Hungary",
+      "capital": 641,
+      "culture": "hungarian",
+      "civilized": true
+    },
+    "BRE": {
+      "name": "BRE",
+      "capital": 539,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "KUT": {
+      "name": "KUT",
+      "capital": 1293,
+      "culture": "gujarati",
+      "civilized": true
+    },
+    "ZAN": {
+      "name": "ZAN",
+      "capital": 2048,
+      "culture": "swahili",
+      "civilized": true
+    },
+    "SCA": {
+      "name": "SCA",
+      "capital": 322,
+      "culture": "swedish",
+      "civilized": true
+    },
+    "POR": {
+      "name": "Portugal",
+      "capital": 521,
+      "culture": "portuguese",
+      "civilized": true
+    },
+    "HYD": {
+      "name": "Hyderabad",
+      "capital": 1283,
+      "culture": "avadhi",
+      "civilized": true
+    },
+    "ENG": {
+      "name": "England",
+      "capital": 300,
+      "culture": "british",
+      "civilized": true
+    },
+    "TRA": {
+      "name": "Travancore",
+      "capital": 1319,
+      "culture": "malayalam",
+      "civilized": true
+    },
+    "HEK": {
+      "name": "HEK",
+      "capital": 566,
+      "culture": "north_german",
+      "civilized": false
+    },
+    "CAM": {
+      "name": "CAM",
+      "capital": 1364,
+      "culture": "khmer",
+      "civilized": false
+    },
+    "LIB": {
+      "name": "LIB",
+      "capital": 1887,
+      "culture": "afro_american",
+      "civilized": true
+    },
+    "HAM": {
+      "name": "HAM",
+      "capital": 528,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "BRA": {
+      "name": "Brazil",
+      "capital": 536,
+      "culture": "north_german",
+      "civilized": true
+    },
+    "NET": {
+      "name": "Netherlands",
+      "capital": 375,
+      "culture": "dutch",
+      "civilized": true
+    },
+    "PAR": {
+      "name": "Paraguay",
+      "capital": 738,
+      "culture": "north_italian",
+      "civilized": true
+    },
+    "HES": {
+      "name": "Hesse-Darmstadt",
+      "capital": 2560,
+      "culture": "north_german",
+      "civilized": false
+    }
+  },
+  "country_codes": [
+    "REB",
+    "ENG",
+    "RUS",
+    "FRA",
+    "PRU",
+    "GER",
+    "AUS",
+    "USA",
+    "JAP",
+    "ITA",
+    "KUK",
+    "DEN",
+    "FIN",
+    "NOR",
+    "SCA",
+    "SWE",
+    "BEL",
+    "CAT",
+    "FLA",
+    "IRE",
+    "NET",
+    "POR",
+    "SCO",
+    "SPA",
+    "WLL",
+    "ANH",
+    "BAD",
+    "BAV",
+    "BRA",
+    "BRE",
+    "COB",
+    "DZG",
+    "FRM",
+    "HAM",
+    "HAN",
+    "HES",
+    "HEK",
+    "HOL",
+    "LIP",
+    "LUB",
+    "LUX",
+    "MEC",
+    "MEI",
+    "NAS",
+    "NGF",
+    "OLD",
+    "SAX",
+    "SCH",
+    "SGF",
+    "WEI",
+    "WUR",
+    "LOM",
+    "LUC",
+    "MOD",
+    "PAP",
+    "PAR",
+    "SAR",
+    "SIC",
+    "TRE",
+    "TUS",
+    "VEN",
+    "BOH",
+    "KRA",
+    "CRI",
+    "EST",
+    "HUN",
+    "LIT",
+    "LAT",
+    "POL",
+    "SLV",
+    "SWI",
+    "RUT",
+    "SIE",
+    "UKR",
+    "CZH",
+    "ALB",
+    "BOS",
+    "BUL",
+    "CRE",
+    "CRO",
+    "CYP",
+    "GRE",
+    "ION",
+    "MOL",
+    "MON",
+    "ROM",
+    "SER",
+    "SLO",
+    "TUR",
+    "WAL",
+    "YUG",
+    "ALD",
+    "CNG",
+    "EGY",
+    "ETH",
+    "MAD",
+    "LIB",
+    "MOR",
+    "NAL",
+    "ORA",
+    "SAF",
+    "SOK",
+    "RHO",
+    "TRI",
+    "TRN",
+    "TUN",
+    "ZAN",
+    "ZUL",
+    "ABU",
+    "AFG",
+    "ARM",
+    "AZB",
+    "BUK",
+    "GEO",
+    "HDJ",
+    "IRQ",
+    "KHI",
+    "KOK",
+    "MUG",
+    "NEJ",
+    "OMA",
+    "PER",
+    "YEM",
+    "HND",
+    "AWA",
+    "BAS",
+    "BER",
+    "BHO",
+    "BIK",
+    "BUN",
+    "GWA",
+    "HYD",
+    "IND",
+    "JAI",
+    "JAS",
+    "JOD",
+    "KAL",
+    "KAS",
+    "KUT",
+    "LAD",
+    "MAK",
+    "MEW",
+    "MYS",
+    "NAG",
+    "NEP",
+    "ORI",
+    "PAN",
+    "SHI",
+    "SIK",
+    "SIN",
+    "TRA",
+    "ATJ",
+    "BAL",
+    "BHU",
+    "BRU",
+    "BUR",
+    "CAM",
+    "CHI",
+    "DAI",
+    "JAV",
+    "KOR",
+    "LUA",
+    "JOH",
+    "SIA",
+    "TIB",
+    "MGL",
+    "WIA",
+    "PHI",
+    "MCK",
+    "GXI",
+    "SXI",
+    "YNN",
+    "XBI",
+    "XIN",
+    "CAL",
+    "CAN",
+    "CHE",
+    "COL",
+    "COS",
+    "CSA",
+    "CUB",
+    "DES",
+    "DOM",
+    "ELS",
+    "GUA",
+    "HAI",
+    "HAW",
+    "MAN",
+    "MEX",
+    "MTC",
+    "HON",
+    "NEN",
+    "NEW",
+    "NIC",
+    "PNM",
+    "QUE",
+    "TEX",
+    "UCA",
+    "ARG",
+    "BOL",
+    "BRZ",
+    "CHL",
+    "CLM",
+    "ECU",
+    "PEU",
+    "PRG",
+    "URU",
+    "VNZ",
+    "AST",
+    "NZL",
+    "ISR",
+    "BYZ",
+    "ICL",
+    "BAB",
+    "TPG",
+    "ARA",
+    "UBD",
+    "BYE",
+    "PLC",
+    "GCO",
+    "JAN"
+  ],
+  "active_country_codes": [
+    "HYD",
+    "CLM",
+    "OLD",
+    "PAR",
+    "ELS",
+    "TUR",
+    "UCA",
+    "LIP",
+    "BUR",
+    "FLA",
+    "KOR",
+    "ETH",
+    "BEL",
+    "ARG",
+    "AUS",
+    "HOL",
+    "ROM",
+    "CHI",
+    "COB",
+    "ZAN",
+    "HAM",
+    "SAX",
+    "EGY",
+    "BAS",
+    "JAV",
+    "USA",
+    "PER",
+    "SGF",
+    "JAP",
+    "VNZ",
+    "URU",
+    "WLL",
+    "MEW",
+    "IND",
+    "MAD",
+    "MEI",
+    "HES",
+    "WEI",
+    "MEX",
+    "FRA",
+    "ECU",
+    "AFG",
+    "AZB",
+    "HEK",
+    "BRE",
+    "RUS",
+    "ANH",
+    "GWA",
+    "PAN",
+    "SOK",
+    "TRA",
+    "LUX",
+    "CAM",
+    "MEC",
+    "NIC",
+    "IRE",
+    "FRM",
+    "SCA",
+    "PRU",
+    "PEU",
+    "DAI",
+    "COL",
+    "NET",
+    "GCO",
+    "BRA",
+    "GRE",
+    "HND",
+    "ATJ",
+    "JOD",
+    "KRA",
+    "CHL",
+    "POR",
+    "PRG",
+    "BAL",
+    "SIA",
+    "MAK",
+    "ITA",
+    "SPA",
+    "NAS",
+    "HAN",
+    "KHI",
+    "KAS",
+    "ALD",
+    "HAI",
+    "ENG",
+    "LIB",
+    "YUG",
+    "BRZ",
+    "SAF",
+    "HUN",
+    "COS",
+    "BHO",
+    "NZL",
+    "SIK",
+    "LUB",
+    "KUT",
+    "BOL",
+    "WUR"
+  ]
+}
