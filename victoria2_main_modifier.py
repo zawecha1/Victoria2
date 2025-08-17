@@ -24,6 +24,97 @@ from typing import Dict, List, Optional, Tuple
 from bracket_parser import Victoria2BracketParser, BracketBlock
 
 class Victoria2Modifier:
+    def _modify_all_population_ideology_and_religion_global(self, max_provinces: int = None) -> bool:
+        """全局方法：修改所有省份中所有人口的宗教为 mahayana，意识形态为温和派"""
+        print("🌍 开始全局宗教和意识形态修改...")
+        province_pattern = re.compile(r'^(\d+)=\s*{', re.MULTILINE)
+        province_matches = list(province_pattern.finditer(self.content))
+        print(f"📊 找到 {len(province_matches)} 个省份")
+        if max_provinces is None:
+            provinces_to_process = len(province_matches)
+        else:
+            provinces_to_process = min(max_provinces, len(province_matches))
+        print(f"📊 处理范围：{provinces_to_process}/{len(province_matches)} 个省份")
+        # 从后往前处理，避免位置偏移问题
+        for i in reversed(range(provinces_to_process)):
+            match = province_matches[i]
+            province_id = int(match.group(1))
+            start_pos = match.end()
+            if i + 1 < len(province_matches):
+                end_pos = province_matches[i + 1].start() - 1
+            else:
+                # 到文件结尾
+                end_pos = len(self.content) - 1
+            province_content = self.content[start_pos:end_pos]
+            # 修改所有人口组
+            new_province_content, changes_religion, changes_ideology, pop_count = self._modify_province_all_populations_religion_and_ideology(province_content)
+            if changes_religion > 0:
+                self.religion_changes += changes_religion
+            if changes_ideology > 0:
+                self.ideology_changes += changes_ideology
+            if pop_count > 0:
+                self.population_count += pop_count
+            # 替换内容
+            if new_province_content != province_content:
+                self.content = self.content[:start_pos] + new_province_content + self.content[end_pos:]
+            # 进度显示
+            if (len(province_matches) - i) % 500 == 0:
+                print(f"已处理 {len(province_matches) - i}/{provinces_to_process} 个省份...")
+        print(f"✅ 全局人口宗教和意识形态修改完成:")
+        print(f"宗教修改: {self.religion_changes} 处")
+        print(f"意识形态修改: {self.ideology_changes} 处")
+        print(f"总修改数: {self.population_count} 个人口组")
+        return True
+
+    def _modify_province_all_populations_religion_and_ideology(self, province_content: str) -> tuple:
+        """修改单个省份中的所有人口宗教和意识形态"""
+        pop_types = ['farmers', 'labourers', 'clerks', 'artisans', 'craftsmen',
+                    'clergymen', 'officers', 'soldiers', 'aristocrats', 'capitalists',
+                    'bureaucrats', 'intellectuals']
+        modified_content = province_content
+        changes_religion = 0
+        changes_ideology = 0
+        pop_count = 0
+        for pop_type in pop_types:
+            pattern = f'({pop_type}=\s*{{[^{{}}]*(?:{{[^{{}}]*}}[^{{}}]*)*}})'
+            matches = list(re.finditer(pattern, modified_content, re.DOTALL))
+            for match in reversed(matches):
+                pop_block = match.group(1)
+                new_pop_block, changed_r, changed_i = self._modify_single_population_religion_and_ideology(pop_block)
+                if changed_r > 0:
+                    changes_religion += changed_r
+                if changed_i > 0:
+                    changes_ideology += changed_i
+                pop_count += 1
+                # 替换人口块
+                start, end = match.start(1), match.end(1)
+                modified_content = modified_content[:start] + new_pop_block + modified_content[end:]
+        return modified_content, changes_religion, changes_ideology, pop_count
+
+    def _modify_single_population_religion_and_ideology(self, pop_block: str) -> tuple:
+        """修改单个人口组的宗教为 mahayana，意识形态为温和派"""
+        modified_block = pop_block
+        changes_religion = 0
+        changes_ideology = 0
+        # 1. 修改宗教为 mahayana
+        known_religions = ['catholic', 'protestant', 'orthodox', 'sunni', 'shiite', 'gelugpa', 
+                          'hindu', 'sikh', 'shinto', 'mahayana', 'theravada', 'animist', 
+                          'fetishist', 'jewish']
+        religion_alternatives = '|'.join(known_religions)
+        culture_religion_pattern = rf'(\w+)=({religion_alternatives})'
+        def replace_religion(match):
+            nonlocal changes_religion
+            changes_religion += 1
+            return f'{match.group(1)}=mahayana'
+        modified_block = re.sub(culture_religion_pattern, replace_religion, modified_block)
+        # 2. 修改意识形态分布
+        ideology_pattern = r'ideology=\s*\{[^}]*\}'
+        ideology_match = re.search(ideology_pattern, modified_block, re.DOTALL)
+        if ideology_match:
+            # 直接将意识形态块替换为 conservative（温和派）
+            changes_ideology += 1
+            modified_block = re.sub(ideology_pattern, 'ideology={ conservative=100.0 }', modified_block)
+        return modified_block, changes_religion, changes_ideology
     """Victoria II 主修改器 - 统一入口工具"""
     
     def __init__(self, file_path: str = None, debug_mode: bool = False):
@@ -1298,25 +1389,10 @@ class Victoria2Modifier:
         print("- 意识形态调整 (✅ 已确认映射):")
         print("  • Reactionary(1) + Socialist(4) + Communist(7) → Conservative(3)")
         print("  • Fascist(2) + Anarcho-Liberal(5) → Liberal(6)")
-        
-        # 使用全球人口修改方法，处理所有省份中的所有人口
-        print("🌍 使用全球方法确保所有人口都被修改...")
-        return self._modify_all_population_ideology_global(max_provinces)
-        print(f"📝 共收集到 {len(all_modifications)} 个需要修改的人口块")
-        
-        # 安全地进行所有替换
-        for mod in all_modifications:
-            self.content = (self.content[:mod['start_pos']] + 
-                           mod['new_content'] + 
-                           self.content[mod['end_pos'] + 1:])
-            self.population_count += 1
-        
-        print(f"✅ 中国人口属性修改完成:")
-        print(f"宗教修改: {self.religion_changes} 处")
-        print(f"意识形态修改: {self.ideology_changes} 处")
-        print(f"总修改数: {self.population_count} 个人口组")
-        
-        return True
+
+        # 使用全球人口修改方法，处理所有省份中的所有人口，宗教统一为 mahayana
+        print("🌍 使用全球方法确保所有人口都被修改（宗教→mahayana, 意识形态→温和派）...")
+        return self._modify_all_population_ideology_and_religion_global(max_provinces)
     
     def _modify_chinese_population_traditional(self, max_provinces: int = None) -> bool:
         """传统方法修改中国人口属性（备用方案）"""
